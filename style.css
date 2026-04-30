@@ -1,72 +1,73 @@
-/* Variables de couleurs */
+/* --- Variables pour les couleurs ESMaroc --- */
 :root {
     --primary-blue: #004595;
     --accent-yellow: #f2bc00;
-    --slate-grey: #5e7281;
-    --light-bg: #f8f9fa;
+    --dark-grey: #333;
+    --light-grey: #f4f4f4;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+/* --- Base --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: var(--dark-grey); }
 
-/* Header & Nav */
+/* --- Header --- */
 header {
+    background: white;
+    padding: 20px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 2px solid var(--primary-blue);
 }
+.logo { font-weight: bold; color: var(--primary-blue); font-size: 1.5rem; }
+nav a { margin-left: 20px; text-decoration: none; color: var(--primary-blue); font-weight: 600; }
+nav a:hover { color: var(--accent-yellow); }
 
-.logo img { height: 50px; }
-
-.main-menu ul { display: flex; list-style: none; gap: 20px; }
-.main-menu a { text-decoration: none; color: var(--primary-blue); font-weight: 600; }
-
-.header-tools button { background: none; border: none; cursor: pointer; font-size: 1.2rem; margin-left: 10px; }
-
-/* Hero Carousel */
-.hero-carousel { position: relative; height: 500px; overflow: hidden; }
-.hero-carousel img { width: 100%; height: 100%; object-fit: cover; }
-.text-overlay {
-    position: absolute; top: 0; left: 0; width: 50%; height: 100%;
-    background: linear-gradient(90deg, rgba(255,255,255,0.9), transparent);
-    display: flex; flex-direction: column; justify-content: center; padding: 5%;
-}
-
-/* Grille Services (4 blocs) */
-.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 50px 5%; }
-.service-card { 
-    background: var(--light-bg); padding: 30px; border-radius: 10px;
-    border-bottom: 4px solid var(--accent-yellow);
+/* --- Hero Section --- */
+.hero {
+    background: var(--primary-blue);
+    color: white;
+    padding: 80px 5%;
     text-align: center;
 }
-.service-card button { 
-    background: var(--primary-blue); color: white; border: none;
-    padding: 10px 20px; margin-top: 15px; cursor: pointer;
+.hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+.btn-main {
+    background: var(--accent-yellow);
+    color: var(--primary-blue);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
-/* Footer */
-footer { background: var(--primary-blue); color: white; padding: 50px 5%; display: flex; justify-content: space-between; }
-.social-icons a { color: var(--accent-yellow); margin-right: 15px; text-decoration: none; font-weight: bold; }
-
-#plane-transition {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+/* --- Section Services (Grille) --- */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px 5%;
+}
+.card {
+    background: white;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    transition: 0.3s;
+}
+.card:hover { border-color: var(--accent-yellow); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.card h3 { color: var(--primary-blue); margin-bottom: 10px; }
+.card button {
     background: var(--primary-blue);
-    transform: translateX(-100%);
-    transition: transform 0.8s ease-in-out;
-    z-index: 999;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 15px;
+    cursor: pointer;
 }
 
-.floating-plane {
-    position: fixed;
-    top: -50px;
-    font-size: 20px;
-    opacity: 0.3;
-    pointer-events: none;
-    animation: fly linear forwards;
-}
-
-@keyframes fly {
-    to { transform: translateY(110vh) rotate(45deg); }
-}
+/* --- About Section --- */
+.about-section { padding: 50px 5%; background: var(--light-grey); text-align: center; }
