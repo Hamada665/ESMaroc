@@ -1,0 +1,51 @@
+/* Variables de couleurs */
+:root {
+    --primary-blue: #004595;
+    --accent-yellow: #f2bc00;
+    --slate-grey: #5e7281;
+    --light-bg: #f8f9fa;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+/* Header & Nav */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo img { height: 50px; }
+
+.main-menu ul { display: flex; list-style: none; gap: 20px; }
+.main-menu a { text-decoration: none; color: var(--primary-blue); font-weight: 600; }
+
+.header-tools button { background: none; border: none; cursor: pointer; font-size: 1.2rem; margin-left: 10px; }
+
+/* Hero Carousel */
+.hero-carousel { position: relative; height: 500px; overflow: hidden; }
+.hero-carousel img { width: 100%; height: 100%; object-fit: cover; }
+.text-overlay {
+    position: absolute; top: 0; left: 0; width: 50%; height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.9), transparent);
+    display: flex; flex-direction: column; justify-content: center; padding: 5%;
+}
+
+/* Grille Services (4 blocs) */
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 50px 5%; }
+.service-card { 
+    background: var(--light-bg); padding: 30px; border-radius: 10px;
+    border-bottom: 4px solid var(--accent-yellow);
+    text-align: center;
+}
+.service-card button { 
+    background: var(--primary-blue); color: white; border: none;
+    padding: 10px 20px; margin-top: 15px; cursor: pointer;
+}
+
+/* Footer */
+footer { background: var(--primary-blue); color: white; padding: 50px 5%; display: flex; justify-content: space-between; }
+.social-icons a { color: var(--accent-yellow); margin-right: 15px; text-decoration: none; font-weight: bold; }
