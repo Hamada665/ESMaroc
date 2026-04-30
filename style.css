@@ -71,3 +71,20 @@ nav a:hover { color: var(--accent-yellow); }
 
 /* --- About Section --- */
 .about-section { padding: 50px 5%; background: var(--light-grey); text-align: center; }
+
+/* Hero avec effet dégradé (blanc fantôme) */
+.hero {
+    height: 500px;
+    background: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902') center/cover;
+    display: flex;
+    align-items: center;
+}
+.overlay {
+    width: 50%; height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.95), transparent);
+    padding: 50px;
+}
+
+/* Footer et Stats */
+.stats { display: flex; justify-content: space-around; padding: 40px; background: #004595; color: white; }
+.footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding: 40px; background: #333; color: white; }
