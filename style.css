@@ -39,7 +39,47 @@ nav a { margin-left: 20px; text-decoration: none; color: var(--primary-blue); }
 .about-img img { width: 100%; border-radius: 8px; }
 
 /* Stats & Footer */
-.stats { display: flex; justify-content: space-around; padding: 40px; background: var(--primary-blue); color: white; }
+.impact-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 5%;
+    background-color: #ffffff; /* Fond blanc comme sur ton image */
+    text-align: center;
+}
+
+.impact-column {
+    flex: 1;
+    padding: 0 20px;
+    border-right: 1px solid #e0e0e0; /* La petite barre grise de séparation */
+}
+
+/* On enlève la barre pour le dernier élément */
+.impact-column:last-child {
+    border-right: none;
+}
+
+.impact-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.impact-column h2 {
+    font-size: 2.5rem;
+    color: var(--primary-blue); /* Le bleu du logo */
+    margin-bottom: 5px;
+}
+
+.impact-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--dark-grey);
+    margin-bottom: 5px;
+}
+
+.impact-desc {
+    font-size: 0.9rem;
+    color: #777;
+}
 footer { background: #333; color: white; padding: 40px; }
 .footer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
 .social-links { text-align: center; margin-top: 20px; color: var(--accent-yellow); }
