@@ -1,90 +1,45 @@
-/* --- Variables pour les couleurs ESMaroc --- */
+/* Variables ESMaroc */
 :root {
     --primary-blue: #004595;
     --accent-yellow: #f2bc00;
-    --dark-grey: #333;
     --light-grey: #f4f4f4;
 }
 
-/* --- Base --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: var(--dark-grey); }
+body { font-family: 'Segoe UI', sans-serif; }
 
-/* --- Header --- */
-header {
-    background: white;
-    padding: 20px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid var(--primary-blue);
-}
-.logo { font-weight: bold; color: var(--primary-blue); font-size: 1.5rem; }
-nav a { margin-left: 20px; text-decoration: none; color: var(--primary-blue); font-weight: 600; }
-nav a:hover { color: var(--accent-yellow); }
+/* Header */
+header { display: flex; justify-content: space-between; padding: 20px 5%; border-bottom: 2px solid var(--primary-blue); }
+.logo { color: var(--primary-blue); font-weight: bold; font-size: 1.5rem; }
+nav a { margin-left: 20px; text-decoration: none; color: var(--primary-blue); }
 
-/* --- Hero Section --- */
-.hero {
-    background: var(--primary-blue);
-    color: white;
-    padding: 80px 5%;
-    text-align: center;
-}
-.hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
-.btn-main {
-    background: var(--accent-yellow);
-    color: var(--primary-blue);
-    border: none;
-    padding: 15px 30px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-/* --- Section Services (Grille) --- */
-.services-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 50px 5%;
-}
-.card {
-    background: white;
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    transition: 0.3s;
-}
-.card:hover { border-color: var(--accent-yellow); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-.card h3 { color: var(--primary-blue); margin-bottom: 10px; }
-.card button {
-    background: var(--primary-blue);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
-/* --- About Section --- */
-.about-section { padding: 50px 5%; background: var(--light-grey); text-align: center; }
-
-/* Hero avec effet dégradé (blanc fantôme) */
+/* Hero avec effet "Blanc Fantôme" */
 .hero {
     height: 500px;
     background: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902') center/cover;
     display: flex;
     align-items: center;
 }
-.overlay {
+.hero-overlay {
     width: 50%; height: 100%;
     background: linear-gradient(90deg, rgba(255,255,255,0.95), transparent);
     padding: 50px;
 }
+.btn-main { background: var(--accent-yellow); color: var(--primary-blue); border: none; padding: 15px; border-radius: 5px; margin-top: 20px; }
 
-/* Footer et Stats */
-.stats { display: flex; justify-content: space-around; padding: 40px; background: #004595; color: white; }
-.footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding: 40px; background: #333; color: white; }
+/* Services (Grille) */
+.services-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 50px 5%; }
+.card { border: 1px solid #ddd; padding: 20px; text-align: center; border-radius: 8px; }
+.card h3 { color: var(--primary-blue); }
+.card button { background: var(--primary-blue); color: white; border: none; padding: 10px; margin-top: 10px; }
+
+/* À Propos */
+.about-section { padding: 50px 5%; background: var(--light-grey); text-align: center; }
+.about-content { display: flex; gap: 40px; align-items: center; margin-top: 20px; }
+.about-img img { width: 100%; border-radius: 8px; }
+
+/* Stats & Footer */
+.stats { display: flex; justify-content: space-around; padding: 40px; background: var(--primary-blue); color: white; }
+footer { background: #333; color: white; padding: 40px; }
+.footer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+.social-links { text-align: center; margin-top: 20px; color: var(--accent-yellow); }
