@@ -97,28 +97,20 @@ nav a:hover { color: var(--yellow); }
 }
 
 /* Section Méthodologie */
-.methodology { padding: 80px 5%; background: #fdfdfd; text-align: center; }
-.methodology h2 { font-size: 2.2rem; color: var(--blue); margin-bottom: 50px; }
+.about-method { padding: 80px 5%; background: #fff; }
+.content-wrapper { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: auto; }
+.text-side { flex: 1; }
+.image-side { flex: 1; }
+.image-side img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
-.method-container { 
-    display: flex; 
-    justify-content: space-between; 
-    gap: 20px; 
-    max-width: 1000px; 
-    margin: 0 auto; 
+/* Style de l'accordéon */
+.acc-trigger { 
+    width: 100%; padding: 20px; background: #f9f9f9; border: none; 
+    text-align: left; font-weight: bold; color: var(--blue); cursor: pointer;
+    border-bottom: 1px solid #ddd;
 }
-
-.method-step {
-    flex: 1;
-    padding: 30px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.method-step .icon { font-size: 3rem; margin-bottom: 15px; }
-.method-step h3 { color: var(--blue); margin-bottom: 15px; }
-.method-step p { color: #666; font-size: 0.95rem; line-height: 1.5; }
+.acc-panel { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.acc-panel.active { max-height: 100px; padding: 15px; }
 
 /* Responsive mobile */
 @media (max-width: 768px) {
