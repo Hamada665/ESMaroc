@@ -96,29 +96,63 @@ nav a:hover { color: var(--yellow); }
     transition: 0.3s;
 }
 
-/* Section Méthodologie */
-.about-method { padding: 80px 5%; background: #fff; }
-.content-wrapper { display: flex; align-items: center; gap: 60px; max-width: 1200px; margin: auto; }
-.text-side { flex: 1; }
-.image-side { flex: 1; }
-.image-side img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+/* --- SECTION METHODOLOGIE ÉLÉGANTE --- */
 
-/* Style de l'accordéon */
+.about-method { 
+    padding: 100px 5%; /* Plus d'espace pour respirer */
+    background: #fdfdfd; /* Un blanc cassé très doux */
+}
+
+.content-wrapper { 
+    display: flex; 
+    align-items: center; /* Centre verticalement */
+    gap: 80px; /* Plus d'espace entre le texte et l'image */
+    max-width: 1100px; /* Largeur maximale pour ne pas écraser le texte */
+    margin: auto; 
+}
+
+.text-side { flex: 1; }
+.image-side { flex: 1; text-align: center; }
+
+.image-side img { 
+    width: 100%; 
+    max-width: 450px; /* Limite la taille de l'image pour l'élégance */
+    border-radius: 20px; 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06); /* Ombre douce moderne */
+}
+
+/* Style moderne de l'accordéon */
 .acc-trigger { 
-    width: 100%; padding: 20px; background: #f9f9f9; border: none; 
-    text-align: left; font-weight: bold; color: var(--blue); cursor: pointer;
-    border-bottom: 1px solid #ddd;
+    width: 100%; 
+    padding: 22px; /* Boutons plus grands pour un look premium */
+    background: #fff; 
+    border: none; 
+    text-align: left; 
+    font-weight: bold; 
+    font-size: 1.1rem; 
+    color: var(--blue); 
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s ease;
 }
+
+.acc-trigger:hover { background: #fdfdfd; } /* Petit effet au survol */
+
+/* ICI LE SECRET DU "MOUVEMENT" INNOVANT */
 .acc-panel { 
-    max-height: 0; 
+    max-height: 0; /* Fermé par défaut */
     overflow: hidden; 
-    transition: max-height 0.4s ease-out; /* Transition douce */
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Transition douce */
     background: #fff;
-    padding: 0 15px;
+    padding: 0 22px; /* Pas de padding vertical au repos */
 }
+
+.acc-panel p { color: #555; font-size: 0.95rem; }
+
+/* La classe JS qui active l'animation */
 .acc-panel.active { 
-    max-height: 500px; /* Augmente pour être sûr que tout le texte passe */
-    padding: 15px; 
+    max-height: 300px; /* S'ouvre pour montrer le texte */
+    padding: 15px 22px; /* Ajoute du padding quand actif */
     border-bottom: 1px solid #eee;
 }
 
