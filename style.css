@@ -28,64 +28,63 @@ nav a:hover { color: var(--yellow); }
 .cta-yellow { background: var(--yellow); border: none; padding: 15px 30px; font-weight: bold; cursor: pointer; border-radius: 5px; }
 
 /* Services */
-.services { display: flex; justify-content: space-around; padding: 50px 5%; gap: 20px; background: var(--light); }
+.services { 
+    display: flex; 
+    justify-content: center; 
+    padding: 80px 5%; 
+    gap: 30px; 
+    background: #fdfdfd; /* Un blanc cassé plus doux */
+}
+
 .service-card {
     background: #fff;
-    padding: 40px; /* Plus d'espace intérieur */
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Ombre plus douce */
+    padding: 40px 30px; /* Plus d'air en haut et bas */
+    border-radius: 20px; /* Coins plus arrondis pour le côté moderne */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08); /* Ombre plus profonde et diffuse */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centre les éléments */
-    text-align: center; /* Plus propre pour ce genre de bloc */
-    max-width: 250px; /* Ajoute ceci pour limiter la largeur de chaque carte */
-    margin: 0 auto;   /* Centre les cartes dans leur colonne */
+    align-items: center; 
+    text-align: center;
+    width: 280px; /* Largeur fixe pour l'harmonie */
+    transition: transform 0.3s ease; /* Petit effet au survol */
 }
+
+.service-card:hover { transform: translateY(-10px); }
+
+.service-card h3 { color: var(--blue); margin-bottom: 20px; }
 
 .service-card p {
-    font-size: 0.9rem;
-    line-height: 1.8; /* Plus d'espace entre les lignes */
-    color: #666;
-    margin: 20px 0;
+    font-size: 0.95rem;
+    line-height: 1.7; 
+    color: #555;
+    flex-grow: 1; /* Pousse le bouton vers le bas */
+    margin-bottom: 30px;
 }
+
 .service-card button {
-    background: #004595;
+    background: var(--blue);
     color: white;
     border: none;
-    padding: 12px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-    width: 100%; /* Force les boutons à prendre toute la largeur */
+    padding: 15px 25px;
+    border-radius: 8px;
+    width: 100%;
     font-weight: bold;
-    transition: background 0.3s;
+    cursor: pointer;
+    margin-top: auto; /* Aligne tout en bas */
 }
 
-.service-card button:hover {
-    background: #003366;
-}
-
-/* IMPACT SECTION (Voici le secret de l'alignement) */
-.impact { text-align: center; padding: 80px 5%; }
-.impact h2 { color: var(--grey); font-weight: 300; font-size: 2rem; margin-bottom: 40px; }
+/* SECTION IMPACT */
+.impact { padding: 100px 5%; background: #fff; }
 .impact-container {
     display: flex;
     justify-content: space-around;
-    padding: 40px 0;
-    border-top: 1px solid #eee; /* Ligne de séparation fine */
+    align-items: flex-start;
 }
-
 .impact-item {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Aligne tout au centre */
+    padding: 0 20px;
 }
-
-.impact-item .icon {
-    font-size: 50px; /* Icônes plus grandes */
-    margin-bottom: 20px;
-}
-.impact-item .num { color: var(--blue); font-size: 2.5rem; margin: 0; }
+.num { font-size: 3rem; color: var(--blue); font-weight: bold; }
 .impact-item .impact-label { font-weight: bold; font-size: 1.2rem; margin: 5px 0; color: #444; }
 .impact-item .impact-sub { font-size: 0.9rem; color: #888; }
 
