@@ -38,9 +38,10 @@ nav a:hover { color: var(--yellow); }
 
 .service-card {
     background: #fff;
-    padding: 40px 30px; /* Plus d'air en haut et bas */
-    border-radius: 20px; /* Coins plus arrondis pour le côté moderne */
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08); /* Ombre plus profonde et diffuse */
+    padding: 40px 30px;
+    border-radius: 8px; /* Coins un peu moins arrondis pour un look plus institutionnel */
+    border-top: 5px solid var(--blue); /* Ajoute une touche de couleur en haut */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Ombre très légère */
     display: flex;
     flex-direction: column;
     align-items: center; 
@@ -50,8 +51,23 @@ nav a:hover { color: var(--yellow); }
 }
 
 .service-card:hover { transform: translateY(-10px); }
-
-.service-card h3 { color: var(--blue); margin-bottom: 20px; }
+.service-card h3 {
+    color: var(--blue);
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+.service-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centre la barre */
+    width: 40px; /* Longueur de la barre */
+    height: 4px; /* Épaisseur */
+    background: var(--yellow);
+    border-radius: 2px;
+}
 
 .service-card p {
     font-size: 0.95rem;
