@@ -109,8 +109,18 @@ nav a:hover { color: var(--yellow); }
     text-align: left; font-weight: bold; color: var(--blue); cursor: pointer;
     border-bottom: 1px solid #ddd;
 }
-.acc-panel { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-.acc-panel.active { max-height: 100px; padding: 15px; }
+.acc-panel { 
+    max-height: 0; 
+    overflow: hidden; 
+    transition: max-height 0.4s ease-out; /* Transition douce */
+    background: #fff;
+    padding: 0 15px;
+}
+.acc-panel.active { 
+    max-height: 200px; /* Taille suffisante pour ton texte */
+    padding: 15px; 
+    border-bottom: 1px solid #eee;
+}
 
 /* Responsive mobile */
 @media (max-width: 768px) {
