@@ -75,6 +75,7 @@ nav a:hover { color: var(--yellow); }
     color: #555;
     flex-grow: 1; /* Pousse le bouton vers le bas */
     margin-bottom: 30px;
+    text-align: justify;
 }
 
 .service-card button {
