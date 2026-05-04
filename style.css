@@ -96,6 +96,35 @@ nav a:hover { color: var(--yellow); }
     transition: 0.3s;
 }
 
+/* Section Méthodologie */
+.methodology { padding: 80px 5%; background: #fdfdfd; text-align: center; }
+.methodology h2 { font-size: 2.2rem; color: var(--blue); margin-bottom: 50px; }
+
+.method-container { 
+    display: flex; 
+    justify-content: space-between; 
+    gap: 20px; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+.method-step {
+    flex: 1;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.method-step .icon { font-size: 3rem; margin-bottom: 15px; }
+.method-step h3 { color: var(--blue); margin-bottom: 15px; }
+.method-step p { color: #666; font-size: 0.95rem; line-height: 1.5; }
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+    .method-container { flex-direction: column; }
+}
+
 /* SECTION IMPACT */
 .impact { padding: 100px 5%; background: #fff; }
 .impact-container {
