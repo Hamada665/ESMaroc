@@ -29,9 +29,38 @@ nav a:hover { color: var(--yellow); }
 
 /* Services */
 .services { display: flex; justify-content: space-around; padding: 50px 5%; gap: 20px; background: var(--light); }
-.service-card { background: #fff; padding: 30px; flex: 1; text-align: center; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-.service-card h3 { color: var(--blue); border-bottom: 3px solid var(--yellow); display: inline-block; padding-bottom: 5px; }
-.service-card button { background: var(--blue); color: white; border: none; padding: 10px 20px; margin-top: 20px; cursor: pointer; }
+.service-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pousse le bouton vers le bas */
+    text-align: justify; /* Justifie le texte */
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 15px 0;
+    color: #4a4a4a;
+}
+.service-card button {
+    background: #004595;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%; /* Force les boutons à prendre toute la largeur */
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.service-card button:hover {
+    background: #003366;
+}
 
 /* IMPACT SECTION (Voici le secret de l'alignement) */
 .impact { text-align: center; padding: 80px 5%; }
