@@ -90,6 +90,12 @@ nav a:hover { color: var(--yellow); }
     margin-top: auto; /* Aligne tout en bas */
 }
 
+.service-card button:hover {
+    background: #003366; /* Un bleu légèrement plus sombre */
+    transform: scale(1.02); /* Un très léger agrandissement au survol */
+    transition: 0.3s;
+}
+
 /* SECTION IMPACT */
 .impact { padding: 100px 5%; background: #fff; }
 .impact-container {
@@ -111,3 +117,12 @@ footer { background: #222; color: #fff; padding: 50px 5% 20px; }
 .footer-box { flex: 1; }
 .footer-logo { height: 40px; filter: brightness(0) invert(1); }
 .footer-bottom { border-top: 1px solid #444; padding-top: 20px; text-align: center; font-size: 0.8rem; }
+
+@media (max-width: 768px) {
+    .services, .impact-container, .footer-content {
+        flex-direction: column; /* Empile les éléments verticalement sur mobile */
+        align-items: center;
+        gap: 40px;
+    }
+    .service-card { width: 90%; } /* Prend presque toute la largeur sur mobile */
+}
