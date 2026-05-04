@@ -117,7 +117,7 @@ nav a:hover { color: var(--yellow); }
     padding: 0 15px;
 }
 .acc-panel.active { 
-    max-height: 200px; /* Taille suffisante pour ton texte */
+    max-height: 500px; /* Augmente pour être sûr que tout le texte passe */
     padding: 15px; 
     border-bottom: 1px solid #eee;
 }
