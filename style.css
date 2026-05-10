@@ -225,6 +225,7 @@ nav a:hover { color: var(--yellow); }
     color: var(--blue); 
     font-size: 2.5rem; 
     margin-bottom: 25px;
+    text-align: center
 }
 .carousel-container {
     display: flex;
