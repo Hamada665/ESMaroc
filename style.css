@@ -220,7 +220,7 @@ nav a:hover { color: var(--yellow); }
 }
 
 /* --- SECTION PROJECTS --- */
-.projects-carousel-section { padding: 80px 5%; background: #f9f9f9; }
+.projects-carousel-section { padding: 80px 5%; }
 .projects-carousel-section h2 {
     color: var(--blue); 
     font-size: 2.5rem; 
