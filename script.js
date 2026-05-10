@@ -16,16 +16,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-const cards = document.querySelectorAll('.project-card');
+
+
+const carousel = document.querySelector('.carousel-container');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
-let currentIndex = 1; // On commence sur la carte du milieu (Dapp)
 
-function updateCarousel() {
+function updateClasses() {
+    const cards = document.querySelectorAll('.project-card');
+    
     cards.forEach((card, index) => {
         card.classList.remove('active', 'side');
         
-        if (index === currentIndex) {
+        // Avec 3 cartes, la deuxième (index 1) est toujours celle du centre
+        if (index === 1) {
             card.classList.add('active');
         } else {
             card.classList.add('side');
@@ -34,18 +38,18 @@ function updateCarousel() {
 }
 
 nextBtn.addEventListener('click', () => {
-    if (currentIndex < cards.length - 1) {
-        currentIndex++;
-        updateCarousel();
-    }
+    const cards = document.querySelectorAll('.project-card');
+    // On prend la première carte et on la déplace à la toute fin
+    carousel.appendChild(cards[0]);
+    updateClasses();
 });
 
 prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-    }
+    const cards = document.querySelectorAll('.project-card');
+    // On prend la dernière carte et on la met au tout début
+    carousel.insertBefore(cards[cards.length - 1], cards[0]);
+    updateClasses();
 });
 
-// Initialisation
-updateCarousel();
+// Lancement au chargement
+updateClasses();
