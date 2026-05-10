@@ -216,6 +216,7 @@ nav a:hover { color: var(--yellow); }
 }
 
 /* --- SECTION PROJECTS --- */
+
 .carousel-container {
     display: flex;
     align-items: center;
@@ -264,9 +265,27 @@ nav a:hover { color: var(--yellow); }
 
 .project-card.side .text-part p, 
 .project-card.side .read-more {
-    display: none; /* On cache les détails sur les côtés pour rester clean */
+    background: var(--yellow); /* On utilise ton jaune */
+    color: #fff;              /* Texte blanc pour le contraste */
+    border: none;             /* On enlève le cadre moche */
+    padding: 12px 25px;
+    border-radius: 50px;      /* Bords très arrondis pour un look moderne */
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    align-self: flex-start;   /* Aligne le bouton au début du texte */
+    box-shadow: 0 4px 15px rgba(242, 188, 0, 0.3); /* Petite ombre dorée */
 }
 
+.project-card .read-more:hover {
+    background: #d4a500;      /* Un jaune un peu plus foncé au survol */
+    transform: translateY(-2px); /* Petit effet de levier */
+    box-shadow: 0 6px 20px rgba(242, 188, 0, 0.4);
+}
 /* Navigation Flèches */
 .carousel-nav { text-align: center; margin-top: 20px; }
 .carousel-nav button {
