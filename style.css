@@ -265,41 +265,41 @@ nav a:hover { color: var(--yellow); }
 
 .project-card.side .text-part p, 
 .project-card .read-more {
-    background: none;        /* On enlève le fond jaune */
-    border: none;            /* On enlève le cadre */
-    color: var(--blue);      /* On utilise ton bleu pro */
+    background: none;
+    border: none;
+    color: var(--blue);
     font-weight: 600;
     font-size: 0.95rem;
     padding: 0;
     margin-top: 20px;
     cursor: pointer;
-    position: relative;      /* Pour l'animation de la ligne */
+    position: relative;
     text-decoration: none;
-    display: inline-block;
+    /* On utilise inline-flex pour que le lien ne prenne que la largeur du texte */
+    display: inline-flex; 
+    flex-direction: column; 
+    align-items: flex-start; /* Aligne tout à gauche */
     transition: color 0.3s ease;
 }
 
-/* La petite ligne élégante en dessous */
 .project-card .read-more::after {
     content: '';
-    position: absolute;
-    width: 100%;
+    display: block; /* On le traite comme un bloc sous le texte */
+    width: 100%;    /* Il prendra la largeur exacte du texte "En savoir plus" */
     height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--yellow); /* Une touche de rappel jaune */
-    transform: scaleX(0.3);          /* La ligne est petite par défaut */
-    transform-origin: bottom left;
+    margin-top: 4px; /* L'espace entre le texte et la ligne */
+    background-color: var(--yellow);
+    transform: scaleX(0.3); /* Ta petite ligne de départ */
+    transform-origin: left;
     transition: transform 0.3s ease;
 }
 
-/* Animation au survol : la ligne s'allonge */
 .project-card .read-more:hover {
     color: var(--yellow);
 }
 
 .project-card .read-more:hover::after {
-    transform: scaleX(1); /* La ligne prend toute la largeur */
+    transform: scaleX(1); /* La ligne s'allonge sur toute la largeur du texte */
 }
 /* Navigation Flèches */
 .carousel-nav { text-align: center; margin-top: 20px; }
