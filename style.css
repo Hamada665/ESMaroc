@@ -264,27 +264,42 @@ nav a:hover { color: var(--yellow); }
 .image-part img { width: 100%; height: 100%; object-fit: cover; }
 
 .project-card.side .text-part p, 
-.project-card.side .read-more {
-    background: var(--yellow); /* On utilise ton jaune */
-    color: #fff;              /* Texte blanc pour le contraste */
-    border: none;             /* On enlève le cadre moche */
-    padding: 12px 25px;
-    border-radius: 50px;      /* Bords très arrondis pour un look moderne */
-    font-weight: bold;
-    font-size: 0.9rem;
+.project-card .read-more {
+    background: none;        /* On enlève le fond jaune */
+    border: none;            /* On enlève le cadre */
+    color: var(--blue);      /* On utilise ton bleu pro */
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0;
+    margin-top: 20px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 15px;
-    align-self: flex-start;   /* Aligne le bouton au début du texte */
-    box-shadow: 0 4px 15px rgba(242, 188, 0, 0.3); /* Petite ombre dorée */
+    position: relative;      /* Pour l'animation de la ligne */
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s ease;
 }
 
+/* La petite ligne élégante en dessous */
+.project-card .read-more::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--yellow); /* Une touche de rappel jaune */
+    transform: scaleX(0.3);          /* La ligne est petite par défaut */
+    transform-origin: bottom left;
+    transition: transform 0.3s ease;
+}
+
+/* Animation au survol : la ligne s'allonge */
 .project-card .read-more:hover {
-    background: #d4a500;      /* Un jaune un peu plus foncé au survol */
-    transform: translateY(-2px); /* Petit effet de levier */
-    box-shadow: 0 6px 20px rgba(242, 188, 0, 0.4);
+    color: var(--yellow);
+}
+
+.project-card .read-more:hover::after {
+    transform: scaleX(1); /* La ligne prend toute la largeur */
 }
 /* Navigation Flèches */
 .carousel-nav { text-align: center; margin-top: 20px; }
