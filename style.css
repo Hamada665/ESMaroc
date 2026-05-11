@@ -1,192 +1,171 @@
-/* Importation de la police Premium */
+/* --- RESET & FONTS --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 :root {
     --blue: #004595;
     --yellow: #f2bc00;
     --text-dark: #1a1a1a;
     --text-light: #666666;
-    --bg-light: #fcfcfc;
+    --bg-light: #f8f9fa;
     --white: #ffffff;
 }
 
-body { 
-    font-family: 'Montserrat', sans-serif; 
-    margin: 0; 
-    color: var(--text-dark); 
-    line-height: 1.7; 
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
     background-color: var(--white);
-    padding-top: 110px;
+    /* L'espace pour le header fixed */
+    padding-top: 100px; 
 }
 
 /* --- HEADER --- */
-header { 
-    background: var(--white); 
-    border-bottom: 1px solid #eee; 
-    padding: 20px 8%; 
-    position: fixed; 
+header {
+    background: var(--white);
+    position: fixed;
     top: 0;
-    left: 0; /* INDISPENSABLE pour le fixed */
-    right: 0; /* INDISPENSABLE pour le fixed */
-    width: 100%; /* On s'assure qu'il prend tout l'écran */
+    left: 0;
+    width: 100%;
     z-index: 1000;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex; /* On aide le container interne */
-    justify-content: center; 
+    padding: 20px 8%;
+    transition: all 0.4s ease;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-/* L'ÉTAT RÉDUIT (Sticky) */
+/* État quand on scroll (ajouté via JS) */
 header.sticky {
-    padding: 10px 8%; /* On réduit le padding */
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05); /* Ombre légère au scroll */
+    padding: 10px 8%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
-.header-container { 
-    display: flex; 
-    justify-content: space-between; /* Pousse le logo à gauche et les icônes à droite */
-    align-items: center; 
-    width: 100%; /* Prend toute la place du header */
-    max-width: 1400px; /* Mais garde une limite de largeur pour le confort */
+.header-container {
+    max-width: 1400px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+/* LOGO */
 .logo img {
-    height: 75px; /* Ta taille "Majestueuse" */
-    width: auto; 
-    transform: scale(1.1); 
-    transform-origin: left center;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    transition: all 0.4s ease; /* Transition sur toutes les propriétés */
-    display: block;
+    height: 65px;
+    width: auto;
+    transition: height 0.4s ease;
 }
 
-/* LOGO RÉDUIT AU SCROLL */
 header.sticky .logo img {
-    height: 50px; /* Taille plus discrète */
-    transform: scale(1); /* On enlève le zoom */
+    height: 50px;
 }
 
-.logo img:hover {
-    transform: scale(1.15);
+/* MENU DE NAVIGATION */
+nav {
+    display: flex;
+    gap: 25px;
 }
 
-/* --- NAVIGATION --- */
-nav a { 
-    text-decoration: none; 
-    color: var(--text-dark); 
-    font-weight: 600; 
-    margin: 0 20px; 
-    font-size: 13px; 
-    text-transform: uppercase; 
-    letter-spacing: 1px;
-    transition: 0.3s;
+nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
 }
 
-nav a:hover { 
-    color: var(--blue); 
+nav a:hover {
+    color: var(--blue);
 }
 
-/* --- ICONES DU HEADER (Recherche, Localisation, Burger) --- */
+/* ICONES DE DROITE */
 .header-icons {
     display: flex;
     align-items: center;
     gap: 20px;
-    min-width: fit-content; /* Empêche les icônes de s'écraser */
 }
 
-/* On cible les icônes spécifiquement pour qu'elles ne prennent pas le style des liens du menu */
-.header-icons .icon-link, 
-.header-icons .burger-menu {
+.header-icons a, .burger-menu {
+    color: var(--blue);
+    font-size: 18px;
     text-decoration: none;
     background: none;
     border: none;
-    padding: 0;
     cursor: pointer;
-    display: flex;
-    align-items: center;
+    transition: transform 0.3s ease;
 }
 
-.header-icons i { 
-    font-size: 20px; /* On augmente un peu */
-    color: var(--blue); 
-    transition: all 0.3s ease; 
-    display: inline-block; /* Force le navigateur à calculer la place */
-    width: 20px; /* Force une largeur */
-    text-align: center;
+.header-icons a:hover {
+    color: var(--yellow);
+    transform: scale(1.1);
 }
 
-.header-icons .icon-link:hover i, 
-.header-icons .burger-menu:hover i { 
-    color: var(--yellow); 
-    transform: scale(1.1); /* Petit effet de zoom au lieu du soulignement */
-}
-
-/* --- HERO SECTION STYLE INSTITUTIONNEL --- */
-.hero { 
-    height: 90vh; /* Un peu plus haut pour l'impact */
-    background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1471&auto=format&fit=crop') center/cover;
+/* --- HERO SECTION --- */
+.hero {
+    height: 85vh;
+    background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1471&auto=format&fit=crop') center/cover no-repeat;
     display: flex;
     align-items: center;
     position: relative;
 }
 
 .hero-overlay {
-    width: 100%; 
+    width: 100%;
     height: 100%;
-    /* On garde ton dégradé bleu signature */
-    background: linear-gradient(110deg, rgba(0,69,149,0.85) 40%, transparent); 
-    display: flex; 
-    align-items: center; 
+    /* Dégradé bleu vers transparent pour le style UM6P */
+    background: linear-gradient(110deg, rgba(0, 69, 149, 0.9) 35%, rgba(0, 69, 149, 0.4) 100%);
+    display: flex;
+    align-items: center;
     padding: 0 8%;
 }
 
 .hero-content {
     display: flex;
-    align-items: stretch; /* Pour que la ligne jaune fasse la hauteur du texte */
-    gap: 30px; /* L'espace entre la barre et ton texte */
+    align-items: stretch;
+    gap: 30px;
+    max-width: 1400px;
 }
 
-/* LA FAMEUSE LIGNE JAUNE */
 .signature-line {
-    width: 5px;
+    width: 6px;
     background-color: var(--yellow);
-    flex-shrink: 0; /* Empêche la ligne de s'écraser */
+    flex-shrink: 0;
 }
 
-.hero-text { 
-    max-width: 700px; 
-    color: var(--white); 
+.hero-text h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem); /* S'adapte à la taille de l'écran */
+    color: var(--white);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: none;
 }
 
-.hero-text h1 { 
-    font-size: 3.5rem; 
-    font-weight: 800; 
-    line-height: 1.1; 
-    margin-bottom: 25px; 
-    letter-spacing: -2px;
-}
-
-.hero-text p { 
-    font-size: 1.2rem; 
-    font-weight: 300; 
-    margin-bottom: 35px; 
+.hero-text p {
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: 300;
+    margin-bottom: 40px;
+    max-width: 600px;
     opacity: 0.9;
-    max-width: 550px;
 }
 
-/* TON BOUTON (On garde tes styles) */
-.cta-yellow { 
-    background: var(--yellow); 
+.cta-yellow {
+    background: var(--yellow);
     color: var(--text-dark);
-    border: none; 
-    padding: 18px 40px; 
-    font-weight: 700; 
+    border: none;
+    padding: 18px 35px;
+    font-size: 14px;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    cursor: pointer; 
-    border-radius: 0; 
-    transition: 0.3s ease;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .cta-yellow:hover {
@@ -195,73 +174,77 @@ nav a:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* --- SERVICES (Minimalisme UM6P) --- */
-.services { 
-    display: flex; 
-    justify-content: center; 
-    flex-wrap: wrap;
-    padding: 120px 8%; /* Très grand espace blanc */
-    gap: 40px; 
+/* --- SERVICES --- */
+.services {
+    padding: 100px 8%;
     background: var(--white);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .service-card {
     background: var(--white);
-    padding: 40px;
-    border: 1px solid #eee; /* Bordure presque invisible */
+    padding: 40px 30px;
+    border: 1px solid #f0f0f0;
     display: flex;
     flex-direction: column;
-    width: 280px; 
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.4s ease;
     position: relative;
+    overflow: hidden;
 }
 
-/* La petite barre d'accentuation en haut qui n'apparaît qu'au survol */
+/* La petite barre bleue discrète au survol */
 .service-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 4px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
     background: var(--blue);
     transform: scaleX(0);
     transition: transform 0.4s ease;
 }
 
-.service-card:hover { 
+.service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
     border-color: transparent;
 }
 
-.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover::before {
+    transform: scaleX(1);
+}
 
 .service-card h3 {
     color: var(--blue);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 20px;
-    letter-spacing: -0.5px;
 }
 
 .service-card p {
     font-size: 0.9rem;
-    line-height: 1.8; 
     color: var(--text-light);
+    line-height: 1.8;
     margin-bottom: 30px;
-    text-align: left; /* Plus pro que justify pour les petits blocs */
+    flex-grow: 1; /* Pousse le bouton vers le bas */
 }
 
 .service-card button {
     background: transparent;
     color: var(--blue);
-    border: 1px solid var(--blue);
-    padding: 12px 0;
-    font-weight: 600;
-    font-size: 0.85rem;
+    border: 1.5px solid var(--blue);
+    padding: 12px 20px;
+    font-size: 12px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
     cursor: pointer;
-    margin-top: auto;
-    transition: 0.3s;
+    transition: all 0.3s;
+    width: fit-content;
 }
 
 .service-card button:hover {
@@ -269,182 +252,230 @@ nav a:hover {
     color: var(--white);
 }
 
-/* --- SECTION METHODOLOGIE (Look Institutionnel) --- */
-.methodology-section { 
-    padding: 120px 8%; 
-    background: var(--bg-light); 
+/* --- METHODOLOGIE --- */
+.methodology-section {
+    padding: 100px 8%;
+    background: var(--bg-light); /* Fond gris très léger pour séparer des services */
 }
 
-.content-wrapper { 
-    display: flex; 
-    align-items: center; 
-    gap: 80px; 
-    max-width: 1400px; 
-    margin: auto; 
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.methodology-text { flex: 1.2; }
+.methodology-text {
+    flex: 1.2;
+}
 
-.methodology-text h2 { 
-    color: var(--blue); 
-    font-size: 3rem; 
+.methodology-text h2 {
+    color: var(--blue);
+    font-size: 2.8rem;
     font-weight: 800;
-    margin-bottom: 30px; 
-    letter-spacing: -2px;
-}
-
-.methodology-text p { 
-    font-size: 1.1rem; 
-    line-height: 1.8; 
-    color: var(--text-light); 
-    margin-bottom: 40px;
-}
-
-.methodology-text h3 { 
-    color: var(--text-dark); 
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
     margin-bottom: 25px;
+    letter-spacing: -1px;
 }
 
-.methodology-text ul { 
-    list-style: none; 
-    padding: 0; 
+.methodology-text p {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    margin-bottom: 35px;
+}
+
+.methodology-text h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.methodology-text ul {
+    list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* On gagne de la place en mettant sur 2 colonnes */
+    grid-template-columns: 1fr 1fr; /* Liste sur deux colonnes */
     gap: 15px;
 }
 
-.methodology-text ul li { 
-    color: var(--text-light); 
-    font-size: 0.95rem;
+.methodology-text ul li {
+    font-size: 0.9rem;
+    color: var(--text-light);
     position: relative;
     padding-left: 25px;
 }
 
+/* La petite puce jaune horizontale */
 .methodology-text ul li::before {
-    content: ""; 
+    content: "";
     position: absolute;
-    left: 0; top: 10px;
-    width: 12px; height: 2px;
-    background: var(--yellow); /* Petite ligne horizontale comme l'UM6P */
+    left: 0;
+    top: 10px;
+    width: 12px;
+    height: 2px;
+    background: var(--yellow);
 }
 
-.methodology-image { flex: 0.8; }
-
-.methodology-image img { 
-    width: 100%; 
-    filter: grayscale(20%); /* Effet photo corporative */
-    border-radius: 0; 
+.methodology-image {
+    flex: 0.8;
 }
 
-/* --- SECTION EVENTS (Style Galerie Institutionnelle) --- */
-.events-section { 
-    padding: 120px 8%; 
-    background: var(--white); 
+.methodology-image img {
+    width: 100%;
+    height: auto;
+    box-shadow: 20px 20px 0px var(--yellow); /* Ombre décalée jaune style moderne */
 }
 
-.events-section h2 {
-    color: var(--blue); 
-    font-size: 3rem; 
-    font-weight: 800;
+/* --- IMPACT --- */
+.impact {
+    padding: 100px 8%;
+    background: var(--white);
+    text-align: center;
+}
+
+.impact .section-title {
+    font-size: 2.5rem;
+    color: var(--blue);
     margin-bottom: 60px;
+    font-weight: 800;
+}
+
+.impact-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.impact-item {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.impact-item i {
+    font-size: 2rem;
+    color: var(--blue);
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.num {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--yellow);
+    margin: 10px 0;
     letter-spacing: -2px;
 }
 
-/* La petite ligne ocre sous le titre, signature UM6P */
+.impact-label {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: var(--blue);
+}
+
+.impact-sub {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 5px;
+}
+
+/* --- ÉVÉNEMENTS --- */
+.events-section {
+    padding: 100px 8%;
+    background: var(--white);
+}
+
+.events-section h2 {
+    color: var(--blue);
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* La ligne jaune UM6P sous le titre */
 .events-section h2::after {
     content: '';
     display: block;
     width: 60px;
     height: 4px;
     background: var(--yellow);
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
-.events-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-    gap: 40px; 
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
 }
 
-.event-card { 
-    background: var(--white); 
-    border: 1px solid #eee; /* Pas d'ombre par défaut */
-    border-radius: 0; 
-    overflow: hidden; 
-    transition: all 0.4s ease; 
+.event-card {
+    border: 1px solid #eee;
+    transition: all 0.4s ease;
 }
 
-.event-card:hover { 
+.event-card:hover {
     border-color: var(--blue);
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
 }
 
-.event-card img { 
-    width: 100%; 
-    height: 250px; 
-    object-fit: cover; 
-    filter: grayscale(30%); /* Unifie le style des photos */
+.event-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    filter: grayscale(40%);
     transition: 0.5s;
 }
 
-.event-card:hover img { filter: grayscale(0%); }
+.event-card:hover img {
+    filter: grayscale(0%);
+}
 
-.event-content { padding: 30px; }
+.event-content {
+    padding: 25px;
+}
 
-.event-content h3 { 
-    color: var(--text-dark); 
-    font-size: 1.3rem; 
+.event-content h3 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.read-more {
+    display: inline-block;
+    color: var(--blue);
     font-weight: 700;
-    margin-bottom: 15px; 
-}
-
-.event-content p {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    line-height: 1.6;
-}
-
-.read-more { 
-    display: inline-block; 
-    margin-top: 20px; 
-    color: var(--blue); 
-    font-weight: 700; 
     font-size: 0.8rem;
+    text-decoration: none;
     text-transform: uppercase;
-    text-decoration: none; 
-    letter-spacing: 1px;
     border-bottom: 2px solid var(--yellow);
-    padding-bottom: 5px;
+    padding-bottom: 3px;
 }
 
-/* --- SECTION PROJETS STYLE UM6P --- */
+/* --- SECTION PROJETS (LOOK UM6P) --- */
 .projects-grid-section {
     padding: 100px 8%;
-    background-color: #f8f9fa;
-}
-
-.section-title {
-    color: #004595;
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 60px;
-    text-transform: none;
+    background-color: #f4f7f9;
 }
 
 .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
+    gap: 60px 30px; /* Plus d'espace vertical pour laisser la carte monter */
     max-width: 1300px;
     margin: 0 auto;
 }
 
 .project-item {
-    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -452,24 +483,22 @@ nav a:hover {
 .project-image {
     width: 100%;
     height: 300px;
-    overflow: hidden;
+    z-index: 1;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
 }
 
-/* LA CARTE BLANCHE QUI MONTE SUR L'IMAGE */
 .project-info-card {
-    background: white;
+    background: var(--white);
     padding: 30px;
     width: 90%;
-    margin: -60px auto 0; /* L'effet magique de superposition */
+    margin: -60px auto 0; /* L'EFFET DE CHEVAUCHEMENT */
     z-index: 2;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
     min-height: 200px;
     display: flex;
     flex-direction: column;
@@ -478,194 +507,75 @@ nav a:hover {
 
 .project-info-card h3 {
     font-size: 1.1rem;
-    color: #333;
-    font-weight: 600;
+    color: var(--text-dark);
     line-height: 1.4;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .card-footer {
     border-top: 1px solid #eee;
     padding-top: 15px;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .read-more-link {
-    color: #333;
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-dark);
     text-decoration: underline;
+    text-decoration-color: var(--yellow);
     text-underline-offset: 4px;
-    text-decoration-color: #f2bc00; /* Ta ligne jaune EsMaroc */
 }
 
 .category-tag {
-    display: inline-block;
-    background: #a7a7a7; /* Gris comme sur ta capture */
-    color: white;
-    padding: 8px 15px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    width: fit-content;
-}
-
-/* Effet au survol */
-.project-item:hover .project-image img {
-    transform: scale(1.05);
-}
-
-/* --- SECTION IMPACT (Style Chiffres Clés UM6P) --- */
-.impact { 
-    padding: 120px 8%; 
-    background: var(--white); 
-    text-align: center; 
-}
-
-.impact .section-title {
-    font-size: 2.8rem;
-    color: var(--blue);
-    font-weight: 800;
-    margin-bottom: 80px;
-    letter-spacing: -2px;
-}
-
-.impact-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 40px;
-}
-
-.impact-item {
-    flex: 1;
-    padding: 20px;
-    /* On unifie la couleur pour plus de sérieux */
-    color: var(--blue); 
-}
-
-/* On utilise le jaune uniquement pour les chiffres pour les faire ressortir */
-.num { 
-    font-size: 4rem; 
-    font-weight: 800; 
-    margin: 15px 0; 
-    color: var(--yellow);
-    letter-spacing: -2px;
-}
-
-.impact-item i { 
-    font-size: 2rem; 
-    margin-bottom: 10px; 
-    opacity: 0.8;
-}
-
-.impact-label { 
-    font-size: 1.1rem; 
-    font-weight: 700; 
-    margin-bottom: 10px; 
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-dark);
-}
-
-.impact-sub { 
-    font-size: 0.9rem; 
-    color: var(--text-light); 
-    line-height: 1.5; 
-}
-
-/* --- FOOTER (Noir Corporate & Or) --- */
-.main-footer {
-    background-color: #1a1a1a; /* Presque noir pour le luxe */
+    background: #a7a7a7;
     color: var(--white);
-    padding: 100px 8% 40px;
+    padding: 6px 12px;
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+/* --- FOOTER --- */
+.main-footer {
+    background: #111;
+    color: var(--white);
+    padding: 80px 8% 30px;
 }
 
 .footer-container {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
     max-width: 1400px;
     margin: 0 auto;
-    gap: 100px;
 }
 
-.footer-left { flex: 1.5; }
-
-.footer-logo {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 30px;
-    letter-spacing: -1px;
-}
-
-.footer-logo span { color: var(--yellow); }
-
-.footer-description {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    margin-bottom: 40px;
-    opacity: 0.7;
-    max-width: 450px;
-}
-
-.footer-contact p {
-    margin-bottom: 15px;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    opacity: 0.8;
-}
-
-.footer-contact i { color: var(--yellow); }
-
-.footer-right {
-    flex: 1;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    padding-left: 60px;
-}
-
-.footer-right h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 35px;
+.footer-logo span {
     color: var(--yellow);
-}
-
-.social-icons {
-    display: flex;
-    gap: 25px;
-    margin-bottom: 60px;
 }
 
 .social-icons a {
     color: var(--white);
-    font-size: 1.4rem;
-    transition: 0.3s;
+    font-size: 1.5rem;
+    margin-right: 20px;
     opacity: 0.6;
+    transition: 0.3s;
 }
 
 .social-icons a:hover {
     color: var(--yellow);
     opacity: 1;
-    transform: translateY(-3px);
 }
 
 .copyright {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
     font-size: 0.8rem;
-    opacity: 0.4;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 30px;
-    margin-top: 40px;
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 1024px) {
-    .impact-container, .footer-container { flex-direction: column; gap: 50px; }
-    .footer-right { border-left: none; padding-left: 0; }
-    .num { font-size: 3rem; }
+    opacity: 0.5;
 }
