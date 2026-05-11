@@ -16,16 +16,25 @@ body {
     color: var(--text-dark); 
     line-height: 1.7; 
     background-color: var(--white);
+    padding-top: 110px;
 }
 
-/* --- HEADER (Look UM6P : Épuré) --- */
+/* --- HEADER --- */
 header { 
     background: var(--white); 
-    border-bottom: 1px solid #eee; /* Bordure très fine */
-    padding: 20px 8%; 
-    position: sticky;
+    border-bottom: 1px solid #eee; 
+    padding: 20px 8%; /* Hauteur de départ */
+    position: fixed; /* On passe en fixed pour que le scroll fonctionne bien */
+    width: 100%;
     top: 0;
     z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Animation fluide */
+}
+
+/* L'ÉTAT RÉDUIT (Sticky) */
+header.sticky {
+    padding: 10px 8%; /* On réduit le padding */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05); /* Ombre légère au scroll */
 }
 
 .header-container { 
@@ -37,21 +46,22 @@ header {
 }
 
 .logo img {
-    /* 1. On définit une hauteur plus grande */
-    height: 75px; 
-    /* 2. On garde les proportions automatiques */
+    height: 75px; /* Ta taille "Majestueuse" */
     width: auto; 
-    /* 3. On utilise un scale léger pour donner du volume sans écarter les bords */
     transform: scale(1.1); 
     transform-origin: left center;
-    /* 4. On ajuste les marges pour que le logo "respire" */
     margin-top: 5px;
     margin-bottom: 5px;
-    /* 5. Fluidité */
-    transition: transform 0.3s ease;
+    transition: all 0.4s ease; /* Transition sur toutes les propriétés */
     display: block;
 }
-/* Un petit effet de "pop" au survol */
+
+/* LOGO RÉDUIT AU SCROLL */
+header.sticky .logo img {
+    height: 50px; /* Taille plus discrète */
+    transform: scale(1); /* On enlève le zoom */
+}
+
 .logo img:hover {
     transform: scale(1.15);
 }
