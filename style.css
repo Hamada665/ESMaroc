@@ -538,44 +538,116 @@ nav a:hover {
     font-weight: 700;
 }
 
-/* --- FOOTER --- */
+/* --- FOOTER (Noir Corporate & Or) --- */
 .main-footer {
-    background: #111;
+    background-color: #1a1a1a; /* Presque noir pour le luxe */
     color: var(--white);
-    padding: 80px 8% 30px;
+    padding: 100px 8% 40px;
 }
 
 .footer-container {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 50px;
     max-width: 1400px;
     margin: 0 auto;
+    gap: 100px;
 }
 
-.footer-logo span {
+.footer-left { 
+    flex: 1.5; 
+}
+
+.footer-logo {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+.footer-logo span { 
+    color: var(--yellow); 
+}
+
+.footer-description {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    opacity: 0.7;
+    max-width: 450px;
+}
+
+.footer-contact p {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    opacity: 0.8;
+}
+
+.footer-contact i { 
+    color: var(--yellow); 
+}
+
+.footer-right {
+    flex: 1;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 60px;
+}
+
+.footer-right h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
     color: var(--yellow);
+}
+
+.social-icons {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 60px;
 }
 
 .social-icons a {
     color: var(--white);
-    font-size: 1.5rem;
-    margin-right: 20px;
-    opacity: 0.6;
+    font-size: 1.4rem;
     transition: 0.3s;
+    opacity: 0.6;
 }
 
 .social-icons a:hover {
     color: var(--yellow);
     opacity: 1;
+    transform: translateY(-3px);
 }
 
 .copyright {
-    text-align: center;
-    margin-top: 50px;
-    padding-top: 20px;
-    border-top: 1px solid #222;
     font-size: 0.8rem;
-    opacity: 0.5;
+    opacity: 0.4;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+    margin-top: 40px;
+}
+
+/* --- RESPONSIVE FINAL --- */
+@media (max-width: 1024px) {
+    .content-wrapper,
+    .impact-container, 
+    .footer-container { 
+        flex-direction: column; 
+        gap: 50px; 
+    }
+    
+    .footer-right { 
+        border-left: none; 
+        padding-left: 0; 
+    }
+    
+    .num { 
+        font-size: 3rem; 
+    }
+    
+    .methodology-image img {
+        box-shadow: 10px 10px 0px var(--yellow);
+    }
 }
