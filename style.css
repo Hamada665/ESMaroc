@@ -325,19 +325,52 @@ nav a:hover { color: var(--yellow); }
 }
 
 /* SECTION IMPACT */
-.impact { padding: 100px 5%; background: #fff; }
+.impact { padding: 100px 5%; background: #fff; text-align: center; }
+
+.impact .section-title {
+    font-size: 2rem;
+    color: #444;
+    font-weight: 300;
+    margin-bottom: 60px;
+}
+
 .impact-container {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 .impact-item {
     flex: 1;
     padding: 0 20px;
+    position: relative;
 }
-.num { font-size: 3rem; color: var(--blue); font-weight: bold; }
-.impact-item .impact-label { font-weight: bold; font-size: 1.2rem; margin: 5px 0; color: #444; }
-.impact-item .impact-sub { font-size: 0.9rem; color: #888; }
+
+/* Les lignes de séparation entre les items */
+.impact-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background: #eee;
+}
+
+/* Style des Icônes */
+.impact-item i { font-size: 3rem; margin-bottom: 20px; }
+
+/* Couleurs spécifiques par bloc */
+.impact-item.blue { color: #0099cc; }
+.impact-item.yellow { color: #f2bc00; }
+.impact-item.red { color: #e63946; }
+.impact-item.light-blue { color: #457b9d; }
+
+.num { font-size: 3.5rem; font-weight: bold; margin: 10px 0; }
+.impact-label { font-size: 1.5rem; font-weight: bold; margin-bottom: 5px; }
+.impact-sub { font-size: 0.9rem; color: #777; line-height: 1.4; }
 
 /* Footer */
 footer { background: #222; color: #fff; padding: 50px 5% 20px; }
