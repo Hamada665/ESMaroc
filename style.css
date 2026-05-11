@@ -23,12 +23,16 @@ body {
 header { 
     background: var(--white); 
     border-bottom: 1px solid #eee; 
-    padding: 20px 8%; /* Hauteur de départ */
-    position: fixed; /* On passe en fixed pour que le scroll fonctionne bien */
-    width: 100%;
+    padding: 20px 8%; 
+    position: fixed; 
     top: 0;
+    left: 0; /* INDISPENSABLE pour le fixed */
+    right: 0; /* INDISPENSABLE pour le fixed */
+    width: 100%; /* On s'assure qu'il prend tout l'écran */
     z-index: 1000;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Animation fluide */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex; /* On aide le container interne */
+    justify-content: center; 
 }
 
 /* L'ÉTAT RÉDUIT (Sticky) */
@@ -39,9 +43,10 @@ header.sticky {
 
 .header-container { 
     display: flex; 
-    justify-content: space-between; 
+    justify-content: space-between; /* Pousse le logo à gauche et les icônes à droite */
     align-items: center; 
-    max-width: 1400px;
+    width: 100%; /* Prend toute la place du header */
+    max-width: 1400px; /* Mais garde une limite de largeur pour le confort */
     margin: 0 auto;
 }
 
@@ -83,11 +88,11 @@ nav a:hover {
 }
 
 /* --- ICONES DU HEADER (Recherche, Localisation, Burger) --- */
-.header-icons { 
+.header-icons {
     display: flex;
     align-items: center;
-    gap: 20px; 
-    margin-left: 20px; /* Espace entre le menu et les icônes */
+    gap: 20px;
+    min-width: fit-content; /* Empêche les icônes de s'écraser */
 }
 
 /* On cible les icônes spécifiquement pour qu'elles ne prennent pas le style des liens du menu */
