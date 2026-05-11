@@ -79,3 +79,15 @@ const animateCounters = () => {
 
 // Lance l'animation (tu peux l'améliorer avec un Scroll Observer plus tard)
 animateCounters();
+
+
+
+// Effet de rétrécissement du header au scroll
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('sticky');
+    } else {
+        header.classList.remove('sticky');
+    }
+});
