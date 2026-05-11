@@ -108,9 +108,12 @@ nav a:hover {
 }
 
 .header-icons i { 
-    font-size: 18px; /* Ta taille préférée */
+    font-size: 20px; /* On augmente un peu */
     color: var(--blue); 
     transition: all 0.3s ease; 
+    display: inline-block; /* Force le navigateur à calculer la place */
+    width: 20px; /* Force une largeur */
+    text-align: center;
 }
 
 .header-icons .icon-link:hover i, 
