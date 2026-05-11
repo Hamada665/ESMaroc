@@ -53,3 +53,29 @@ prevBtn.addEventListener('click', () => {
 
 // Lancement au chargement
 updateClasses();
+
+
+
+const counters = document.querySelectorAll('.num');
+
+const animateCounters = () => {
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const suffix = counter.getAttribute('data-suffix') || "";
+            const speed = target / 100;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + speed);
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = target + suffix;
+            }
+        };
+        updateCount();
+    });
+};
+
+// Lance l'animation (tu peux l'améliorer avec un Scroll Observer plus tard)
+animateCounters();
