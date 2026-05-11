@@ -36,7 +36,25 @@ header {
     margin: 0 auto;
 }
 
-.logo img { height: 50px; }
+.logo img {
+    /* 1. On définit une hauteur plus grande */
+    height: 75px; 
+    /* 2. On garde les proportions automatiques */
+    width: auto; 
+    /* 3. On utilise un scale léger pour donner du volume sans écarter les bords */
+    transform: scale(1.1); 
+    transform-origin: left center;
+    /* 4. On ajuste les marges pour que le logo "respire" */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* 5. Fluidité */
+    transition: transform 0.3s ease;
+    display: block;
+}
+/* Un petit effet de "pop" au survol */
+.logo img:hover {
+    transform: scale(1.15);
+}
 
 /* --- NAVIGATION --- */
 nav a { 
