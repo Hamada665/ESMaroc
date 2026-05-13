@@ -673,172 +673,135 @@ nav a:hover {
    PAGE À PROPOS - STYLE INSTITUTIONNEL 
    ============================================================ */
 
-/* 1. CONFIGURATION ET POLICE */
 .about-page {
-    font-family: 'Montserrat', sans-serif; /* Style image_3bae5a.png */
-    padding-top: 100px;
+    font-family: 'Montserrat', sans-serif;
     background: #ffffff;
     color: #333;
 }
 
-/* 2. SECTION HERO (Style image_3badfc.png) */
+/* --- HERO SECTION (image_3b3981.png) --- */
 .about-hero {
-    background-color: #fdfdfd; 
-    padding: 100px 10%;
+    padding: 60px 5%;
+    background: #f9f7f6; /* Fond beige très clair comme l'image */
 }
 
 .soft-frame {
-    border-left: 8px solid #003366; /* Bleu Royal ES.Maroc */
-    padding: 25px 45px;
-    background: #f8f9fa; 
-    border-radius: 0 25px 25px 0;
+    border-left: 5px solid #e9545b; /* La barre rouge distinctive */
+    padding: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .soft-frame h1 {
-    font-size: 4.2rem; /* Titre imposant image_3badfc.png */
+    font-size: 3.5rem;
     font-weight: 800;
-    color: #003366;
-    margin-bottom: 10px;
-    letter-spacing: -2px;
+    color: #e9545b; /* Titre en rouge corail */
+    margin-bottom: 15px;
 }
 
 .soft-frame .subtitle {
-    font-size: 1.6rem;
-    font-weight: 300; /* Look épuré Montserrat */
-    color: #555;
-    max-width: 800px;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #444;
+    line-height: 1.4;
 }
 
-/* 3. SECTION ESSENCE ET CHIFFRES (Layout Flex) */
+/* --- SECTION TEXTE & CHIFFRES (image_3b36d3.png) --- */
 .about-essence {
-    padding: 80px 10%;
-}
-
-.content-wrapper-flex {
-    display: flex;
-    gap: 70px;
-    align-items: center;
-}
-
-.text-side {
-    flex: 1.2;
-}
-
-.text-side h2 {
-    font-size: 2.5rem;
-    color: #003366;
-    font-weight: 800;
-    margin-bottom: 30px;
+    padding: 60px 10%;
 }
 
 .text-side p {
-    font-size: 1.15rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
     color: #444;
-    margin-bottom: 20px;
 }
 
-/* Grille des Stats (Jaune et Bleu) */
-.stats-grid {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+/* Mise en avant des chiffres dans le texte */
+.highlight-val {
+    font-weight: 700;
+    color: #e9545b; /* Rouge corail pour les stats importantes */
+    font-size: 1.2rem;
 }
 
-.stat-item {
-    padding: 40px 25px;
-    border-radius: 15px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-}
-
-.stat-item.blue-bg {
-    background: #f0f7ff;
-    border-bottom: 6px solid #003366;
-}
-
-.stat-item.yellow-bg {
-    background: #fffdf2;
-    border-bottom: 6px solid #FFCC00; /* Jaune ES.Maroc */
-}
-
-.stat-number {
-    display: block;
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #003366;
-    margin-bottom: 5px;
-}
-
-.stat-label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #777;
+.section-title-red {
+    color: #e9545b;
     text-transform: uppercase;
+    font-weight: 700;
+    margin: 40px 0 20px;
+    font-size: 1.1rem;
 }
 
-/* 4. NOS VALEURS (Style image_3bab13.png) */
+/* --- SECTION VALEURS (image_3b369b.png) --- */
 .about-values {
-    padding: 100px 10% 140px;
-    text-align: center;
-}
-
-.about-values h3 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #003366;
-    margin-bottom: 65px;
-    letter-spacing: 2px;
+    padding: 40px 5% 100px;
+    border-top: 1px solid #eee;
 }
 
 .values-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 25px;
+    gap: 0; /* Pas d'espace pour créer l'effet de lignes séparatrices */
 }
 
 .value-card {
-    background: #ffffff;
-    border: 1px solid #eeeeee;
-    border-radius: 20px;
-    padding: 45px 20px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    padding: 40px 15px;
+    text-align: center;
+    border-right: 1px solid #f0f0f0; /* Lignes verticales fines */
+    transition: background 0.3s ease;
 }
 
-.value-card i {
-    font-size: 2.8rem;
-    color: #003366;
+.value-card:last-child {
+    border-right: none;
+}
+
+.value-card img, .value-card i {
+    height: 80px;
     margin-bottom: 25px;
-    display: block;
 }
 
 .value-card h4 {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #003366;
+    font-size: 0.9rem;
+    font-weight: 800;
     text-transform: uppercase;
+    line-height: 1.3;
 }
 
-/* Effet interactif au survol */
+/* Couleurs spécifiques par carte (comme sur l'image) */
+.card-1 h4 { color: #0077b6; } /* Bleu */
+.card-2 h4 { color: #ffb703; } /* Jaune fun */
+.card-3 h4 { color: #e9545b; } /* Rouge */
+.card-4 h4 { color: #fb8500; } /* Orange */
+.card-5 h4 { color: #219ebc; } /* Bleu ciel */
+
 .value-card:hover {
-    transform: translateY(-15px); /* Animation image_3bab13.png */
-    background: #f9f9f9;
-    border-color: #003366;
-    box-shadow: 0 20px 40px rgba(0, 51, 102, 0.1);
+    background: #fcfcfc;
 }
 
-/* 5. RESPONSIVE DESIGN */
-@media (max-width: 1024px) {
-    .content-wrapper-flex { flex-direction: column; text-align: center; }
-    .values-grid { grid-template-columns: repeat(3, 1fr); }
-    .soft-frame h1 { font-size: 3rem; }
+/* --- LISTES À PUCES (image_3b369b.png) --- */
+.ambition-list {
+    list-style: none;
+    padding-left: 20px;
 }
 
-@media (max-width: 768px) {
+.ambition-list li {
+    position: relative;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    color: #555;
+}
+
+.ambition-list li::before {
+    content: "•";
+    color: #333;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
     .values-grid { grid-template-columns: repeat(2, 1fr); }
-    .stats-grid { grid-template-columns: 1fr; }
-    .soft-frame { padding: 15px 25px; }
+    .value-card { border-bottom: 1px solid #f0f0f0; }
 }
