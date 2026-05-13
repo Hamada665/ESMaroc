@@ -665,3 +665,120 @@ nav a:hover {
         box-shadow: 10px 10px 0px var(--yellow);
     }
 }
+
+
+
+
+/* ============================================================
+   PAGE À PROPOS (Nouveau code)
+   ============================================================ */
+
+.about-page {
+    padding-top: 100px; /* Pour laisser passer le header fixe */
+}
+
+/* Hero avec cadre soft */
+.about-hero {
+    background-color: #f9fbfd; /* Bleu très pâle */
+    padding: 80px 8%;
+    text-align: left;
+}
+
+.soft-frame {
+    border-left: 5px solid #e91e63; /* Barre rose/rouge comme UM6P */
+    padding-left: 30px;
+    max-width: 900px;
+}
+
+.soft-frame h1 {
+    font-size: 3.5rem;
+    color: #e91e63; /* Couleur d'accentuation */
+    margin-bottom: 15px;
+}
+
+.soft-frame .subtitle {
+    font-size: 1.4rem;
+    color: var(--dark-blue);
+    opacity: 0.8;
+}
+
+/* Section Essence & Chiffres */
+.about-essence {
+    padding: 80px 8%;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    flex: 1;
+}
+
+.stat-item {
+    background: #f0f4f8; /* Gris-bleu soft */
+    padding: 30px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.stat-item.yellow {
+    background: #fff9e6; /* Jaune soft */
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--dark-blue);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Valeurs avec icônes */
+.about-values {
+    padding: 80px 8%;
+    background: #fff;
+    text-align: center;
+}
+
+.about-values h3 {
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    color: #e91e63;
+}
+
+.values-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.value-card {
+    flex: 1;
+    padding: 30px;
+    border-bottom: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.value-card i {
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.value-card h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.value-card:hover {
+    background: #f9fbfd;
+    transform: translateY(-5px);
+}
