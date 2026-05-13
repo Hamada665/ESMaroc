@@ -54,27 +54,27 @@ header.sticky {
 
 /* LOGO */
 .logo img {
-    height: 65px; 
+    height: 65px; /* Base fixe pour le header */
     width: auto;
     transition: all 0.4s ease;
     
-    transform: scale(2.0); 
-    transform-origin: left center; 
+    /* TAILLE MAXIMUM SANS CASSER LE MENU */
+    transform: scale(2.1); /* Passage à 2.1 pour un impact massif */
+    transform-origin: left center;
     
-    /* On ajoute une marge à gauche pour qu'il ne colle pas trop au bord après le scale */
-    margin-left: 15px; 
+    /* On décale un peu plus pour laisser le logo "respirer" à gauche */
+    margin-left: 25px; 
 
     /* MAGIE POUR LE FOND BLANC */
     mix-blend-mode: multiply;
-    
-    /* AMÉLIORATION DE LA NETTETÉ */
     image-rendering: -webkit-optimize-contrast;
 }
 
 header.sticky .logo img {
     height: 50px;
-    transform: scale(1.5); /* Un peu plus grand aussi en mode sticky */
-    margin-left: 10px;
+    /* On garde un scale important même en réduit */
+    transform: scale(1.6); 
+    margin-left: 15px;
 }
 
 /* MENU DE NAVIGATION */
