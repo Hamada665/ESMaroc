@@ -59,7 +59,7 @@ header.sticky {
     transition: all 0.4s ease;
     
     /* TAILLE MAXIMUM SANS CASSER LE MENU */
-    transform: scale(2.0); /* Passage à 2.1 pour un impact massif */
+    transform: scale(1.9); /* Passage à 2.1 pour un impact massif */
     transform-origin: left center;
     
     /* On décale un peu plus pour laisser le logo "respirer" à gauche */
