@@ -54,25 +54,27 @@ header.sticky {
 
 /* LOGO */
 .logo img {
-    height: 65px;
+    height: 65px; 
     width: auto;
     transition: all 0.4s ease;
     
-    /* 1. AGRANDIR SANS TOUCHER AU HEADER */
-    /* On l'agrandit de 30% visuellement */
-    transform: scale(1.3); 
-    /* On l'aligne à gauche pour qu'il ne s'éloigne pas du bord */
-    transform-origin: left center;
+    transform: scale(1.8); 
+    transform-origin: left center; 
     
-    /* 2. ENLEVER LE FOND BLANC (MAGIE CSS) */
-    /* Cela rend le blanc transparent s'il est pur */
+    /* On ajoute une marge à gauche pour qu'il ne colle pas trop au bord après le scale */
+    margin-left: 15px; 
+
+    /* MAGIE POUR LE FOND BLANC */
     mix-blend-mode: multiply;
+    
+    /* AMÉLIORATION DE LA NETTETÉ */
+    image-rendering: -webkit-optimize-contrast;
 }
 
 header.sticky .logo img {
     height: 50px;
-    /* On réduit un peu l'agrandissement quand on scroll */
-    transform: scale(1.1);
+    transform: scale(1.3); /* Un peu plus grand aussi en mode sticky */
+    margin-left: 10px;
 }
 
 /* MENU DE NAVIGATION */
