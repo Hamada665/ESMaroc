@@ -193,10 +193,11 @@ nav a:hover {
     padding: 100px 8%;
     background: var(--white);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1400px;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 40px; /* Un peu plus d'espace pour le look 2x2 */
+    max-width: 1200px; /* On réduit un peu la largeur max pour que ce soit plus élégant */
     margin: 0 auto;
+}
 }
 
 .service-card {
@@ -208,6 +209,7 @@ nav a:hover {
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
+    min-height: 320px;
 }
 
 /* La petite barre bleue discrète au survol */
