@@ -670,115 +670,180 @@ nav a:hover {
 
 
 /* ============================================================
-   PAGE À PROPOS (Nouveau code)
+   PAGE À PROPOS - STYLE INSTITUTIONNEL 
    ============================================================ */
 
-.about-page {
-    padding-top: 100px; /* Pour laisser passer le header fixe */
+/* Couleurs de base et utilitaires */
+:root {
+    --es-blue: #003366;
+    --es-yellow: #FFCC00;
+    --es-light-blue: #f4f8fc;
+    --es-light-yellow: #fffdf5;
 }
 
-/* Hero avec cadre soft */
+.about-page {
+    padding-top: 90px; /* Ajuste selon la hauteur de ton header */
+    background: #ffffff;
+    font-family: 'Poppins', sans-serif; /* Ou ta police actuelle */
+}
+
+/* --- SECTION HERO (Cadre Soft) --- */
 .about-hero {
-    background-color: #f9fbfd; /* Bleu très pâle */
-    padding: 80px 8%;
-    text-align: left;
+    background-color: var(--es-light-blue);
+    padding: 80px 10%;
 }
 
 .soft-frame {
-    border-left: 5px solid #e91e63; /* Barre rose/rouge comme UM6P */
-    padding-left: 30px;
-    max-width: 900px;
+    border-left: 6px solid var(--es-blue);
+    padding-left: 35px;
+    max-width: 850px;
 }
 
 .soft-frame h1 {
-    font-size: 3.5rem;
-    color: #e91e63; /* Couleur d'accentuation */
+    font-size: 3.2rem;
+    color: var(--es-blue);
     margin-bottom: 15px;
+    font-weight: 800;
 }
 
 .soft-frame .subtitle {
-    font-size: 1.4rem;
-    color: var(--dark-blue);
-    opacity: 0.8;
+    font-size: 1.25rem;
+    color: #444;
+    line-height: 1.6;
+    max-width: 700px;
 }
 
-/* Section Essence & Chiffres */
+/* --- SECTION ESSENCE & STATS (Layout Flex) --- */
 .about-essence {
-    padding: 80px 8%;
+    padding: 100px 10%;
+}
+
+.content-wrapper-flex {
     display: flex;
     gap: 60px;
     align-items: center;
 }
 
+.text-side {
+    flex: 1.2;
+}
+
+.text-side h2 {
+    font-size: 2.2rem;
+    color: var(--es-blue);
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.text-side p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Grille des Chiffres */
 .stats-grid {
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    flex: 1;
 }
 
 .stat-item {
-    background: #f0f4f8; /* Gris-bleu soft */
-    padding: 30px;
-    border-radius: 4px;
+    padding: 35px 20px;
+    border-radius: 12px;
     text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 51, 102, 0.05);
 }
 
-.stat-item.yellow {
-    background: #fff9e6; /* Jaune soft */
+.stat-item.blue-bg {
+    background: #eef5ff;
+    border-bottom: 5px solid var(--es-blue);
+}
+
+.stat-item.yellow-bg {
+    background: var(--es-light-yellow);
+    border-bottom: 5px solid var(--es-yellow);
 }
 
 .stat-number {
     display: block;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 800;
-    color: var(--dark-blue);
+    color: var(--es-blue);
+    margin-bottom: 5px;
 }
 
 .stat-label {
-    font-size: 0.9rem;
-    opacity: 0.7;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* Valeurs avec icônes */
+.stat-item:hover {
+    transform: translateY(-8px);
+}
+
+/* --- SECTION VALEURS (Icônes resserrées) --- */
 .about-values {
-    padding: 80px 8%;
-    background: #fff;
+    padding: 80px 10% 120px;
     text-align: center;
+    background: #fff;
 }
 
 .about-values h3 {
+    font-size: 1.8rem;
+    color: var(--es-blue);
     margin-bottom: 50px;
+    text-transform: uppercase;
     letter-spacing: 2px;
-    color: #e91e63;
 }
 
 .values-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
 }
 
 .value-card {
-    flex: 1;
-    padding: 30px;
-    border-bottom: 1px solid #eee;
-    transition: 0.3s;
+    padding: 30px 15px;
+    border: 1px solid #f0f0f0;
+    border-radius: 15px;
+    transition: all 0.3s ease;
 }
 
 .value-card i {
-    font-size: 2.5rem;
-    color: var(--dark-blue);
+    font-size: 2.2rem;
+    color: var(--es-blue);
     margin-bottom: 20px;
-    opacity: 0.5;
 }
 
 .value-card h4 {
     font-size: 0.9rem;
+    font-weight: 700;
+    color: #333;
     text-transform: uppercase;
 }
 
 .value-card:hover {
-    background: #f9fbfd;
-    transform: translateY(-5px);
+    border-color: var(--es-blue);
+    background: var(--es-light-blue);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .content-wrapper-flex { flex-direction: column; text-align: center; }
+    .values-grid { grid-template-columns: repeat(3, 1fr); }
+    .soft-frame { border-left: none; border-top: 5px solid var(--es-blue); padding: 20px 0; }
+}
+
+@media (max-width: 600px) {
+    .values-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .soft-frame h1 { font-size: 2.2rem; }
 }
