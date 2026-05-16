@@ -673,135 +673,575 @@ nav a:hover {
    PAGE À PROPOS - STYLE INSTITUTIONNEL 
    ============================================================ */
 
-.about-page {
-    font-family: 'Montserrat', sans-serif;
-    background: #ffffff;
-    color: #333;
+/* ============================================================
+   SECTION 1 : HERO & ESSENCE (AVEC TES VARIABLES)
+   ============================================================ */
+
+/* --- HERO BANNER --- */
+.about-hero {
+    background-color: var(--bg-light); 
+    padding: 80px 5%; /* Un peu moins de padding haut car le body a déjà 100px */
+    display: flex;
+    justify-content: center;
 }
 
-/* --- HERO SECTION (image_3b3981.png) --- */
-.about-hero {
-    padding: 60px 5%;
-    background: #f9f7f6; /* Fond beige très clair comme l'image */
+.hero-container {
+    width: 100%;
+    max-width: 1200px;
 }
 
 .soft-frame {
-    border-left: 5px solid #e9545b; /* La barre rouge distinctive */
-    padding: 40px;
-    max-width: 1100px;
-    margin: 0 auto;
+    /* Utilisation de ton jaune exact pour la barre verticale UM6P */
+    border-left: 6px solid var(--yellow); 
+    padding: 20px 0 20px 40px;
+    background: transparent;
 }
 
 .soft-frame h1 {
     font-size: 3.5rem;
     font-weight: 800;
-    color: #e9545b; /* Titre en rouge corail */
-    margin-bottom: 15px;
+    color: var(--blue); /* Ton bleu exact */
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -1px;
 }
 
 .soft-frame .subtitle {
-    font-size: 1.4rem;
-    font-weight: 300;
-    color: #444;
-    line-height: 1.4;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--text-light); /* Ton texte grisé exact */
+    max-width: 800px;
 }
 
-/* --- SECTION TEXTE & CHIFFRES (image_3b36d3.png) --- */
-.about-essence {
-    padding: 60px 10%;
+/* --- TEXTE ESSENCE --- */
+.about-essence-text {
+    padding: 90px 5%;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
 }
 
-.text-side p {
+.container-essence {
+    width: 100%;
+    max-width: 900px; /* Largeur de lecture idéale type éditorial / UM6P */
+}
+
+.essence-content h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--blue);
+    margin-bottom: 35px;
+}
+
+/* Petite ligne décorative jaune sous "Entreprise Sociale Maroc" */
+.essence-content h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--yellow);
+    margin-top: 15px;
+}
+
+.essence-content p {
     font-size: 1.1rem;
-    line-height: 1.7;
+    color: var(--text-dark);
     margin-bottom: 25px;
-    color: #444;
+    line-height: 1.8;
+    font-weight: 400;
+    text-align: justify;
 }
 
-/* Mise en avant des chiffres dans le texte */
-.highlight-val {
-    font-weight: 700;
-    color: #e9545b; /* Rouge corail pour les stats importantes */
-    font-size: 1.2rem;
+/* On donne de l'importance au premier paragraphe pour casser la monotonie */
+.essence-content p:first-of-type {
+    font-size: 1.25rem;
+    color: var(--blue);
+    font-weight: 600;
+    line-height: 1.7;
 }
 
+
+/* ============================================================
+   SECTION 2 : NOS MISSIONS (BENTO GRID STYLE)
+   ============================================================ */
+.about-missions {
+    padding: 100px 5%;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+}
+
+.container-missions {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Le grand titre de la section */
 .section-title-red {
-    color: #e9545b;
-    text-transform: uppercase;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--blue);
+    margin-bottom: 50px;
+    line-height: 1.3;
+    max-width: 900px;
+}
+
+/* Configuration de la Grille */
+.missions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px; /* Espace entre les cartes */
+}
+
+/* Style de chaque carte de mission */
+.mission-card {
+    background-color: var(--bg-light);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 4px; /* Coins très légèrement arrondis pour le look moderne */
+    padding: 40px;
+    display: flex;
+    gap: 25px;
+    transition: all 0.3s ease; /* Pour l'effet fluide au survol */
+}
+
+/* La 7ème carte (RSE) prend toute la largeur de la grille */
+.mission-card.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Style des icônes de missions */
+.mission-icon {
+    font-size: 1.8rem;
+    color: var(--blue); /* Icône en bleu de ta charte */
+    background-color: var(--white);
+    width: 60px;
+    height: 60px;
+    min-width: 60px; /* Évite que l'icône s'écrase si le texte est long */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 43, 149, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* Conteneur de texte de la carte */
+.mission-text h4 {
+    font-size: 1.25rem;
     font-weight: 700;
-    margin: 40px 0 20px;
+    color: var(--blue);
+    margin-bottom: 12px;
+}
+
+.mission-text p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* --- EFFETS HOVER STYLE UM6P --- */
+.mission-card:hover {
+    background-color: var(--white);
+    transform: translateY(-5px); /* La carte se soulève légèrement */
+    box-shadow: 0 15px 35px rgba(0, 69, 149, 0.08); /* Ombre douce bleutée */
+    border-color: rgba(0, 69, 149, 0.15);
+}
+
+.mission-card:hover .mission-icon {
+    background-color: var(--yellow); /* L'icône s'illumine en jaune ESMaroc */
+    color: var(--text-dark);
+}
+
+/* Ajustement pour les petits écrans (Responsive) */
+@media (max-width: 768px) {
+    .mission-card {
+        flex-direction: column; /* L'icône passe au-dessus du texte */
+        gap: 15px;
+        padding: 30px;
+    }
+    .mission-card.full-width {
+        grid-column: auto; /* Annule la pleine largeur sur mobile */
+    }
+    .section-title-red {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* ============================================================
+   SECTION 3 : MOT DU PRÉSIDENT (VERSION PRESTIGE)
+   ============================================================ */
+.director-honor-section {
+    background-color: var(--white);
+    padding-bottom: 100px;
+}
+
+/* --- 1. La Grande Bannière Portrait --- */
+.director-hero-banner {
+    width: 100%;
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.director-image-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 550px; /* Grande marge de hauteur pour la photo */
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--bg-light); /* Fond de secours si pas d'image */
+}
+
+.director-full-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recadre la photo proprement sans la déformer */
+    object-position: center 20%; /* Centre le visage */
+    filter: brightness(0.9); /* Assombrit légèrement pour faire ressortir le texte */
+}
+
+/* La carte de titre superposée en bas à gauche de la photo */
+.director-title-card {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    background-color: var(--white);
+    padding: 30px 40px;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    border-left: 5px solid var(--blue); /* Rappel de ta charte */
+}
+
+.director-title-card .eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.director-title-card h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--blue);
+    margin-bottom: 5px;
+}
+
+.director-title-card p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+/* --- 2. Le Message Éditorial --- */
+.director-message-container {
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.message-content {
+    width: 100%;
+    max-width: 800px; /* Plus serré pour un confort de lecture optimal */
+}
+
+.message-content p {
     font-size: 1.1rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 25px;
+    text-align: justify;
 }
 
-/* --- SECTION VALEURS (image_3b369b.png) --- */
+/* Lettrine stylisée pour le "Chers visiteurs" */
+.drop-cap-text {
+    font-size: 1.4rem !important;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+/* Style de la citation (Blockquote) au milieu du message */
+.message-content blockquote {
+    border-left: 4px solid var(--yellow); /* Accent jaune ESMaroc */
+    padding: 15px 0 15px 30px;
+    margin: 40px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--blue);
+    line-height: 1.6;
+}
+
+/* Bloc signature final */
+.final-signature {
+    margin-top: 50px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 30px;
+}
+
+.signature-block {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.signature-block strong {
+    font-size: 1.25rem;
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.signature-block span {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .director-image-container {
+        height: 350px; /* On réduit la hauteur sur mobile */
+    }
+    
+    .director-title-card {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin: 20px 5% 0 5%;
+        max-width: 100%;
+        padding: 20px;
+    }
+    
+    .director-hero-banner {
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    .message-content blockquote {
+        font-size: 1.15rem;
+        padding-left: 20px;
+    }
+}
+
+
+/* ============================================================
+   SECTION 4 : IMPACT ET CHIFFRES CLÉS (2018-2024)
+   ============================================================ */
+.about-impact {
+    padding: 100px 5%;
+    background-color: var(--bg-light); /* Fond grisé pour contraster avec la section précédente */
+    display: flex;
+    justify-content: center;
+}
+
+.about-impact .container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Le sous-titre de la section d'impact */
+.about-impact .section-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-light);
+    margin-top: -35px;
+    margin-bottom: 60px;
+    max-width: 700px;
+}
+
+/* Grille des statistiques */
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* Style de base des cartes statistiques */
+.impact-card {
+    background-color: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+    transition: all 0.3s ease;
+}
+
+/* Le Chiffre énorme style UM6P */
+.impact-number {
+    display: block;
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--blue); /* Ton bleu exact */
+    line-height: 1.1;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    transition: transform 0.3s ease;
+}
+
+/* Le libellé en gras */
+.impact-label {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+/* La petite description explicative */
+.impact-description {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* --- LA CARTE MISE EN AVANT (Highlight Card pour les Emplois) --- */
+.impact-card.highlight-card {
+    background-color: var(--blue); /* Fond bleu ESMaroc */
+    border-color: var(--blue);
+}
+
+.impact-card.highlight-card .impact-number {
+    color: var(--yellow); /* Chiffre en jaune ESMaroc pour un contraste maximal */
+}
+
+.impact-card.highlight-card .impact-label {
+    color: var(--white);
+}
+
+.impact-card.highlight-card .impact-description {
+    color: rgba(255, 255, 255, 0.8); /* Texte blanc légèrement transparent */
+}
+
+/* --- EFFET HOVER --- */
+.impact-card:not(.highlight-card):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 69, 149, 0.06);
+    border-color: rgba(0, 69, 149, 0.1);
+}
+
+.impact-card:not(.highlight-card):hover .impact-number {
+    transform: scale(1.05); /* Légère impulsion sur le chiffre au survol */
+}
+
+.impact-card.highlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 69, 149, 0.2);
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .impact-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+    
+    .impact-card {
+        padding: 30px 20px;
+    }
+    
+    .impact-number {
+        font-size: 2.8rem;
+    }
+}
+
+
+/* ============================================================
+   SECTION 5 : NOS VALEURS (STYLE ÉPURÉ UM6P)
+   ============================================================ */
 .about-values {
-    padding: 40px 5% 100px;
-    border-top: 1px solid #eee;
+    padding: 100px 5%;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
 }
 
+.about-values .container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.values-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.values-header .section-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-light);
+    margin-top: 10px;
+}
+
+/* Grille pour les 5 valeurs */
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0; /* Pas d'espace pour créer l'effet de lignes séparatrices */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 35px;
 }
 
-.value-card {
-    padding: 40px 15px;
+/* Style individuel de chaque valeur */
+.value-item {
+    padding: 20px 10px;
     text-align: center;
-    border-right: 1px solid #f0f0f0; /* Lignes verticales fines */
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.value-card:last-child {
-    border-right: none;
+/* Les icônes minimalistes */
+.value-icon {
+    font-size: 2.2rem;
+    color: var(--blue); /* Ton bleu exact */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.value-card img, .value-card i {
-    height: 80px;
-    margin-bottom: 25px;
+.value-item h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 15px;
 }
 
-.value-card h4 {
-    font-size: 0.9rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    line-height: 1.3;
+.value-item p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
 }
 
-/* Couleurs spécifiques par carte (comme sur l'image) */
-.card-1 h4 { color: #0077b6; } /* Bleu */
-.card-2 h4 { color: #ffb703; } /* Jaune fun */
-.card-3 h4 { color: #e9545b; } /* Rouge */
-.card-4 h4 { color: #fb8500; } /* Orange */
-.card-5 h4 { color: #219ebc; } /* Bleu ciel */
-
-.value-card:hover {
-    background: #fcfcfc;
+/* --- LE PETIT PLUS EN EXCELLENCE (Highlight Value) --- */
+.value-item.highlight-value {
+    border-top: 3px solid var(--yellow); /* Une ligne jaune subtile sur le haut pour la différencier */
+    background-color: var(--bg-light);
+    border-radius: 4px;
+    padding: 20px;
 }
 
-/* --- LISTES À PUCES (image_3b369b.png) --- */
-.ambition-list {
-    list-style: none;
-    padding-left: 20px;
+.value-item.highlight-value .value-icon {
+    color: var(--yellow); /* L'icône brille en jaune par défaut */
 }
 
-.ambition-list li {
-    position: relative;
-    padding-bottom: 15px;
-    padding-left: 25px;
-    color: #555;
+/* --- EFFETS AU SURVOL --- */
+.value-item:not(.highlight-value):hover .value-icon {
+    transform: scale(1.15);
+    color: var(--yellow); /* L'icône passe au jaune au survol */
 }
 
-.ambition-list li::before {
-    content: "•";
-    color: #333;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
+.value-item.highlight-value:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 992px) {
-    .values-grid { grid-template-columns: repeat(2, 1fr); }
-    .value-card { border-bottom: 1px solid #f0f0f0; }
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .values-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        gap: 20px;
+    }
+    
+    .value-item {
+        padding: 10px;
+    }
 }
