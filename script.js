@@ -10,38 +10,50 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 2. ANIMATION DES CHIFFRES (AVEC OBSERVER)
+    // 2. ANIMATION DES CHIFFRES (AVEC OBSERVER) (Style Index + Support des préfixes/suffixes)
+document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll('.num');
-    
-    const animate = (counter) => {
-        const target = +counter.getAttribute('data-target');
-        const suffix = counter.getAttribute('data-suffix') || "";
-        let count = 0;
-        const speed = target / 50; // Vitesse de l'animation
+    const speed = 200; // Plus le chiffre est bas, plus l'animation est rapide
 
+    const startCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        const prefix = counter.getAttribute('data-prefix') || '';
+        const suffix = counter.getAttribute('data-suffix') || '';
+        
         const updateCount = () => {
+            const count = +counter.innerText.replace(/[^0-9]/g, ''); // Nettoie le texte pour n'avoir que le nombre
+            const inc = Math.ceil(target / speed);
+
             if (count < target) {
-                count += speed;
-                counter.innerText = Math.ceil(count);
-                setTimeout(updateCount, 20);
+                counter.innerText = prefix + (count + inc) + suffix;
+                setTimeout(updateCount, 1);
             } else {
-                counter.innerText = target + suffix;
+                // Formatage final propre une fois la cible atteinte
+                if (target >= 10000) {
+                    // Ajoute un espace pour les grands nombres (ex: 13 100)
+                    const formattedTarget = target.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                    counter.innerText = prefix + formattedTarget + suffix;
+                } else {
+                    counter.innerText = prefix + target + suffix;
+                }
             }
         };
+
         updateCount();
     };
 
-    // On ne lance l'animation que quand on voit la section
-    const observer = new IntersectionObserver((entries) => {
+    // Intersection Observer pour ne lancer l'animation que lorsque l'utilisateur scroll jusqu'aux chiffres
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                animate(entry.target);
-                observer.unobserve(entry.target); // Animé une seule fois
+            if (entry.isIntersecting) {
+                startCounter(entry.target);
+                observer.unobserve(entry.target); // Annule l'observation pour ne le faire qu'une seule fois
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.5 }); // Déclenche quand 50% de la section est visible
 
-    counters.forEach(c => observer.observe(c));
+    counters.forEach(counter => observer.observe(counter));
+});
 
     // 3. ACCORDEON (Si tu en as dans ESMaroc)
     const triggers = document.querySelectorAll('.acc-trigger');
