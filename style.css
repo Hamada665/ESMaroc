@@ -1031,122 +1031,91 @@ nav a:hover {
 
 
 /* ============================================================
-   SECTION 4 : IMPACT ET CHIFFRES CLÉS (2018-2024)
+   SECTION 4 : IMPACT & CHIFFRES (STYLE ÉPURÉ INDEX)
    ============================================================ */
 .about-impact {
     padding: 100px 5%;
-    background-color: var(--bg-light); /* Fond grisé pour contraster avec la section précédente */
-    display: flex;
-    justify-content: center;
-}
-
-.about-impact .container {
-    width: 100%;
-    max-width: 1200px;
-}
-
-/* Le sous-titre de la section d'impact */
-.about-impact .section-subtitle {
-    font-size: 1.15rem;
-    color: var(--text-light);
-    margin-top: -35px;
-    margin-bottom: 60px;
-    max-width: 700px;
-}
-
-/* Grille des statistiques */
-.impact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-}
-
-/* Style de base des cartes statistiques */
-.impact-card {
-    background-color: var(--white);
-    border: 1px solid rgba(0, 0, 0, 0.03);
-    border-radius: 4px;
-    padding: 40px 30px;
+    background: var(--white);
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
-    transition: all 0.3s ease;
 }
 
-/* Le Chiffre énorme style UM6P */
-.impact-number {
-    display: block;
-    font-size: 3.2rem;
-    font-weight: 800;
-    color: var(--blue); /* Ton bleu exact */
-    line-height: 1.1;
+.about-impact .section-title-red {
+    font-size: 2.5rem;
+    color: var(--blue);
     margin-bottom: 10px;
-    letter-spacing: -1px;
-    transition: transform 0.3s ease;
+    font-weight: 800;
 }
 
-/* Le libellé en gras */
-.impact-label {
-    display: block;
+.about-impact .section-subtitle {
     font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 15px;
+    color: var(--text-light);
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* La petite description explicative */
-.impact-description {
+/* Conteneur aligné horizontalement, identique à l'index */
+.impact-container-apropis {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Item minimaliste sans bordure ni fond */
+.impact-item-apropos {
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Style des icônes par défaut (Bleu) */
+.impact-item-apropos i {
+    font-size: 2rem;
+    color: var(--blue);
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+/* Style des chiffres par défaut (Jaune) */
+.impact-item-apropos .num {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--yellow);
+    margin: 5px 0;
+    letter-spacing: -2px;
+    line-height: 1.1;
+}
+
+.impact-item-apropos .impact-label {
+    font-weight: 700;
+    text-transform: uppercase;
     font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: var(--blue);
+    margin-bottom: 8px;
+}
+
+.impact-item-apropos .impact-sub {
+    font-size: 0.85rem;
     color: var(--text-light);
     line-height: 1.5;
 }
 
-/* --- LA CARTE MISE EN AVANT (Highlight Card pour les Emplois) --- */
-.impact-card.highlight-card {
-    background-color: var(--blue); /* Fond bleu ESMaroc */
-    border-color: var(--blue);
+/* --- INVERSION POUR LE 5ÈME ÉLÉMENT (EMPLOIS) --- */
+.impact-item-apropos.highlight-item i {
+    color: var(--yellow); /* L'icône passe en jaune */
+    opacity: 1;
 }
 
-.impact-card.highlight-card .impact-number {
-    color: var(--yellow); /* Chiffre en jaune ESMaroc pour un contraste maximal */
-}
-
-.impact-card.highlight-card .impact-label {
-    color: var(--white);
-}
-
-.impact-card.highlight-card .impact-description {
-    color: rgba(255, 255, 255, 0.8); /* Texte blanc légèrement transparent */
-}
-
-/* --- EFFET HOVER --- */
-.impact-card:not(.highlight-card):hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 69, 149, 0.06);
-    border-color: rgba(0, 69, 149, 0.1);
-}
-
-.impact-card:not(.highlight-card):hover .impact-number {
-    transform: scale(1.05); /* Légère impulsion sur le chiffre au survol */
-}
-
-.impact-card.highlight-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 69, 149, 0.2);
-}
-
-/* --- RESPONSIVE MOBILE --- */
-@media (max-width: 768px) {
-    .impact-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-    }
-    
-    .impact-card {
-        padding: 30px 20px;
-    }
-    
-    .impact-number {
-        font-size: 2.8rem;
-    }
+.impact-item-apropos.highlight-item .num {
+    color: var(--blue); /* Le chiffre passe en bleu */
 }
 
 
