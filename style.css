@@ -1031,7 +1031,7 @@ nav a:hover {
 
 
 /* ============================================================
-   SECTION 4 : IMPACT & CHIFFRES (STYLE ÉPURÉ INDEX)
+   SECTION 4 : IMPACT & CHIFFRES (CORRECTIF ALIGNEMENT)
    ============================================================ */
 .about-impact {
     padding: 100px 5%;
@@ -1055,27 +1055,25 @@ nav a:hover {
     margin-right: auto;
 }
 
-/* Conteneur aligné horizontalement, identique à l'index */
-.impact-container-apropis {
+/* Grille flexible horizontale forcée */
+.impact-container-apropos {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 40px;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Empêche le retour à la ligne brusque sur grand écran */
+    gap: 20px;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-/* Item minimaliste sans bordure ni fond */
 .impact-item-apropos {
     flex: 1;
-    min-width: 220px;
+    min-width: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
 }
 
-/* Style des icônes par défaut (Bleu) */
 .impact-item-apropos i {
     font-size: 2rem;
     color: var(--blue);
@@ -1083,7 +1081,6 @@ nav a:hover {
     opacity: 0.8;
 }
 
-/* Style des chiffres par défaut (Jaune) */
 .impact-item-apropos .num {
     font-size: 3.5rem;
     font-weight: 800;
@@ -1108,16 +1105,33 @@ nav a:hover {
     line-height: 1.5;
 }
 
-/* --- INVERSION POUR LE 5ÈME ÉLÉMENT (EMPLOIS) --- */
+/* --- INVERSION DU 5ÈME ÉLÉMENT --- */
 .impact-item-apropos.highlight-item i {
-    color: var(--yellow); /* L'icône passe en jaune */
+    color: var(--yellow);
     opacity: 1;
 }
 
 .impact-item-apropos.highlight-item .num {
-    color: var(--blue); /* Le chiffre passe en bleu */
+    color: var(--blue);
 }
 
+/* Version mobile : on repasse proprement en colonne */
+@media (max-width: 992px) {
+    .impact-container-apropos {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .impact-item-apropos {
+        flex: unset;
+        width: 45%; /* 2 par ligne sur tablette */
+    }
+}
+
+@media (max-width: 576px) {
+    .impact-item-apropos {
+        width: 100%; /* 1 par ligne sur téléphone */
+    }
+}
 
 /* ============================================================
    SECTION 5 : NOS VALEURS (STYLE ÉPURÉ UM6P)
