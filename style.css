@@ -1167,7 +1167,7 @@ nav a:hover {
 }
 
 /* ============================================================
-   SECTION 5 : NOS VALEURS (ALIGNÉ À GAUCHE)
+   SECTION 5 : NOS VALEURS (HARMONISÉES, ALIGNÉES & SÉPARÉES)
    ============================================================ */
 .about-values {
     padding: 100px 5%;
@@ -1190,10 +1190,9 @@ nav a:hover {
     font-size: 2.5rem;
     color: var(--blue);
     font-weight: 800;
-    margin-bottom: 20px; /* Légèrement augmenté */
+    margin-bottom: 20px;
 }
 
-/* Ajout de la ligne jaune décorative sous le titre Valeurs */
 .values-header .section-title-red::after {
     content: '';
     display: block;
@@ -1208,21 +1207,29 @@ nav a:hover {
     color: var(--text-light);
 }
 
-/* Alignement parfait des 5 blocs sur une seule ligne */
+/* Conteneur flex */
 .values-flex-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
-    gap: 25px;
+    gap: 0; /* On passe le gap à 0 pour que les séparateurs soient parfaitement équilibrés */
 }
 
-/* Style unique et identique pour TOUTES les valeurs */
+/* Style unique de chaque valeur avec les nouvelles lignes verticales */
 .value-item {
     flex: 1;
     min-width: 180px;
-    padding: 25px 15px;
+    padding: 25px 30px; /* Augmentation du padding latéral pour espacer le texte des lignes */
     text-align: center;
     transition: all 0.3s ease;
+    
+    /* --- LES LIGNES VERTICALES --- */
+    border-right: 1px solid rgba(0, 43, 149, 0.12); /* Fline ligne bleutée très subtile */
+}
+
+/* Sécurité : On retire la ligne verticale sur le dernier élément (Excellence) */
+.values-flex-container .value-item:last-child {
+    border-right: none;
 }
 
 .value-icon {
@@ -1245,27 +1252,32 @@ nav a:hover {
     line-height: 1.6;
 }
 
-/* --- EFFET AU SURVOL UNIQUE --- */
+/* --- EFFET AU SURVOL --- */
 .value-item:hover .value-icon {
     transform: scale(1.15);
     color: var(--yellow);
 }
 
-/* --- RESPONSIVE HARMONIEUX --- */
+/* --- RESPONSIVE TECHNIQUE --- */
 @media (max-width: 1024px) {
     .values-header {
         text-align: center;
     }
     .values-header .section-title-red::after {
-        margin: 15px auto 0 auto; /* Centre la ligne jaune sur tablette/mobile */
+        margin: 15px auto 0 auto;
     }
     .values-flex-container {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 30px; /* On remet du gap sur tablette/mobile car les blocs vont se superposer */
     }
     .value-item {
         flex: unset;
         width: 45%;
+        padding: 25px 15px;
+        border-right: none; /* On enlève les lignes verticales sur les petits écrans car la structure change */
+        background-color: var(--bg-light); /* Un léger fond pour bien séparer les blocs sous forme de grilles */
+        border-radius: 4px;
     }
 }
 
