@@ -1036,14 +1036,24 @@ nav a:hover {
 .about-impact {
     padding: 100px 5%;
     background: var(--white);
-    text-align: left; /* Changé : tout le texte de base s'aligne à gauche */
+    text-align: left;
 }
 
 .about-impact .section-title-red {
     font-size: 2.5rem;
     color: var(--blue);
-    margin-bottom: 10px;
+    margin-bottom: 20px; /* Légèrement augmenté pour espacer la ligne jaune */
     font-weight: 800;
+}
+
+/* Ajout de la ligne jaune décorative sous le titre Impact */
+.about-impact .section-title-red::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--yellow);
+    margin-top: 15px;
 }
 
 .about-impact .section-subtitle {
@@ -1051,7 +1061,6 @@ nav a:hover {
     color: var(--text-light);
     margin-bottom: 60px;
     max-width: 800px;
-    /* Retrait des margins auto pour caler le sous-titre parfaitement à gauche */
     margin-left: 0; 
     margin-right: 0;
 }
@@ -1063,10 +1072,9 @@ nav a:hover {
     flex-wrap: nowrap;
     gap: 20px;
     max-width: 1400px;
-    margin: 0; /* Changé : s'aligne sur le bord gauche */
+    margin: 0;
 }
 
-/* Les éléments intérieurs restent centrés sur eux-mêmes pour le look épuré */
 .impact-item-apropos {
     flex: 1;
     min-width: 180px;
@@ -1120,10 +1128,16 @@ nav a:hover {
 
 /* Version mobile */
 @media (max-width: 992px) {
+    .about-impact {
+        text-align: center; /* Recentrage global sur mobile */
+    }
+    .about-impact .section-title-red::after {
+        margin: 15px auto 0 auto; /* Centre la ligne jaune sur mobile */
+    }
     .impact-container-apropos {
         flex-wrap: wrap;
         justify-content: center;
-        margin: 0 auto; /* Se recentre sur mobile pour l'équilibre visuel */
+        margin: 0 auto;
     }
     .impact-item-apropos {
         flex: unset;
@@ -1144,7 +1158,7 @@ nav a:hover {
     padding: 100px 5%;
     background-color: var(--white);
     display: flex;
-    justify-content: flex-start; /* Changé : Aligne le conteneur général à gauche */
+    justify-content: flex-start;
 }
 
 .about-values .container {
@@ -1153,7 +1167,7 @@ nav a:hover {
 }
 
 .values-header {
-    text-align: left; /* Changé : Le titre et le sous-titre passent à gauche */
+    text-align: left;
     margin-bottom: 60px;
 }
 
@@ -1161,7 +1175,17 @@ nav a:hover {
     font-size: 2.5rem;
     color: var(--blue);
     font-weight: 800;
-    margin-bottom: 10px;
+    margin-bottom: 20px; /* Légèrement augmenté */
+}
+
+/* Ajout de la ligne jaune décorative sous le titre Valeurs */
+.values-header .section-title-red::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--yellow);
+    margin-top: 15px;
 }
 
 .values-header .section-subtitle {
@@ -1177,7 +1201,7 @@ nav a:hover {
     gap: 25px;
 }
 
-/* Style unique et identique pour TOUTES les valeurs (alignées au centre pour chaque bloc) */
+/* Style unique et identique pour TOUTES les valeurs */
 .value-item {
     flex: 1;
     min-width: 180px;
@@ -1215,7 +1239,10 @@ nav a:hover {
 /* --- RESPONSIVE HARMONIEUX --- */
 @media (max-width: 1024px) {
     .values-header {
-        text-align: center; /* Se recentre sur tablette pour l'esthétique */
+        text-align: center;
+    }
+    .values-header .section-title-red::after {
+        margin: 15px auto 0 auto; /* Centre la ligne jaune sur tablette/mobile */
     }
     .values-flex-container {
         flex-wrap: wrap;
