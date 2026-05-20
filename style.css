@@ -1031,12 +1031,12 @@ nav a:hover {
 
 
 /* ============================================================
-   SECTION 4 : IMPACT & CHIFFRES (CORRECTIF ALIGNEMENT)
+   SECTION 4 : IMPACT & CHIFFRES (CORRECTIF ALIGNEMENT GAUCHE)
    ============================================================ */
 .about-impact {
     padding: 100px 5%;
     background: var(--white);
-    text-align: center;
+    text-align: left; /* Changé : tout le texte de base s'aligne à gauche */
 }
 
 .about-impact .section-title-red {
@@ -1051,20 +1051,22 @@ nav a:hover {
     color: var(--text-light);
     margin-bottom: 60px;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    /* Retrait des margins auto pour caler le sous-titre parfaitement à gauche */
+    margin-left: 0; 
+    margin-right: 0;
 }
 
 /* Grille flexible horizontale forcée */
 .impact-container-apropos {
     display: flex;
     justify-content: space-between;
-    flex-wrap: nowrap; /* Empêche le retour à la ligne brusque sur grand écran */
+    flex-wrap: nowrap;
     gap: 20px;
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 0; /* Changé : s'aligne sur le bord gauche */
 }
 
+/* Les éléments intérieurs restent centrés sur eux-mêmes pour le look épuré */
 .impact-item-apropos {
     flex: 1;
     min-width: 180px;
@@ -1072,6 +1074,7 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    text-align: center; 
 }
 
 .impact-item-apropos i {
@@ -1115,32 +1118,33 @@ nav a:hover {
     color: var(--blue);
 }
 
-/* Version mobile : on repasse proprement en colonne */
+/* Version mobile */
 @media (max-width: 992px) {
     .impact-container-apropos {
         flex-wrap: wrap;
         justify-content: center;
+        margin: 0 auto; /* Se recentre sur mobile pour l'équilibre visuel */
     }
     .impact-item-apropos {
         flex: unset;
-        width: 45%; /* 2 par ligne sur tablette */
+        width: 45%;
     }
 }
 
 @media (max-width: 576px) {
     .impact-item-apropos {
-        width: 100%; /* 1 par ligne sur téléphone */
+        width: 100%;
     }
 }
 
 /* ============================================================
-   SECTION 5 : NOS VALEURS (HARMONISÉES & ALIGNÉES)
+   SECTION 5 : NOS VALEURS (ALIGNÉ À GAUCHE)
    ============================================================ */
 .about-values {
     padding: 100px 5%;
     background-color: var(--white);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Changé : Aligne le conteneur général à gauche */
 }
 
 .about-values .container {
@@ -1149,7 +1153,7 @@ nav a:hover {
 }
 
 .values-header {
-    text-align: center;
+    text-align: left; /* Changé : Le titre et le sous-titre passent à gauche */
     margin-bottom: 60px;
 }
 
@@ -1173,7 +1177,7 @@ nav a:hover {
     gap: 25px;
 }
 
-/* Style unique et identique pour TOUTES les valeurs */
+/* Style unique et identique pour TOUTES les valeurs (alignées au centre pour chaque bloc) */
 .value-item {
     flex: 1;
     min-width: 180px;
@@ -1182,7 +1186,6 @@ nav a:hover {
     transition: all 0.3s ease;
 }
 
-/* Icônes de base en Bleu */
 .value-icon {
     font-size: 2.2rem;
     color: var(--blue);
@@ -1204,7 +1207,6 @@ nav a:hover {
 }
 
 /* --- EFFET AU SURVOL UNIQUE --- */
-/* Toutes les icônes réagissent de la même façon en passant au jaune */
 .value-item:hover .value-icon {
     transform: scale(1.15);
     color: var(--yellow);
@@ -1212,18 +1214,21 @@ nav a:hover {
 
 /* --- RESPONSIVE HARMONIEUX --- */
 @media (max-width: 1024px) {
+    .values-header {
+        text-align: center; /* Se recentre sur tablette pour l'esthétique */
+    }
     .values-flex-container {
         flex-wrap: wrap;
         justify-content: center;
     }
     .value-item {
         flex: unset;
-        width: 45%; /* S'organise proprement par paires sur tablette */
+        width: 45%;
     }
 }
 
 @media (max-width: 600px) {
     .value-item {
-        width: 100%; /* Une seule colonne propre sur mobile */
+        width: 100%;
     }
 }
