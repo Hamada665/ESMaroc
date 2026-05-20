@@ -1134,7 +1134,7 @@ nav a:hover {
 }
 
 /* ============================================================
-   SECTION 5 : NOS VALEURS (STYLE ÉPURÉ UM6P)
+   SECTION 5 : NOS VALEURS (ALIGNEMENT PARFAIT)
    ============================================================ */
 .about-values {
     padding: 100px 5%;
@@ -1145,7 +1145,7 @@ nav a:hover {
 
 .about-values .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px; /* Légèrement augmenté pour laisser respirer les 5 blocs */
 }
 
 .values-header {
@@ -1153,30 +1153,40 @@ nav a:hover {
     margin-bottom: 60px;
 }
 
+.values-header .section-title-red {
+    font-size: 2.5rem;
+    color: var(--blue);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
 .values-header .section-subtitle {
     font-size: 1.15rem;
     color: var(--text-light);
-    margin-top: 10px;
 }
 
-/* Grille pour les 5 valeurs */
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 35px;
+/* Nouveau conteneur Flex horizontal forcé */
+.values-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Force l'alignement sur une seule ligne */
+    gap: 25px;
 }
 
 /* Style individuel de chaque valeur */
 .value-item {
-    padding: 20px 10px;
+    flex: 1;
+    min-width: 180px;
+    padding: 25px 15px;
     text-align: center;
     transition: all 0.3s ease;
+    border-top: 3px solid transparent; /* Pour éviter les décalages avec la carte d'excellence */
 }
 
 /* Les icônes minimalistes */
 .value-icon {
     font-size: 2.2rem;
-    color: var(--blue); /* Ton bleu exact */
+    color: var(--blue);
     margin-bottom: 20px;
     transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -1194,22 +1204,21 @@ nav a:hover {
     line-height: 1.6;
 }
 
-/* --- LE PETIT PLUS EN EXCELLENCE (Highlight Value) --- */
+/* --- MISE EN AVANT DE L'EXCELLENCE --- */
 .value-item.highlight-value {
-    border-top: 3px solid var(--yellow); /* Une ligne jaune subtile sur le haut pour la différencier */
-    background-color: var(--bg-light);
+    border-top: 3px solid var(--yellow); /* Ligne jaune subtile */
+    background-color: var(--bg-light);   /* Léger fond gris pour le standing */
     border-radius: 4px;
-    padding: 20px;
 }
 
 .value-item.highlight-value .value-icon {
-    color: var(--yellow); /* L'icône brille en jaune par défaut */
+    color: var(--yellow); /* L'icône brille en jaune */
 }
 
 /* --- EFFETS AU SURVOL --- */
 .value-item:not(.highlight-value):hover .value-icon {
     transform: scale(1.15);
-    color: var(--yellow); /* L'icône passe au jaune au survol */
+    color: var(--yellow); /* L'icône passe au jaune */
 }
 
 .value-item.highlight-value:hover {
@@ -1217,14 +1226,26 @@ nav a:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-/* --- RESPONSIVE MOBILE --- */
-@media (max-width: 768px) {
-    .values-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        gap: 20px;
+/* --- RESPONSIVE TECHNIQUE --- */
+@media (max-width: 1024px) {
+    .values-flex-container {
+        flex-wrap: wrap; /* Permet de casser les lignes proprement sur tablette */
+        justify-content: center;
     }
-    
     .value-item {
-        padding: 10px;
+        flex: unset;
+        width: 40%; /* Passe à 2 par ligne sur format moyen */
+    }
+    .value-item.highlight-value {
+        width: 90%; /* Excellence prend une place centrale en bas */
+    }
+}
+
+@media (max-width: 600px) {
+    .value-item {
+        width: 100%; /* 1 seule colonne sur smartphone */
+    }
+    .value-item.highlight-value {
+        width: 100%;
     }
 }
