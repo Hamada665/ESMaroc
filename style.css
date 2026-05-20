@@ -762,7 +762,7 @@ nav a:hover {
 
 
 /* ============================================================
-   SECTION 2 : NOS MISSIONS (BENTO GRID STYLE)
+   SECTION 2 : NOS MISSIONS (BENTO GRID STYLE - AVEC LIGNE JAUNE)
    ============================================================ */
 .about-missions {
     padding: 100px 5%;
@@ -776,32 +776,42 @@ nav a:hover {
     max-width: 1200px;
 }
 
-/* Le grand titre de la section */
-.section-title-red {
+/* Le grand titre de la section ajusté avec sa ligne jaune */
+.about-missions .section-title-red {
     font-size: 2.2rem;
     font-weight: 800;
     color: var(--blue);
-    margin-bottom: 50px;
+    margin-bottom: 50px; /* Conserve l'espace avant la grille */
     line-height: 1.3;
     max-width: 900px;
+}
+
+/* Ajout de la petite ligne décorative jaune sous le titre des Missions */
+.about-missions .section-title-red::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--yellow);
+    margin-top: 15px;
 }
 
 /* Configuration de la Grille */
 .missions-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px; /* Espace entre les cartes */
+    gap: 30px;
 }
 
 /* Style de chaque carte de mission */
 .mission-card {
     background-color: var(--bg-light);
     border: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: 4px; /* Coins très légèrement arrondis pour le look moderne */
+    border-radius: 4px;
     padding: 40px;
     display: flex;
     gap: 25px;
-    transition: all 0.3s ease; /* Pour l'effet fluide au survol */
+    transition: all 0.3s ease;
 }
 
 /* La 7ème carte (RSE) prend toute la largeur de la grille */
@@ -812,11 +822,11 @@ nav a:hover {
 /* Style des icônes de missions */
 .mission-icon {
     font-size: 1.8rem;
-    color: var(--blue); /* Icône en bleu de ta charte */
+    color: var(--blue);
     background-color: var(--white);
     width: 60px;
     height: 60px;
-    min-width: 60px; /* Évite que l'icône s'écrase si le texte est long */
+    min-width: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -843,31 +853,36 @@ nav a:hover {
 /* --- EFFETS HOVER STYLE UM6P --- */
 .mission-card:hover {
     background-color: var(--white);
-    transform: translateY(-5px); /* La carte se soulève légèrement */
-    box-shadow: 0 15px 35px rgba(0, 69, 149, 0.08); /* Ombre douce bleutée */
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 69, 149, 0.08);
     border-color: rgba(0, 69, 149, 0.15);
 }
 
 .mission-card:hover .mission-icon {
-    background-color: var(--yellow); /* L'icône s'illumine en jaune ESMaroc */
+    background-color: var(--yellow);
     color: var(--text-dark);
 }
 
 /* Ajustement pour les petits écrans (Responsive) */
 @media (max-width: 768px) {
+    .about-missions {
+        text-align: center; /* Aligne le texte au centre sur mobile */
+    }
+    .about-missions .section-title-red::after {
+        margin: 15px auto 0 auto; /* Centre proprement la ligne jaune sur mobile uniquement */
+    }
     .mission-card {
-        flex-direction: column; /* L'icône passe au-dessus du texte */
+        flex-direction: column;
         gap: 15px;
         padding: 30px;
     }
     .mission-card.full-width {
-        grid-column: auto; /* Annule la pleine largeur sur mobile */
+        grid-column: auto;
     }
     .section-title-red {
         font-size: 1.8rem;
     }
 }
-
 
 /* ============================================================
    SECTION 3 : MOT DU PRÉSIDENT (VERSION PRESTIGE)
