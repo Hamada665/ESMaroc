@@ -1134,7 +1134,7 @@ nav a:hover {
 }
 
 /* ============================================================
-   SECTION 5 : NOS VALEURS (ALIGNEMENT PARFAIT)
+   SECTION 5 : NOS VALEURS (HARMONISÉES & ALIGNÉES)
    ============================================================ */
 .about-values {
     padding: 100px 5%;
@@ -1145,7 +1145,7 @@ nav a:hover {
 
 .about-values .container {
     width: 100%;
-    max-width: 1400px; /* Légèrement augmenté pour laisser respirer les 5 blocs */
+    max-width: 1400px;
 }
 
 .values-header {
@@ -1165,25 +1165,24 @@ nav a:hover {
     color: var(--text-light);
 }
 
-/* Nouveau conteneur Flex horizontal forcé */
+/* Alignement parfait des 5 blocs sur une seule ligne */
 .values-flex-container {
     display: flex;
     justify-content: space-between;
-    flex-wrap: nowrap; /* Force l'alignement sur une seule ligne */
+    flex-wrap: nowrap;
     gap: 25px;
 }
 
-/* Style individuel de chaque valeur */
+/* Style unique et identique pour TOUTES les valeurs */
 .value-item {
     flex: 1;
     min-width: 180px;
     padding: 25px 15px;
     text-align: center;
     transition: all 0.3s ease;
-    border-top: 3px solid transparent; /* Pour éviter les décalages avec la carte d'excellence */
 }
 
-/* Les icônes minimalistes */
+/* Icônes de base en Bleu */
 .value-icon {
     font-size: 2.2rem;
     color: var(--blue);
@@ -1204,48 +1203,27 @@ nav a:hover {
     line-height: 1.6;
 }
 
-/* --- MISE EN AVANT DE L'EXCELLENCE --- */
-.value-item.highlight-value {
-    border-top: 3px solid var(--yellow); /* Ligne jaune subtile */
-    background-color: var(--bg-light);   /* Léger fond gris pour le standing */
-    border-radius: 4px;
-}
-
-.value-item.highlight-value .value-icon {
-    color: var(--yellow); /* L'icône brille en jaune */
-}
-
-/* --- EFFETS AU SURVOL --- */
-.value-item:not(.highlight-value):hover .value-icon {
+/* --- EFFET AU SURVOL UNIQUE --- */
+/* Toutes les icônes réagissent de la même façon en passant au jaune */
+.value-item:hover .value-icon {
     transform: scale(1.15);
-    color: var(--yellow); /* L'icône passe au jaune */
+    color: var(--yellow);
 }
 
-.value-item.highlight-value:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-}
-
-/* --- RESPONSIVE TECHNIQUE --- */
+/* --- RESPONSIVE HARMONIEUX --- */
 @media (max-width: 1024px) {
     .values-flex-container {
-        flex-wrap: wrap; /* Permet de casser les lignes proprement sur tablette */
+        flex-wrap: wrap;
         justify-content: center;
     }
     .value-item {
         flex: unset;
-        width: 40%; /* Passe à 2 par ligne sur format moyen */
-    }
-    .value-item.highlight-value {
-        width: 90%; /* Excellence prend une place centrale en bas */
+        width: 45%; /* S'organise proprement par paires sur tablette */
     }
 }
 
 @media (max-width: 600px) {
     .value-item {
-        width: 100%; /* 1 seule colonne sur smartphone */
-    }
-    .value-item.highlight-value {
-        width: 100%;
+        width: 100%; /* Une seule colonne propre sur mobile */
     }
 }
