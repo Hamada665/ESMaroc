@@ -1290,6 +1290,30 @@ nav a:hover {
 /* ==========================================================================
    SECTION : STYLE FUSIONNÉ : GRILLE + ACCORDÉON INTERACTIF
    ========================================================================== */
+.faq-global-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-section-title {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.faq-section-title h2 {
+    color: #003399; /* Ton bleu */
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.title-line-yellow {
+    width: 60px;
+    height: 4px;
+    background-color: #e0ab00; /* Ton jaune */
+    border-radius: 2px;
+}
+
 .about-faq-fusion {
     padding: 80px 5%;
     background-color: #f8f9fa; /* Fond clair pour détacher les cartes blanches */
