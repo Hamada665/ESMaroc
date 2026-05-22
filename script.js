@@ -83,3 +83,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+    // ============================================================
+    // 4. ACCORDEON (FAQ)
+    // ============================================================
+<script>
+    document.querySelectorAll('.fusion-header').forEach(button => {
+        button.addEventListener('click', () => {
+            const currentItem = button.parentElement;
+            const content = currentItem.querySelector('.fusion-content');
+            
+            // Toggle l'état de la carte cliquée
+            currentItem.classList.toggle('active');
+
+            if (currentItem.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = null;
+            }
+        });
+    });
+</script>
