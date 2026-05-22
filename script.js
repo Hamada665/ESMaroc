@@ -85,23 +85,26 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-    // ============================================================
-    // 4. ACCORDEON (FAQ)
-    // ============================================================
-<script>
-    document.querySelectorAll('.fusion-header').forEach(button => {
-        button.addEventListener('click', () => {
-            const currentItem = button.parentElement;
-            const content = currentItem.querySelector('.fusion-content');
-            
-            // Toggle l'état de la carte cliquée
-            currentItem.classList.toggle('active');
+// ==========================================================================
+// INTERACTION DE L'ACCORDÉON "QUESTIONS CLÉS" (FUSION)
+// ==========================================================================
+document.addEventListener('click', function (e) {
+    // On vérifie si l'élément cliqué est un en-tête d'accordéon ou un de ses enfants
+    const header = e.target.closest('.fusion-header');
+    
+    if (header) {
+        e.preventDefault();
+        const currentItem = header.parentElement;
+        const content = currentItem.querySelector('.fusion-content');
+        
+        // Active ou désactive la classe .active sur l'élément de la grille
+        currentItem.classList.toggle('active');
 
-            if (currentItem.classList.contains('active')) {
-                content.style.maxHeight = content.scrollHeight + "px";
-            } else {
-                content.style.maxHeight = null;
-            }
-        });
-    });
-</script>
+        // Gère l'animation d'ouverture/fermeture en hauteur
+        if (currentItem.classList.contains('active')) {
+            content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+            content.style.maxHeight = null;
+        }
+    }
+});
