@@ -1288,57 +1288,87 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   SECTION 4 QUESTIONS CLÉS (STYLE COHÉRENT HUB)
+   SECTION : STYLE FUSIONNÉ : GRILLE + ACCORDÉON INTERACTIF
    ========================================================================== */
-.about-faq-essence {
+.about-faq-fusion {
     padding: 80px 5%;
-    background-color: #ffffff; /* Fond blanc pour rester épuré */
+    background-color: #f8f9fa; /* Fond clair pour détacher les cartes blanches */
 }
 
-.container-faq {
+.container-fusion {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur PC */
-    gap: 30px; /* Espace entre les cartes */
+    gap: 25px; /* Espace entre les blocs */
+    align-items: start; /* Évite que les boîtes s'étirent bizarrement */
 }
 
-.faq-box {
-    background-color: #f8f9fa; /* Le gris très clair du site */
-    padding: 35px;
-    border-radius: 4px;
-    border-left: 5px solid #e0ab00; /* La ligne jaune signature à gauche */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.fusion-item {
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
 }
 
-/* Petit effet de survol discret et pro */
-.faq-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+.fusion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 25px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
 }
 
-.faq-box h3 {
+.fusion-title {
     color: #003399; /* Ton bleu officiel */
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    margin-bottom: 15px;
-    line-height: 1.4;
 }
 
-.faq-box p {
-    color: #4a4a4a; /* Gris textuel standard */
-    font-size: 1.05rem;
+.fusion-icon {
+    color: #003399;
+    font-size: 0.95rem;
+    transition: transform 0.3s ease;
+    margin-left: 15px;
+}
+
+.fusion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 25px;
+}
+
+.fusion-content p {
+    color: #555555;
+    font-size: 1rem;
     line-height: 1.6;
+    padding-bottom: 22px;
     margin: 0;
 }
 
-/* responsive : bascule en 1 seule colonne sur smartphone */
-@media (max-width: 768px) {
-    .container-faq {
+/* ---- ÉTATS ACTIFS DU MÉLANGE ---- */
+.fusion-item.active {
+    border-left-color: #e0ab00; /* Devient jaune signature à l'ouverture */
+    box-shadow: 0 6px 18px rgba(0, 51, 153, 0.08);
+}
+
+.fusion-item.active .fusion-icon {
+    transform: rotate(180deg);
+    color: #e0ab00;
+}
+
+/* Responsive : 1 seule colonne sur tablettes et mobiles */
+@media (max-width: 992px) {
+    .container-fusion {
         grid-template-columns: 1fr;
         gap: 20px;
-    }
-    .about-faq-essence {
-        padding: 50px 5%;
     }
 }
