@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <!-- Header (Le même que ton index.html) -->
+    <!-- Header (Le même sur toutes les pages) -->
 <header>
     <div class="header-container">
         <div class="logo">
@@ -18,8 +18,18 @@
         </div>
         
         <nav>
-            <a href="#">Accueil</a>
-            <a href="qui-sommes-nous.html">ESMaroc</a>
+            <a href="index.html">Accueil</a> <!-- Remplacé # par index.html pour la navigation -->
+            
+            <!-- LE NOUVEAU MENU DÉROULANT ESMAROC -->
+            <div class="dropdown">
+                <a href="#" class="dropdown-trigger">ESMaroc <i class="fas fa-chevron-down nav-arrow"></i></a>
+                <div class="dropdown-menu">
+                    <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
+                    <a href="histoire.html">Notre Histoire & Vision</a>
+                    <a href="equipe.html">Notre Équipe</a>
+                </div>
+            </div>
+
             <a href="#">Évènements</a>
             <a href="#">Projets</a>
             <a href="#">École E-learning</a>
