@@ -1399,3 +1399,209 @@ nav a:hover {
         padding-left: 20px;
     }
 }
+
+/* ==========================================================================
+   PAGE HISTOIRE - DESIGN CHRONOLOGIQUE ET VISION
+   ========================================================================== */
+.history-global-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* --- Frise Chronologique --- */
+.history-timeline-section {
+    padding: 60px 0 100px 0;
+    background-color: #ffffff;
+}
+
+.timeline-container {
+    position: relative;
+    padding: 40px 0;
+}
+
+/* La ligne verticale centrale */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: rgba(0, 51, 153, 0.15); /* Ton bleu transparent */
+    transform: translateX(-50%);
+}
+
+.timeline-block {
+    position: relative;
+    margin-bottom: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Alternance gauche / droite des blocs de texte */
+.timeline-block:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-date {
+    width: 120px;
+    height: 45px;
+    background-color: #003399; /* Ton bleu */
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 10px rgba(0, 51, 153, 0.2);
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Changement de couleur pour le badge fondateur */
+.timeline-block:first-child .timeline-date {
+    background-color: #e0ab00; /* Ton jaune signature pour 2017 */
+    box-shadow: 0 4px 10px rgba(224, 171, 0, 0.3);
+}
+
+.timeline-content {
+    width: 43%;
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border-top: 3px solid #003399;
+}
+
+.timeline-block:first-child .timeline-content {
+    border-top-color: #e0ab00;
+}
+
+.timeline-content h3 {
+    color: #003399;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.timeline-content p {
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Section Vision --- */
+.history-vision-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.vision-intro-box .vision-eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #e0ab00;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.vision-intro-box h2 {
+    color: #003399;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.vision-intro-box p {
+    color: #4a4a4a;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.vision-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vision-mini-card {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: start;
+    border-left: 4px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.vision-mini-card:hover {
+    border-left-color: #003399;
+}
+
+.vision-card-number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #e0ab00;
+    line-height: 1;
+}
+
+.vision-mini-card h4 {
+    color: #003399;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+
+.vision-mini-card p {
+    color: #666666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    grid-column: 2; /* Aligne le texte sous le titre, pas sous le numéro */
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .timeline-container::before {
+        left: 20px;
+    }
+    .timeline-block {
+        flex-direction: column !important;
+        padding-left: 50px;
+        margin-bottom: 40px;
+    }
+    .timeline-date {
+        left: 20px;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 35px;
+        font-size: 0.85rem;
+    }
+    .timeline-content {
+        width: 100%;
+        padding: 20px;
+    }
+    .vision-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
