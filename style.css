@@ -884,166 +884,6 @@ nav a:hover {
     }
 }
 
-/* ============================================================
-   SECTION 3 : MOT DU PRÉSIDENT (VERSION PRESTIGE)
-   ============================================================ */
-.director-honor-section {
-    background-color: var(--white);
-    padding-bottom: 100px;
-}
-
-/* --- 1. La Grande Bannière Portrait --- */
-.director-hero-banner {
-    width: 100%;
-    padding: 0 5%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 60px;
-}
-
-.director-image-container {
-    width: 100%;
-    max-width: 1200px;
-    height: 550px; /* Grande marge de hauteur pour la photo */
-    position: relative;
-    border-radius: 4px;
-    overflow: hidden;
-    background-color: var(--bg-light); /* Fond de secours si pas d'image */
-}
-
-.director-full-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Recadre la photo proprement sans la déformer */
-    object-position: center 20%; /* Centre le visage */
-    filter: brightness(0.9); /* Assombrit légèrement pour faire ressortir le texte */
-}
-
-/* La carte de titre superposée en bas à gauche de la photo */
-.director-title-card {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    background-color: var(--white);
-    padding: 30px 40px;
-    border-radius: 4px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    border-left: 5px solid var(--blue); /* Rappel de ta charte */
-}
-
-.director-title-card .eyebrow {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-light);
-    font-weight: 600;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.director-title-card h2 {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--blue);
-    margin-bottom: 5px;
-}
-
-.director-title-card p {
-    font-size: 0.95rem;
-    color: var(--text-light);
-    font-weight: 400;
-}
-
-/* --- 2. Le Message Éditorial --- */
-.director-message-container {
-    padding: 0 5%;
-    display: flex;
-    justify-content: center;
-}
-
-.message-content {
-    width: 100%;
-    max-width: 800px; /* Plus serré pour un confort de lecture optimal */
-}
-
-.message-content p {
-    font-size: 1.1rem;
-    color: var(--text-dark);
-    line-height: 1.8;
-    margin-bottom: 25px;
-    text-align: justify;
-}
-
-/* Lettrine stylisée pour le "Chers visiteurs" */
-.drop-cap-text {
-    font-size: 1.4rem !important;
-    font-weight: 600;
-    color: var(--blue);
-}
-
-/* Style de la citation (Blockquote) au milieu du message */
-.message-content blockquote {
-    border-left: 4px solid var(--yellow); /* Accent jaune ESMaroc */
-    padding: 15px 0 15px 30px;
-    margin: 40px 0;
-    font-size: 1.3rem;
-    font-weight: 600;
-    font-style: italic;
-    color: var(--blue);
-    line-height: 1.6;
-}
-
-/* Bloc signature final */
-.final-signature {
-    margin-top: 50px;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    padding-top: 30px;
-}
-
-.signature-block {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.signature-block strong {
-    font-size: 1.25rem;
-    color: var(--blue);
-    font-weight: 700;
-}
-
-.signature-block span {
-    font-size: 0.95rem;
-    color: var(--text-light);
-}
-
-/* --- RESPONSIVE MOBILE --- */
-@media (max-width: 768px) {
-    .director-image-container {
-        height: 350px; /* On réduit la hauteur sur mobile */
-    }
-    
-    .director-title-card {
-        position: relative;
-        bottom: 0;
-        left: 0;
-        margin: 20px 5% 0 5%;
-        max-width: 100%;
-        padding: 20px;
-    }
-    
-    .director-hero-banner {
-        flex-direction: column;
-        padding: 0;
-    }
-    
-    .message-content blockquote {
-        font-size: 1.15rem;
-        padding-left: 20px;
-    }
-}
-
 
 /* ============================================================
    SECTION 4 : IMPACT & CHIFFRES (CORRECTIF ALIGNEMENT GAUCHE)
@@ -1394,5 +1234,168 @@ nav a:hover {
     .container-fusion {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+}
+
+/* ============================================================
+   PAGE EQUIPE - STYLE INSTITUTIONNEL 
+   ============================================================ */
+/* ============================================================
+   MOT DU PRÉSIDENT (VERSION PRESTIGE)
+   ============================================================ */
+.director-honor-section {
+    background-color: var(--white);
+    padding-bottom: 100px;
+}
+
+/* --- 1. La Grande Bannière Portrait --- */
+.director-hero-banner {
+    width: 100%;
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.director-image-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 550px; /* Grande marge de hauteur pour la photo */
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--bg-light); /* Fond de secours si pas d'image */
+}
+
+.director-full-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recadre la photo proprement sans la déformer */
+    object-position: center 20%; /* Centre le visage */
+    filter: brightness(0.9); /* Assombrit légèrement pour faire ressortir le texte */
+}
+
+/* La carte de titre superposée en bas à gauche de la photo */
+.director-title-card {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    background-color: var(--white);
+    padding: 30px 40px;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    border-left: 5px solid var(--blue); /* Rappel de ta charte */
+}
+
+.director-title-card .eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.director-title-card h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--blue);
+    margin-bottom: 5px;
+}
+
+.director-title-card p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+/* --- 2. Le Message Éditorial --- */
+.director-message-container {
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.message-content {
+    width: 100%;
+    max-width: 800px; /* Plus serré pour un confort de lecture optimal */
+}
+
+.message-content p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* Lettrine stylisée pour le "Chers visiteurs" */
+.drop-cap-text {
+    font-size: 1.4rem !important;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+/* Style de la citation (Blockquote) au milieu du message */
+.message-content blockquote {
+    border-left: 4px solid var(--yellow); /* Accent jaune ESMaroc */
+    padding: 15px 0 15px 30px;
+    margin: 40px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--blue);
+    line-height: 1.6;
+}
+
+/* Bloc signature final */
+.final-signature {
+    margin-top: 50px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 30px;
+}
+
+.signature-block {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.signature-block strong {
+    font-size: 1.25rem;
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.signature-block span {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .director-image-container {
+        height: 350px; /* On réduit la hauteur sur mobile */
+    }
+    
+    .director-title-card {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin: 20px 5% 0 5%;
+        max-width: 100%;
+        padding: 20px;
+    }
+    
+    .director-hero-banner {
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    .message-content blockquote {
+        font-size: 1.15rem;
+        padding-left: 20px;
     }
 }
