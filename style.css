@@ -1625,12 +1625,14 @@ nav a:hover {
 }
 
 .timeline-date {
-    width: 120px;
+    width: auto; /* Supprime les 120px fixes pour s'adapter au texte long */
+    min-width: 120px; /* Assure une taille minimale pour les dates courtes */
     height: 45px;
+    padding: 0 20px; /* Donne de l'espace à gauche et à droite du texte */
     background-color: #003399; /* Ton bleu */
     color: #ffffff;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Légèrement réduit pour aider les mots très longs */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1642,6 +1644,7 @@ nav a:hover {
     z-index: 2;
     text-transform: uppercase;
     letter-spacing: 1px;
+    white-space: nowrap; /* Empêche le mot de se couper sur deux lignes */
 }
 
 /* Changement de couleur pour le badge fondateur */
@@ -1771,9 +1774,11 @@ nav a:hover {
     .timeline-date {
         left: 20px;
         transform: translateX(-50%);
-        width: 100px;
+        width: auto; /* Supprime les 100px fixes sur mobile */
+        min-width: 90px;
         height: 35px;
-        font-size: 0.85rem;
+        padding: 0 15px;
+        font-size: 0.8rem;
     }
     .timeline-content {
         width: 100%;
