@@ -80,6 +80,7 @@ header.sticky .logo img {
 /* MENU DE NAVIGATION */
 nav {
     display: flex;
+    align-items: center; /* Aligne le dropdown parfaitement au centre vertical des autres liens */
     gap: 25px;
 }
 
@@ -87,8 +88,8 @@ nav a {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 600;
-    font-size: 13px;
-    text-transform: uppercase;
+    font-size: 13px; /* Conserve tes 13px d'origine */
+    text-transform: uppercase; /* Conserve les majuscules */
     letter-spacing: 0.5px;
     transition: color 0.3s;
 }
@@ -96,6 +97,80 @@ nav a {
 nav a:hover {
     color: var(--blue);
 }
+
+/* ==========================================================================
+   AJOUT : GESTION DU SOUS-MENU DÉROULANT (DROPDOWN)
+   ========================================================================== */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+/* Petite flèche FontAwesome à côté d'ESMaroc */
+.nav-arrow {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+/* Le rideau/boîte du sous-menu (Caché par défaut) */
+.dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15px); /* Effet d'apparition vers le bas */
+    background-color: var(--white);
+    min-width: 240px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px 0;
+    opacity: 0;
+    pointer-events: none; /* Désactivé tant qu'il est invisible */
+    transition: all 0.3s ease;
+    z-index: 9999;
+    border-top: 3px solid var(--blue); /* Ligne de rappel bleu */
+}
+
+/* Liens internes du sous-menu (Qui sommes-nous, Histoire, Équipe) */
+.dropdown-menu a {
+    color: var(--text-dark) !important;
+    padding: 12px 20px !important;
+    display: block !important;
+    font-size: 12px !important; /* Légèrement plus petit pour le sous-menu */
+    font-weight: 600 !important;
+    text-transform: none !important; /* En minuscule/normal pour une meilleure lecture */
+    letter-spacing: 0px !important;
+    text-align: left !important;
+    transition: background-color 0.2s, color 0.2s !important;
+}
+
+/* Changement de couleur au survol dans le sous-menu */
+.dropdown-menu a:hover {
+    background-color: #f8f9fa !important;
+    color: var(--blue) !important; /* Reste dans ta charte au survol */
+}
+
+/* DÉPLOIEMENT AU SURVOL DE LA SOURIS */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0); /* Remonte à sa position finale */
+}
+
+/* Pivotement à 180° de la flèche au survol */
+.dropdown:hover .nav-arrow {
+    transform: rotate(180deg);
+    color: var(--blue);
+}
+
+/* ========================================================================== */
 
 /* ICONES DE DROITE */
 .header-icons {
