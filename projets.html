@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos Projets - ESMaroc</title>
-    <link class="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<!-- Header (Le même sur toutes les pages) -->
 <header>
     <div class="header-container">
         <div class="logo">
@@ -19,7 +18,6 @@
         <nav>
             <a href="index.html">Accueil</a>
             
-            <!-- LE NOUVEAU MENU DÉROULANT ESMAROC -->
             <div class="dropdown">
                 <a href="#" class="dropdown-trigger">ESMaroc <i class="fas fa-chevron-down nav-arrow"></i></a>
                 <div class="dropdown-menu">
@@ -30,7 +28,7 @@
             </div>
 
             <a href="#">Évènements</a>
-            <a href="projets.html">Projets</a> <!-- Lien mis à jour -->
+            <a href="projets.html">Projets</a>
             <a href="#">École E-learning</a>
             <a href="#">Contact</a>
         </nav>
@@ -45,7 +43,6 @@
     
 <main class="projects-page">
             
-    <!-- BANNIÈRE PRINCIPALE -->
     <section class="projects-hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -54,7 +51,6 @@
         </div>
     </section>
 
-    <!-- SECTION 1 : LES GRANDS PROGRAMMES -->
     <section class="projects-grid-section">
         <div class="global-container">
             <div class="section-title">
@@ -63,7 +59,6 @@
             </div>
 
             <div class="modern-projects-grid">
-                <!-- PROJET 1 : UPSHIFT -->
                 <div class="project-card">
                     <div class="p-img-wrapper">
                         <img src="photo-upshift.jpg" alt="Projet UPSHIFT">
@@ -75,7 +70,6 @@
                     </div>
                 </div>
 
-                <!-- PROJET 2 : NAWAT -->
                 <div class="project-card">
                     <div class="p-img-wrapper">
                         <img src="photo-nawat.jpg" alt="Projet NAWAT">
@@ -87,7 +81,6 @@
                     </div>
                 </div>
 
-                <!-- PROJET 3 : RESTART -->
                 <div class="project-card">
                     <div class="p-img-wrapper">
                         <img src="photo-restart.jpg" alt="Projet RESTART">
@@ -99,7 +92,6 @@
                     </div>
                 </div>
 
-                <!-- PROJET 4 : AVEC LES JEUNES -->
                 <div class="project-card">
                     <div class="p-img-wrapper">
                         <img src="photo-jeunes.jpg" alt="Avec les jeunes pour les jeunes">
@@ -114,7 +106,6 @@
         </div>
     </section>
 
-    <!-- SECTION 2 : INITIATIVES & ALLIANCES EN COURS -->
     <section class="other-projects-section">
         <div class="global-container">
             <div class="section-title">
@@ -123,7 +114,6 @@
             </div>
 
             <div class="secondary-projects-grid">
-                <!-- WORK 4 LIFE -->
                 <div class="sec-project-card">
                     <img src="photo-w4l.jpg" alt="Work 4 Life">
                     <div class="sec-card-content">
@@ -133,7 +123,6 @@
                     </div>
                 </div>
 
-                <!-- FLOWER -->
                 <div class="sec-project-card">
                     <img src="photo-flower.jpg" alt="Projet Flower">
                     <div class="sec-card-content">
@@ -143,7 +132,6 @@
                     </div>
                 </div>
 
-                <!-- OIM -->
                 <div class="sec-project-card">
                     <img src="photo-oim.jpg" alt="Projet OIM">
                     <div class="sec-card-content">
@@ -153,7 +141,6 @@
                     </div>
                 </div>
 
-                <!-- JISR -->
                 <div class="sec-project-card">
                     <img src="photo-jisr.jpg" alt="Projet JISR">
                     <div class="sec-card-content">
@@ -163,7 +150,6 @@
                     </div>
                 </div>
 
-                <!-- LOG MED -->
                 <div class="sec-project-card">
                     <img src="photo-logmed.jpg" alt="Projet Log Med">
                     <div class="sec-card-content">
@@ -173,7 +159,6 @@
                     </div>
                 </div>
 
-                <!-- DAR-LIBTIKAR -->
                 <div class="sec-project-card">
                     <img src="photo-dar-libtikar.jpg" alt="Dar Libtikar">
                     <div class="sec-card-content">
@@ -183,7 +168,6 @@
                     </div>
                 </div>
 
-                <!-- DAPP -->
                 <div class="sec-project-card">
                     <img src="photo-dapp.jpg" alt="Programme DAPP">
                     <div class="sec-card-content">
@@ -193,7 +177,6 @@
                     </div>
                 </div>
 
-                <!-- GIZ CLUSTER -->
                 <div class="sec-project-card">
                     <img src="photo-giz.jpg" alt="Cluster GIZ">
                     <div class="sec-card-content">
@@ -206,7 +189,6 @@
         </div>
     </section>
 
-    <!-- SECTION 3 : LES PARTENARIATS & CONVENTIONS -->
     <section class="partnerships-section">
         <div class="global-container">
             <div class="section-title" style="text-align: center;">
@@ -243,9 +225,6 @@
         </div>
     </section>
 
-    <!-- FENÊTRES MODALES (POP-UPS) -->
-    
-    <!-- MODALE 1 : UPSHIFT -->
     <div id="modal-upshift" class="project-modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('modal-upshift')">&times;</span>
@@ -260,7 +239,6 @@
         </div>
     </div>
 
-    <!-- MODALE 2 : NAWAT -->
     <div id="modal-nawat" class="project-modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('modal-nawat')">&times;</span>
@@ -275,7 +253,6 @@
         </div>
     </div>
 
-    <!-- MODALE 3 : RESTART -->
     <div id="modal-restart" class="project-modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('modal-restart')">&times;</span>
@@ -291,7 +268,6 @@
         </div>
     </div>
 
-    <!-- MODALE 4 : AVEC LES JEUNES -->
     <div id="modal-jeunes" class="project-modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('modal-jeunes')">&times;</span>
@@ -309,7 +285,6 @@
 
 </main>
             
-<!-- Footer (Le même que ton index.html) -->
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-left">
