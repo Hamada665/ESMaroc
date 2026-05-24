@@ -1580,7 +1580,7 @@ nav a:hover {
 
 
 /* ==========================================================================
-   PAGE HISTOIRE - DESIGN CHRONOLOGIQUE ET VISION
+   PAGE HISTOIRE - DESIGN CHRONOLOGIQUE ET VISION (CORRIGÉ)
    ========================================================================== */
 .history-global-container {
     max-width: 1200px;
@@ -1624,15 +1624,14 @@ nav a:hover {
     flex-direction: row-reverse;
 }
 
+/* TAILLE STRICTEMENT IDENTIQUE POUR TOUS LES BADGES SANS SURPLOMB */
 .timeline-date {
-    width: auto; /* Supprime les 120px fixes pour s'adapter au texte long */
-    min-width: 120px; /* Assure une taille minimale pour les dates courtes */
+    width: 160px; /* Largeur fixe harmonisée pour tout le monde (2017, L'INTERFACE, etc.) */
     height: 45px;
-    padding: 0 20px; /* Donne de l'espace à gauche et à droite du texte */
     background-color: #003399; /* Ton bleu */
     color: #ffffff;
     font-weight: 700;
-    font-size: 0.9rem; /* Légèrement réduit pour aider les mots très longs */
+    font-size: 0.85rem; /* Ajusté pour que "L'INTERFACE" tienne parfaitement sans forcer */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1653,8 +1652,9 @@ nav a:hover {
     box-shadow: 0 4px 10px rgba(224, 171, 0, 0.3);
 }
 
+/* BLOCS D'EXPLICATION RÉDUITS POUR LAISSER RESPIRER LES BADGES CENTRALISÉS */
 .timeline-content {
-    width: 43%;
+    width: 40%; /* Réduit de 43% à 40% pour supprimer le problème d'empiètement */
     background-color: #f8f9fa;
     padding: 30px;
     border-radius: 6px;
@@ -1768,17 +1768,17 @@ nav a:hover {
     }
     .timeline-block {
         flex-direction: column !important;
-        padding-left: 50px;
+        padding-left: 60px; /* Augmenté de 50px à 60px pour éviter la collision avec le badge */
         margin-bottom: 40px;
     }
     .timeline-date {
         left: 20px;
         transform: translateX(-50%);
-        width: auto; /* Supprime les 100px fixes sur mobile */
-        min-width: 90px;
+        width: auto; /* Permet la flexibilité indispensable sur petits écrans */
+        min-width: 100px;
         height: 35px;
         padding: 0 15px;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
     .timeline-content {
         width: 100%;
