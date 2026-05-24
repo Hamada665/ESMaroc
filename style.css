@@ -1476,104 +1476,124 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   SECTION TROMBINOSCOPE ÉQUIPE OPÉRATIONNELLE
+   NOUVEAU DESIGN ÉQUIPE - INSPIRÉ STYLE CARTES PROJETS 
    ========================================================================== */
-.team-presentation-container {
+.modern-team-container {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 60px;
     align-items: center;
 }
 
-.team-row {
+.m-team-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 40px 30px; /* Plus d'espace vertical pour laisser respirer le chevauchement */
     width: 100%;
 }
 
-/* Ajustements pour la ligne du Directeur et des grands groupes */
-.row-center {
+.m-row-center {
     display: flex;
     justify-content: center;
 }
 
-.row-large {
-    grid-template-columns: repeat(3, 1fr); /* Aligne par 3 pour rester harmonieux */
+.m-row-large {
+    grid-template-columns: repeat(3, 1fr);
 }
 
-/* Style des cartes */
-.team-member-card {
-    background-color: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    border: 1px solid rgba(0,0,0,0.04);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* La carte globale */
+.m-member-card {
+    position: relative;
+    background: transparent;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 25px 20px;
+    width: 100%;
+    height: 380px; /* Hauteur fixe pour aligner parfaitement toutes les cartes */
 }
 
-.team-member-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 51, 153, 0.08);
-}
-
-/* Carte spéciale Directeur */
+/* Spécificité pour le Directeur */
 .leader-card {
-    width: 320px;
-    border-top: 4px solid var(--yellow);
+    max-width: 360px;
 }
 
-/* Boîte de la photo ronde */
-.team-img-box {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
+/* Zone Photo (Grand rectangle en fond) */
+.m-img-wrapper {
+    width: 100%;
+    height: 280px; /* Prend une grande partie de la carte */
     overflow: hidden;
-    margin-bottom: 15px;
-    border: 3px solid #f1f3f5;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     background-color: #e9ecef;
 }
 
-.team-img-box img {
+.m-img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-/* Textes à l'intérieur */
-.team-info-box h4 {
-    color: var(--text-dark);
-    font-size: 1.05rem;
+/* Effet Zoom au survol comme sur les sites de projets */
+.m-member-card:hover .m-img-wrapper img {
+    transform: scale(1.06);
+}
+
+/* Le Bloc d'info blanc qui chevauche (Copie conforme de image_0369d5.png) */
+.m-info-box {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 2px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    z-index: 2;
+    transition: transform 0.3s ease;
+    border-bottom: 3px solid #003399; /* Fine ligne de rappel sous la boîte */
+}
+
+.m-member-card:hover .m-info-box {
+    transform: translateY(-5px); /* Léger rebond sympa au survol */
+}
+
+/* Style de la bordure jaune pour le Directeur */
+.leader-card .m-info-box {
+    border-bottom-color: #e0ab00;
+}
+
+/* Textes à l'intérieur de la boîte blanche */
+.m-info-box h4 {
+    margin: 0 0 6px 0;
+    color: #111111;
+    font-size: 1.1rem;
     font-weight: 700;
-    margin: 0 0 8px 0;
+    text-transform: uppercase; /* Donne le côté moderne et strict de la maquette */
+    letter-spacing: 0.5px;
 }
 
-.team-role-tag {
-    font-size: 0.85rem;
-    color: var(--text-light);
-    font-weight: 500;
-    line-height: 1.4;
+.m-role {
+    font-size: 0.82rem;
+    color: #666666;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     display: block;
 }
 
-/* Responsive Mobile / Tablette */
+/* --- RESPONSIVE TABLETTE & MOBILE --- */
 @media (max-width: 992px) {
-    .team-row, .row-large {
+    .m-team-row, .m-row-large {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 600px) {
-    .team-row, .row-large {
+@media (max-width: 650px) {
+    .m-team-row, .m-row-large {
         grid-template-columns: 1fr;
     }
-    .team-member-card {
-        max-width: 320px;
+    .m-member-card {
+        max-width: 340px;
         margin: 0 auto;
     }
 }
