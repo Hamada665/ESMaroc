@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Projets - ESMaroc</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER (Garde ton header habituel ici) -->
+
+    <!-- BANNIÈRE PRINCIPALE -->
+    <section class="projects-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Notre Portefeuille de Projets</h1>
+            <p>Découvrez nos programmes structurants orientés entrepreneuriat, employabilité et inclusion socio-économique au Maroc.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 1 : LES GRANDS PROGRAMMES (STYLE image_0369d5.png) -->
+    <section class="projects-grid-section">
+        <div class="global-container">
+            <div class="section-title">
+                <h2>Programmes Majeurs</h2>
+                <div class="title-line-blue"></div>
+            </div>
+
+            <div class="modern-projects-grid">
+                <!-- PROJET 1 : UPSHIFT -->
+                <div class="project-card">
+                    <div class="p-img-wrapper">
+                        <img src="photo-upshift.jpg" alt="Projet UPSHIFT"> <!-- Remplace par la photo de ta tutrice -->
+                    </div>
+                    <div class="p-info-box">
+                        <h3>PROJET UPSHIFT : INNOVATION & ENTREPRENEURIAT SOCIAL</h3>
+                        <span class="p-partner">Partenaire : UNICEF (Tanger)</span>
+                        <button class="p-btn-more" onclick="openModal('modal-upshift')">VOIR LES RÉSULTATS <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- PROJET 2 : NAWAT -->
+                <div class="project-card">
+                    <div class="p-img-wrapper">
+                        <img src="photo-nawat.jpg" alt="Projet NAWAT">
+                    </div>
+                    <div class="p-info-box">
+                        <h3>PROJET NAWAT : RENFORCEMENT ET ACCOMPAGNEMENT DES TPE</h3>
+                        <span class="p-partner">Partenaire : MAROC PME</span>
+                        <button class="p-btn-more" onclick="openModal('modal-nawat')">VOIR LES RÉSULTATS <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- PROJET 3 : RESTART -->
+                <div class="project-card">
+                    <div class="p-img-wrapper">
+                        <img src="photo-restart.jpg" alt="Projet RESTART">
+                    </div>
+                    <div class="p-info-box">
+                        <h3>PROJET RESTART : CRÉATION DE STARTUPS ÉCO-DURABLES</h3>
+                        <span class="p-partner">Initiative ESMaroc</span>
+                        <button class="p-btn-more" onclick="openModal('modal-restart')">VOIR LES RÉSULTATS <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- PROJET 4 : AVEC LES JEUNES -->
+                <div class="project-card">
+                    <div class="p-img-wrapper">
+                        <img src="photo-jeunes.jpg" alt="Avec les jeunes pour les jeunes">
+                    </div>
+                    <div class="p-info-box">
+                        <h3>AVEC LES JEUNES, POUR LES JEUNES : INSERTION & AUTO-ENTREPRENEURS</h3>
+                        <span class="p-partner">Financement : Union Européenne</span>
+                        <button class="p-btn-more" onclick="openModal('modal-jeunes')">VOIR LES RÉSULTATS <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2 : INITIATIVES & ALLIANCES EN COURS (POUR LES TEXTES PLUS COURTS) -->
+    <section class="other-projects-section">
+        <div class="global-container">
+            <div class="section-title">
+                <h2>Autres Initiatives & Programmes Thématiques</h2>
+                <div class="title-line-yellow"></div>
+            </div>
+
+            <div class="secondary-projects-grid">
+                <!-- WORK 4 LIFE -->
+                <div class="sec-project-card">
+                    <img src="photo-w4l.jpg" alt="Work 4 Life">
+                    <div class="sec-card-content">
+                        <h4>WORK 4 LIFE (W4L)</h4>
+                        <span class="badge-tag">Union Européenne</span>
+                        <p>Soutien à l’insertion socio-économique des personnes migrantes via l’entrepreneuriat collectif et la structuration de plus d'une vingtaine de coopératives viables.</p>
+                    </div>
+                </div>
+
+                <!-- FLOWER -->
+                <div class="sec-project-card">
+                    <img src="photo-flower.jpg" alt="Projet Flower">
+                    <div class="sec-card-content">
+                        <h4>PROJET FLOWER</h4>
+                        <span class="badge-tag">Régional (Maroc / Tunisie)</span>
+                        <p>Formation de plus de 2 000 femmes, amélioration de l'accès aux marchés, revalorisation des revenus et intégration progressive à la sécurité sociale via des circuits courts.</p>
+                    </div>
+                </div>
+
+                <!-- OIM -->
+                <div class="sec-project-card">
+                    <img src="photo-oim.jpg" alt="Projet OIM">
+                    <div class="sec-card-content">
+                        <h4>MIGRATION & DÉVELOPPEMENT</h4>
+                        <span class="badge-tag">OIM</span>
+                        <p>Accompagnement technique et financier de plus de 200 porteurs de projets, favorisant l'intégration économique des migrants et des communautés locales.</p>
+                    </div>
+                </div>
+
+                <!-- JISR -->
+                <div class="sec-project-card">
+                    <img src="photo-jisr.jpg" alt="Projet JISR">
+                    <div class="sec-card-content">
+                        <h4>JISR : INCUBATEUR SOCIAL DES FEMMES</h4>
+                        <span class="badge-tag">Tanger-Assilah (2022-2026)</span>
+                        <p>Dispositif d'incubation, de coaching et de formation visant l'autonomisation économique de près de 1 000 femmes en situation de vulnérabilité (NTIC, Tourisme, Commerce solidaire).</p>
+                    </div>
+                </div>
+
+                <!-- LOG MED -->
+                <div class="sec-project-card">
+                    <img src="photo-logmed.jpg" alt="Projet Log Med">
+                    <div class="sec-card-content">
+                        <h4>LOG MED : CONNECTER L'AVENIR</h4>
+                        <span class="badge-tag">Coopération Italienne</span>
+                        <p>Activation d'un écosystème de stages de perfectionnement rémunérés et d'accompagnement technique sur mesure pour les jeunes et les femmes des régions RSK et TTA.</p>
+                    </div>
+                </div>
+
+                <!-- DAR-LIBTIKAR -->
+                <div class="sec-project-card">
+                    <img src="photo-dar-libtikar.jpg" alt="Dar Libtikar">
+                    <div class="sec-card-content">
+                        <h4>LABEL DAR-LIBTIKAR</h4>
+                        <span class="badge-tag">Fondation Abdelkader Bensalah</span>
+                        <p>Dynamisation de l'innovation sociale territoriale à Tanger à travers un parcours complet d'incubation et de post-incubation de 8 à 9 mois.</p>
+                    </div>
+                </div>
+
+                <!-- DAPP -->
+                <div class="sec-project-card">
+                    <img src="photo-dapp.jpg" alt="Programme DAPP">
+                    <div class="sec-card-content">
+                        <h4>PROGRAMME PARTENARIAT DANO-ARABE (DAPP)</h4>
+                        <span class="badge-tag">Danida (2022-2027)</span>
+                        <p>Intervention majeure axée sur l'emploi des jeunes (18-35 ans), l'entrepreneuriat et les droits humains à travers les axes YEE et HRI sur 3 régions clés du Royaume.</p>
+                    </div>
+                </div>
+
+                <!-- GIZ CLUSTER -->
+                <div class="sec-project-card">
+                    <img src="photo-giz.jpg" alt="Cluster GIZ">
+                    <div class="sec-card-content">
+                        <h4>CLUSTER TECHNOLOGIES D'ASSEMBLAGE</h4>
+                        <span class="badge-tag">GIZ</span>
+                        <p>Contribution stratégique à la structuration d'un cluster industriel technologique pour renforcer la compétitivité et l'innovation sectorielle au Maroc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 : LES PARTENARIATS & CONVENTIONS -->
+    <section class="partnerships-section">
+        <div class="global-container">
+            <div class="section-title" style="text-align: center;">
+                <h2>Nos Alliances Stratégiques</h2>
+                <div class="title-line-blue" style="margin: 0 auto;"></div>
+                <p>Ces synergies durables garantissent un impact fort à l'échelle régionale et nationale.</p>
+            </div>
+
+            <div class="partners-grid-boxes">
+                <div class="partner-category-box">
+                    <h5><i class="fas fa-handshake"></i> Partenariats Institutionnels</h5>
+                    <ul>
+                        <li>Office de Développement de la Coopération (ODCO)</li>
+                        <li>Entraide Nationale</li>
+                        <li>Ministère du Tourisme, de l'Artisanat et de l'Économie Sociale</li>
+                        <li>ANAPEC & Maroc PME</li>
+                        <li>Directions Régionales de la Jeunesse et de l'Artisanat (RSK / TTA)</li>
+                        <li>Commune d'El Hoceima</li>
+                    </ul>
+                </div>
+
+                <div class="partner-category-box">
+                    <h5><i class="fas fa-users"></i> Partenariats Associatifs & ONG</h5>
+                    <ul>
+                        <li>Association AAUPE, CMERES, AIDECA</li>
+                        <li>Fondation Iltizam (Impact Lab / Numa Casa)</li>
+                        <li>Association 100% Mamans Tanger, Chifaa</li>
+                        <li>Casal Dels Infants, Association AMH, Al Jisr</li>
+                        <li>Confédération des Jeunes Entrepreneurs Subsahariens au Maroc</li>
+                        <li>Organisation des Jeunes Africains (OJA)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FENÊTRES MODALES (POP-UPS) POUR AFFICHER LES CHIFFRES ET RÉSULTATS
+         ========================================================================== -->
+    
+    <!-- MODALE 1 : UPSHIFT -->
+    <div id="modal-upshift" class="project-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-upshift')">&times;</span>
+            <span class="modal-tag">UNICEF</span>
+            <h2>Projet UP SHIFT — Résultats Clés</h2>
+            <p class="modal-intro">Partenaire de mise en œuvre à Tanger (2021-2022) pour la sensibilisation à l'entrepreneuriat social.</p>
+            <div class="modal-stats-grid">
+                <div class="stat-box"><strong>+1 000</strong><span>Jeunes sensibilisés (15-25 ans)</span></div>
+                <div class="stat-box"><strong>50</strong><span>Jeunes en Bootcamp intensif (6 jours)</span></div>
+                <div class="stat-box"><strong>5</strong><span>Groupes incubés vers la création de leur startup</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALE 2 : NAWAT -->
+    <div id="modal-nawat" class="project-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-nawat')">&times;</span>
+            <span class="modal-tag">Maroc PME</span>
+            <h2>Projet NAWAT — Résultats Clés</h2>
+            <p class="modal-intro">Renforcement des capacités des Très Petites Entreprises pour booster leur compétitivité.</p>
+            <div class="modal-stats-grid">
+                <div class="stat-box"><strong>20</strong><span>TPE accompagnées stratégiquement</span></div>
+                <div class="stat-box"><strong>Multiples</strong><span>Événements de réseautage organisés</span></div>
+                <div class="stat-box"><strong>Sur-mesure</strong><span>Conférences thématiques sectorielles</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALE 3 : RESTART -->
+    <div id="modal-restart" class="project-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-restart')">&times;</span>
+            <span class="modal-tag">ESMaroc Innovation</span>
+            <h2>Projet RESTART — Résultats Clés</h2>
+            <p class="modal-intro">Favoriser un véritable changement d'échelle des initiatives vertes accompagnées.</p>
+            <div class="modal-stats-grid">
+                <div class="stat-box"><strong>+50</strong><span>Startups éco-durables créées/consolidées</span></div>
+                <div class="stat-box"><strong>600</strong><span>Idées innovantes prototypées</span></div>
+                <div class="stat-box"><strong>450</strong><span>Business plans formalisés et viables</span></div>
+                <div class="stat-box"><strong>Subventions</strong><span>Fonds d'amorçage direct distribués</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALE 4 : AVEC LES JEUNES -->
+    <div id="modal-jeunes" class="project-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-jeunes')">&times;</span>
+            <span class="modal-tag">Union Européenne</span>
+            <h2>Avec les jeunes, pour les jeunes — Résultats Clés</h2>
+            <p class="modal-intro">Dispositifs d’insertion professionnelle directe, de stages rémunérés et de partenariats territoriaux.</p>
+            <div class="modal-stats-grid">
+                <div class="stat-box"><strong>147</strong><span>Jeunes immatriculés Auto-Entrepreneurs</span></div>
+                <div class="stat-box"><strong>83</strong><span>Jeunes insérés sur le marché de l'emploi</span></div>
+                <div class="stat-box"><strong>25</strong><span>Stages rémunérés (Contrats ANAPEC)</span></div>
+                <div class="stat-box"><strong>30%</strong><span>Taux de participation féminine minimum</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER (Garde ton footer habituel ici) -->
+
+    <!-- PETIT SCRIPT JAVASCRIPT POUR LES POPUPS -->
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+        // Ferme la modale si on clique à l'extérieur
+        window.onclick = function(event) {
+            if (event.target.classList.contains('project-modal')) {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
