@@ -550,13 +550,15 @@ nav a:hover {
     padding-bottom: 3px;
 }
 
-/* --- SECTION PROJETS (LOOK UM6P) --- */
-.projects-grid-section {
+/* ==========================================================================
+   SECTION PROJETS - PAGE ACCUEIL (LOOK UM6P)
+   ========================================================================== */
+body:not(.projects-page) .projects-grid-section {
     padding: 100px 8%;
     background-color: #f4f7f9;
 }
 
-.projects-container {
+body:not(.projects-page) .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 60px 30px; /* Plus d'espace vertical pour laisser la carte monter */
@@ -564,24 +566,24 @@ nav a:hover {
     margin: 0 auto;
 }
 
-.project-item {
+body:not(.projects-page) .project-item {
     display: flex;
     flex-direction: column;
 }
 
-.project-image {
+body:not(.projects-page) .project-image {
     width: 100%;
     height: 300px;
     z-index: 1;
 }
 
-.project-image img {
+body:not(.projects-page) .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.project-info-card {
+body:not(.projects-page) .project-info-card {
     background: var(--white);
     padding: 30px;
     width: 90%;
@@ -594,7 +596,7 @@ nav a:hover {
     justify-content: space-between;
 }
 
-.project-info-card h3 {
+body:not(.projects-page) .project-info-card h3 {
     font-size: 1.1rem;
     color: var(--text-dark);
     line-height: 1.4;
@@ -602,7 +604,7 @@ nav a:hover {
     font-weight: 700;
 }
 
-.card-footer {
+body:not(.projects-page) .card-footer {
     border-top: 1px solid #eee;
     padding-top: 15px;
     display: flex;
@@ -610,7 +612,7 @@ nav a:hover {
     align-items: center;
 }
 
-.read-more-link {
+body:not(.projects-page) .read-more-link {
     font-size: 0.75rem;
     font-weight: 800;
     color: var(--text-dark);
@@ -619,7 +621,7 @@ nav a:hover {
     text-underline-offset: 4px;
 }
 
-.category-tag {
+body:not(.projects-page) .category-tag {
     background: #a7a7a7;
     color: var(--white);
     padding: 6px 12px;
@@ -1854,7 +1856,7 @@ nav a:hover {
     opacity: 0.9; 
 }
 
-/* Grille des Grands Projets - PROTECTION DE L'ACCUEIL ICI */
+/* Grille des Grands Projets */
 .projects-page .projects-grid-section { 
     padding: 80px 0; 
     background-color: #f8f9fa; 
