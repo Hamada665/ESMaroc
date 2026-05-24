@@ -1,9 +1,41 @@
+// ==========================================================================
+// A. FONCTIONS GLOBALES (Accessibles via les attributs HTML onclick)
+// ==========================================================================
+
+// 1. Ouvrir une modale de projet
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "flex"; // Centre la modale proprement
+        document.body.style.overflow = "hidden"; // Bloque le scroll en arrière-plan
+    }
+}
+
+// 2. Fermer une modale de projet
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto"; // Réactive le scroll
+    }
+}
+
+
+// ==========================================================================
+// B. FONCTIONNALITÉS INTERNES (Une fois la page chargée)
+// ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
     
-    // ============================================================
-    // 1. HEADER SCROLL EFFECT
-    // ============================================================
+    // ------------------------------------------------------------
+    // 1. HEADER : EFFET SCROLL (STICKY) & MENU MOBILE
+    // ------------------------------------------------------------
     const header = document.querySelector('header');
+    const burgerMenu = document.querySelector(".burger-menu");
+    const nav = document.querySelector("nav");
+    const dropdownTrigger = document.querySelector(".dropdown-trigger");
+    const dropdown = document.querySelector(".dropdown");
+
+    // Effet Sticky au scroll
     if (header) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -14,18 +46,57 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ============================================================
-    // 2. ANIMATION DES CHIFFRES AU SCROLL (INDEX & À PROPOS)
-    // ============================================================
+    // Menu Mobile (Burger Toggle)
+    if (burgerMenu && nav) {
+        burgerMenu.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            const icon = burgerMenu.querySelector("i");
+            if (icon) {
+                icon.classList.toggle("fa-bars");
+                icon.classList.toggle("fa-times"); // Transforme le burger en "X"
+            }
+        });
+    }
+
+    // Dropdown ESMaroc sur Mobile (au clic)
+    if (dropdownTrigger && dropdown) {
+        dropdownTrigger.addEventListener("click", (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault(); // Évite de suivre le lien '#'
+                dropdown.classList.toggle("open");
+            }
+        });
+    }
+
+    // ------------------------------------------------------------
+    // 2. SÉCURITÉ MODALES : FERMETURE AU CLIC SUR L'OVERLAY
+    // ------------------------------------------------------------
+    window.addEventListener("click", (event) => {
+        const modals = document.querySelectorAll(".project-modal");
+        modals.forEach(modal => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+    });
+
+    // ------------------------------------------------------------
+    // 3. ANIMATION DES CHIFFRES AU SCROLL (INDEX & À PROPOS)
+    // ------------------------------------------------------------
     const counters = document.querySelectorAll('.num');
-    const speed = 200; // Vitesse globale de l'animation
+    const speed = 200; 
+
+    const formatNumber = (num) => {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    };
 
     const startCounter = (counter) => {
         const target = parseInt(counter.getAttribute('data-target'), 10);
         const prefix = counter.getAttribute('data-prefix') || '';
         const suffix = counter.getAttribute('data-suffix') || '';
         
-        if (isNaN(target)) return; // Sécurité
+        if (isNaN(target)) return; 
 
         const updateCount = () => {
             const currentText = counter.innerText;
@@ -49,29 +120,24 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
 
-        // Fonction pour séparer les milliers (ex: 13 100 ou 7 000)
-        const formatNumber = (num) => {
-            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-        };
-
         updateCount();
     };
 
-    // L'Intersection Observer pour déclencher l'effet au scroll
+    // Intersection Observer pour les compteurs
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 startCounter(entry.target);
-                observer.unobserve(entry.target); // Lance l'animation une seule fois
+                observer.unobserve(entry.target); 
             }
         });
-    }, { threshold: 0.1 }); // Sensibilité du scroll
+    }, { threshold: 0.1 });
 
     counters.forEach(counter => observer.observe(counter));
 
-    // ============================================================
-    // 3. ACCORDEON
-    // ============================================================
+    // ------------------------------------------------------------
+    // 4. ACCORDÉONS CLASSIQUES 
+    // ------------------------------------------------------------
     const triggers = document.querySelectorAll('.acc-trigger');
     triggers.forEach(trigger => {
         trigger.addEventListener('click', () => {
@@ -82,29 +148,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-});
-
-
-// ==========================================================================
-// INTERACTION DE L'ACCORDÉON "QUESTIONS CLÉS" (FUSION)
-// ==========================================================================
-document.addEventListener('click', function (e) {
-    // On vérifie si l'élément cliqué est un en-tête d'accordéon ou un de ses enfants
-    const header = e.target.closest('.fusion-header');
-    
-    if (header) {
-        e.preventDefault();
-        const currentItem = header.parentElement;
-        const content = currentItem.querySelector('.fusion-content');
+    // ------------------------------------------------------------
+    // 5. ACCORDÉON SPECIFIQUE "QUESTIONS CLÉS" (FUSION)
+    // ------------------------------------------------------------
+    document.addEventListener('click', function (e) {
+        const accordeonHeader = e.target.closest('.fusion-header');
         
-        // Active ou désactive la classe .active sur l'élément de la grille
-        currentItem.classList.toggle('active');
+        if (accordeonHeader) {
+            e.preventDefault();
+            const currentItem = accordeonHeader.parentElement;
+            const content = currentItem.querySelector('.fusion-content');
+            
+            currentItem.classList.toggle('active');
 
-        // Gère l'animation d'ouverture/fermeture en hauteur
-        if (currentItem.classList.contains('active')) {
-            content.style.maxHeight = content.scrollHeight + "px";
-        } else {
-            content.style.maxHeight = null;
+            if (currentItem.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = null;
+            }
         }
-    }
+    });
+
 });
