@@ -1814,56 +1814,54 @@ body:not(.projects-page) .category-tag {
 }
 
 /* ==========================================================================
-   PAGE PROJETS : PORTFOLIO ULTRA-PREMIUM CYBER-UM6P (OUTSTANDING VERSION)
+   PAGE PROJET : PORTFOLIO LIGHT-PREMIUM (UM6P ARCHITECTURAL STYLE) - OUTSTANDING
    ========================================================================== */
 
-/* Fond ultra-profond style Hub de Recherche / Tech */
+/* Background with a subtle technical grid/dot pattern or crisp light gray */
 .portfolio-layout {
-    background-color: #060b19; 
-    background-image: 
-        radial-gradient(at 0% 0%, rgba(0, 51, 153, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(224, 171, 0, 0.08) 0px, transparent 50%);
-    padding-top: 60px;
-    min-height: 100vh;
-    font-family: 'Montserrat', sans-serif;
+    background-color: #f9fbfd; 
+    background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px);
+    background-size: 30px 30px; /* Subtle academic/tech grid texture */
+    padding-top: 50px;
 }
 
-/* Bannière futuriste épurée */
+/* Crisp & authoritative Hero Section */
 .portfolio-hero {
     text-align: center;
     padding: 100px 20px 60px;
-    background: transparent;
+    background: #ffffff;
+    border-bottom: 2px solid #edf2f7;
+    position: relative;
 }
 
 .portfolio-hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 900;
-    color: #ffffff;
-    letter-spacing: -1px;
-    margin-bottom: 20px;
+    color: #0f2547; /* Elite Deep Navy */
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
     text-transform: uppercase;
-    text-shadow: 0 0 20px rgba(255,255,255,0.1);
 }
 
 .portfolio-hero-content p {
-    font-size: 1.2rem;
-    color: #8fa0dd;
-    max-width: 850px;
-    margin: 0 auto 30px;
+    font-size: 1.15rem;
+    color: #4a5568;
+    max-width: 800px;
+    margin: 0 auto 25px;
     line-height: 1.7;
 }
 
 .portfolio-hero-line {
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, #003399, #e0ab00); /* Dégradé des 2 couleurs ESMaroc */
+    width: 80px;
+    height: 5px;
+    background-color: #003399; /* ESMaroc Blue */
     margin: 0 auto;
-    border-radius: 2px;
+    border-radius: 10px;
 }
 
-/* Grille de cartes */
+/* Grid Layout */
 .portfolio-grid-section {
-    padding: 60px 8% 120px;
+    padding: 80px 8% 120px;
 }
 
 .portfolio-container {
@@ -1874,59 +1872,56 @@ body:not(.projects-page) .category-tag {
     margin: 0 auto;
 }
 
-/* --- LA CARTE "GLASSMORPHISM" ULTRA-FUTURISTE --- */
+/* --- THE OUTSTANDING LIGHT CARD (ARCHITECTURAL & MINIMALIST) --- */
 .logo-project-card {
-    background: rgba(255, 255, 255, 0.03); /* Verre transparent */
-    backdrop-filter: blur(12px); /* Effet flouté derrière le verre */
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 24px; /* Coins super arrondis et modernes */
-    padding: 40px 30px;
+    background: #ffffff;
+    border-radius: 0px; /* Sharp corporate architectural angles instead of round bubbles */
+    padding: 45px 35px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start; /* Left-aligned for that high-end editorial feel */
+    text-align: left;
     text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.08); /* Bordure ultra fine brillante */
-    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border-top: 4px solid #edf2f7; /* Thick accent top bar */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.02);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     height: 100%;
     justify-content: space-between;
     position: relative;
 }
 
-/* Écrin du Logo en apesanteur */
+/* Dynamic Left Border Accent Line on each card */
+.logo-project-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #003399;
+    transition: width 0.4s ease;
+}
+
+/* Clean, open frame for the logo */
 .project-logo-wrapper {
-    height: 160px;
-    width: 100%; 
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 20px;
+    height: 100px; /* Slimmer, cleaner height */
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-    padding: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    position: relative;
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02);
-    transition: all 0.5s ease;
+    justify-content: flex-start; /* Aligned left with the text */
+    margin-bottom: 35px;
+    background: transparent;
 }
 
-/* Le logo lui-même */
 .project-logo-img {
     max-height: 100%;
-    max-width: 100%;
+    max-width: 75%;
     object-fit: containment;
-    filter: drop-shadow(0px 5px 15px rgba(0,0,0,0.3)); /* Donne de la profondeur au logo */
-    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    filter: grayscale(100%) opacity(85%); /* Sleek premium trick: logos start elegant grayscale... */
+    transition: all 0.4s ease;
 }
 
-/* Fix pour les logos sur fond blanc (ex: Upshift) pour qu'ils s'intègrent comme un charme */
-.project-logo-img[src*="upshift"], .project-logo-img[src*="black"] {
-    background: #ffffff;
-    padding: 10px;
-    border-radius: 12px;
-}
-
-/* Texte sous la verrière */
+/* Content Area */
 .project-logo-info {
     width: 100%;
 }
@@ -1934,96 +1929,75 @@ body:not(.projects-page) .category-tag {
 .project-logo-info h3 {
     font-size: 1.4rem;
     font-weight: 800;
-    color: #ffffff;
-    margin: 0 0 10px 0;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    color: #0f2547;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.3px;
 }
 
 .project-institution {
     display: block;
     font-size: 0.85rem;
-    color: #798eb4; /* Couleur de texte électrique douce */
+    color: #718096;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     margin-bottom: 30px;
-    min-height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 35px;
 }
 
-/* Lien "Découvrir" transformé en bouton flottant */
+/* Editorial-style text link button */
 .view-project-link {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.08);
-    padding: 12px 24px;
-    border-radius: 30px;
+    color: #0f2547;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
-    letter-spacing: 0.5px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #e2e8f0; /* Underlined like a premium magazine */
+    width: 100%;
 }
 
-/* --- LE HOVER SPATIAL (EFFET WOW RECHERCHÉ) --- */
+/* --- THE MASTERFUL HOVER EFFECTS --- */
 .logo-project-card:hover {
-    transform: translateY(-12px) scale(1.02); /* La carte s'élève et grossit légèrement */
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(0, 51, 153, 0.6);
-    /* Halo de lumière magique sous la carte */
-    box-shadow: 0 30px 60px rgba(0, 51, 153, 0.25), 0 0 40px rgba(0, 51, 153, 0.1);
+    transform: translateY(-8px);
+    background: #ffffff;
+    border-top-color: #003399; /* Top border lights up corporate blue */
+    box-shadow: 0 30px 60px rgba(15, 37, 71, 0.08);
 }
 
-/* Animation de l'écrin et du logo */
-.logo-project-card:hover .project-logo-wrapper {
-    background: rgba(0, 51, 153, 0.2);
-    border-color: rgba(0, 51, 153, 0.4);
-    box-shadow: 0 0 30px rgba(0, 51, 153, 0.3);
-}
-
+/* ...and bloom into full vibrant color on hover! Solves the awkward logo contrast perfectly */
 .logo-project-card:hover .project-logo-img {
-    transform: scale(1.12) rotate(1deg); /* Le logo pulse en avant */
+    filter: grayscale(0%) opacity(100%);
+    transform: scale(1.03);
 }
 
-/* Bouton au survol */
+.logo-project-card:hover::before {
+    width: 100%; /* Bottom border shoots across */
+}
+
 .logo-project-card:hover .view-project-link {
-    background: #003399; /* Devient bleu éclatant */
-    color: #ffffff;
-    border-color: #003399;
-    box-shadow: 0 0 20px rgba(0, 51, 153, 0.4);
-    gap: 16px;
+    color: #003399;
+    border-bottom-color: #003399; /* Line turns blue */
+    gap: 15px; /* Arrow slides right smoothly */
 }
 
-/* --- VARIATION DE COULEUR OR POUR LES PROJETS AU SURVOL (ASYNCHRONE) --- */
-.logo-project-card:nth-child(even):hover {
-    border-color: rgba(224, 171, 0, 0.6);
-    box-shadow: 0 30px 60px rgba(224, 171, 0, 0.15), 0 0 40px rgba(224, 171, 0, 0.08);
+/* Highlight style for the alternating cards / Conventions card */
+.convention-card-highlight {
+    border-top-color: #e0ab00;
 }
-.logo-project-card:nth-child(even):hover .project-logo-wrapper {
-    background: rgba(224, 171, 0, 0.1);
-    border-color: rgba(224, 171, 0, 0.3);
-    box-shadow: 0 0 30px rgba(224, 171, 0, 0.2);
+.convention-card-highlight:hover {
+    border-top-color: #e0ab00;
 }
-.logo-project-card:nth-child(even):hover .view-project-link {
-    background: #e0ab00; /* Devient Or éclatant */
-    border-color: #e0ab00;
-    box-shadow: 0 0 20px rgba(224, 171, 0, 0.4);
+.convention-card-highlight:hover::before {
+    background-color: #e0ab00;
 }
-
-/* Style de la carte Conventions */
-.convention-icon {
-    font-size: 4rem;
+.convention-card-highlight .convention-icon {
+    font-size: 3.5rem;
+    color: #a0aec0;
+    transition: color 0.4s ease;
+}
+.convention-card-highlight:hover .convention-icon {
     color: #e0ab00;
-    text-shadow: 0 0 15px rgba(224, 171, 0, 0.4);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .portfolio-grid-section { padding: 40px 5%; }
-    .portfolio-hero-content h1 { font-size: 2.2rem; }
 }
