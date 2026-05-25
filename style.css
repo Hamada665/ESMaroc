@@ -1814,26 +1814,26 @@ body:not(.projects-page) .category-tag {
 }
 
 /* ==========================================================================
-   PAGE PROJETS : NOUVEAU PORTFOLIO PROJETS (STYLE LOGOS ÉPURÉS - LOOK UM6P)
+   PAGE PROJETS : PORTFOLIO PROJETS PREMIUM (STYLE REVISITÉ - LOOK UM6P)
    ========================================================================== */
 
 .portfolio-layout {
-    background-color: #fcfdfe; /* Fond très clair et lumineux style UM6P */
+    background-color: #f8fafc; /* Fond ultra-lumineux et pro */
     padding-top: 40px;
 }
 
 /* Bannière épurée */
 .portfolio-hero {
     text-align: center;
-    padding: 80px 20px 40px;
+    padding: 90px 20px 50px;
     background: #ffffff;
-    border-bottom: 1px solid #f0f4f8;
+    border-bottom: 1px solid #eef2f6;
 }
 
 .portfolio-hero-content h1 {
-    font-size: 2.4rem;
-    font-weight: 800;
-    color: #0f2547; /* Bleu nuit très profond */
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #0f2547;
     letter-spacing: -0.5px;
     margin-bottom: 15px;
     text-transform: uppercase;
@@ -1848,9 +1848,9 @@ body:not(.projects-page) .category-tag {
 }
 
 .portfolio-hero-line {
-    width: 60px;
+    width: 70px;
     height: 4px;
-    background-color: #003399; /* Ta couleur corporate principale */
+    background-color: #003399;
     margin: 0 auto;
 }
 
@@ -1867,60 +1867,69 @@ body:not(.projects-page) .category-tag {
     margin: 0 auto;
 }
 
-/* Cartes Logos - Style Premium */
+/* --- LA CARTE PREMIUM (STYLE GÉOMÉTRIQUE UM6P) --- */
 .logo-project-card {
     background: #ffffff;
-    border-radius: 12px; /* Coins très arrondis pour le côté "adorable" */
-    padding: 40px 30px;
+    border-radius: 16px; /* Angles "adorables" et modernes */
+    padding: 35px 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    text-decoration: none; /* Enlève le souligné du lien */
-    box-shadow: 0 10px 30px rgba(15, 37, 71, 0.04); /* Ombre ultra diffuse et discrète */
-    border: 1px solid #f0f4f8;
-    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(15, 37, 71, 0.02); /* Ombre presque invisible de base */
+    border: 1px solid #eef2f6;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Transition ultra fluide */
     height: 100%;
     justify-content: space-between;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Conteneur du logo avec beaucoup de "Whitespace" pour respirer */
+/* L'ÉCRIN DU LOGO (Résout le problème de taille des images) */
 .project-logo-wrapper {
-    height: 140px;
+    height: 150px;
+    width: 150px; /* On force un carré parfait pour l'écrin */
+    background-color: #f1f5f9; /* Fond gris-bleu très doux pour caler le logo */
+    border-radius: 14px; /* Un poil plus arrondi que la carte */
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    margin-bottom: 30px;
-    padding: 10px;
+    margin-bottom: 25px;
+    padding: 20px; /* Espace de sécurité pour que le logo ne colle jamais aux bords */
+    transition: background-color 0.35s ease;
 }
 
 .project-logo-img {
     max-height: 100%;
-    max-width: 85%;
-    object-fit: containment;
-    transition: transform 0.35s ease;
+    max-width: 100%;
+    object-fit: containment; /* Empêche la déformation */
+    mix-blend-mode: multiply; /* Fusionne le blanc des logos avec le fond gris */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Style spécial pour la carte Conventions */
-.convention-card-highlight {
-    background: linear-gradient(145deg, #ffffff, #f7faff);
-    border: 1px dashed #003399;
+.convention-card-highlight .project-logo-wrapper {
+    background-color: rgba(0, 51, 153, 0.05); /* Légère teinte bleue */
 }
 
 .convention-icon {
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: #003399;
-    transition: transform 0.35s ease;
+    transition: transform 0.4s ease;
 }
 
-/* Informations sous le logo */
+/* Informations textuelles */
+.project-logo-info {
+    width: 100%;
+}
+
 .project-logo-info h3 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: #0f2547;
-    margin: 0 0 8px 0;
-    letter-spacing: 0.5px;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.3px;
 }
 
 .project-institution {
@@ -1929,29 +1938,37 @@ body:not(.projects-page) .category-tag {
     color: #8a99ad;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+    min-height: 40px; /* Aligne les liens même si le texte fait 1 ou 2 lignes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .view-project-link {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: #003399;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    transition: gap 0.2s ease, color 0.2s;
+    transition: all 0.3s ease;
 }
 
-/* --- EFFET AU SURVOL (HOVER MAGIC) --- */
+/* --- EFFET AU SURVOL (LA MAGIE UM6P OPERE) --- */
 .logo-project-card:hover {
-    transform: translateY(-8px); /* La carte flotte vers le haut */
-    box-shadow: 0 20px 40px rgba(15, 37, 71, 0.09); /* L'ombre devient plus immersive */
-    border-color: #003399; /* La bordure prend ta couleur clé */
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(15, 37, 71, 0.08); /* L'ombre se déploie */
+    border-color: #003399; /* La carte s'active avec ton bleu */
+}
+
+.logo-project-card:hover .project-logo-wrapper {
+    background-color: #e2e8f0; /* L'écrin s'assombrit légèrement pour faire ressortir le logo */
 }
 
 .logo-project-card:hover .project-logo-img {
-    transform: scale(1.06); /* Le logo s'anime discrètement */
+    transform: scale(1.08); /* Le logo zoome proprement sans baver */
 }
 
 .logo-project-card:hover .convention-icon {
@@ -1959,12 +1976,12 @@ body:not(.projects-page) .category-tag {
 }
 
 .logo-project-card:hover .view-project-link {
-    color: #e0ab00; /* Le lien passe au jaune doré au survol */
-    gap: 12px; /* La petite flèche se décale de manière dynamique */
+    color: #e0ab00; /* Le bouton passe en mode Or */
+    gap: 14px; /* Flèche dynamique */
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     .portfolio-grid-section { padding: 40px 5%; }
-    .portfolio-hero-content h1 { font-size: 1.9rem; }
+    .portfolio-hero-content h1 { font-size: 2rem; }
 }
