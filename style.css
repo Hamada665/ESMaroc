@@ -1837,13 +1837,13 @@ body:not(.projects-page) .category-tag {
 .portfolio-hero-content h1 {
     font-size: 2.8rem;
     font-weight: 900;
-    color: #003399; /* Bleu ESMaroc Officiel */
+    color: #003399; /* Le bleu reste sur le texte */
     letter-spacing: -0.5px;
     margin-bottom: 25px;
     text-transform: uppercase;
     display: inline-block;
     padding-bottom: 15px;
-    border-bottom: 4px solid #003399; /* Ligne de titre élégante et intégrée */
+    border-bottom: 4px solid #e0ab00; /* Ligne en Jaune Doré ESMaroc */
 }
 
 .portfolio-hero-content p {
