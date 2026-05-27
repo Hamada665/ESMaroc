@@ -2058,17 +2058,17 @@ body:not(.projects-page) .category-tag {
 
 
 /* ==========================================================================
-   PAGE ÉVÉNEMENT : TOUTE LA CHARTE GRAPHIQUE DU SALON (JAUNE OR & ANTHRACITE)
+   PAGE ÉVÉNEMENT : VRAIE CHARTE GRAPHIQUE OFFICIELLE (image_332e64.png)
    ========================================================================== */
 
-/* --- 1. HERO HEADER (Le Gris Anthracite Mat Ultra-Corporate du Logo) --- */
+/* --- 1. HERO HEADER DE L'ÉVÉNEMENT (Noir Pur & Élégant) --- */
 .ev-detail-hero {
-    background-color: #212529; /* Le fond sombre/noir du logo pour le contraste */
+    background-color: #000000; /* Le noir franc du texte du logo */
     padding: 140px 20px 110px;
     text-align: center;
     color: #ffffff;
     position: relative;
-    border-bottom: 3px solid #FFCC00; /* Ligne de démarcation Jaune Or */
+    border-bottom: 3px solid #ECA344; /* Ligne de démarcation Orange Abricot officiel */
 }
 
 .ev-detail-hero-content {
@@ -2077,12 +2077,12 @@ body:not(.projects-page) .category-tag {
 }
 
 .ev-badge {
-    background-color: #FFCC00; /* Le Jaune Or éclatant du cercle du logo */
-    color: #212529; /* Écrit en sombre pour un contraste maximal */
+    background-color: #ECA344; /* L'orange abricot doux de la charte */
+    color: #ffffff; /* Écrit en blanc pour rester épuré */
     padding: 6px 18px;
     border-radius: 4px;
     font-size: 0.85rem;
-    font-weight: 800;
+    font-weight: 700;
     text-transform: uppercase;
     display: inline-block;
     margin-bottom: 25px;
@@ -2100,7 +2100,7 @@ body:not(.projects-page) .category-tag {
 .ev-breadcrumb {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.7);
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -2112,18 +2112,18 @@ body:not(.projects-page) .category-tag {
 }
 
 .ev-breadcrumb a:hover {
-    color: #FFCC00;
+    color: #ECA344;
 }
 
 .breadcrumb-sep {
     font-size: 0.75rem;
     margin: 0 10px;
-    color: #FFCC00;
+    color: #ECA344;
 }
 
-/* --- INTERSECTION DU LOGO (Parfaitement blanc et détouré) --- */
+/* --- INTERSECTION MODERNE DU LOGO CIRCULAIRE --- */
 .ev-brand-separator {
-    background-color: #f8fafc; /* Fond gris très clair pour faire ressortir le blanc du logo */
+    background-color: #ffffff;
     position: relative;
     height: 70px;
     display: flex;
@@ -2136,15 +2136,20 @@ body:not(.projects-page) .category-tag {
     position: absolute;
     top: -90px; 
     background: #ffffff;
-    padding: 12px;
+    padding: 15px;
     border-radius: 50%;
-    border: 4px solid #FFCC00; /* Rappel puissant du cercle Jaune Or du logo */
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15); 
+    border: 3px solid #ECA344; /* Rappel exact du cercle extérieur du logo */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08); 
     width: 180px; 
     height: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.ev-logo-salon-container:hover {
+    transform: scale(1.04);
 }
 
 .ev-salon-img {
@@ -2153,15 +2158,15 @@ body:not(.projects-page) .category-tag {
     object-fit: contain;
 }
 
-/* --- 2. RUBAN DES STATS (Inversion des couleurs pour maximiser l'impact) --- */
+/* --- 2. RUBAN DES CHIFFRES CLÉS (Contraste Noir & Ocre Doux) --- */
 .ev-stats-bar {
-    background-color: #212529; /* Fond sombre du logo pour donner du rythme */
+    background-color: #000000; /* Fond noir pour rappeler l'importance de l'événement */
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     padding: 60px 8% 50px;
-    border-bottom: 4px solid #FFCC00; /* Ligne Jaune Or signature */
+    border-bottom: 4px solid #ECA344;
 }
 
 .ev-stat-item {
@@ -2172,22 +2177,21 @@ body:not(.projects-page) .category-tag {
 
 .ev-stat-number {
     display: block;
-    font-size: 3.8rem; /* Encore plus gros, plus d'impact */
-    font-weight: 900;
-    color: #FFCC00; /* Le jaune éclate sur le fond sombre */
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: #ECA344; /* Le orange du logo qui ressort parfaitement */
     margin-bottom: 5px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .ev-stat-label {
     font-size: 0.95rem;
-    color: #ffffff; /* Texte blanc pour une lisibilité parfaite */
-    font-weight: 700;
+    color: #ffffff;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.8px;
 }
 
-/* --- 3. ZONE DOUBLE COLONNE --- */
+/* --- 3. ARCHITECTURE DOUBLE COLONNE --- */
 .ev-detail-container {
     max-width: 1300px;
     margin: 80px auto;
@@ -2200,16 +2204,16 @@ body:not(.projects-page) .category-tag {
 .ev-main-content h2 {
     font-size: 2.2rem;
     margin-bottom: 25px;
-    color: #212529; /* Remplacement du bleu par le noir corporate */
+    color: #000000; /* Titres en noir pur */
     font-weight: 800;
 }
 
 .ev-main-content h2::after {
     content: '';
     display: block;
-    width: 60px;
+    width: 50px;
     height: 4px;
-    background-color: #FFCC00; /* Ligne jaune sous le titre */
+    background-color: #ECA344; /* Ligne signature orange abricot */
     margin-top: 12px;
 }
 
@@ -2220,47 +2224,46 @@ body:not(.projects-page) .category-tag {
 }
 
 .ev-main-content .ev-lead {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    color: #212529;
+    color: #000000;
 }
 
 .ev-quote {
-    border-left: 5px solid #FFCC00; /* Grosse barre jaune */
+    border-left: 5px solid #ECA344;
     padding: 25px 30px;
     margin: 45px 0;
     background-color: #f8fafc;
     font-style: italic;
-    font-size: 1.2rem;
-    color: #212529;
+    font-size: 1.15rem;
+    color: #000000;
 }
 
 .ev-quote cite {
     display: block;
     margin-top: 15px;
-    font-size: 1rem;
-    color: #FFCC00; /* Auteur mis en valeur en Jaune Or sur fond clair (ou #212529 selon ta préférence, ici noir c'est plus lisible, restons sur le noir) */
-    color: #212529;
-    font-weight: 800;
+    font-size: 0.95rem;
+    color: #495057;
+    font-weight: 700;
     font-style: normal;
 }
 
-/* --- SIDEBAR : CARD INFO PRATIQUE (Épurée avec bordure jaune) --- */
+/* --- SIDEBAR : FICHE INFO PRATIQUE (Style Épuré) --- */
 .ev-info-card {
     background-color: #ffffff;
     border: 1px solid #e9ecef;
-    border-top: 4px solid #FFCC00; /* Le haut de la carte s'habille de jaune */
+    border-top: 4px solid #ECA344; /* Sommet de la carte souligné en orange */
     border-radius: 4px;
     padding: 40px;
     position: sticky;
     top: 40px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.03);
 }
 
 .ev-info-card h3 {
     margin-bottom: 30px;
-    font-size: 1.5rem;
-    color: #212529;
+    font-size: 1.4rem;
+    color: #000000;
     font-weight: 800;
     border-bottom: 2px solid #f1f5f9;
     padding-bottom: 15px;
@@ -2281,62 +2284,64 @@ body:not(.projects-page) .category-tag {
 }
 
 .info-icon {
-    color: #FFCC00; /* Icônes en Jaune Or */
-    font-size: 1.3rem;
+    color: #ECA344; /* Icônes en ocre doux */
+    font-size: 1.2rem;
     margin-right: 15px;
     width: 20px;
     text-align: center;
 }
 
 .ev-info-card ul li strong {
-    color: #212529;
+    color: #000000;
 }
 
-/* BOUTON CTA (Contraste maximal : fond noir, texte jaune, et inversement au hover) */
+/* BOUTON D'ACTION (Fidèle à l'esprit minimaliste du reste de ton site) */
 .ev-btn-cta {
     display: block;
-    background-color: #212529; 
-    color: #FFCC00; 
+    background-color: #000000; 
+    color: #ffffff; 
     text-align: center;
     padding: 16px;
     border-radius: 4px;
     text-decoration: none;
-    font-weight: 800;
+    font-weight: 700;
     transition: all 0.3s ease;
     text-transform: uppercase;
     font-size: 0.9rem;
-    border: 2px solid #212529;
+    border: 2px solid #000000;
     letter-spacing: 0.5px;
 }
 
 .ev-btn-cta:hover {
-    background-color: #FFCC00;
-    color: #212529;
-    border-color: #FFCC00;
+    background-color: transparent;
+    color: #ECA344;
+    border-color: #ECA344;
 }
 
-/* --- 4. GALERIE PHOTOS --- */
+/* --- 4. GALERIE PHOTOS INFINIE --- */
 .ev-gallery-section {
     max-width: 1300px;
     margin: 80px auto 120px;
     padding: 0 6%;
 }
 
-.ev-gallery-title text-align: center; margin-bottom: 50px;
+.ev-gallery-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
 
 .ev-gallery-title h2 {
     font-size: 2.2rem;
-    color: #212529;
-    margin: 0;
+    color: #000000;
     font-weight: 800;
 }
 
 .ev-gallery-title h2::after {
     content: '';
     display: block;
-    width: 60px;
+    width: 50px;
     height: 4px;
-    background-color: #FFCC00;
+    background-color: #ECA344;
     margin: 12px auto 15px;
 }
 
@@ -2352,7 +2357,6 @@ body:not(.projects-page) .category-tag {
     height: 220px;
     overflow: hidden;
     border-radius: 4px;
-    border: 1px solid #e9ecef;
 }
 
 .gallery-overlay {
@@ -2361,7 +2365,7 @@ body:not(.projects-page) .category-tag {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(33, 37, 41, 0.85); /* Voile noir transparent de la charte */
+    background-color: rgba(0, 0, 0, 0.8); /* Masque noir pur transparent */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2370,8 +2374,8 @@ body:not(.projects-page) .category-tag {
 }
 
 .gallery-overlay i {
-    color: #FFCC00; /* Icône de zoom en Jaune Or */
-    font-size: 2rem;
+    color: #ECA344;
+    font-size: 1.8rem;
 }
 
 .ev-gallery-item:hover .gallery-overlay {
