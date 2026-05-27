@@ -2245,246 +2245,303 @@ body:not(.projects-page) .category-tag {
 }
 
 /* ==========================================================================
-   PAGE DÉTAIL ÉVÉNEMENT : PREMIUM, COHERENT & AERATED
-   ========================================================================= */
+   PAGE DÉTAIL ÉVÉNEMENT : LOOK CORPORATE BLEU & JAUNE OR (AÉRÉ)
+   ========================================================================== */
 
-/* --- 1. HERO HEADER (Spacious & Readable) --- */
+/* --- 1. HERO HEADER DE L'ÉVÉNEMENT --- */
 .ev-detail-hero {
-    position: relative;
     background-size: cover;
     background-position: center;
-    padding: 250px 20px 180px; /* MODIFIÉ : Massive spacing increase for aeration */
+    padding: 160px 20px 130px;
     text-align: center;
     color: #ffffff;
-    /* Crucial Overlay: Solves the contrast issue with light images */
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+    position: relative;
 }
 .ev-detail-hero-content {
-    max-width: 900px; /* Increased max width slightly for better flow */
+    max-width: 900px;
     margin: 0 auto;
-    z-index: 2; /* Ensures text is above overlay */
+    position: relative;
+    z-index: 2;
 }
 .ev-badge {
-    background-color: #003399; /* Official ESMaroc Blue */
-    color: white;
-    padding: 8px 18px;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 800;
+    background-color: #FFCC00; /* Jaune Or éclatant */
+    color: #0f2547;            /* Écrit en bleu foncé pour un contraste parfait */
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
     text-transform: uppercase;
     display: inline-block;
-    margin-bottom: 25px; /* MODIFIÉ : More space */
-    letter-spacing: 1px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
 }
 .ev-detail-hero h1 {
-    font-size: 3.2rem; /* Increased size to feel more grand */
-    margin-bottom: 25px; /* MODIFIÉ : More space */
-    font-weight: 900;
-    letter-spacing: -1px;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 15px 0;
 }
 .ev-breadcrumb {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 15px;
     font-weight: 500;
 }
 .ev-breadcrumb a {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 .ev-breadcrumb a:hover {
-    color: #003399;
+    color: #FFCC00;
+}
+.breadcrumb-sep {
+    font-size: 0.75rem;
+    margin: 0 8px;
+    color: #FFCC00; /* Séparateurs jaunes */
 }
 
-/* --- 2. RUBAN DES CHIFFRES CLÉS (Coherent & Airy) --- */
+/* --- 2. RUBAN DES CHIFFRES CLÉS (Style Intégré au Site) --- */
 .ev-stats-bar {
-    background-color: #f9fbfd; /* Subtle light gray */
+    background-color: #0f2547; /* Fond Bleu Corporate */
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    padding: 60px 8%; /* MODIFIÉ : Significantly more padding */
-    border-bottom: 2px solid #edf2f7;
-    margin-bottom: 80px; /* Space before main content */
+    padding: 50px 8%;
 }
 .ev-stat-item {
     text-align: center;
-    padding: 20px;
+    padding: 15px;
 }
 .ev-stat-number {
     display: block;
-    font-size: 3rem; /* MODIFIÉ : Larger impact */
-    font-weight: 900;
-    color: #003399; /* Official ESMaroc Blue */
-    margin-bottom: 10px;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #FFCC00; /* Chiffres en Jaune Or */
+    margin-bottom: 5px;
 }
 .ev-stat-label {
-    font-size: 1.1rem;
-    color: #4a5568;
-    font-weight: 600;
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-/* --- 3. DISPOSITION (MAIN / SIDEBAR) (AERATED) --- */
+/* --- 3. ARCHITECTURE DOUBLE COLONNE (Espace Aéré) --- */
 .ev-detail-container {
-    max-width: 1400px; /* Increased max width to align with projects */
-    margin: 80px auto;
+    max-width: 1300px;
+    margin: 100px auto;
     display: grid;
-    grid-template-columns: 8fr 4fr; /* Adjusted ratio for better sidebar feel */
-    gap: 80px; /* MODIFIÉ : Massive increase to solve cramped feel */
-    padding: 0 8%;
+    grid-template-columns: 7.5fr 4.5fr;
+    gap: 80px; /* Grand espace pour éviter le côté serré */
+    padding: 0 6%;
 }
 .ev-main-content h2 {
     font-size: 2rem;
-    margin-bottom: 30px;
-    color: #0f2547; /* Deep ESMaroc Corporate Blue */
-    font-weight: 800;
-    letter-spacing: -0.3px;
+    margin-bottom: 25px;
+    color: #0f2547;
+    font-weight: 700;
+}
+/* Soulignement jaune sous le titre principal */
+.ev-main-content h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #FFCC00;
+    margin-top: 12px;
 }
 .ev-main-content p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #4a5568;
-    margin-bottom: 30px;
+    color: #4f5e71;
+    margin-bottom: 25px;
 }
 .ev-main-content .ev-lead {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: #0f2547;
-    margin-bottom: 40px;
 }
 .ev-quote {
-    border-left: 6px solid #003399; /* Bold coherent accent */
-    padding: 30px; /* MODIFIÉ : More space */
-    margin: 60px 0;
-    background-color: #edf2f7; /* Subtle light gray box */
-    border-radius: 4px;
+    border-left: 4px solid #FFCC00; /* Ligne d'accent Jaune */
+    padding: 25px 30px;
+    margin: 45px 0;
+    background-color: #f4f7fc;
     font-style: italic;
-    font-size: 1.2rem;
-    line-height: 1.7;
-    color: #4a5568;
+    font-size: 1.15rem;
+    position: relative;
+}
+.quote-icon {
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    color: rgba(255, 204, 0, 0.25);
+    font-size: 2.5rem;
 }
 .ev-quote cite {
     display: block;
-    margin-top: 15px;
-    font-size: 1rem;
-    color: #718096;
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #0f2547;
     font-weight: 700;
     font-style: normal;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-/* SIDEBAR (Structure & Space) */
+/* SIDEBAR PRATIQUE (Fiche d'info flottante) */
 .ev-info-card {
     background-color: #ffffff;
-    border: 2px solid #edf2f7; /* Slightly more distinct border */
-    border-radius: 8px;
-    padding: 40px; /* MODIFIÉ : More space inside */
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 40px;
     position: sticky;
-    top: 50px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04); /* Airy shadow */
+    top: 40px; /* Reste fixé élégamment au défilement */
+    box-shadow: 0 10px 30px rgba(15, 37, 71, 0.04);
 }
 .ev-info-card h3 {
     margin-bottom: 30px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #0f2547;
-    font-weight: 800;
-    border-bottom: 3px solid #edf2f7;
+    font-weight: 700;
+    border-bottom: 2px solid #e2e8f0;
     padding-bottom: 15px;
 }
 .ev-info-card ul {
     list-style: none;
     padding: 0;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 .ev-info-card ul li {
     margin-bottom: 20px;
-    font-size: 1.1rem;
-    color: #4a5568;
+    font-size: 1.05rem;
+    color: #4f5e71;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
-/* Coherent Accent line inside info list */
+.info-icon {
+    color: #FFCC00; /* Icônes pro en jaune */
+    font-size: 1.2rem;
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
 .ev-info-card ul li strong {
     color: #0f2547;
-    font-weight: 700;
-    margin-right: 10px;
 }
 .ev-btn-cta {
     display: block;
-    background-color: #003399;
+    background-color: #0f2547;
     color: white;
     text-align: center;
-    padding: 16px;
-    border-radius: 5px;
+    padding: 15px;
+    border-radius: 4px;
     text-decoration: none;
-    font-weight: 800;
+    font-weight: 700;
     transition: all 0.3s ease;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    border: 2px solid #0f2547;
 }
 .ev-btn-cta:hover {
-    background-color: #002266;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 51, 153, 0.2);
+    background-color: transparent;
+    color: #0f2547;
+    border-color: #0f2547;
 }
 
-/* --- 4. LA GALERIE PHOTOS (Aerated Grid) --- */
+/* --- 4. GALERIE SÉCURISÉE ET INFINIE (Taille Standardisée) --- */
 .ev-gallery-section {
-    max-width: 1400px;
-    margin: 120px auto; /* MODIFIÉ : More space */
-    padding: 0 8%;
+    max-width: 1300px;
+    margin: 100px auto 140px;
+    padding: 0 6%;
 }
 .ev-gallery-title {
     text-align: center;
-    margin-bottom: 80px; /* MODIFIÉ : More space */
+    margin-bottom: 50px;
 }
 .ev-gallery-title h2 {
     font-size: 2.2rem;
     color: #0f2547;
-    font-weight: 800;
-    margin-bottom: 15px;
+    margin: 0;
+}
+/* Soulignement jaune sous le titre de la galerie */
+.ev-gallery-title h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #FFCC00;
+    margin: 12px auto 15px;
 }
 .ev-gallery-title p {
-    font-size: 1.1rem;
     color: #718096;
+    font-size: 1.1rem;
 }
-
-/* Aerated Grid */
-.ev-masonry-gallery {
+.ev-standard-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* MODIFIÉ : Slightly larger minimal cell */
-    grid-auto-rows: 250px; /* MODIFIÉ : Taller cells */
-    gap: 25px; /* MODIFIÉ : More space between images */
-    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Calcule l'alignement tout seul */
+    gap: 25px; /* Espace équilibré */
+}
+.ev-gallery-item {
+    position: relative;
+    display: block;
+    height: 210px; /* Force TOUTES les images à avoir strictement la même hauteur */
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.ev-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recadre intelligemment les photos sans les déformer */
+    transition: transform 0.4s ease;
+}
+/* Effet de survol bleu avec icône loupe jaune */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 37, 71, 0.85); /* Masque Bleu Royal transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.gallery-overlay i {
+    color: #FFCC00; /* Icône jaune or */
+    font-size: 1.8rem;
+}
+.ev-gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+.ev-gallery-item:hover img {
+    transform: scale(1.06);
 }
 
-/* Responsive (Air & Space) */
-@media (max-width: 1024px) {
+/* --- 5. RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
     .ev-detail-container {
+        grid-template-columns: 1fr; /* Passage sur une seule colonne */
         gap: 50px;
+    }
+    .ev-info-card {
+        position: static; /* Désactive le mode collant sur tablette/mobile */
     }
 }
 @media (max-width: 768px) {
-    .ev-detail-hero {
-        padding: 180px 20px 120px;
-    }
     .ev-detail-hero h1 {
-        font-size: 2.4rem;
-    }
-    .ev-detail-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 0 5%;
+        font-size: 2.2rem;
     }
     .ev-stats-bar {
-        padding: 40px 5%;
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 20px;
     }
-    .ev-masonry-gallery {
-        grid-template-columns: 1fr;
-        grid-auto-rows: 300px;
+    .ev-standard-gallery {
+        grid-template-columns: 1fr; /* Une seule image par ligne sur mobile pour le confort visuel */
+        grid-auto-rows: 240px;
     }
 }
