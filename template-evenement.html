@@ -4,23 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nom de l'Événement - ESMaroc</title>
+    <!-- Ton fichier CSS unique -->
     <link rel="stylesheet" href="style.css">
+    <!-- CDN Font Awesome pour les vraies icônes pro (sans émojis) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CDN CSS de Lightbox2 pour le carrousel au clic -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
 </head>
 <body>
 
-    <header class="ev-detail-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200');">
+    <nav class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">ES<span>Maroc</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="evenements.html" class="active">Événements</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==========================================================================
+       HERO HEADER (Aéré, contrasté et corporate)
+       ========================================================================== -->
+    <header class="ev-detail-hero" style="background-image: linear-gradient(rgba(15, 37, 71, 0.85), rgba(15, 37, 71, 0.7)), url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200');">
         <div class="ev-detail-hero-content">
             <span class="ev-badge">Recrutement & Business</span>
             <h1>Le Salon de l'Emploi ESMaroc</h1>
+            <div class="yellow-bar-center"></div>
             <nav class="ev-breadcrumb">
-                <a href="index.html">Accueil</a> &gt; 
-                <a href="evenements.html">Événements</a> &gt; 
+                <a href="index.html">Accueil</a> <i class="fa-solid fa-chevron-right breadcrumb-sep"></i> 
+                <a href="evenements.html">Événements</a> <i class="fa-solid fa-chevron-right breadcrumb-sep"></i> 
                 <span>Salon de l'Emploi</span>
             </nav>
         </div>
     </header>
 
+    <!-- ==========================================================================
+       RUBAN DES CHIFFRES CLÉS (Look harmonisé avec le site)
+       ========================================================================== -->
     <section class="ev-stats-bar">
         <div class="ev-stat-item">
             <span class="ev-stat-number">100+</span>
@@ -36,8 +61,12 @@
         </div>
     </section>
 
+    <!-- ==========================================================================
+       CORPS DE PAGE (Zone de texte + Fiche pratique à droite)
+       ========================================================================== -->
     <main class="ev-detail-container">
         
+        <!-- Colonne Gauche : Contenu textuel -->
         <article class="ev-main-content">
             <h2>À propos de l'événement</h2>
             <p class="ev-lead">Le Salon de l'Emploi d'ESMaroc est le rendez-vous incontournable pour connecter les jeunes talents et les structures de l'économie sociale et solidaire avec le marché du travail.</p>
@@ -45,6 +74,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             
             <blockquote class="ev-quote">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
                 "Ce salon n'est pas juste un lieu de rencontre, c'est un véritable tremplin professionnel pour l'écosystème entrepreneurial des jeunes au Maroc."
                 <cite>— Responsable de pôle, ESMaroc</cite>
             </blockquote>
@@ -52,13 +82,23 @@
             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </article>
 
+        <!-- Colonne Droite : Fiche pratique (Sidebar) -->
         <aside class="ev-sidebar">
             <div class="ev-info-card">
                 <h3>Infos Pratiques</h3>
                 <ul>
-                    <li><strong>📅 Fréquence :</strong> Annuel (Chaque Octobre)</li>
-                    <li><strong>📍 Lieu :</strong> Hybride (Rabat / En ligne)</li>
-                    <li><strong>🤝 Partenaires :</strong> ANAPEC, UNICEF, GIZ</li>
+                    <li>
+                        <i class="fa-solid fa-calendar-days info-icon"></i>
+                        <div><strong>Fréquence :</strong> Annuel (Chaque Octobre)</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot info-icon"></i>
+                        <div><strong>Lieu :</strong> Hybride (Rabat / En ligne)</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-handshake info-icon"></i>
+                        <div><strong>Partenaires :</strong> ANAPEC, UNICEF, GIZ</div>
+                    </li>
                 </ul>
                 <a href="#contact" class="ev-btn-cta">Devenir Partenaire</a>
             </div>
@@ -66,35 +106,59 @@
 
     </main>
 
+    <!-- ==========================================================================
+       GALERIE PHOTOS STANDARDISÉE (Ajoute autant de photos que tu veux !)
+       ========================================================================== -->
     <section class="ev-gallery-section">
         <div class="ev-gallery-title">
             <h2>Retour en images</h2>
+            <div class="yellow-bar-center"></div>
             <p>Découvrez les moments forts et l'énergie de notre dernière édition</p>
         </div>
 
-        <div class="ev-masonry-gallery">
-            <a href="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800" data-lightbox="ev-gallery" class="ev-grid-item span-2">
-                <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=600" alt="Atelier collaboratif">
+        <!-- Grille uniforme et infinie. Toutes les images feront la même taille sans casser -->
+        <div class="ev-standard-gallery">
+            
+            <a href="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800" data-lightbox="ev-album" class="ev-gallery-item">
+                <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=600" alt="Atelier ESMaroc">
+                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
             </a>
 
-            <a href="https://images.unsplash.com/photo-1531535934027-667f687cede5?q=80&w=800" data-lightbox="ev-gallery" class="ev-grid-item">
-                <img src="https://images.unsplash.com/photo-1531535934027-667f687cede5?q=80&w=600" alt="Présentation projet">
+            <a href="https://images.unsplash.com/photo-1531535934027-667f687cede5?q=80&w=800" data-lightbox="ev-album" class="ev-gallery-item">
+                <img src="https://images.unsplash.com/photo-1531535934027-667f687cede5?q=80&w=600" alt="Présentation ESMaroc">
+                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
             </a>
 
-            <a href="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800" data-lightbox="ev-gallery" class="ev-grid-item row-2">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600" alt="Échanges d'équipe">
+            <a href="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800" data-lightbox="ev-album" class="ev-gallery-item">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=600" alt="Conférence ESMaroc">
+                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
             </a>
 
-            <a href="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800" data-lightbox="ev-gallery" class="ev-grid-item">
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=600" alt="Conférence plénière">
+            <a href="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800" data-lightbox="ev-album" class="ev-gallery-item">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=600" alt="Pitch Événement">
+                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
             </a>
+            
+            <!-- Tu peux dupliquer ce bloc <a> autant de fois que tu veux ici, la grille restera parfaite -->
 
-            <a href="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800" data-lightbox="ev-gallery" class="ev-grid-item span-2">
-                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=600" alt="Session de pitch">
-            </a>
         </div>
     </section>
 
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 ESMaroc - Écosystème Entrepreneurial et de l'Employabilité. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts pour faire fonctionner le carrousel Lightbox au clic -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
+    <script>
+        // Configuration de la Lightbox pour avoir les flèches et un affichage pro
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true, // Permet de boucler à l'infini (gauche/droite)
+          'albumLabel': "Image %1 sur %2"
+        })
+    </script>
 </body>
 </html>
