@@ -2058,201 +2058,14 @@ body:not(.projects-page) .category-tag {
 
 
 /* ==========================================================================
-   PAGE ÉVÉNEMENTS COMPLÈTE : ISOLATION ET DESIGN FLOTTANT SÉCURISÉ
+   PAGE DÉTAIL ÉVÉNEMENT : VERSION ÉPURÉE & HARMONISÉE (STYLE SALON)
    ========================================================================== */
 
-.events-layout {
-    background-color: #f9fbfd; 
-    background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px);
-    background-size: 30px 30px;
-    padding-top: 50px;
-}
-
-/* Hero Section */
-.events-hero {
-    text-align: center;
-    padding: 100px 20px 60px;
-    background: #ffffff;
-    border-bottom: 2px solid #edf2f7;
-}
-
-.events-hero-content h1 {
-    font-size: 2.8rem;
-    font-weight: 900;
-    color: #003399;
-    letter-spacing: -0.5px;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    display: inline-block;
-    padding-bottom: 15px;
-    border-bottom: 4px solid #e0ab00; /* Jaune doré ESMaroc */
-}
-
-.events-hero-content p {
-    font-size: 1.15rem;
-    color: #4a5568;
-    max-width: 900px;
-    margin: 0 auto;
-    line-height: 1.7;
-}
-
-/* Titres de Groupes */
-.events-group-title {
-    text-align: center;
-    font-size: 1.8rem;
-    color: #0f2547;
-    font-weight: 800;
-    margin: 60px 0 20px;
-    position: relative;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.events-grid-section {
-    padding: 20px 8% 60px;
-}
-
-.events-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 50px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-/* --- STRUCTURE PROTEGÉE DES CARTES DE LA PAGE DÉDIÉE (page-ev-) --- */
-.page-ev-card {
-    position: relative;
-    height: 520px;
-    background: #ffffff;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-decoration: none;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-}
-
-.page-ev-image-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 65%;
-    overflow: hidden;
-}
-
-.page-ev-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* --- LA BOÎTE BLANCHE FLOTTANTE SÉCURISÉE --- */
-.page-ev-floating-box {
-    position: relative;
-    background: #ffffff;
-    width: 92%;
-    margin: 0 auto 20px auto;
-    padding: 25px 20px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 240px;
-    z-index: 2;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.page-ev-floating-box h3 {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: #003399;
-    line-height: 1.4;
-    margin: 0 0 10px 0;
-    text-transform: uppercase;
-}
-
-.page-ev-snippet {
-    font-size: 0.9rem;
-    color: #4a5568;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* Pied de la boite flottante */
-.page-ev-footer-action {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding-top: 12px;
-    border-top: 1px solid #edf2f7;
-}
-
-.page-ev-read-more {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #0f2547;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding-bottom: 2px;
-    border-bottom: 2px solid #e0ab00;
-    transition: all 0.3s ease;
-}
-
-.page-ev-badge {
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: #ffffff;
-    background: #718096;
-    padding: 5px 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-radius: 2px;
-}
-
-/* Badges couleurs */
-.badge-recrutement { background-color: #e53e3e; }
-.badge-accompagnement { background-color: #3182ce; }
-.badge-formation { background-color: #38a169; }
-.badge-strategie { background-color: #805ad5; }
-
-/* --- HOVER EFFECTS SPÉCIFIQUES --- */
-.page-ev-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(15, 37, 71, 0.08);
-}
-
-.page-ev-card:hover .page-ev-image-wrapper img {
-    transform: scale(1.06);
-}
-
-.page-ev-card:hover .page-ev-floating-box {
-    transform: translateY(-5px);
-}
-
-.page-ev-card:hover .page-ev-read-more {
-    color: #003399;
-    border-bottom-color: #003399;
-    padding-right: 4px;
-}
-
-/* ==========================================================================
-   PAGE DÉTAIL ÉVÉNEMENT : LOOK CORPORATE BLEU & JAUNE OR (AÉRÉ)
-   ========================================================================== */
-
-/* --- 1. HERO HEADER DE L'ÉVÉNEMENT --- */
+/* --- 1. HERO HEADER DE L'ÉVÉNEMENT (Inspiré de image_31d1c3.png) --- */
 .ev-detail-hero {
     background-size: cover;
     background-position: center;
-    padding: 160px 20px 130px;
+    padding: 140px 20px 110px;
     text-align: center;
     color: #ffffff;
     position: relative;
@@ -2263,9 +2076,24 @@ body:not(.projects-page) .category-tag {
     position: relative;
     z-index: 2;
 }
+
+/* Conteneur pour le logo spécifique de l'événement (image_31ce24.png) */
+.ev-hero-logo-wrapper {
+    margin-bottom: 25px;
+}
+.ev-hero-logo {
+    max-width: 140px; /* Taille idéale pour rester discret et élégant */
+    height: auto;
+    background-color: #ffffff; /* Fond blanc pour faire ressortir le logo circulaire */
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+}
+
 .ev-badge {
-    background-color: #FFCC00; /* Jaune Or éclatant */
-    color: #0f2547;            /* Écrit en bleu foncé pour un contraste parfait */
+    background-color: #FFCC00; /* Le Jaune Or du logo */
+    color: #0f2547;
     padding: 6px 16px;
     border-radius: 4px;
     font-size: 0.85rem;
@@ -2280,15 +2108,16 @@ body:not(.projects-page) .category-tag {
     font-weight: 800;
     color: #ffffff;
     margin: 0 0 15px 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 .ev-breadcrumb {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.8);
     margin-top: 15px;
     font-weight: 500;
 }
 .ev-breadcrumb a {
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -2298,17 +2127,18 @@ body:not(.projects-page) .category-tag {
 .breadcrumb-sep {
     font-size: 0.75rem;
     margin: 0 8px;
-    color: #FFCC00; /* Séparateurs jaunes */
+    color: #FFCC00;
 }
 
-/* --- 2. RUBAN DES CHIFFRES CLÉS (Style Intégré au Site) --- */
+/* --- 2. RUBAN DES CHIFFRES CLÉS (Style adouci sur fond blanc/gris neutre) --- */
 .ev-stats-bar {
-    background-color: #0f2547; /* Fond Bleu Corporate */
+    background-color: #ffffff; /* Fini le gros bloc bleu lourd, place à la clarté */
+    border-bottom: 1px solid #e2e8f0;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    padding: 50px 8%;
+    padding: 40px 8%;
 }
 .ev-stat-item {
     text-align: center;
@@ -2316,26 +2146,26 @@ body:not(.projects-page) .category-tag {
 }
 .ev-stat-number {
     display: block;
-    font-size: 3rem;
+    font-size: 3.2rem;
     font-weight: 800;
-    color: #FFCC00; /* Chiffres en Jaune Or */
+    color: #FFCC00; /* Rappel Jaune Or */
     margin-bottom: 5px;
 }
 .ev-stat-label {
-    font-size: 1rem;
-    color: #ffffff;
-    font-weight: 500;
+    font-size: 0.95rem;
+    color: #4f5e71;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-/* --- 3. ARCHITECTURE DOUBLE COLONNE (Espace Aéré) --- */
+/* --- 3. ARCHITECTURE DOUBLE COLONNE ÉPURÉE --- */
 .ev-detail-container {
     max-width: 1300px;
-    margin: 100px auto;
+    margin: 80px auto;
     display: grid;
     grid-template-columns: 7.5fr 4.5fr;
-    gap: 80px; /* Grand espace pour éviter le côté serré */
+    gap: 80px;
     padding: 0 6%;
 }
 .ev-main-content h2 {
@@ -2344,11 +2174,11 @@ body:not(.projects-page) .category-tag {
     color: #0f2547;
     font-weight: 700;
 }
-/* Soulignement jaune sous le titre principal */
+/* Ligne de soulignement subtile */
 .ev-main-content h2::after {
     content: '';
     display: block;
-    width: 50px;
+    width: 45px;
     height: 4px;
     background-color: #FFCC00;
     margin-top: 12px;
@@ -2363,12 +2193,13 @@ body:not(.projects-page) .category-tag {
     font-size: 1.25rem;
     font-weight: 600;
     color: #0f2547;
+    line-height: 1.7;
 }
 .ev-quote {
-    border-left: 4px solid #FFCC00; /* Ligne d'accent Jaune */
+    border-left: 4px solid #FFCC00;
     padding: 25px 30px;
     margin: 45px 0;
-    background-color: #f4f7fc;
+    background-color: #f8fafc; /* Fond ultra léger */
     font-style: italic;
     font-size: 1.15rem;
     position: relative;
@@ -2377,7 +2208,7 @@ body:not(.projects-page) .category-tag {
     position: absolute;
     top: -15px;
     left: 15px;
-    color: rgba(255, 204, 0, 0.25);
+    color: rgba(255, 204, 0, 0.2);
     font-size: 2.5rem;
 }
 .ev-quote cite {
@@ -2389,22 +2220,22 @@ body:not(.projects-page) .category-tag {
     font-style: normal;
 }
 
-/* SIDEBAR PRATIQUE (Fiche d'info flottante) */
+/* SIDEBAR CARD (Harmonisée avec les cartes de ton portefeuille projets) */
 .ev-info-card {
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 40px;
     position: sticky;
-    top: 40px; /* Reste fixé élégamment au défilement */
-    box-shadow: 0 10px 30px rgba(15, 37, 71, 0.04);
+    top: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); /* Ombre légère non-agressive */
 }
 .ev-info-card h3 {
     margin-bottom: 30px;
     font-size: 1.4rem;
     color: #0f2547;
     font-weight: 700;
-    border-bottom: 2px solid #e2e8f0;
+    border-bottom: 2px solid #f1f5f9;
     padding-bottom: 15px;
 }
 .ev-info-card ul {
@@ -2420,7 +2251,7 @@ body:not(.projects-page) .category-tag {
     align-items: center;
 }
 .info-icon {
-    color: #FFCC00; /* Icônes pro en jaune */
+    color: #FFCC00;
     font-size: 1.2rem;
     margin-right: 15px;
     width: 20px;
@@ -2431,8 +2262,8 @@ body:not(.projects-page) .category-tag {
 }
 .ev-btn-cta {
     display: block;
-    background-color: #0f2547;
-    color: white;
+    background-color: #FFCC00; /* Bouton Jaune pour créer le point focal */
+    color: #0f2547;
     text-align: center;
     padding: 15px;
     border-radius: 4px;
@@ -2441,18 +2272,17 @@ body:not(.projects-page) .category-tag {
     transition: all 0.3s ease;
     text-transform: uppercase;
     font-size: 0.9rem;
-    border: 2px solid #0f2547;
+    border: 2px solid #FFCC00;
 }
 .ev-btn-cta:hover {
     background-color: transparent;
-    color: #0f2547;
-    border-color: #0f2547;
+    color: #FFCC00;
 }
 
-/* --- 4. GALERIE SÉCURISÉE ET INFINIE (Taille Standardisée) --- */
+/* --- 4. GALERIE PHOTOS INFRASTRUCTURE PORTFOLIO --- */
 .ev-gallery-section {
     max-width: 1300px;
-    margin: 100px auto 140px;
+    margin: 80px auto 120px;
     padding: 0 6%;
 }
 .ev-gallery-title {
@@ -2464,11 +2294,10 @@ body:not(.projects-page) .category-tag {
     color: #0f2547;
     margin: 0;
 }
-/* Soulignement jaune sous le titre de la galerie */
 .ev-gallery-title h2::after {
     content: '';
     display: block;
-    width: 50px;
+    width: 45px;
     height: 4px;
     background-color: #FFCC00;
     margin: 12px auto 15px;
@@ -2479,31 +2308,30 @@ body:not(.projects-page) .category-tag {
 }
 .ev-standard-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Calcule l'alignement tout seul */
-    gap: 25px; /* Espace équilibré */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
 }
 .ev-gallery-item {
     position: relative;
     display: block;
-    height: 210px; /* Force TOUTES les images à avoir strictement la même hauteur */
+    height: 210px;
     overflow: hidden;
     border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 .ev-gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Recadre intelligemment les photos sans les déformer */
+    object-fit: cover;
     transition: transform 0.4s ease;
 }
-/* Effet de survol bleu avec icône loupe jaune */
 .gallery-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(15, 37, 71, 0.85); /* Masque Bleu Royal transparent */
+    background-color: rgba(15, 37, 71, 0.7); /* Voile transparent harmonisé */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2511,24 +2339,26 @@ body:not(.projects-page) .category-tag {
     transition: opacity 0.3s ease;
 }
 .gallery-overlay i {
-    color: #FFCC00; /* Icône jaune or */
+    color: #FFCC00;
     font-size: 1.8rem;
 }
 .ev-gallery-item:hover .gallery-overlay {
     opacity: 1;
 }
 .ev-gallery-item:hover img {
-    transform: scale(1.06);
+    transform: scale(1.05);
 }
 
 /* --- 5. RESPONSIVE DESIGN --- */
 @media (max-width: 992px) {
     .ev-detail-container {
-        grid-template-columns: 1fr; /* Passage sur une seule colonne */
+        grid-template-columns: 1fr;
         gap: 50px;
+        margin: 50px auto;
     }
     .ev-info-card {
-        position: static; /* Désactive le mode collant sur tablette/mobile */
+        position: static;
+        padding: 30px;
     }
 }
 @media (max-width: 768px) {
@@ -2537,11 +2367,10 @@ body:not(.projects-page) .category-tag {
     }
     .ev-stats-bar {
         flex-direction: column;
-        gap: 30px;
-        padding: 40px 20px;
+        gap: 25px;
+        padding: 30px 20px;
     }
-    .ev-standard-gallery {
-        grid-template-columns: 1fr; /* Une seule image par ligne sur mobile pour le confort visuel */
-        grid-auto-rows: 240px;
+    .ev-stat-number {
+        font-size: 2.6rem;
     }
 }
