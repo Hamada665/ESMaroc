@@ -2243,3 +2243,231 @@ body:not(.projects-page) .category-tag {
     border-bottom-color: #003399;
     padding-right: 4px;
 }
+
+/* ==========================================================================
+   PAGE DÉTAIL ÉVÉNEMENT & GALERIE ASYMÉTRIQUE
+   ========================================================================== */
+
+/* --- 1. HERO HEADER --- */
+.ev-detail-hero {
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: #ffffff;
+}
+.ev-detail-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.ev-badge {
+    background-color: #0056b3; /* Remplace par la couleur primaire d'ESMaroc */
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.ev-detail-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.ev-breadcrumb {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+.ev-breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.ev-breadcrumb a:hover {
+    color: #0056b3;
+}
+
+/* --- 2. RUBAN DES CHIFFRES CLÉS --- */
+.ev-stats-bar {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+.ev-stat-item {
+    text-align: center;
+    padding: 10px 20px;
+}
+.ev-stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0056b3; /* Couleur ESMaroc */
+}
+.ev-stat-label {
+    font-size: 0.95rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* --- 3. DISPOSITION DE LA PAGE (MAIN / SIDEBAR) --- */
+.ev-detail-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    gap: 40px;
+    padding: 0 20px;
+}
+.ev-main-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+.ev-main-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+}
+.ev-main-content .ev-lead {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #222;
+}
+.ev-quote {
+    border-left: 5px solid #0056b3;
+    padding: 15px 20px;
+    margin: 30px 0;
+    background-color: #f1f7fd;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+.ev-quote cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* SIDEBAR */
+.ev-info-card {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 30px;
+    position: sticky;
+    top: 20px; /* Reste fixé au scroll ! */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.ev-info-card h3 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+}
+.ev-info-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+.ev-info-card ul li {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #4a4a4a;
+}
+.ev-btn-cta {
+    display: block;
+    background-color: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.ev-btn-cta:hover {
+    background-color: #004085;
+}
+
+/* --- 4. LA GALERIE PHOTOS ASYMÉTRIQUE --- */
+.ev-gallery-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+.ev-gallery-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.ev-gallery-title h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.ev-gallery-title p {
+    color: #6c757d;
+}
+
+/* LA GRILLE MAGIQUE CSS GRID */
+.ev-masonry-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 15px;
+    grid-auto-flow: dense; /* Bouche les trous automatiquement */
+}
+.ev-grid-item {
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+    display: block;
+}
+.ev-grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recadre proprement sans déformer */
+    transition: transform 0.5s ease;
+}
+/* Effet zoom ultra-satisfaisant au survol */
+.ev-grid-item:hover img {
+    transform: scale(1.08);
+}
+
+/* Les classes asymétriques */
+.span-2 {
+    grid-column: span 2;
+}
+.row-2 {
+    grid-row: span 2;
+}
+
+/* --- 5. RESPONSIVE DESIGN (MOBILE-FRIENDLY) --- */
+@media (max-width: 768px) {
+    .ev-detail-hero h1 {
+        font-size: 2rem;
+    }
+    .ev-detail-container {
+        grid-template-columns: 1fr; /* On passe sur une seule colonne */
+        gap: 30px;
+    }
+    .ev-stats-bar {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .ev-masonry-gallery {
+        grid-template-columns: 1fr; /* La galerie s'empile verticalement sur mobile */
+        grid-auto-rows: 250px;
+    }
+    .span-2, .row-2 {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
