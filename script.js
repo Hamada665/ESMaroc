@@ -170,3 +170,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+/* ==========================================================================
+   CONFIGURATION DE LA LIGHTBOX (GALERIE DÉTAIL ÉVÉNEMENT)
+   ========================================================================== */
+if (typeof lightbox !== 'undefined') {
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true, // Permet de boucler indéfiniment (gauche <-> droite)
+        'albumLabel': "Image %1 sur %2",
+        'fadeDuration': 300,
+        'imageFadeDuration': 300
+    });
+}
