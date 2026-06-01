@@ -2859,10 +2859,10 @@ body:not(.projects-page) .category-tag {
 .cafe-logo-img {
     width: 100% !important;
     height: 100% !important;
-    padding: 10px 15px !important; 
-    object-fit: contain !important;
+    padding: 0 !important; /* On enlève le gros espace interne qui réduisait l'image */
+    object-fit: cover !important; /* Force l'image à remplir tout le rectangle sombre */
+    object-position: center !important; /* Centre l'image parfaitement */
 }
-
 /* --- BARRE DES STATS --- */
 .cafe-stats-bar {
     background-color: #fafafa !important;
