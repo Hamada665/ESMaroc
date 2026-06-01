@@ -2385,17 +2385,17 @@ body:not(.projects-page) .category-tag {
 
 
 /* ==========================================================================
-   PAGE ÉVÉNEMENT : VRAIE CHARTE GRAPHIQUE OFFICIELLE (image_332e64.png)
+   PAGE ÉVÉNEMENT : CHARTE GRAPHIQUE INVERSÉE (Chaleureuse & Impactante)
    ========================================================================== */
 
-/* --- 1. HERO HEADER DE L'ÉVÉNEMENT (Noir Pur & Élégant) --- */
+/* --- 1. HERO HEADER DE L'ÉVÉNEMENT (Dominante Orange Abricot) --- */
 .ev-detail-hero {
-    background-color: #000000; /* Le noir franc du texte du logo */
+    background-color: #ECA344; /* Inversé : L'orange abricot prend les commandes */
     padding: 140px 20px 110px;
     text-align: center;
-    color: #ffffff;
+    color: #000000; /* Inversé : Texte en noir pour un contraste maximal sur l'orange */
     position: relative;
-    border-bottom: 3px solid #ECA344; /* Ligne de démarcation Orange Abricot officiel */
+    border-bottom: 3px solid #000000; /* Ligne de démarcation noire */
 }
 
 .ev-detail-hero-content {
@@ -2404,8 +2404,8 @@ body:not(.projects-page) .category-tag {
 }
 
 .ev-badge {
-    background-color: #ECA344; /* L'orange abricot doux de la charte */
-    color: #ffffff; /* Écrit en blanc pour rester épuré */
+    background-color: #000000; /* Inversé : Badge noir */
+    color: #ffffff; /* Écrit en blanc pour ressortir sur le noir */
     padding: 6px 18px;
     border-radius: 4px;
     font-size: 0.85rem;
@@ -2419,33 +2419,33 @@ body:not(.projects-page) .category-tag {
 .ev-detail-hero h1 {
     font-size: 3.2rem;
     font-weight: 800;
-    color: #ffffff;
+    color: #000000; /* Inversé : Titre en noir pur */
     margin: 0 0 20px 0;
     letter-spacing: -0.5px;
 }
 
 .ev-breadcrumb {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.7); /* Mi-noir transparent pour le fil d'Ariane */
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .ev-breadcrumb a {
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .ev-breadcrumb a:hover {
-    color: #ECA344;
+    color: #ffffff; /* Au survol, le lien passe au blanc pour contraster */
 }
 
 .breadcrumb-sep {
     font-size: 0.75rem;
     margin: 0 10px;
-    color: #ECA344;
+    color: #000000;
 }
 
 /* --- INTERSECTION MODERNE DU LOGO CIRCULAIRE --- */
@@ -2465,7 +2465,7 @@ body:not(.projects-page) .category-tag {
     background: #ffffff;
     padding: 15px;
     border-radius: 50%;
-    border: 3px solid #ECA344; /* Rappel exact du cercle extérieur du logo */
+    border: 3px solid #ECA344; /* Reste inchangé pour correspondre parfaitement au cercle extérieur de ton logo */
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08); 
     width: 180px; 
     height: 180px;
@@ -2485,15 +2485,15 @@ body:not(.projects-page) .category-tag {
     object-fit: contain;
 }
 
-/* --- 2. RUBAN DES CHIFFRES CLÉS (Contraste Noir & Ocre Doux) --- */
+/* --- 2. RUBAN DES CHIFFRES CLÉS (Inversé : Fond Orange & Chiffres Noirs) --- */
 .ev-stats-bar {
-    background-color: #000000; /* Fond noir pour rappeler l'importance de l'événement */
+    background-color: #ECA344; /* Inversé : Fond orange abricot */
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     padding: 60px 8% 50px;
-    border-bottom: 4px solid #ECA344;
+    border-bottom: 4px solid #000000; /* Ligne du bas noire */
 }
 
 .ev-stat-item {
@@ -2506,13 +2506,13 @@ body:not(.projects-page) .category-tag {
     display: block;
     font-size: 3.6rem;
     font-weight: 800;
-    color: #ECA344; /* Le orange du logo qui ressort parfaitement */
+    color: #000000; /* Inversé : Les compteurs s'affichent fièrement en noir */
     margin-bottom: 5px;
 }
 
 .ev-stat-label {
     font-size: 0.95rem;
-    color: #ffffff;
+    color: #ffffff; /* Blanc pour une lisibilité parfaite sur le fond orange */
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.8px;
@@ -2531,7 +2531,7 @@ body:not(.projects-page) .category-tag {
 .ev-main-content h2 {
     font-size: 2.2rem;
     margin-bottom: 25px;
-    color: #000000; /* Titres en noir pur */
+    color: #000000;
     font-weight: 800;
 }
 
@@ -2540,7 +2540,7 @@ body:not(.projects-page) .category-tag {
     display: block;
     width: 50px;
     height: 4px;
-    background-color: #ECA344; /* Ligne signature orange abricot */
+    background-color: #ECA344; /* La ligne de signature reste orange pour l'identité */
     margin-top: 12px;
 }
 
@@ -2575,11 +2575,11 @@ body:not(.projects-page) .category-tag {
     font-style: normal;
 }
 
-/* --- SIDEBAR : FICHE INFO PRATIQUE (Style Épuré) --- */
+/* --- SIDEBAR : FICHE INFO PRATIQUE --- */
 .ev-info-card {
     background-color: #ffffff;
     border: 1px solid #e9ecef;
-    border-top: 4px solid #ECA344; /* Sommet de la carte souligné en orange */
+    border-top: 4px solid #ECA344;
     border-radius: 4px;
     padding: 40px;
     position: sticky;
@@ -2611,7 +2611,7 @@ body:not(.projects-page) .category-tag {
 }
 
 .info-icon {
-    color: #ECA344; /* Icônes en ocre doux */
+    color: #ECA344;
     font-size: 1.2rem;
     margin-right: 15px;
     width: 20px;
@@ -2622,11 +2622,11 @@ body:not(.projects-page) .category-tag {
     color: #000000;
 }
 
-/* BOUTON D'ACTION (Fidèle à l'esprit minimaliste du reste de ton site) */
+/* BOUTON D'ACTION PRINCIPAL (Passe en Orange pour un effet "Click" irrésistible) */
 .ev-btn-cta {
     display: block;
-    background-color: #000000; 
-    color: #ffffff; 
+    background-color: #ECA344; /* Inversé : Bouton Orange */
+    color: #000000; /* Texte écrit en noir pour être ultra-lisible */
     text-align: center;
     padding: 16px;
     border-radius: 4px;
@@ -2635,14 +2635,14 @@ body:not(.projects-page) .category-tag {
     transition: all 0.3s ease;
     text-transform: uppercase;
     font-size: 0.9rem;
-    border: 2px solid #000000;
+    border: 2px solid #ECA344;
     letter-spacing: 0.5px;
 }
 
 .ev-btn-cta:hover {
     background-color: transparent;
-    color: #ECA344;
-    border-color: #ECA344;
+    color: #000000;
+    border-color: #000000; /* Devient noir élégant au survol */
 }
 
 /* --- 4. GALERIE PHOTOS INFINIE --- */
@@ -2692,7 +2692,7 @@ body:not(.projects-page) .category-tag {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Masque noir pur transparent */
+    background-color: rgba(236, 163, 68, 0.9); /* Inversé : Le masque de survol des photos est maintenant orange translucide */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2701,7 +2701,7 @@ body:not(.projects-page) .category-tag {
 }
 
 .gallery-overlay i {
-    color: #ECA344;
+    color: #000000; /* Inversé : L'icône de loupe passe en noir pour ressortir sur l'orange */
     font-size: 1.8rem;
 }
 
