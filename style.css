@@ -2777,12 +2777,12 @@ body:not(.projects-page) .category-tag {
 /* --- 1. HERO HEADER (Espaces réduits au strict minimum) --- */
 .cafe-detail-hero {
     background-color: #ffffff;
-    padding: 40px 20px 30px !important; /* Réduction drastique des vides */
+    padding: 40px 20px 30px !important;
     text-align: center;
     color: #4a5568;
     position: relative;
     border-bottom: 1px solid #edf2f7;
-}
+    z-index: 1 !important; /* Force le hero à rester au niveau inférieur */
 
 .cafe-detail-hero-content {
     max-width: 900px;
@@ -2842,12 +2842,12 @@ body:not(.projects-page) .category-tag {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 99 !important; /* Force la section à être au-dessus du header */
+    z-index: 10 !important; /* Passe au-dessus du hero */
 }
 
 .cafe-logo-container {
     position: absolute;
-    top: -55px; /* Légèrement remonté pour un effet d'encastrement parfait */
+    top: -35px; /* Ajusté pour un alignement parfait à cheval sur la ligne */
     background: #0f172a; 
     border-radius: 8px; 
     border: 3px solid #ffffff; 
@@ -2860,7 +2860,7 @@ body:not(.projects-page) .category-tag {
     overflow: hidden; 
     transition: transform 0.3s ease;
     box-sizing: border-box;
-    z-index: 999 !important; /* Force le logo à passer au-dessus de TOUT le monde */
+    z-index: 20 !important; /* Le logo est le roi du calque */
 }
 
 .cafe-logo-container:hover {
