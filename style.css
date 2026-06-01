@@ -670,7 +670,7 @@ body:not(.projects-page) .category-tag {
 .es-agir-header .es-subtitle {
     font-size: 1.1rem;
     color: var(--text-light);
-    margin-top: -30px; /* Rapproche parfaitement le sous-titre de la ligne jaune */
+    margin-top: -30px;
     margin-bottom: 20px;
 }
 
@@ -682,19 +682,50 @@ body:not(.projects-page) .category-tag {
 }
 
 .es-agir-card {
-    background: var(--bg-light); /* Fond gris institutionnel */
+    background: var(--bg-light); /* Fond gris institutionnel très léger */
     padding: 50px 40px;
     border: 1px solid #eef0f2;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     transition: all 0.4s ease;
+    position: relative;
 }
 
 .es-agir-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.05);
     border-color: rgba(0, 69, 149, 0.2);
+}
+
+/* LE ROND DE L'ICÔNE (Inspiré de image_feeb64.png) */
+.es-agir-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background-color: var(--white); /* Fond blanc de base */
+    border-radius: 50%; /* Devient un cercle parfait */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Ombre légère et douce */
+    transition: all 0.4s ease;
+}
+
+.es-agir-icon-wrapper i {
+    color: var(--blue); /* Icône en bleu ES Maroc */
+    font-size: 1.5rem;
+    transition: all 0.4s ease;
+}
+
+/* EFFET INTERACTIF AU SURVOL DE LA CARTE */
+/* Comme sur la carte du milieu de ton exemple, le rond passe au jaune au survol */
+.es-agir-card:hover .es-agir-icon-wrapper {
+    background-color: var(--yellow);
+}
+
+.es-agir-card:hover .es-agir-icon-wrapper i {
+    color: var(--text-dark); /* L'icône vire au sombre pour rester lisible */
 }
 
 .es-btn-agir {
@@ -711,7 +742,6 @@ body:not(.projects-page) .category-tag {
     transition: all 0.3s ease;
 }
 
-/* Au survol du bloc, le bouton devient jaune/abricot */
 .es-agir-card:hover .es-btn-agir {
     background: var(--yellow);
     color: var(--text-dark);
@@ -722,7 +752,6 @@ body:not(.projects-page) .category-tag {
     color: var(--text-light);
     line-height: 1.7;
 }
-
 /* --- FOOTER (Noir Corporate & Or) --- */
 .main-footer {
     background-color: #1a1a1a; /* Presque noir pour le luxe */
