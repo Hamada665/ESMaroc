@@ -2771,13 +2771,13 @@ body:not(.projects-page) .category-tag {
 
 
 /* ==========================================================================
-   PAGE ÉVÉNEMENT 2 : CAFÉ ESMAROC (CHARTE MINIMALISTE NOIR & BLANC NÉON)
+   PAGE ÉVÉNEMENT 2 : CAFÉ ESMAROC (CORRECTION ESPACEMENTS & LOGO RECTANGLE)
    ========================================================================== */
 
-/* --- 1. HERO HEADER (Épuré, Lumineux & Contrasté) --- */
+/* --- 1. HERO HEADER (Espaces réduits au strict minimum) --- */
 .cafe-detail-hero {
     background-color: #ffffff;
-    padding: 140px 20px 110px;
+    padding: 40px 20px 30px !important; /* Réduction drastique des vides */
     text-align: center;
     color: #4a5568;
     position: relative;
@@ -2790,7 +2790,7 @@ body:not(.projects-page) .category-tag {
 }
 
 .cafe-badge {
-    background-color: #0f172a; /* Noir ardoise */
+    background-color: #0f172a;
     color: #ffffff;
     padding: 6px 18px;
     border-radius: 4px;
@@ -2798,29 +2798,15 @@ body:not(.projects-page) .category-tag {
     font-weight: 700;
     text-transform: uppercase;
     display: inline-block;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     letter-spacing: 1px;
 }
 
 .cafe-detail-hero h1 {
-    font-size: 3.2rem;
+    font-size: 2.8rem;
     font-weight: 800;
     color: #000000;
-    margin: 0 auto 20px auto;
-    letter-spacing: -0.5px;
-    position: relative;
-    display: inline-block;
-}
-
-/* Ligne de soulignement noire sous le H1 pour rappeler la sobriété du logo */
-.cafe-detail-hero h1::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #000000; 
-    margin: 15px auto 0 auto;
-    border-radius: 2px;
+    margin: 10px auto 15px auto;
 }
 
 .cafe-breadcrumb {
@@ -2829,7 +2815,7 @@ body:not(.projects-page) .category-tag {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .cafe-breadcrumb a {
@@ -2848,11 +2834,11 @@ body:not(.projects-page) .category-tag {
     color: #a0aec0;
 }
 
-/* --- LOGO ENCASTRE (Sublimation du logo sombre) --- */
+/* --- LOGO ENCASTRE MODIFIÉ (Format rectangulaire arrondi pour épouser le logo) --- */
 .cafe-brand-separator {
     background-color: #fafafa;
     position: relative;
-    height: 70px;
+    height: 40px; /* Réduit pour remonter la section des chiffres */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2861,31 +2847,30 @@ body:not(.projects-page) .category-tag {
 
 .cafe-logo-container {
     position: absolute;
-    top: -90px; 
-    background: #0f172a; /* Fond noir pour fusionner avec le fond du logo */
-    border-radius: 50%;
-    border: 4px solid #ffffff; /* Cercle blanc éclatant autour pour le faire ressortir */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); 
-    width: 180px; 
-    height: 180px;
+    top: -45px; /* Ajusté pour le nouveau format */
+    background: #0f172a; 
+    border-radius: 8px; /* Coins légèrement arrondis plus modernes qu'un cercle ici */
+    border: 3px solid #ffffff; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
+    width: 240px; /* Plus large pour accueillir l'écriture horizontale */
+    height: 70px; /* Moins haut pour éviter le gros vide blanc */
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
     box-sizing: border-box;
 }
 
 .cafe-logo-container:hover {
     transform: scale(1.04);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
 }
 
 .cafe-logo-img {
     width: 100%;
-    height: auto;
-    padding: 15px; 
-    object-fit: contain;
+    height: 100%;
+    padding: 10px 15px; 
+    object-fit: contain; /* Garde les proportions sans couper */
     box-sizing: border-box;
 }
 
@@ -2896,7 +2881,7 @@ body:not(.projects-page) .category-tag {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    padding: 40px 8%;
+    padding: 50px 8% 30px !important; /* Ajusté pour laisser respirer le logo */
     border-bottom: 1px solid #edf2f7;
 }
 
@@ -2910,7 +2895,7 @@ body:not(.projects-page) .category-tag {
     display: block;
     font-size: 3.4rem;
     font-weight: 800;
-    color: #000000; /* Chiffres en noir pur */
+    color: #000000;
     margin-bottom: 5px;
 }
 
@@ -2925,10 +2910,10 @@ body:not(.projects-page) .category-tag {
 /* --- 3. STRUCTURE DOUBLE COLONNE --- */
 .cafe-detail-container {
     max-width: 1300px;
-    margin: 60px auto;
+    margin: 40px auto;
     display: grid;
     grid-template-columns: 7.5fr 4.5fr;
-    gap: 80px;
+    gap: 60px;
     padding: 0 6%;
 }
 
@@ -2937,15 +2922,6 @@ body:not(.projects-page) .category-tag {
     margin-bottom: 25px;
     color: #000000;
     font-weight: 800;
-}
-
-.cafe-main-content h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 4px;
-    background-color: #000000;
-    margin-top: 12px;
 }
 
 .cafe-main-content p {
@@ -2979,11 +2955,11 @@ body:not(.projects-page) .category-tag {
     font-style: normal;
 }
 
-/* --- SIDEBAR : INFOS PRATIQUES STYLE MINI-BLOC --- */
+/* --- SIDEBAR --- */
 .cafe-info-card {
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
-    border-top: 4px solid #000000; /* Rappel de la ligne noire supérieure */
+    border-top: 4px solid #000000;
     border-radius: 4px;
     padding: 35px;
     position: sticky;
@@ -3000,33 +2976,14 @@ body:not(.projects-page) .category-tag {
     padding-bottom: 12px;
 }
 
-.cafe-info-card ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 30px;
-}
-
-.cafe-info-card ul li {
-    margin-bottom: 20px;
-    font-size: 1rem;
-    color: #4a5568;
-    display: flex;
-    align-items: center;
-}
-
 .cafe-info-icon {
-    color: #4a5568; /* Icônes gris foncé pour rester sobre et minimaliste */
+    color: #4a5568;
     font-size: 1.1rem;
     margin-right: 15px;
     width: 20px;
     text-align: center;
 }
 
-.cafe-info-card ul li strong {
-    color: #1a202c;
-}
-
-/* BOUTON CTA NOIR CHIC */
 .cafe-btn-cta {
     display: block;
     background-color: #000000;
@@ -3048,7 +3005,6 @@ body:not(.projects-page) .category-tag {
     color: #000000;
 }
 
-/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     .cafe-stats-bar {
         padding: 30px 20px;
