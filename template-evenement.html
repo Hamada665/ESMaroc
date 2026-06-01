@@ -5,16 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salon de l'Emploi ESMaroc - ESMaroc</title>
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome pour l'ensemble des icônes vectorielles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- CDN CSS de Lightbox2 pour la galerie -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
 </head>
 <body class="events-detail-page-body">
 
-<!-- ==========================================================================
-   HEADER STRUCTURAL OFFICIEL (Identique à ton portefeuille de projets)
-   ========================================================================== -->
 <header>
     <div class="header-container">
         <div class="logo">
@@ -47,12 +42,8 @@
     </div> 
 </header>
     
-<!-- ==========================================================================
-   MAIN STRUCTURE (Parfaitement harmonisée et aérée)
-   ========================================================================== -->
 <main class="events-detail-layout">
             
-    <!-- 1. HERO HEADER (Épuré, couleur mate extraite de image_31d1c3.png gérée par le CSS) -->
     <section class="ev-detail-hero">
         <div class="ev-detail-hero-content">
             <span class="ev-badge">Recrutement & Business</span>
@@ -65,14 +56,12 @@
         </div>
     </section>
 
-    <!-- ZONE LOGO EN TRANSITION FLUIDE (Met en valeur le logo de image_31ce24.png sans alourdir le hero) -->
     <div class="ev-brand-separator">
         <div class="ev-logo-salon-container">
             <img src="ESALON LOGO.png" alt="Logo Officiel du Salon de l'Emploi" class="ev-salon-img">
         </div>
     </div>
 
-    <!-- 2. RUBAN DES CHIFFRES CLÉS -->
     <section class="ev-stats-bar">
         <div class="ev-stat-item">
             <span class="ev-stat-number">100+</span>
@@ -88,15 +77,30 @@
         </div>
     </section>
 
-    <!-- 3. ZONE DOUBLE COLONNE : CONTENU ÉPURÉ & SIDEBAR DEVENIR PARTENAIRE -->
     <section class="ev-detail-container">
         
-        <!-- Colonne principale (Gauche) : Récit textuel -->
         <article class="ev-main-content">
             <h2>À propos de l'événement</h2>
-            <p class="ev-lead">Le Salon de l'Emploi d'ESMaroc est le rendez-vous incontournable pour connecter les jeunes talents et les structures de l'économie sociale et solidaire avec le marché du travail.</p>
+            <p class="ev-lead">Le Salon de l’Emploi ESMaroc constitue une plateforme majeure de réseautage et de recrutement, réunissant l’ensemble des acteurs de l’emploi et du développement économique.</p>
             
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Il rassemble lors de ses différentes éditions :</p>
+            
+            <ul style="list-style-type: none; padding-left: 5px; margin: 20px 0;">
+                <li style="margin-bottom: 12px; font-size: 1.05rem; color: #4a5568; display: flex; align-items: center;">
+                    <span style="color: #ECA344; margin-right: 12px; font-size: 1.1rem;">✔</span>
+                    Plus de <strong>100 entreprises</strong> nationales et internationales
+                </li>
+                <li style="margin-bottom: 12px; font-size: 1.05rem; color: #4a5568; display: flex; align-items: center;">
+                    <span style="color: #ECA344; margin-right: 12px; font-size: 1.1rem;">✔</span>
+                    <strong>40 startups</strong> et organisations partenaires
+                </li>
+                <li style="margin-bottom: 12px; font-size: 1.05rem; color: #4a5568; display: flex; align-items: center;">
+                    <span style="color: #ECA344; margin-right: 12px; font-size: 1.1rem;">✔</span>
+                    Plus de <strong>400 chercheurs d’emploi</strong> présélectionnés
+                </li>
+            </ul>
+            
+            <p>L’événement propose également plus de 20 e-conférences et ateliers de coaching autour de l’entrepreneuriat, l’entrepreneuriat social, l’employabilité, les soft skills et le développement personnel, animés par des professionnels et ouverts au grand public.</p>
             
             <blockquote class="ev-quote">
                 <i class="fas fa-quote-left quote-icon"></i>
@@ -104,10 +108,14 @@
                 <cite>— Responsable de pôle, ESMaroc</cite>
             </blockquote>
 
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p style="margin-top: 30px; font-weight: 600;">
+                Une plateforme digitale dédiée accompagne l’événement pour maximiser l’accès aux opportunités : 
+                <a href="https://www.salon-esmaroc.org" target="_blank" style="color: #ECA344; text-decoration: none; border-bottom: 1px dashed #ECA344; transition: color 0.3s ease;">
+                    www.salon-esmaroc.org
+                </a>
+            </p>
         </article>
 
-        <!-- Sidebar (Droite) : Fiche Pratique avec bouton d'appel à l'action Jaune Or -->
         <aside class="ev-sidebar">
             <div class="ev-info-card">
                 <h3>Infos Pratiques</h3>
@@ -131,7 +139,6 @@
 
     </section>
 
-    <!-- 4. GALERIE PHOTOS INFINIE (Effet épuré type "Nos Projets") -->
     <section class="ev-gallery-section">
         <div class="ev-gallery-title">
             <h2>Retour en images</h2>
@@ -140,25 +147,21 @@
 
         <div class="ev-standard-gallery">
             
-            <!-- Photo 1 -->
             <a href="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800" data-lightbox="ev-album" class="ev-gallery-item">
                 <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=600" alt="Atelier Salon de l'Emploi">
                 <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
             </a>
 
-            <!-- Photo 2 -->
             <a href="https://images.unsplash.com/photo-1531535934027-667f687cede5?q=80&w=800" data-lightbox="ev-album" class="ev-gallery-item">
                 <img src="https://images.unsplash.com/photo-1531535934027-667f687cede5?q=80&w=600" alt="Networking ESMaroc">
                 <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
             </a>
 
-            <!-- Photo 3 -->
             <a href="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800" data-lightbox="ev-album" class="ev-gallery-item">
                 <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=600" alt="Conférence E-Salon">
                 <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
             </a>
 
-            <!-- Photo 4 -->
             <a href="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800" data-lightbox="ev-album" class="ev-gallery-item">
                 <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=600" alt="Entretiens et Coaching">
                 <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
@@ -169,9 +172,6 @@
 
 </main>
             
-<!-- ==========================================================================
-   FOOTER STRUCTURAL OFFICIEL (Exactement identique à ton fichier d'origine)
-   ========================================================================== -->
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-left">
@@ -199,9 +199,7 @@
     </div>
 </footer>
 
-<!-- CDN Lightbox (Pour la navigation des images) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
-<!-- Ton fichier script.js externe -->
 <script src="script.js"></script>
 
 </body>
