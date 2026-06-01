@@ -654,7 +654,7 @@ body:not(.projects-page) .category-tag {
 }
 
 /* ==========================================================================
-   NOUVELLE SECTION : AGIR AVEC ES MAROC
+   SECTION : AGIR AVEC ES MAROC (STYLE MISSIONS & IMAGE_FEEB64)
    ========================================================================== */
 .es-agir-section {
     padding: 100px 8%;
@@ -682,50 +682,31 @@ body:not(.projects-page) .category-tag {
 }
 
 .es-agir-card {
-    background: var(--bg-light); /* Fond gris institutionnel très léger */
+    background: var(--bg-light); /* Fond gris très clair au repos */
     padding: 50px 40px;
-    border: 1px solid #eef0f2;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    transition: all 0.4s ease;
-    position: relative;
+    transition: all 0.3s ease;
 }
 
-.es-agir-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-    border-color: rgba(0, 69, 149, 0.2);
-}
-
-/* LE ROND DE L'ICÔNE (Inspiré de image_feeb64.png) */
-.es-agir-icon-wrapper {
+/* LE ROND DE L'ICÔNE (Copie conforme du style de tes missions réussies) */
+.es-agir-icon {
+    font-size: 1.8rem;
+    color: var(--blue);
+    background-color: var(--white); /* Fond blanc au repos */
     width: 60px;
     height: 60px;
-    background-color: var(--white); /* Fond blanc de base */
-    border-radius: 50%; /* Devient un cercle parfait */
+    min-width: 60px;
+    border-radius: 50%; /* Cercle parfait */
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Ombre légère et douce */
-    transition: all 0.4s ease;
-}
-
-.es-agir-icon-wrapper i {
-    color: var(--blue); /* Icône en bleu ES Maroc */
-    font-size: 1.5rem;
-    transition: all 0.4s ease;
-}
-
-/* EFFET INTERACTIF AU SURVOL DE LA CARTE */
-/* Comme sur la carte du milieu de ton exemple, le rond passe au jaune au survol */
-.es-agir-card:hover .es-agir-icon-wrapper {
-    background-color: var(--yellow);
-}
-
-.es-agir-card:hover .es-agir-icon-wrapper i {
-    color: var(--text-dark); /* L'icône vire au sombre pour rester lisible */
+    box-shadow: 0 4px 10px rgba(0, 43, 149, 0.05);
+    transition: all 0.3s ease;
 }
 
 .es-btn-agir {
@@ -742,16 +723,43 @@ body:not(.projects-page) .category-tag {
     transition: all 0.3s ease;
 }
 
-.es-agir-card:hover .es-btn-agir {
-    background: var(--yellow);
-    color: var(--text-dark);
-}
-
 .es-agir-card p {
     font-size: 0.95rem;
     color: var(--text-light);
     line-height: 1.7;
 }
+
+/* --- EFFETS HOVER HARMONISÉS --- */
+.es-agir-card:hover {
+    background-color: var(--white); /* Devient blanc comme tes missions */
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 69, 149, 0.08);
+    border-color: rgba(0, 69, 149, 0.15);
+}
+
+/* L'icône passe sur fond jaune et l'élément FontAwesome devient sombre */
+.es-agir-card:hover .es-agir-icon {
+    background-color: var(--yellow);
+    color: var(--text-dark);
+}
+
+/* Le bouton s'allume également en jaune */
+.es-agir-card:hover .es-btn-agir {
+    background: var(--yellow);
+    color: var(--text-dark);
+}
+
+/* Ajustement responsive */
+@media (max-width: 768px) {
+    .es-agir-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .es-agir-card {
+        padding: 35px 25px;
+    }
+}
+
 /* --- FOOTER (Noir Corporate & Or) --- */
 .main-footer {
     background-color: #1a1a1a; /* Presque noir pour le luxe */
