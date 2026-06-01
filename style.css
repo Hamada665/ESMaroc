@@ -2774,13 +2774,14 @@ body:not(.projects-page) .category-tag {
    PAGE ÉVÉNEMENT 2 : CAFÉ ESMAROC (CORRECTION INTERACTIONS & DESIGN FINAL)
    ========================================================================== */
 
+/* --- 1. HERO HEADER DE L'ÉVÉNEMENT (Identique à E-Salon) --- */
 .cafe-detail-hero {
-    background-color: #ffffff !important;
-    padding: 50px 20px 40px !important;
+    background-color: #f8fafc !important; /* Même fond gris ultra-clair */
+    padding: 140px 20px 110px !important;  /* Mêmes paddings larges */
     text-align: center !important;
     color: #4a5568 !important;
     position: relative !important;
-    border-bottom: 1px solid #edf2f7 !important;
+    border-bottom: 1px solid #e2e8f0 !important;
     z-index: 1 !important;
     display: block !important;
 }
@@ -2791,7 +2792,7 @@ body:not(.projects-page) .category-tag {
 }
 
 .cafe-badge {
-    background-color: #0f172a !important; 
+    background-color: #0f172a !important; /* Couleur de la charte Café */
     color: #ffffff !important;
     padding: 6px 18px !important;
     border-radius: 4px !important;
@@ -2799,16 +2800,29 @@ body:not(.projects-page) .category-tag {
     font-weight: 700 !important;
     text-transform: uppercase !important;
     display: inline-block !important;
-    margin-bottom: 15px !important;
+    margin-bottom: 25px !important;
     letter-spacing: 1px !important;
 }
 
 .cafe-detail-hero h1 {
-    font-size: 2.8rem !important;
+    font-size: 3.2rem !important; /* Même taille imposante */
     font-weight: 800 !important;
     color: #000000 !important;
-    margin: 10px auto 15px auto !important;
+    margin: 0 auto 20px auto !important;
+    letter-spacing: -0.5px !important;
+    position: relative !important;
+    display: inline-block !important; 
+}
+
+/* ⭐ AJOUT : Ligne de soulignement sous le titre principal H1 */
+.cafe-detail-hero h1::after {
+    content: '' !important;
     display: block !important;
+    width: 60px !important; 
+    height: 4px !important;  
+    background-color: #0f172a !important; /* Ligne aux couleurs du Café */
+    margin: 15px auto 0 auto !important;  
+    border-radius: 2px !important;
 }
 
 .cafe-breadcrumb {
@@ -2816,77 +2830,67 @@ body:not(.projects-page) .category-tag {
     color: #718096 !important;
     font-weight: 500 !important;
     text-transform: uppercase !important;
-    margin-top: 10px !important;
+    letter-spacing: 0.5px !important;
+    margin-top: 15px !important;
 }
 
 .cafe-breadcrumb a {
     color: #4a5568 !important;
     text-decoration: none !important;
-    transition: all 0.25s ease-in-out !important;
+    transition: color 0.3s ease !important;
 }
 
-/* Correction : Pas de soulignement au survol, mais une couleur et un effet glow */
 .cafe-breadcrumb a:hover {
-    color: #0f172a !important;
-    text-decoration: none !important;
-    text-shadow: 0 0 8px rgba(15, 23, 42, 0.25) !important;
+    color: #0f172a !important; /* Rappel couleur café au survol */
 }
 
 .cafe-breadcrumb-sep {
+    font-size: 0.75rem !important;
     margin: 0 10px !important;
     color: #a0aec0 !important;
 }
 
-/* --- LE SÉPARATEUR DE LOGO PASSANT AU-DESSUS --- */
+/* --- INTERSECTION MODERNE DU LOGO REPLIQUÉE --- */
 .cafe-brand-separator {
-    background-color: #fafafa !important;
+    background-color: #ffffff !important;
     position: relative !important;
-    height: 40px !important; 
+    height: 70px !important; /* Même hauteur */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    z-index: 50 !important;
+    z-index: 10 !important;
 }
 
-/* Cadre du logo avec effet de survol dynamique */
+/* Conteneur avec exactement les mêmes propriétés physiques que E-Salon */
 .cafe-logo-container {
     position: absolute !important;
-    top: -35px !important;
-    background: #ffffff !important; /* Fond blanc pour épouser le fond du logo */
-    border-radius: 8px !important; 
-    border: 3px solid #0f172a !important; /* Bordure marine pour bien délimiter le cadre */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important; 
-    width: 240px !important; 
-    height: 70px !important; 
+    top: -90px !important; /* Même placement de superposition à cheval */
+    background: #ffffff !important;
+    border-radius: 50% !important; /* On garde la forme circulaire du modèle */
+    border: 3px solid #0f172a !important; /* Bordure extérieure couleur Café */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important; 
+    width: 180px !important;  /* Même taille stricte */
+    height: 180px !important; /* Même taille stricte */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    overflow: hidden !important;
-    z-index: 100 !important;
-    transition: all 0.3s ease-in-out !important;
+    overflow: hidden !important; 
+    transition: transform 0.3s ease !important;
+    box-sizing: border-box !important;
     cursor: pointer !important;
 }
 
-/* Effet au survol : soulèvement et effet de lueur (glow) marine */
 .cafe-logo-container:hover {
-    transform: translateY(-5px) scale(1.02) !important;
-    box-shadow: 0 15px 30px rgba(15, 23, 42, 0.35) !important;
-    background: #0f172a !important; /* Le cadre vire au sombre au survol pour un effet flash */
+    transform: scale(1.04) !important; /* Même effet de zoom discret */
 }
 
-/* Correction radicale de l'image pour qu'elle s'ajuste à 100% au cadre */
 .cafe-logo-img {
     width: 100% !important;
     height: 100% !important;
-    padding: 0 !important; 
-    object-fit: fill !important; /* Force l'image allongée à occuper tout l'espace du cadre */
-    transition: transform 0.3s ease !important;
+    padding: 8px !important; /* Même espace interne de protection */
+    object-fit: contain !important; /* Ajuste proprement sans écraser */
+    box-sizing: border-box !important;
 }
-
-.cafe-logo-container:hover .cafe-logo-img {
-    transform: scale(1.03) !important;
-}
-
 /* --- BARRE DES STATS --- */
 .cafe-stats-bar {
     background-color: #fafafa !important;
