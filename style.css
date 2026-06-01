@@ -2197,200 +2197,12 @@ body:not(.projects-page) .category-tag {
 }
 
 /* ==========================================================================
-   PAGE ÉVÉNEMENTS COMPLÈTE : ISOLATION ET DESIGN FLOTTANT SÉCURISÉ
+   PAGE ÉVÉNEMENT : DESIGN INSTITUTIONNEL, ÉPURÉ (CHARTE NOIR & ORANGE)
    ========================================================================== */
 
-.events-layout {
-    background-color: #f9fbfd; 
-    background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px);
-    background-size: 30px 30px;
-    padding-top: 50px;
-}
-
-/* Hero Section */
-.events-hero {
-    text-align: center;
-    padding: 100px 20px 60px;
-    background: #ffffff;
-    border-bottom: 2px solid #edf2f7;
-}
-
-.events-hero-content h1 {
-    font-size: 2.8rem;
-    font-weight: 900;
-    color: #003399;
-    letter-spacing: -0.5px;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    display: inline-block;
-    padding-bottom: 15px;
-    border-bottom: 4px solid #e0ab00; /* Jaune doré ESMaroc */
-}
-
-.events-hero-content p {
-    font-size: 1.15rem;
-    color: #4a5568;
-    max-width: 900px;
-    margin: 0 auto;
-    line-height: 1.7;
-}
-
-/* Titres de Groupes */
-.events-group-title {
-    text-align: center;
-    font-size: 1.8rem;
-    color: #0f2547;
-    font-weight: 800;
-    margin: 60px 0 20px;
-    position: relative;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.events-grid-section {
-    padding: 20px 8% 60px;
-}
-
-.events-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 50px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-/* --- STRUCTURE PROTEGÉE DES CARTES DE LA PAGE DÉDIÉE (page-ev-) --- */
-.page-ev-card {
-    position: relative;
-    height: 520px;
-    background: #ffffff;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-decoration: none;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-}
-
-.page-ev-image-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 65%;
-    overflow: hidden;
-}
-
-.page-ev-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* --- LA BOÎTE BLANCHE FLOTTANTE SÉCURISÉE --- */
-.page-ev-floating-box {
-    position: relative;
-    background: #ffffff;
-    width: 92%;
-    margin: 0 auto 20px auto;
-    padding: 25px 20px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 240px;
-    z-index: 2;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.page-ev-floating-box h3 {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: #003399;
-    line-height: 1.4;
-    margin: 0 0 10px 0;
-    text-transform: uppercase;
-}
-
-.page-ev-snippet {
-    font-size: 0.9rem;
-    color: #4a5568;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* Pied de la boite flottante */
-.page-ev-footer-action {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding-top: 12px;
-    border-top: 1px solid #edf2f7;
-}
-
-.page-ev-read-more {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #0f2547;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding-bottom: 2px;
-    border-bottom: 2px solid #e0ab00;
-    transition: all 0.3s ease;
-}
-
-.page-ev-badge {
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: #ffffff;
-    background: #718096;
-    padding: 5px 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-radius: 2px;
-}
-
-/* Badges couleurs */
-.badge-recrutement { background-color: #e53e3e; }
-.badge-accompagnement { background-color: #3182ce; }
-.badge-formation { background-color: #38a169; }
-.badge-strategie { background-color: #805ad5; }
-
-/* --- HOVER EFFECTS SPÉCIFIQUES --- */
-.page-ev-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(15, 37, 71, 0.08);
-}
-
-.page-ev-card:hover .page-ev-image-wrapper img {
-    transform: scale(1.06);
-}
-
-.page-ev-card:hover .page-ev-floating-box {
-    transform: translateY(-5px);
-}
-
-.page-ev-card:hover .page-ev-read-more {
-    color: #003399;
-    border-bottom-color: #003399;
-    padding-right: 4px;
-}
-
-
-/* ==========================================================================
-   PAGE ÉVÉNEMENT : DESIGN INSTITUTIONNEL, ÉPURÉ ET SÉCURISÉ
-   ========================================================================== */
-
-/* --- 1. HERO HEADER DE L'ÉVÉNEMENT (Style Lumineux & Institutionnel) --- */
+/* --- 1. HERO HEADER DE L'ÉVÉNEMENT (Lumineux, Épuré & Sobre) --- */
 .ev-detail-hero {
-    background-color: #f8fafc; /* Fond gris ultra-clair, propre et moderne */
+    background-color: #f8fafc; /* Fond gris ultra-clair, propre et moderne (image_fc2d29.png) */
     padding: 140px 20px 110px;
     text-align: center;
     color: #4a5568;
@@ -2404,7 +2216,7 @@ body:not(.projects-page) .category-tag {
 }
 
 .ev-badge {
-    background-color: #003399; /* Bleu institutionnel ESMaroc */
+    background-color: #000000; /* Badge Noir Institutionnel */
     color: #ffffff;
     padding: 6px 18px;
     border-radius: 4px;
@@ -2419,7 +2231,7 @@ body:not(.projects-page) .category-tag {
 .ev-detail-hero h1 {
     font-size: 3.2rem;
     font-weight: 800;
-    color: #003399; /* Titre principal en bleu fort comme sur ton site */
+    color: #000000; /* Titre principal en Noir Pur (image_fc2d29.png) */
     margin: 0 0 20px 0;
     letter-spacing: -0.5px;
 }
@@ -2448,7 +2260,7 @@ body:not(.projects-page) .category-tag {
     color: #a0aec0;
 }
 
-/* --- INTERSECTION MODERNE DU LOGO CIRCULAIRE --- */
+/* --- INTERSECTION MODERNE DU LOGO CIRCULAIRE CORRIGÉE --- */
 .ev-brand-separator {
     background-color: #ffffff;
     position: relative;
@@ -2463,7 +2275,7 @@ body:not(.projects-page) .category-tag {
     position: absolute;
     top: -90px; 
     background: #ffffff;
-    padding: 15px;
+    padding: 0; /* Suppression du padding pour éliminer les débordements du carré blanc (image_fc3c6e.png) */
     border-radius: 50%;
     border: 3px solid #ECA344; /* Cercle orange fin parfaitement assorti au logo */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
@@ -2472,6 +2284,7 @@ body:not(.projects-page) .category-tag {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* ⭐ FIX UNIQUE : Coupe les coins carrés blancs qui dépassaient sur image_fc3c6e.png */
     transition: transform 0.3s ease;
 }
 
@@ -2480,9 +2293,9 @@ body:not(.projects-page) .category-tag {
 }
 
 .ev-salon-img {
-    width: 90%;
-    height: auto;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ⭐ FIX UNIQUE : Remplit le cercle parfaitement sans écraser le format */
 }
 
 /* --- 2. RUBAN DES CHIFFRES CLÉS (Épuré & Lumineux) --- */
@@ -2531,7 +2344,7 @@ body:not(.projects-page) .category-tag {
 .ev-main-content h2 {
     font-size: 2.2rem;
     margin-bottom: 25px;
-    color: #003399; /* Titre de section bleu officiel */
+    color: #000000; /* Titre de section en Noir (image_fc2cc8.png) */
     font-weight: 800;
 }
 
@@ -2540,7 +2353,7 @@ body:not(.projects-page) .category-tag {
     display: block;
     width: 50px;
     height: 4px;
-    background-color: #ECA344; /* Ligne d'accent orange fidèle aux pages précédentes */
+    background-color: #ECA344; /* Ligne d'accent orange (image_fc2cc8.png) */
     margin-top: 12px;
 }
 
@@ -2557,7 +2370,7 @@ body:not(.projects-page) .category-tag {
 }
 
 .ev-quote {
-    border-left: 4px solid #003399; /* Ligne de citation bleue */
+    border-left: 4px solid #000000; /* Ligne de citation Noire */
     padding: 20px 25px;
     margin: 40px 0;
     background-color: #f7fafc;
@@ -2579,7 +2392,7 @@ body:not(.projects-page) .category-tag {
 .ev-info-card {
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
-    border-top: 4px solid #003399; /* Rappel haut de carte en bleu royal */
+    border-top: 4px solid #000000; /* Haut de carte en Noir */
     border-radius: 4px;
     padding: 35px;
     position: sticky;
@@ -2590,7 +2403,7 @@ body:not(.projects-page) .category-tag {
 .ev-info-card h3 {
     margin-bottom: 25px;
     font-size: 1.3rem;
-    color: #003399;
+    color: #000000; /* Titre Infos Pratiques en Noir */
     font-weight: 800;
     border-bottom: 2px solid #edf2f7;
     padding-bottom: 12px;
@@ -2622,10 +2435,10 @@ body:not(.projects-page) .category-tag {
     color: #2d3748;
 }
 
-/* BOUTON D'ACTION PRINCIPAL (Épuré, sobre et efficace) */
+/* BOUTON D'ACTION PRINCIPAL (Noir institutionnel chic) */
 .ev-btn-cta {
     display: block;
-    background-color: #003399; /* Bouton bleu corporate */
+    background-color: #000000; /* Bouton Noir */
     color: #ffffff;
     text-align: center;
     padding: 15px;
@@ -2635,13 +2448,13 @@ body:not(.projects-page) .category-tag {
     transition: all 0.3s ease;
     text-transform: uppercase;
     font-size: 0.85rem;
-    border: 2px solid #003399;
+    border: 2px solid #000000;
     letter-spacing: 0.5px;
 }
 
 .ev-btn-cta:hover {
     background-color: transparent;
-    color: #003399;
+    color: #000000;
 }
 
 /* --- 4. GALERIE PHOTOS --- */
@@ -2658,7 +2471,7 @@ body:not(.projects-page) .category-tag {
 
 .ev-gallery-title h2 {
     font-size: 2rem;
-    color: #003399;
+    color: #000000; /* Titre Galerie en Noir */
     font-weight: 800;
 }
 
@@ -2703,7 +2516,7 @@ body:not(.projects-page) .category-tag {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 51, 153, 0.85); /* Masque bleu corporate translucide au survol */
+    background-color: rgba(0, 0, 0, 0.8); /* Masque de survol Noir translucide */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2717,7 +2530,7 @@ body:not(.projects-page) .category-tag {
 }
 
 .ev-gallery-item:hover img {
-    transform: scale(1.05); /* Léger zoom élégant */
+    transform: scale(1.05);
 }
 
 .ev-gallery-item:hover .gallery-overlay {
