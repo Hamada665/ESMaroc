@@ -2791,7 +2791,7 @@ body:not(.projects-page) .category-tag {
 }
 
 .cafe-badge {
-    background-color: #0f172a !important; /* Couleur officielle de la charte */
+    background-color: #0f172a !important; 
     color: #ffffff !important;
     padding: 6px 18px !important;
     border-radius: 4px !important;
@@ -2822,13 +2822,14 @@ body:not(.projects-page) .category-tag {
 .cafe-breadcrumb a {
     color: #4a5568 !important;
     text-decoration: none !important;
-    transition: color 0.2s ease !important;
+    transition: all 0.25s ease-in-out !important;
 }
 
-/* Effet survol sur le fil d'ariane */
+/* Correction : Pas de soulignement au survol, mais une couleur et un effet glow */
 .cafe-breadcrumb a:hover {
     color: #0f172a !important;
-    text-decoration: underline !important;
+    text-decoration: none !important;
+    text-shadow: 0 0 8px rgba(15, 23, 42, 0.25) !important;
 }
 
 .cafe-breadcrumb-sep {
@@ -2847,13 +2848,13 @@ body:not(.projects-page) .category-tag {
     z-index: 50 !important;
 }
 
-/* Cadre du logo optimisé avec effet de survol dynamique */
+/* Cadre du logo avec effet de survol dynamique */
 .cafe-logo-container {
     position: absolute !important;
     top: -35px !important;
-    background: #0f172a !important; /* Fond marine assorti au logo */
+    background: #ffffff !important; /* Fond blanc pour épouser le fond du logo */
     border-radius: 8px !important; 
-    border: 3px solid #ffffff !important; 
+    border: 3px solid #0f172a !important; /* Bordure marine pour bien délimiter le cadre */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important; 
     width: 240px !important; 
     height: 70px !important; 
@@ -2866,25 +2867,24 @@ body:not(.projects-page) .category-tag {
     cursor: pointer !important;
 }
 
-/* Effet dynamique : le logo se soulève et s'illumine */
+/* Effet au survol : soulèvement et effet de lueur (glow) marine */
 .cafe-logo-container:hover {
-    transform: translateY(-4px) scale(1.02) !important;
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25) !important;
-    border-color: #0f172a !important;
+    transform: translateY(-5px) scale(1.02) !important;
+    box-shadow: 0 15px 30px rgba(15, 23, 42, 0.35) !important;
+    background: #0f172a !important; /* Le cadre vire au sombre au survol pour un effet flash */
 }
 
-/* Ajustement de l'image interne pour remplir harmonieusement le cadre */
+/* Correction radicale de l'image pour qu'elle s'ajuste à 100% au cadre */
 .cafe-logo-img {
     width: 100% !important;
     height: 100% !important;
-    padding: 6px 12px !important; /* Espacement parfait */
-    object-fit: contain !important;
-    background-color: #ffffff !important; /* Évite l'effet de vide sur les côtés */
+    padding: 0 !important; 
+    object-fit: fill !important; /* Force l'image allongée à occuper tout l'espace du cadre */
     transition: transform 0.3s ease !important;
 }
 
 .cafe-logo-container:hover .cafe-logo-img {
-    transform: scale(1.05) !important; /* Zoom fluide de l'image au survol */
+    transform: scale(1.03) !important;
 }
 
 /* --- BARRE DES STATS --- */
@@ -2965,7 +2965,7 @@ body:not(.projects-page) .category-tag {
 }
 
 .cafe-check {
-    color: #0f172a !important; /* Teinte noire/marine pour les checkmarks */
+    color: #0f172a !important; 
     font-weight: bold !important;
     margin-right: 12px !important;
     display: inline-block !important;
@@ -2992,7 +2992,7 @@ body:not(.projects-page) .category-tag {
 .cafe-info-card {
     background-color: #ffffff !important;
     border: 1px solid #e2e8f0 !important;
-    border-top: 4px solid #0f172a !important; /* Bordure supérieure assortie au thème */
+    border-top: 4px solid #0f172a !important; 
     padding: 35px !important;
     position: sticky !important;
     top: 40px !important;
@@ -3027,7 +3027,7 @@ body:not(.projects-page) .category-tag {
     text-align: center !important;
 }
 
-/* Bouton d'action avec transition de couleur et effet de clic */
+/* Bouton d'action avec transition */
 .cafe-btn-cta {
     display: block !important;
     background-color: #0f172a !important;
@@ -3044,7 +3044,7 @@ body:not(.projects-page) .category-tag {
 }
 
 .cafe-btn-cta:hover {
-    background-color: #1e293b !important; /* Éclaircissement élégant au survol */
+    background-color: #1e293b !important; 
     box-shadow: 0 5px 15px rgba(15, 23, 42, 0.2) !important;
     transform: translateY(-2px) !important;
 }
