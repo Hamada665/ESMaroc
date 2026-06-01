@@ -2838,28 +2838,29 @@ body:not(.projects-page) .category-tag {
 .cafe-brand-separator {
     background-color: #fafafa;
     position: relative;
-    height: 40px; /* Réduit pour remonter la section des chiffres */
+    height: 40px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 99 !important; /* Force la section à être au-dessus du header */
 }
 
 .cafe-logo-container {
     position: absolute;
-    top: -45px; /* Ajusté pour le nouveau format */
+    top: -55px; /* Légèrement remonté pour un effet d'encastrement parfait */
     background: #0f172a; 
-    border-radius: 8px; /* Coins légèrement arrondis plus modernes qu'un cercle ici */
+    border-radius: 8px; 
     border: 3px solid #ffffff; 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
-    width: 240px; /* Plus large pour accueillir l'écriture horizontale */
-    height: 70px; /* Moins haut pour éviter le gros vide blanc */
+    width: 240px; 
+    height: 70px; 
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden; 
     transition: transform 0.3s ease;
     box-sizing: border-box;
+    z-index: 999 !important; /* Force le logo à passer au-dessus de TOUT le monde */
 }
 
 .cafe-logo-container:hover {
