@@ -43,33 +43,45 @@
 </header>
 
 <!-- ==========================================================================
-     HERO HEADER : CAFÉ ESMAROC
+     HERO HEADER : CAFÉ ESMAROC (CORRIGÉ POUR ÉVITER LES CONFLITS)
      ========================================================================== -->
-<header class="cafe-detail-hero">
-    <div class="cafe-detail-hero-content">
-        <span class="cafe-badge">Incubation & Échanges</span>
-        <h1>Café ESMaroc</h1>
-        <div class="cafe-breadcrumb">
+<header class="cafe-detail-hero" style="display: block; text-align: center; width: 100%;">
+    <div class="cafe-detail-hero-content" style="display: block; max-width: 900px; margin: 0 auto;">
+        
+        <!-- Badge forcé au-dessus -->
+        <span class="cafe-badge" style="display: inline-block; margin-bottom: 15px; float: none; clear: both;">
+            Incubation & Échanges
+        </span>
+        
+        <!-- Titre principal avec sa ligne intégrée directement dedans pour ne plus la perdre -->
+        <h1 class="cafe-detail-hero h1" style="display: block; font-size: 3.2rem; font-weight: 800; color: #000000; margin: 10px auto 20px auto; text-align: center;">
+            Café ESMaroc
+            <span style="display: block; width: 60px; height: 4px; background-color: #000000; margin: 15px auto 0 auto; border-radius: 2px;"></span>
+        </h1>
+        
+        <!-- Fil d'ariane -->
+        <div class="cafe-breadcrumb" style="display: block; margin-top: 20px;">
             <a href="index.html">Accueil</a> 
             <span class="cafe-breadcrumb-sep">&gt;</span> 
             <a href="evenements.html">Événements</a> 
             <span class="cafe-breadcrumb-sep">&gt;</span> 
-            <span>Café ESMaroc</span>
+            <span style="color: #718096;">Café ESMaroc</span>
         </div>
+        
     </div>
 </header>
 
 <!-- BULLE DU LOGO INTERMÉDIAIRE -->
-<div class="cafe-brand-separator">
+<div class="cafe-brand-separator" style="clear: both;">
     <div class="cafe-logo-container">
         <img src="image_d27248.png" alt="Logo Café ESMaroc" class="cafe-logo-img">
     </div>
 </div>
 
 <!-- ==========================================================================
-     BARRE DES CHIFFRES CLÉS
+     BARRE DES CHIFFRES CLÉS (Correction "Regular" -> "Mensuel")
      ========================================================================== -->
-<section class="cafe-stats-bar">
+<section class="cafe-stats-bar" style="clear: both;">
     <div class="cafe-stat-item">
         <span class="cafe-stat-number">100%</span>
         <span class="cafe-stat-label">Collaboratif</span>
@@ -79,7 +91,7 @@
         <span class="cafe-stat-label">Secteurs Clés</span>
     </div>
     <div class="cafe-stat-item">
-        <span class="cafe-stat-number">Regular</span>
+        <span class="cafe-stat-number">Régulier</span>
         <span class="cafe-stat-label">Rencontres</span>
     </div>
 </section>
@@ -89,7 +101,7 @@
      ========================================================================== -->
 <section class="cafe-detail-container">
         
-    <!-- Colonne Gauche : Infos textuelles -->
+    <!-- Colonne Gauche : Infos textuelles (CORRIGÉE POUR LES LISTES DÉSORDONNÉES) -->
     <article class="cafe-main-content">
         <h2>Carrefour d’innovation et de collaboration</h2>
         <p class="cafe-lead">Le Café ESMaroc va bien au-delà du simple concept de point de rencontre ; il incarne un véritable centre d’échanges, de discussions et d’innovation, positionné au cœur du tissu entrepreneurial marocain.</p>
@@ -98,17 +110,18 @@
         
         <p>Ces sessions dynamiques s'articulent autour de trois axes majeurs :</p>
         
-        <ul style="list-style-type: none; padding-left: 5px; margin: 20px 0;">
-            <li style="margin-bottom: 12px; font-size: 1.05rem; color: #4a5568; display: flex; align-items: center;">
-                <span style="color: #000000; margin-right: 12px; font-size: 1.1rem;">✔</span>
+        <!-- Structure de liste blindée contre le CSS global du thème -->
+        <ul style="list-style: none !important; padding: 0 !important; margin: 25px 0 !important; display: block !important;">
+            <li style="display: block !important; margin-bottom: 16px !important; font-size: 1.05rem; color: #4a5568; line-height: 1.6; text-align: left !important;">
+                <span style="color: #000000; font-weight: bold; margin-right: 10px; display: inline-block;">✓</span>
                 La <strong>présentation des avancées</strong> et des réussites des projets incubés.
             </li>
-            <li style="margin-bottom: 12px; font-size: 1.05rem; color: #4a5568; display: flex; align-items: center;">
-                <span style="color: #000000; margin-right: 12px; font-size: 1.1rem;">✔</span>
+            <li style="display: block !important; margin-bottom: 16px !important; font-size: 1.05rem; color: #4a5568; line-height: 1.6; text-align: left !important;">
+                <span style="color: #000000; font-weight: bold; margin-right: 10px; display: inline-block;">✓</span>
                 Le <strong>partage d’expériences concrètes</strong> et de bonnes pratiques entrepreneuriales.
             </li>
-            <li style="margin-bottom: 12px; font-size: 1.05rem; color: #4a5568; display: flex; align-items: center;">
-                <span style="color: #000000; margin-right: 12px; font-size: 1.1rem;">✔</span>
+            <li style="display: block !important; margin-bottom: 16px !important; font-size: 1.05rem; color: #4a5568; line-height: 1.6; text-align: left !important;">
+                <span style="color: #000000; font-weight: bold; margin-right: 10px; display: inline-block;">✓</span>
                 L’<strong>identification de synergies</strong> et de collaborations futures.
             </li>
         </ul>
@@ -126,18 +139,18 @@
     <aside class="cafe-sidebar">
         <div class="cafe-info-card">
             <h3>Infos Pratiques</h3>
-            <ul>
-                <li>
+            <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                <li style="display: flex; align-items: center; margin-bottom: 20px;">
                     <i class="fas fa-calendar-alt cafe-info-icon"></i>
-                    <div><strong>Fréquence :</strong> Régulier (Mensuel)</div>
+                    <div><strong>Fréquence :</strong> Mensuel</div>
                 </li>
-                <li>
+                <li style="display: flex; align-items: center; margin-bottom: 20px;">
                     <i class="fas fa-map-marker-alt cafe-info-icon"></i>
                     <div><strong>Lieu :</strong> Hybride (Présentiel / En ligne)</div>
                 </li>
-                <li>
+                <li style="display: flex; align-items: center; margin-bottom: 20px;">
                     <i class="fas fa-users cafe-info-icon"></i>
-                    <div><strong>Public :</strong> Startups incubées & Entrepreneurs</div>
+                    <div><strong>Public :</strong> Startups & Entrepreneurs</div>
                 </li>
             </ul>
             <a href="#contact" class="cafe-btn-cta">Rejoindre l'Incubateur</a>
@@ -145,7 +158,7 @@
     </aside>
 
 </section>
-
+    
     <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-left">
