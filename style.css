@@ -2202,7 +2202,7 @@ body:not(.projects-page) .category-tag {
 
 /* --- 1. HERO HEADER DE L'ÉVÉNEMENT (Lumineux, Épuré & Sobre) --- */
 .ev-detail-hero {
-    background-color: #f8fafc; /* Fond gris ultra-clair, propre et moderne (image_fc2d29.png) */
+    background-color: #f8fafc; /* Fond gris ultra-clair, propre et moderne */
     padding: 140px 20px 110px;
     text-align: center;
     color: #4a5568;
@@ -2231,9 +2231,22 @@ body:not(.projects-page) .category-tag {
 .ev-detail-hero h1 {
     font-size: 3.2rem;
     font-weight: 800;
-    color: #000000; /* Titre principal en Noir Pur (image_fc2d29.png) */
-    margin: 0 0 20px 0;
+    color: #000000; /* Titre principal en Noir Pur */
+    margin: 0 auto 20px auto;
     letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block; /* Permet à la ligne de s'adapter à la largeur du texte */
+}
+
+/* ⭐ AJOUT : Ligne de soulignement (Underline) sous le titre principal H1 */
+.ev-detail-hero h1::after {
+    content: '';
+    display: block;
+    width: 60px; /* Largeur de la ligne */
+    height: 4px;  /* Épaisseur de la ligne */
+    background-color: #ECA344; /* Orange de la charte */
+    margin: 15px auto 0 auto;  /* Centre la ligne sous le texte */
+    border-radius: 2px;
 }
 
 .ev-breadcrumb {
@@ -2242,6 +2255,7 @@ body:not(.projects-page) .category-tag {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    margin-top: 15px;
 }
 
 .ev-breadcrumb a {
@@ -2275,17 +2289,17 @@ body:not(.projects-page) .category-tag {
     position: absolute;
     top: -90px; 
     background: #ffffff;
-    padding: 0; /* Suppression du padding pour éliminer les débordements du carré blanc (image_fc3c6e.png) */
     border-radius: 50%;
-    border: 3px solid #ECA344; /* Cercle orange fin parfaitement assorti au logo */
+    border: 3px solid #ECA344; /* Garde la jolie bordure extérieure orange */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
     width: 180px; 
     height: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* ⭐ FIX UNIQUE : Coupe les coins carrés blancs qui dépassaient sur image_fc3c6e.png */
+    overflow: hidden; 
     transition: transform 0.3s ease;
+    box-sizing: border-box;
 }
 
 .ev-logo-salon-container:hover {
@@ -2295,7 +2309,9 @@ body:not(.projects-page) .category-tag {
 .ev-salon-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* ⭐ FIX UNIQUE : Remplit le cercle parfaitement sans écraser le format */
+    padding: 8px; /* ⭐ FIX : Donne de l'espace pour que le cercle intégré à l'image ne soit plus rogné */
+    object-fit: contain; /* ⭐ FIX : Force le logo à s'adapter entièrement sans déborder (image_f23ca1.png) */
+    box-sizing: border-box;
 }
 
 /* --- 2. RUBAN DES CHIFFRES CLÉS (Épuré & Lumineux) --- */
@@ -2344,7 +2360,7 @@ body:not(.projects-page) .category-tag {
 .ev-main-content h2 {
     font-size: 2.2rem;
     margin-bottom: 25px;
-    color: #000000; /* Titre de section en Noir (image_fc2cc8.png) */
+    color: #000000; /* Titre de section en Noir */
     font-weight: 800;
 }
 
@@ -2353,7 +2369,7 @@ body:not(.projects-page) .category-tag {
     display: block;
     width: 50px;
     height: 4px;
-    background-color: #ECA344; /* Ligne d'accent orange (image_fc2cc8.png) */
+    background-color: #ECA344; /* Ligne d'accent orange */
     margin-top: 12px;
 }
 
