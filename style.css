@@ -2771,7 +2771,7 @@ body:not(.projects-page) .category-tag {
 
 
 /* ==========================================================================
-   PAGE ÉVÉNEMENT 2 : CAFÉ ESMAROC (CORRECTION ESPACEMENTS & LOGO RECTANGLE)
+   PAGE ÉVÉNEMENT 2 : CAFÉ ESMAROC (CORRECTION INTERACTIONS & DESIGN FINAL)
    ========================================================================== */
 
 .cafe-detail-hero {
@@ -2791,7 +2791,7 @@ body:not(.projects-page) .category-tag {
 }
 
 .cafe-badge {
-    background-color: #0f172a !important;
+    background-color: #0f172a !important; /* Couleur officielle de la charte */
     color: #ffffff !important;
     padding: 6px 18px !important;
     border-radius: 4px !important;
@@ -2822,6 +2822,13 @@ body:not(.projects-page) .category-tag {
 .cafe-breadcrumb a {
     color: #4a5568 !important;
     text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+/* Effet survol sur le fil d'ariane */
+.cafe-breadcrumb a:hover {
+    color: #0f172a !important;
+    text-decoration: underline !important;
 }
 
 .cafe-breadcrumb-sep {
@@ -2837,32 +2844,49 @@ body:not(.projects-page) .category-tag {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    z-index: 50 !important; /* Passe au-dessus du hero blanc */
+    z-index: 50 !important;
 }
 
+/* Cadre du logo optimisé avec effet de survol dynamique */
 .cafe-logo-container {
     position: absolute !important;
-    top: -35px !important; /* Le fait chevaucher parfaitement */
-    background: #0f172a !important; 
+    top: -35px !important;
+    background: #0f172a !important; /* Fond marine assorti au logo */
     border-radius: 8px !important; 
     border: 3px solid #ffffff !important; 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important; 
     width: 240px !important; 
     height: 70px !important; 
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     overflow: hidden !important;
-    z-index: 100 !important; /* Calque suprême */
+    z-index: 100 !important;
+    transition: all 0.3s ease-in-out !important;
+    cursor: pointer !important;
 }
 
+/* Effet dynamique : le logo se soulève et s'illumine */
+.cafe-logo-container:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25) !important;
+    border-color: #0f172a !important;
+}
+
+/* Ajustement de l'image interne pour remplir harmonieusement le cadre */
 .cafe-logo-img {
     width: 100% !important;
     height: 100% !important;
-    padding: 0 !important; /* On enlève le gros espace interne qui réduisait l'image */
-    object-fit: cover !important; /* Force l'image à remplir tout le rectangle sombre */
-    object-position: center !important; /* Centre l'image parfaitement */
+    padding: 6px 12px !important; /* Espacement parfait */
+    object-fit: contain !important;
+    background-color: #ffffff !important; /* Évite l'effet de vide sur les côtés */
+    transition: transform 0.3s ease !important;
 }
+
+.cafe-logo-container:hover .cafe-logo-img {
+    transform: scale(1.05) !important; /* Zoom fluide de l'image au survol */
+}
+
 /* --- BARRE DES STATS --- */
 .cafe-stats-bar {
     background-color: #fafafa !important;
@@ -2941,14 +2965,14 @@ body:not(.projects-page) .category-tag {
 }
 
 .cafe-check {
-    color: #000000 !important;
+    color: #0f172a !important; /* Teinte noire/marine pour les checkmarks */
     font-weight: bold !important;
     margin-right: 12px !important;
     display: inline-block !important;
 }
 
 .cafe-quote {
-    border-left: 4px solid #000000 !important;
+    border-left: 4px solid #0f172a !important;
     padding: 20px 25px !important;
     margin: 40px 0 !important;
     background-color: #f8fafc !important;
@@ -2968,7 +2992,7 @@ body:not(.projects-page) .category-tag {
 .cafe-info-card {
     background-color: #ffffff !important;
     border: 1px solid #e2e8f0 !important;
-    border-top: 4px solid #000000 !important;
+    border-top: 4px solid #0f172a !important; /* Bordure supérieure assortie au thème */
     padding: 35px !important;
     position: sticky !important;
     top: 40px !important;
@@ -3003,9 +3027,10 @@ body:not(.projects-page) .category-tag {
     text-align: center !important;
 }
 
+/* Bouton d'action avec transition de couleur et effet de clic */
 .cafe-btn-cta {
     display: block !important;
-    background-color: #000000 !important;
+    background-color: #0f172a !important;
     color: #ffffff !important;
     text-align: center !important;
     padding: 15px !important;
@@ -3013,6 +3038,15 @@ body:not(.projects-page) .category-tag {
     font-weight: 700 !important;
     text-transform: uppercase !important;
     font-size: 0.85rem !important;
+    border-radius: 4px !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s ease !important;
+}
+
+.cafe-btn-cta:hover {
+    background-color: #1e293b !important; /* Éclaircissement élégant au survol */
+    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.2) !important;
+    transform: translateY(-2px) !important;
 }
 
 /* --- RESPONSIVE MOBILE --- */
