@@ -2771,13 +2771,13 @@ body:not(.projects-page) .category-tag {
 
 
 /* ==========================================================================
-   PAGE ÉVÉNEMENT 2 : CAFÉ ESMAROC (CORRECTION INTERACTIONS & DESIGN FINAL)
+   PAGE ÉVÉNEMENT 2 : CAFÉ ESMAROC (DESIGN CORRIGÉ & ALIGNÉ)
    ========================================================================== */
 
-/* --- 1. HERO HEADER DE L'ÉVÉNEMENT (Identique à E-Salon) --- */
+/* --- 1. HERO HEADER DE L'ÉVÉNEMENT (Copie conforme structurelle d'E-Salon) --- */
 .cafe-detail-hero {
-    background-color: #f8fafc !important; /* Même fond gris ultra-clair */
-    padding: 140px 20px 110px !important;  /* Mêmes paddings larges */
+    background-color: #f8fafc !important; 
+    padding: 140px 20px 110px !important;  
     text-align: center !important;
     color: #4a5568 !important;
     position: relative !important;
@@ -2792,7 +2792,7 @@ body:not(.projects-page) .category-tag {
 }
 
 .cafe-badge {
-    background-color: #0f172a !important; /* Couleur de la charte Café */
+    background-color: #0f172a !important; 
     color: #ffffff !important;
     padding: 6px 18px !important;
     border-radius: 4px !important;
@@ -2805,22 +2805,22 @@ body:not(.projects-page) .category-tag {
 }
 
 .cafe-detail-hero h1 {
-    font-size: 3.2rem !important; /* Même taille imposante */
+    font-size: 3.2rem !important; 
     font-weight: 800 !important;
     color: #000000 !important;
     margin: 0 auto 20px auto !important;
     letter-spacing: -0.5px !important;
     position: relative !important;
-    display: inline-block !important; 
+    display: block !important; /* Fix structurel : empêche les collisions avec le badge */
 }
 
-/* ⭐ AJOUT : Ligne de soulignement sous le titre principal H1 */
+/* Ligne de soulignement sous le titre principal H1 */
 .cafe-detail-hero h1::after {
     content: '' !important;
     display: block !important;
     width: 60px !important; 
     height: 4px !important;  
-    background-color: #0f172a !important; /* Ligne aux couleurs du Café */
+    background-color: #0f172a !important; 
     margin: 15px auto 0 auto !important;  
     border-radius: 2px !important;
 }
@@ -2841,7 +2841,7 @@ body:not(.projects-page) .category-tag {
 }
 
 .cafe-breadcrumb a:hover {
-    color: #0f172a !important; /* Rappel couleur café au survol */
+    color: #0f172a !important; 
     text-decoration: none !important;
 }
 
@@ -2855,22 +2855,22 @@ body:not(.projects-page) .category-tag {
 .cafe-brand-separator {
     background-color: #ffffff !important;
     position: relative !important;
-    height: 70px !important; /* Même hauteur */
+    height: 70px !important; 
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     z-index: 10 !important;
 }
 
-/* FIX : Le cadre reste un RECTANGLE parfait à bords arrondis de 240x70px, positionné comme ESALON */
+/* Cadre rectangulaire parfaitement centré à cheval (-35px pour sa hauteur de 70px) */
 .cafe-logo-container {
     position: absolute !important;
-    top: -35px !important; /* Centré à cheval sur la ligne de séparation */
+    top: -35px !important; 
     background: #ffffff !important;
     border-radius: 8px !important; 
-    border: 3px solid #0f172a !important; /* Bordure extérieure couleur Café */
+    border: 3px solid #0f172a !important; 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important; 
-    width: 240px !important;  /* Proportions rectangulaires préservées */
+    width: 240px !important;  
     height: 70px !important; 
     display: flex !important;
     justify-content: center !important;
@@ -2882,14 +2882,14 @@ body:not(.projects-page) .category-tag {
 }
 
 .cafe-logo-container:hover {
-    transform: scale(1.04) !important; /* Même effet de zoom discret */
+    transform: scale(1.04) !important; 
 }
 
 .cafe-logo-img {
     width: 100% !important;
     height: 100% !important;
-    padding: 8px !important; /* Même espace interne de protection */
-    object-fit: contain !important; /* Ajuste proprement sans écraser */
+    padding: 8px !important; 
+    object-fit: contain !important; 
     box-sizing: border-box !important;
 }
 
@@ -3033,7 +3033,6 @@ body:not(.projects-page) .category-tag {
     text-align: center !important;
 }
 
-/* Bouton d'action avec transition */
 .cafe-btn-cta {
     display: block !important;
     background-color: #0f172a !important;
