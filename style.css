@@ -2789,6 +2789,10 @@ body:not(.projects-page) .category-tag {
 .cafe-detail-hero-content {
     max-width: 900px !important;
     margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important; /* Force le badge, le titre et les liens à se superposer proprement */
+    align-items: center !important;
+    text-align: center !important;
 }
 
 .cafe-badge {
@@ -2855,27 +2859,26 @@ body:not(.projects-page) .category-tag {
 .cafe-brand-separator {
     background-color: #ffffff !important;
     position: relative !important;
-    height: 70px !important; 
+    height: 50px !important; /* Ajusté pour correspondre à la nouvelle boîte */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     z-index: 10 !important;
 }
 
-/* Cadre rectangulaire parfaitement centré à cheval (-35px pour sa hauteur de 70px) */
 .cafe-logo-container {
     position: absolute !important;
-    top: -35px !important; 
+    top: -25px !important; /* Parfaitement à cheval (-25px pour une hauteur de 50px) */
     background: #ffffff !important;
-    border-radius: 8px !important; 
+    border-radius: 6px !important; 
     border: 3px solid #0f172a !important; 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important; 
-    width: 240px !important;  
-    height: 70px !important; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important; 
+    width: 280px !important;  /* Plus large pour étaler ton texte */
+    height: 50px !important;  /* Moins haut pour éliminer le vide au-dessus/en-dessous */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    overflow: hidden !important; /* Garde le logo bien confiné à l'intérieur du rectangle */
+    overflow: hidden !important; 
     transition: transform 0.3s ease !important;
     box-sizing: border-box !important;
     cursor: pointer !important;
@@ -2885,15 +2888,16 @@ body:not(.projects-page) .category-tag {
     transform: scale(1.04) !important; 
 }
 
+/* --- 3. TON LOGO AGRANDI ET NETTOYÉ --- */
 .cafe-logo-img {
     width: 100% !important;
     height: 100% !important;
-    padding: 0px !important; /* CHANGEMENT : On supprime les 8px pour gagner un maximum d'espace */
-    object-fit: contain !important; /* Empêche le texte du logo de s'étirer ou de se déformer */
-    transform: scale(1.7); /* L'ASTUCE : On zoom à 170% dans l'image pour éliminer ses espaces vides cachés */
-    transition: transform 0.3s ease !important;
+    padding: 0px !important; 
+    object-fit: contain !important; /* Conserve les proportions originales de tes lettres sans les écraser */
+    transform: scale(2.2) !important; /* Élimine les marges transparentes de ton fichier pour remplir le cadre */
     box-sizing: border-box !important;
 }
+
 /* --- BARRE DES STATS --- */
 .cafe-stats-bar {
     background-color: #fafafa !important;
