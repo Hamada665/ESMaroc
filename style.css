@@ -2824,10 +2824,10 @@ body:not(.projects-page) .category-tag {
     content: '' !important;
     display: block !important;
     width: 60px !important; 
-    height: 4px !important;  
+    height: 4px !important;    
     background-color: #0f172a !important; 
     border-radius: 2px !important;
-    margin: 15px auto 0 auto !important;  
+    margin: 15px auto 0 auto !important;    
 }
 
 /* Fil d'Ariane (Breadcrumb) */
@@ -2858,14 +2858,14 @@ body:not(.projects-page) .category-tag {
 }
 
 
-/* --- 2. INTERSECTION CADRE LOGO (Ajustement automatique sans déformation) --- */
+/* --- 2. INTERSECTION CADRE LOGO (Ajustement horizontal élégant) --- */
 .cafe-brand-separator {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     position: relative !important;
     z-index: 10 !important;
-    height: 50px !important; 
+    height: 60px !important; 
     background-color: #ffffff !important;
 }
 
@@ -2874,28 +2874,32 @@ body:not(.projects-page) .category-tag {
     justify-content: center !important;
     align-items: center !important;
     position: absolute !important;
-    top: -24px !important; 
+    top: 50% !important;
+    transform: translateY(-50%) !important;
     background: #ffffff !important; 
-    border: 3px solid #0f172a !important; 
-    border-radius: 6px !important; 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05) !important; 
-    width: 220px !important; 
-    height: auto !important; /* Laisse le cadre épouser la hauteur du logo */
-    padding: 0px !important; 
+    border: 2px solid #0f172a !important; 
+    border-radius: 50px !important; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important; 
+    width: auto !important;
+    max-width: 280px !important; 
+    height: 54px !important; 
+    padding: 0 24px !important; 
     overflow: hidden !important; 
     cursor: pointer !important;
     box-sizing: border-box !important;
-    transition: transform 0.2s ease !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 .cafe-logo-container:hover {
-    transform: scale(1.05) !important; 
+    transform: translateY(-56%) scale(1.03) !important; 
+    box-shadow: 0 6px 25px rgba(15, 23, 42, 0.15) !important;
 }
 
 .cafe-logo-img {
     display: block !important;
-    width: 100% !important; 
-    height: auto !important; 
+    width: auto !important; 
+    height: 100 !important; 
+    max-height: 26px !important; 
     object-fit: contain !important; 
 }
 
