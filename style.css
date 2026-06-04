@@ -2842,6 +2842,7 @@ body:not(.projects-page) .category-tag {
 
 .cafe-breadcrumb a:hover {
     color: #0f172a !important; /* Rappel couleur café au survol */
+    text-decoration: none !important;
 }
 
 .cafe-breadcrumb-sep {
@@ -2861,16 +2862,16 @@ body:not(.projects-page) .category-tag {
     z-index: 10 !important;
 }
 
-/* Conteneur avec exactement les mêmes propriétés physiques que E-Salon */
+/* FIX : Le cadre reste un RECTANGLE parfait à bords arrondis de 240x70px, positionné comme ESALON */
 .cafe-logo-container {
     position: absolute !important;
-    top: -90px !important; /* Même placement de superposition à cheval */
+    top: -35px !important; /* Centré à cheval sur la ligne de séparation */
     background: #ffffff !important;
-    border-radius: 50% !important; /* On garde la forme circulaire du modèle */
+    border-radius: 8px !important; 
     border: 3px solid #0f172a !important; /* Bordure extérieure couleur Café */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important; 
-    width: 180px !important;  /* Même taille stricte */
-    height: 180px !important; /* Même taille stricte */
+    width: 240px !important;  /* Proportions rectangulaires préservées */
+    height: 70px !important; 
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -2891,6 +2892,7 @@ body:not(.projects-page) .category-tag {
     object-fit: contain !important; /* Ajuste proprement sans écraser */
     box-sizing: border-box !important;
 }
+
 /* --- BARRE DES STATS --- */
 .cafe-stats-bar {
     background-color: #fafafa !important;
