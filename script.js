@@ -1,6 +1,6 @@
-// ==========================================================================
-// A. FONCTIONS GLOBALES (Accessibles via les attributs HTML onclick)
-// ==========================================================================
+/* ==========================================================================
+   A. FONCTIONS GLOBALES (Accessibles via les attributs HTML onclick)
+   ========================================================================== */
 
 // 1. Ouvrir une modale de projet
 function openModal(modalId) {
@@ -21,9 +21,9 @@ function closeModal(modalId) {
 }
 
 
-// ==========================================================================
-// B. FONCTIONNALITÉS INTERNES (Une fois la page chargée)
-// ==========================================================================
+/* ==========================================================================
+   B. FONCTIONNALITÉS INTERNES (Une fois la page chargée)
+   ========================================================================== */
 document.addEventListener("DOMContentLoaded", () => {
     
     // ------------------------------------------------------------
@@ -48,7 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Menu Mobile (Burger Toggle)
     if (burgerMenu && nav) {
-        burgerMenu.addEventListener("click", () => {
+        burgerMenu.addEventListener("click", (e) => {
+            e.stopPropagation(); // Évite la fermeture immédiate via le clic global
             nav.classList.toggle("active");
             const icon = burgerMenu.querySelector("i");
             if (icon) {
@@ -63,15 +64,17 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdownTrigger.addEventListener("click", (e) => {
             if (window.innerWidth <= 768) {
                 e.preventDefault(); // Évite de suivre le lien '#'
+                e.stopPropagation(); // Évite la fermeture immédiate via le clic global
                 dropdown.classList.toggle("open");
             }
         });
     }
 
     // ------------------------------------------------------------
-    // 2. SÉCURITÉ MODALES : FERMETURE AU CLIC SUR L'OVERLAY
+    // 2. SÉCURITÉ ET FERMETURES GLOBALES (Clic à l'extérieur)
     // ------------------------------------------------------------
     window.addEventListener("click", (event) => {
+        // A. Fermeture des modales au clic sur l'overlay
         const modals = document.querySelectorAll(".project-modal");
         modals.forEach(modal => {
             if (event.target === modal) {
@@ -79,6 +82,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.body.style.overflow = "auto";
             }
         });
+
+        // B. Fermeture du menu mobile si on clique en dehors
+        if (nav && nav.classList.contains("active") && !nav.contains(event.target) && !burgerMenu.contains(event.target)) {
+            nav.classList.remove("active");
+            const icon = burgerMenu.querySelector("i");
+            if (icon) {
+                icon.classList.add("fa-bars");
+                icon.classList.remove("fa-times");
+            }
+        }
+
+        // C. Fermeture du dropdown si on clique en dehors
+        if (dropdown && dropdown.classList.contains("open") && !dropdown.contains(event.target)) {
+            dropdown.classList.remove("open");
+        }
     });
 
     // ------------------------------------------------------------
