@@ -2868,13 +2868,13 @@ body:not(.projects-page) .category-tag {
 
 .cafe-logo-container {
     position: absolute !important;
-    top: -25px !important; /* Parfaitement à cheval (-25px pour une hauteur de 50px) */
+    top: -35px !important; 
     background: #ffffff !important;
-    border-radius: 6px !important; 
+    border-radius: 8px !important; 
     border: 3px solid #0f172a !important; 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important; 
-    width: 280px !important;  /* Plus large pour étaler ton texte */
-    height: 50px !important;  /* Moins haut pour éliminer le vide au-dessus/en-dessous */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important; 
+    width: 240px !important;  
+    height: 65px !important; /* Hauteur ajustée pour mieux épouser le format rectangle */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -2888,13 +2888,12 @@ body:not(.projects-page) .category-tag {
     transform: scale(1.04) !important; 
 }
 
-/* --- 3. TON LOGO AGRANDI ET NETTOYÉ --- */
 .cafe-logo-img {
     width: 100% !important;
     height: 100% !important;
-    padding: 0px !important; 
-    object-fit: contain !important; /* Conserve les proportions originales de tes lettres sans les écraser */
-    transform: scale(2.2) !important; /* Élimine les marges transparentes de ton fichier pour remplir le cadre */
+    padding: 0px !important; /* Supprime tout espace interne */
+    object-fit: fill !important; /* FORCE l'image à s'étirer pour occuper 100% du cadre noir */
+    transform: none !important; /* On supprime définitivement le scale qui détruisait la qualité */
     box-sizing: border-box !important;
 }
 
