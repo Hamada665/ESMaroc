@@ -2868,33 +2868,32 @@ body:not(.projects-page) .category-tag {
 
 .cafe-logo-container {
     position: absolute !important;
-    top: -35px !important; 
-    background: #ffffff !important;
-    border-radius: 8px !important; 
+    top: -24px !important; /* Ajusté pour centrer parfaitement le nouveau cadre fin sur la ligne */
+    background: #ffffff !important; 
+    border-radius: 6px !important; 
     border: 3px solid #0f172a !important; 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important; 
-    width: 240px !important;  
-    height: 65px !important; /* Hauteur ajustée pour mieux épouser le format rectangle */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05) !important; 
+    width: 220px !important; /* Largeur fixe parfaite pour ton logo */
+    height: auto !important; /* L'ASTUCE : Le cadre s'adapte tout seul à la hauteur réelle du logo */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     overflow: hidden !important; 
-    transition: transform 0.3s ease !important;
+    padding: 0px !important; /* Zéro espace pour que le logo se colle pile sur les bords */
+    transition: transform 0.2s ease !important;
     box-sizing: border-box !important;
     cursor: pointer !important;
 }
 
 .cafe-logo-container:hover {
-    transform: scale(1.04) !important; 
+    transform: scale(1.05) !important; 
 }
 
 .cafe-logo-img {
-    width: 100% !important;
-    height: 100% !important;
-    padding: 0px !important; /* Supprime tout espace interne */
-    object-fit: fill !important; /* FORCE l'image à s'étirer pour occuper 100% du cadre noir */
-    transform: none !important; /* On supprime définitivement le scale qui détruisait la qualité */
-    box-sizing: border-box !important;
+    width: 100% !important; /* Force le logo à occuper toute la largeur disponible */
+    height: auto !important; /* Empêche STRICTEMENT la déformation ou l'écrasement des lettres */
+    display: block !important;
+    object-fit: contain !important; 
 }
 
 /* --- BARRE DES STATS --- */
