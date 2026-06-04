@@ -2771,299 +2771,210 @@ body:not(.projects-page) .category-tag {
 
 
 /* ==========================================================================
-   PAGE ÉVÉNEMENT 2 : CAFÉ ESMAROC (DESIGN CORRIGÉ & ALIGNÉ)
+   PAGE EVENEMENT 2 : HERO HEADER - ESMAROC CAFÉ
    ========================================================================== */
 
-/* --- 1. HERO HEADER DE L'ÉVÉNEMENT (Copie conforme structurelle d'E-Salon) --- */
 .cafe-detail-hero {
-    background-color: #f8fafc !important; 
-    padding: 140px 20px 110px !important;  
-    text-align: center !important;
-    color: #4a5568 !important;
-    position: relative !important;
-    border-bottom: 1px solid #e2e8f0 !important;
-    z-index: 1 !important;
-    display: block !important;
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fafc 100%
+    );
+    padding: 140px 20px 130px;
+    text-align: center;
+    color: #4a5568;
+    position: relative;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .cafe-detail-hero-content {
-    max-width: 900px !important;
-    margin: 0 auto !important;
-    display: flex !important;
-    flex-direction: column !important; /* Force le badge, le titre et les liens à se superposer proprement */
-    align-items: center !important;
-    text-align: center !important;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .cafe-badge {
-    background-color: #0f172a !important; 
-    color: #ffffff !important;
-    padding: 6px 18px !important;
-    border-radius: 4px !important;
-    font-size: 0.85rem !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    display: inline-block !important;
-    margin-bottom: 25px !important;
-    letter-spacing: 1px !important;
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 6px 18px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
 }
 
 .cafe-detail-hero h1 {
-    font-size: 3.2rem !important; 
-    font-weight: 800 !important;
-    color: #000000 !important;
-    margin: 0 auto 20px auto !important;
-    letter-spacing: -0.5px !important;
-    position: relative !important;
-    display: block !important; /* Fix structurel : empêche les collisions avec le badge */
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #000000;
+    margin: 0 auto 20px auto;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
 }
 
-/* Ligne de soulignement sous le titre principal H1 */
 .cafe-detail-hero h1::after {
-    content: '' !important;
-    display: block !important;
-    width: 60px !important; 
-    height: 4px !important;  
-    background-color: #0f172a !important; 
-    margin: 15px auto 0 auto !important;  
-    border-radius: 2px !important;
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #0f172a;
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
 }
 
 .cafe-breadcrumb {
-    font-size: 0.9rem !important;
-    color: #718096 !important;
-    font-weight: 500 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
-    margin-top: 15px !important;
+    font-size: 0.9rem;
+    color: #718096;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
 }
 
 .cafe-breadcrumb a {
-    color: #4a5568 !important;
-    text-decoration: none !important;
-    transition: color 0.3s ease !important;
+    color: #4a5568;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .cafe-breadcrumb a:hover {
-    color: #0f172a !important; 
-    text-decoration: none !important;
+    color: #0f172a;
 }
 
 .cafe-breadcrumb-sep {
-    font-size: 0.75rem !important;
-    margin: 0 10px !important;
-    color: #a0aec0 !important;
+    font-size: 0.75rem;
+    margin: 0 10px;
+    color: #a0aec0;
 }
 
-/* --- INTERSECTION MODERNE DU LOGO REPLIQUÉE --- */
+
+/* ==========================================================================
+   LOGO FLOTTANT PREMIUM
+   ========================================================================== */
+
 .cafe-brand-separator {
-    background-color: #ffffff !important;
-    position: relative !important;
-    height: 50px !important; /* Ajusté pour correspondre à la nouvelle boîte */
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    z-index: 10 !important;
+    background-color: #ffffff;
+    position: relative;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
 }
 
 .cafe-logo-container {
-    position: absolute !important;
-    top: -24px !important; /* Ajusté pour centrer parfaitement le nouveau cadre fin sur la ligne */
-    background: #ffffff !important; 
-    border-radius: 6px !important; 
-    border: 3px solid #0f172a !important; 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05) !important; 
-    width: 220px !important; /* Largeur fixe parfaite pour ton logo */
-    height: auto !important; /* L'ASTUCE : Le cadre s'adapte tout seul à la hauteur réelle du logo */
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    overflow: hidden !important; 
-    padding: 0px !important; /* Zéro espace pour que le logo se colle pile sur les bords */
-    transition: transform 0.2s ease !important;
-    box-sizing: border-box !important;
-    cursor: pointer !important;
+    position: absolute;
+    top: -55px;
+
+    width: 340px;
+    height: 110px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px 25px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.06),
+        0 5px 15px rgba(0, 0, 0, 0.03);
+
+    transition: all 0.3s ease;
+
+    z-index: 20;
 }
 
 .cafe-logo-container:hover {
-    transform: scale(1.05) !important; 
+    transform: translateY(-4px);
 }
 
 .cafe-logo-img {
-    width: 100% !important; /* Force le logo à occuper toute la largeur disponible */
-    height: auto !important; /* Empêche STRICTEMENT la déformation ou l'écrasement des lettres */
-    display: block !important;
-    object-fit: contain !important; 
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    display: block;
 }
 
-/* --- BARRE DES STATS --- */
+
+/* ==========================================================================
+   BARRE DES CHIFFRES CLÉS
+   ========================================================================== */
+
 .cafe-stats-bar {
-    background-color: #fafafa !important;
-    display: flex !important;
-    justify-content: space-around !important;
-    align-items: center !important;
-    flex-wrap: wrap !important;
-    padding: 60px 8% 40px !important;
-    border-bottom: 1px solid #edf2f7 !important;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 70px 8% 40px;
+    border-bottom: 1px solid #edf2f7;
 }
 
 .cafe-stat-item {
-    text-align: center !important;
-    padding: 15px !important;
-    min-width: 220px !important;
+    text-align: center;
+    padding: 15px;
+    min-width: 220px;
 }
 
 .cafe-stat-number {
-    display: block !important;
-    font-size: 3.4rem !important;
-    font-weight: 800 !important;
-    color: #000000 !important;
+    display: block;
+    font-size: 3.4rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 5px;
 }
 
 .cafe-stat-label {
-    font-size: 0.9rem !important;
-    color: #718096 !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
+    font-size: 0.9rem;
+    color: #4a5568;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
 }
 
-/* --- GRID LAYOUT PRINCIPAL --- */
-.cafe-detail-container {
-    max-width: 1300px !important;
-    margin: 50px auto !important;
-    display: grid !important;
-    grid-template-columns: 7.5fr 4.5fr !important;
-    gap: 60px !important;
-    padding: 0 6% !important;
-}
 
-.cafe-main-content h2 {
-    font-size: 2.2rem !important;
-    margin-bottom: 25px !important;
-    color: #000000 !important;
-    font-weight: 800 !important;
-}
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
 
-.cafe-main-content p {
-    font-size: 1.05rem !important;
-    line-height: 1.8 !important;
-    color: #4a5568 !important;
-}
-
-.cafe-lead {
-    font-size: 1.2rem !important;
-    font-weight: 600 !important;
-    color: #1a202c !important;
-}
-
-/* --- SÉCURISATION CONTRE LES LISTES CASSÉES --- */
-.cafe-clean-list {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 25px 0 !important;
-    display: block !important;
-}
-
-.cafe-clean-list li {
-    display: block !important;
-    margin-bottom: 16px !important;
-    font-size: 1.05rem !important;
-    color: #4a5568 !important;
-    line-height: 1.6 !important;
-    text-align: left !important;
-}
-
-.cafe-check {
-    color: #0f172a !important; 
-    font-weight: bold !important;
-    margin-right: 12px !important;
-    display: inline-block !important;
-}
-
-.cafe-quote {
-    border-left: 4px solid #0f172a !important;
-    padding: 20px 25px !important;
-    margin: 40px 0 !important;
-    background-color: #f8fafc !important;
-    font-style: italic !important;
-}
-
-.cafe-quote cite {
-    display: block !important;
-    margin-top: 12px !important;
-    font-size: 0.9rem !important;
-    color: #718096 !important;
-    font-weight: 700 !important;
-    font-style: normal !important;
-}
-
-/* --- SIDEBAR CARD --- */
-.cafe-info-card {
-    background-color: #ffffff !important;
-    border: 1px solid #e2e8f0 !important;
-    border-top: 4px solid #0f172a !important; 
-    padding: 35px !important;
-    position: sticky !important;
-    top: 40px !important;
-}
-
-.cafe-info-card h3 {
-    margin-bottom: 25px !important;
-    font-size: 1.3rem !important;
-    color: #000000 !important;
-    font-weight: 800 !important;
-    border-bottom: 2px solid #edf2f7 !important;
-    padding-bottom: 12px !important;
-}
-
-.cafe-sidebar-list {
-    list-style: none !important;
-    padding: 0 !important;
-    margin-bottom: 30px !important;
-}
-
-.cafe-sidebar-list li {
-    display: flex !important;
-    align-items: center !important;
-    margin-bottom: 20px !important;
-}
-
-.cafe-info-icon {
-    color: #4a5568 !important;
-    font-size: 1.1rem !important;
-    margin-right: 15px !important;
-    width: 20px !important;
-    text-align: center !important;
-}
-
-.cafe-btn-cta {
-    display: block !important;
-    background-color: #0f172a !important;
-    color: #ffffff !important;
-    text-align: center !important;
-    padding: 15px !important;
-    text-decoration: none !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    font-size: 0.85rem !important;
-    border-radius: 4px !important;
-    letter-spacing: 0.5px !important;
-    transition: all 0.3s ease !important;
-}
-
-.cafe-btn-cta:hover {
-    background-color: #1e293b !important; 
-    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.2) !important;
-    transform: translateY(-2px) !important;
-}
-
-/* --- RESPONSIVE MOBILE --- */
 @media (max-width: 768px) {
-    .cafe-detail-container {
-        grid-template-columns: 1fr !important;
-        gap: 40px !important;
+
+    .cafe-detail-hero {
+        padding: 120px 20px 110px;
     }
+
+    .cafe-detail-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .cafe-brand-separator {
+        height: 70px;
+    }
+
+    .cafe-logo-container {
+        width: 260px;
+        height: 90px;
+        top: -45px;
+        padding: 12px 20px;
+    }
+
+    .cafe-logo-img {
+        max-width: 210px;
+    }
+
     .cafe-stats-bar {
-        padding: 40px 20px !important;
+        padding: 60px 20px 30px;
+    }
+
+    .cafe-stat-number {
+        font-size: 2.6rem;
     }
 }
