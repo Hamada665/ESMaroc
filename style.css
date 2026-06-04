@@ -2887,7 +2887,7 @@ body:not(.projects-page) .category-tag {
     /* Dimensions du cadre */
     width: 380px;
     height: 120px; 
-    padding: 0; /* Suppression du padding pour maximiser la place de l'image */
+    padding: 0; 
     
     overflow: hidden; 
     cursor: pointer;
@@ -2895,7 +2895,7 @@ body:not(.projects-page) .category-tag {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Effet au survol dynamique (ajusté avec le nouveau scale de l'image) */
+/* Effet au survol dynamique */
 .cafe-logo-container:hover {
     transform: translateY(-55%) scale(1.03); 
     box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15);
@@ -2906,8 +2906,8 @@ body:not(.projects-page) .category-tag {
     width: 100%; 
     height: 100%; 
     object-fit: contain; 
-    /* Zoom artificiel de 2.2x pour éliminer l'espace vide interne de l'image */
-    transform: scale(2.2); 
+    /* Zoom massif à 3.5x pour supprimer totalement l'espace vide superflu */
+    transform: scale(3.5); 
 }
 
 
@@ -3087,7 +3087,7 @@ body:not(.projects-page) .category-tag {
     }
     
     .cafe-logo-img {
-        transform: scale(1.8); /* Zoom un poil plus léger pour les petits écrans */
+        transform: scale(2.8); /* Zoom légèrement adapté pour le rendu mobile */
     }
 
     .cafe-detail-container {
