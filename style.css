@@ -3101,82 +3101,39 @@ body:not(.projects-page) .category-tag {
 }
 
 /* ==========================================================================
-   PAGE SOUK DES STARTUPS - FIXE & PROPRE
+   PAGE SOUK DES STARTUPS : DESIGN COHÉRENT (CHARTE NOIR, ORANGE & JAUNE)
    ========================================================================== */
 
-.souk-detail-hero {
-    background-color: #fffaf0;
-    padding: 140px 20px 110px;
-    text-align: center;
-    position: relative;
-    border-bottom: 3px solid #ed8936;
-}
+/* 1. HERO HEADER */
+.ev-detail-hero { background-color: #f8fafc; padding: 140px 20px 110px; text-align: center; color: #4a5568; position: relative; border-bottom: 1px solid #e2e8f0; }
+.ev-detail-hero-content { max-width: 900px; margin: 0 auto; }
+.ev-badge { background-color: #ed8936; color: #ffffff; padding: 6px 18px; border-radius: 4px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-bottom: 25px; }
+.ev-detail-hero h1 { font-size: 3.2rem; font-weight: 800; color: #000000; margin: 0 auto 20px auto; }
+.ev-detail-hero h1::after { content: ''; display: block; width: 60px; height: 4px; background-color: #ecc94b; margin: 15px auto 0 auto; border-radius: 2px; }
 
-.souk-detail-hero-content { max-width: 900px; margin: 0 auto; }
+/* 2. LOGO SEPARATOR */
+.ev-brand-separator { background-color: #ffffff; position: relative; height: 70px; display: flex; justify-content: center; align-items: center; z-index: 10; }
+.ev-logo-salon-container { position: absolute; top: -90px; background: #ffffff; border-radius: 8px; border: 3px solid #ecc94b; box-shadow: 0 10px 30px rgba(0,0,0,0.05); width: 250px; height: 180px; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+.ev-salon-img { width: 100%; height: 100%; object-fit: contain; padding: 5px; }
 
-.souk-badge {
-    background-color: #ed8936;
-    color: #ffffff;
-    padding: 6px 18px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-bottom: 25px;
-}
+/* 3. STATS BAR */
+.ev-stats-bar { background-color: #ffffff; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; padding: 40px 8% 40px; border-bottom: 1px solid #edf2f7; }
+.ev-stat-item { text-align: center; padding: 15px; min-width: 220px; }
+.ev-stat-number { display: block; font-size: 3.4rem; font-weight: 800; color: #ed8936; margin-bottom: 5px; }
+.ev-stat-label { font-size: 0.9rem; color: #4a5568; font-weight: 700; text-transform: uppercase; }
 
-.souk-detail-hero h1 { font-size: 3.2rem; font-weight: 800; color: #2d3748; margin-bottom: 20px; }
-.souk-detail-hero h1::after {
-    content: ''; display: block; width: 60px; height: 4px;
-    background-color: #ed8936; margin: 15px auto 0 auto; border-radius: 2px;
-}
+/* 4. MAIN CONTENT & SIDEBAR */
+.ev-detail-container { max-width: 1300px; margin: 60px auto; display: grid; grid-template-columns: 7.5fr 4.5fr; gap: 80px; padding: 0 6%; }
+.ev-main-content h2 { font-size: 2.2rem; margin-bottom: 25px; color: #000000; font-weight: 800; }
+.ev-main-content h2::after { content: ''; display: block; width: 50px; height: 4px; background-color: #ecc94b; margin-top: 12px; }
+.ev-info-card { background-color: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #ed8936; border-radius: 4px; padding: 35px; position: sticky; top: 40px; }
+.ev-btn-cta { display: block; background-color: #000000; color: #ffffff; text-align: center; padding: 15px; border-radius: 4px; text-transform: uppercase; font-weight: 700; }
 
-.souk-breadcrumb { font-size: 0.9rem; color: #718096; text-transform: uppercase; margin-top: 15px; }
-.souk-breadcrumb a { color: #4a5568; text-decoration: none; }
-.souk-breadcrumb a:hover { color: #ed8936; }
-
-/* Zone séparatrice corrigée pour ne pas chevaucher le header */
-.souk-brand-separator { 
-    display: flex; 
-    justify-content: center; 
-    background-color: transparent; 
-    margin-top: -50px; 
-    position: relative; 
-    z-index: 5; 
-}
-
-.souk-logo-container {
-    background: #ffffff;
-    border: 2px solid #ed8936;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(237, 137, 54, 0.2);
-    width: 300px;
-    height: 100px;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.souk-logo-img { width: 100%; height: 100%; object-fit: contain; }
-
-/* Stats & Contenu */
-.souk-stats-bar { background-color: #ffffff; display: flex; justify-content: space-around; padding: 80px 8% 40px; border-bottom: 1px solid #edf2f7; }
-.souk-stat-number { display: block; font-size: 2.2rem; font-weight: 800; color: #ed8936; }
-.souk-stat-label { color: #718096; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; }
-
-.souk-detail-container { max-width: 1200px; margin: 50px auto; display: grid; grid-template-columns: 2fr 1fr; gap: 60px; padding: 0 6%; }
-.souk-main-content h2 { font-size: 2rem; color: #2d3748; margin-bottom: 20px; }
-.souk-lead { font-size: 1.2rem; font-weight: 600; color: #2d3748; line-height: 1.6; }
-.souk-clean-list { list-style: none; padding: 0; }
-.souk-clean-list li { margin-bottom: 15px; display: flex; align-items: flex-start; }
-.souk-check { color: #ed8936; margin-right: 10px; font-weight: bold; }
-
-.souk-info-card { background-color: #f8fafc; border-top: 4px solid #ed8936; padding: 30px; border-radius: 4px; }
-.souk-btn-cta {
-    display: block; background-color: #ed8936; color: #ffffff; text-align: center;
-    padding: 15px; text-decoration: none; border-radius: 4px; font-weight: bold;
-    margin-top: 20px; transition: background 0.3s;
-}
-.souk-btn-cta:hover { background-color: #dd7a29; }
+/* 5. GALLERY */
+.ev-gallery-section { max-width: 1300px; margin: 60px auto 100px; padding: 0 6%; }
+.ev-gallery-title { text-align: center; margin-bottom: 40px; }
+.ev-gallery-title h2::after { content: ''; display: block; width: 50px; height: 4px; background-color: #ecc94b; margin: 12px auto 15px; }
+.ev-standard-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+.ev-gallery-item { position: relative; height: 220px; overflow: hidden; border-radius: 4px; }
+.gallery-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; opacity: 0; transition: 0.3s; }
+.ev-gallery-item:hover .gallery-overlay { opacity: 1; }
