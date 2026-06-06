@@ -3540,3 +3540,170 @@ body:not(.projects-page) .category-tag {
         height: 90px !important;
     }
 }
+
+/* ==========================================================================
+   PAGE ÉVÉNEMENT : ÉCOLE D'ÉTÉ ESMAROC
+   ========================================================================== */
+
+:root {
+    --ed-teal: #01a9a9;
+    --ed-black: #111111;
+    --ed-white: #feffff;
+    --ed-teal-light: rgba(1, 169, 169, 0.08);
+}
+
+/* --- 1. HERO --- */
+.ed-hero {
+    background-color: var(--ed-white);
+    border-bottom: 1px solid #e8f5f5;
+}
+
+.ed-badge {
+    background-color: var(--ed-teal) !important; /* Badge teal — signature propre à l'École d'Été */
+    color: var(--ed-white) !important;
+}
+
+.ed-h1 {
+    color: var(--ed-black) !important;
+}
+
+.ed-h1::after {
+    background-color: var(--ed-teal) !important;
+}
+
+.ed-hero .ev-breadcrumb a:hover {
+    color: var(--ed-teal) !important;
+}
+
+/* --- 2. LOGO CONTENEUR RECTANGULAIRE --- */
+.ed-brand-separator {
+    height: 55px !important;
+}
+
+.ed-logo-container {
+    width: 320px !important;
+    height: 110px !important;
+    border-radius: 8px !important;
+    border-color: var(--ed-teal) !important;
+    background-color: var(--ed-white) !important;
+    top: -55px !important;
+}
+
+.ed-salon-img {
+    padding: 0 !important;
+    object-fit: contain !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* --- 3. STATS BAR --- */
+.ed-stats-bar {
+    background-color: var(--ed-teal-light) !important;
+    border-bottom: 2px solid var(--ed-teal) !important;
+}
+
+.ed-stats-bar .ev-stat-label {
+    color: #4a5568 !important;
+}
+
+.ed-stat-number {
+    color: var(--ed-teal) !important;
+}
+
+.ed-stats-bar .ev-stat-item:not(:last-child) {
+    border-right: 1px solid rgba(1, 169, 169, 0.25);
+}
+
+/* --- 4. TITRES DE SECTION --- */
+.ed-section-title {
+    color: var(--ed-black) !important;
+    font-size: 2.2rem !important;
+    margin-bottom: 25px !important;
+    font-weight: 800 !important;
+}
+
+.ed-section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: var(--ed-teal);
+    margin-top: 12px;
+}
+
+/* --- CHECK ICONS --- */
+.ed-check-icon {
+    color: var(--ed-teal);
+    margin-right: 12px;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* --- 5. BLOCKQUOTE --- */
+.ed-quote {
+    border-left-color: var(--ed-teal) !important;
+    background-color: var(--ed-teal-light) !important;
+}
+
+.ed-quote cite {
+    color: var(--ed-teal) !important;
+}
+
+/* --- 6. SIDEBAR / INFO CARD --- */
+.ed-info-card {
+    border-top-color: var(--ed-teal) !important;
+}
+
+.ed-info-card h3 {
+    color: var(--ed-black) !important;
+}
+
+.ed-info-icon {
+    color: var(--ed-teal) !important;
+}
+
+/* --- 7. BOUTON CTA --- */
+.ed-btn-cta {
+    background-color: var(--ed-teal) !important;
+    color: var(--ed-white) !important;
+    border-color: var(--ed-teal) !important;
+    font-weight: 800 !important;
+}
+
+.ed-btn-cta:hover {
+    background-color: transparent !important;
+    color: var(--ed-teal) !important;
+    border-color: var(--ed-teal) !important;
+}
+
+/* --- 8. GALERIE --- */
+.ed-gallery-title-h2 {
+    color: var(--ed-black) !important;
+}
+
+.ed-gallery-title-h2::after {
+    background-color: var(--ed-teal) !important;
+}
+
+.ed-gallery-overlay {
+    background-color: rgba(17, 17, 17, 0.82) !important;
+}
+
+.ed-gallery-overlay i {
+    color: var(--ed-teal) !important;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .ed-stats-bar .ev-stat-item:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(1, 169, 169, 0.2);
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+
+    .ed-logo-container {
+        width: 260px !important;
+        height: 90px !important;
+    }
+}
