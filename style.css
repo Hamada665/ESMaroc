@@ -3323,3 +3323,220 @@ body:not(.projects-page) .category-tag {
         margin-bottom: 10px;
     }
 }
+
+/* ==========================================================================
+   PAGE ÉVÉNEMENT : SEMAINES PORTES OUVERTES (sous-événement ESalon)
+   ========================================================================== */
+
+:root {
+    --po-orange: #f4ad4a;
+    --po-black: #020202;
+    --po-grey: #dededd;
+    --po-bg: #f9f9f8;
+}
+
+/* --- 1. HERO --- */
+.po-hero {
+    background-color: var(--po-bg);
+    border-bottom: 1px solid var(--po-grey);
+}
+
+.po-badge {
+    background-color: var(--po-black) !important;
+    color: #ffffff !important;
+}
+
+.po-h1 {
+    color: var(--po-black) !important;
+}
+
+.po-h1::after {
+    background-color: var(--po-orange) !important;
+}
+
+.po-hero .ev-breadcrumb a:hover {
+    color: var(--po-orange) !important;
+}
+
+/* --- 2. LOGO CONTENEUR RECTANGULAIRE --- */
+.po-brand-separator {
+    height: 55px !important;
+}
+
+.po-logo-container {
+    width: 320px !important;
+    height: 110px !important;
+    border-radius: 8px !important;
+    border-color: var(--po-orange) !important;
+    background-color: #ffffff !important;
+    top: -55px !important;
+}
+
+.po-salon-img {
+    padding: 0 !important;
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* --- 3. STATS BAR --- */
+.po-stats-bar {
+    background-color: var(--po-grey) !important;
+    border-bottom: none;
+}
+
+.po-stats-bar .ev-stat-label {
+    color: #5a5a5a !important;
+}
+
+.po-stat-number {
+    color: var(--po-black) !important; /* Chiffres/mots en noir sur fond gris */
+}
+
+.po-stats-bar .ev-stat-item:not(:last-child) {
+    border-right: 1px solid rgba(2, 2, 2, 0.15);
+}
+
+/* --- 4. TITRES DE SECTION --- */
+.po-section-title {
+    color: var(--po-black) !important;
+    font-size: 2.2rem !important;
+    margin-bottom: 25px !important;
+    font-weight: 800 !important;
+}
+
+.po-section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: var(--po-orange);
+    margin-top: 12px;
+}
+
+/* --- CHECK ICONS --- */
+.po-check-icon {
+    color: var(--po-orange);
+    margin-right: 12px;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* --- 5. BLOCKQUOTE --- */
+.po-quote {
+    border-left-color: var(--po-orange) !important;
+    background-color: var(--po-bg) !important;
+}
+
+.po-quote cite {
+    color: var(--po-orange) !important;
+}
+
+/* --- LIEN PARENT ESALON --- */
+.po-parent-link {
+    margin-top: 35px;
+    padding: 18px 22px;
+    background-color: var(--po-grey);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.po-parent-link a {
+    color: var(--po-black);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid var(--po-orange);
+    transition: color 0.3s ease;
+}
+
+.po-parent-link a:hover {
+    color: var(--po-orange);
+}
+
+.po-parent-icon {
+    color: var(--po-orange);
+    font-size: 1rem;
+}
+
+/* --- 6. SIDEBAR / INFO CARD --- */
+.po-info-card {
+    border-top-color: var(--po-orange) !important;
+}
+
+.po-info-card h3 {
+    color: var(--po-black) !important;
+}
+
+.po-info-icon {
+    color: var(--po-orange) !important;
+}
+
+/* --- 7. BOUTONS --- */
+.po-btn-cta {
+    background-color: var(--po-black) !important;
+    color: #ffffff !important;
+    border-color: var(--po-black) !important;
+}
+
+.po-btn-cta:hover {
+    background-color: transparent !important;
+    color: var(--po-black) !important;
+}
+
+/* Bouton secondaire retour ESalon */
+.po-btn-secondary {
+    display: block;
+    margin-top: 12px;
+    text-align: center;
+    padding: 12px;
+    border-radius: 4px;
+    border: 2px solid var(--po-grey);
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.po-btn-secondary:hover {
+    border-color: var(--po-orange);
+    color: var(--po-black);
+}
+
+/* --- 8. GALERIE --- */
+.po-gallery-title-h2 {
+    color: var(--po-black) !important;
+}
+
+.po-gallery-title-h2::after {
+    background-color: var(--po-orange) !important;
+}
+
+.po-gallery-overlay {
+    background-color: rgba(2, 2, 2, 0.82) !important;
+}
+
+.po-gallery-overlay i {
+    color: var(--po-orange) !important;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .po-stats-bar .ev-stat-item:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(2, 2, 2, 0.1);
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+
+    .po-logo-container {
+        width: 260px !important;
+        height: 90px !important;
+    }
+}
