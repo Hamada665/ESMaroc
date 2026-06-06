@@ -3186,9 +3186,17 @@ body:not(.projects-page) .category-tag {
 }
 
 /* --- 2. LOGO CIRCULAIRE --- */
+.ec-brand-separator {
+    height: 55px !important;
+}
+
 .ec-logo-container {
-    border-color: var(--ec-gold) !important;    /* Bordure dorée à la place d'orange */
-    background-color: #1a1a1a !important;        /* Fond noir pour que le logo blanc ressorte */
+    width: 320px !important;
+    height: 110px !important;
+    border-radius: 8px !important;
+    border-color: var(--ec-gold) !important;
+    background-color: #ffffff !important;  /* Fond blanc */
+    top: -55px !important;
 }
 
 /* --- 3. STATS BAR --- */
