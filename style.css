@@ -3201,7 +3201,7 @@ body:not(.projects-page) .category-tag {
 
 .ec-logo-container .ev-salon-img {
     padding: 0 !important;
-    object-fit: contain !important;
+    object-fit: fill !important;
     width: 100% !important;
     height: 100% !important;
 }
