@@ -3136,23 +3136,27 @@ body:not(.projects-page) .category-tag {
 .souk-breadcrumb a { color: #4a5568; text-decoration: none; }
 .souk-breadcrumb a:hover { color: #ed8936; }
 
-/* Cadre logo corrigé pour remonter sur la ligne */
-.souk-brand-separator { background-color: #ffffff; position: relative; height: 60px; display: flex; justify-content: center; }
+/* Zone séparatrice corrigée pour ne pas chevaucher le header */
+.souk-brand-separator { 
+    display: flex; 
+    justify-content: center; 
+    background-color: transparent; 
+    margin-top: -50px; 
+    position: relative; 
+    z-index: 5; 
+}
 
 .souk-logo-container {
-    position: absolute;
-    top: -50px; /* Ajuste cette valeur si besoin pour la hauteur */
     background: #ffffff;
     border: 2px solid #ed8936;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(237, 137, 54, 0.2);
-    width: 320px;
+    width: 300px;
     height: 100px;
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
 }
 
 .souk-logo-img { width: 100%; height: 100%; object-fit: contain; }
