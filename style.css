@@ -3150,49 +3150,161 @@ body:not(.projects-page) .category-tag {
 }
 
 /* ==========================================================================
-   CSS COMPLET : EXPERTS CONNECT (COMPLET ET AUTONOME)
+   PAGE ÉVÉNEMENT 4 : EXPERTS CONNECT
    ========================================================================== */
 
-/* --- 1. GÉNÉRAL / HEADER / FOOTER (Structure commune) --- */
-body { margin: 0; font-family: sans-serif; color: #333; }
-.header-container { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: #fff; border-bottom: 1px solid #eee; }
-.main-footer { background: #333; color: #fff; padding: 40px 5%; }
-.footer-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-.footer-logo { color: #fff; }
-.footer-logo span { color: #f29443; }
-.social-icons a { color: #fff; margin-right: 15px; font-size: 1.2rem; }
+/* --- VARIABLES DE CHARTE --- */
+:root {
+    --ec-gold: #F5C518;
+    --ec-black: #1a1a1a;
+    --ec-bg: #fafaf7;
+    --ec-gold-hover: #d4a800;
+}
 
-/* --- 2. HERO SECTION (Experts Connect) --- */
-.ev-detail-hero { background-color: #f8fafc; padding: 100px 20px; text-align: center; }
-.ev-badge { background-color: #F7C600 !important; color: #000000 !important; padding: 6px 15px; font-weight: bold; text-transform: uppercase; border-radius: 4px; }
-.ev-detail-hero h1 { color: #000000; margin: 20px 0; }
-.ev-detail-hero h1::after { content: ''; display: block; width: 50px; height: 4px; background-color: #F7C600 !important; margin: 15px auto; }
+/* --- 1. HERO --- */
+.ec-hero {
+    background-color: var(--ec-bg);
+    border-bottom: 1px solid #e8e5d8;
+}
 
-/* --- 3. SEPARATEUR ET LOGO --- */
-.ev-brand-separator { position: relative; height: 50px; }
-.ev-logo-salon-container { position: absolute; top: -80px; left: 50%; transform: translateX(-50%); background: #fff; border: 3px solid #F7C600 !important; padding: 10px; border-radius: 8px; width: 220px; }
-.ev-salon-img { width: 100%; }
+.ec-badge {
+    background-color: var(--ec-black) !important;
+    color: var(--ec-gold) !important; /* Badge noir avec texte doré : signature propre à EC */
+}
 
-/* --- 4. STATS BAR --- */
-.ev-stats-bar { display: flex; justify-content: center; gap: 50px; padding: 60px 20px 30px; background: #fff; }
-.ev-stat-number { display: block; font-size: 2.5rem; font-weight: bold; color: #F7C600 !important; }
-.ev-stat-label { text-transform: uppercase; font-weight: bold; }
+.ec-h1 {
+    color: var(--ec-black) !important;
+}
 
-/* --- 5. MAIN CONTENT & SIDEBAR --- */
-.ev-detail-container { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-.ev-main-content h2 { color: #000000; margin-bottom: 20px; }
-.ev-main-content h2::after { content: ''; display: block; width: 40px; height: 3px; background-color: #F7C600 !important; margin-top: 10px; }
-.ev-info-card { border-top: 4px solid #F7C600 !important; background: #f9f9f9; padding: 30px; }
-.ev-btn-cta { display: block; background: #000000 !important; color: #fff !important; text-align: center; padding: 15px; text-decoration: none; font-weight: bold; margin-top: 20px; }
-.ev-btn-cta:hover { background: #F7C600 !important; color: #000000 !important; }
+/* Ligne de soulignement en jaune doré */
+.ec-h1::after {
+    background-color: var(--ec-gold) !important;
+}
 
-/* --- 6. GALERIE --- */
-.ev-gallery-section { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-.ev-standard-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.ev-gallery-item { height: 200px; background: #eee; border-radius: 4px; }
+.ev-breadcrumb a:hover {
+    color: var(--ec-gold) !important;
+}
 
-/* --- 7. RESPONSIVE --- */
+/* --- 2. LOGO CIRCULAIRE --- */
+.ec-logo-container {
+    border-color: var(--ec-gold) !important;    /* Bordure dorée à la place d'orange */
+    background-color: #1a1a1a !important;        /* Fond noir pour que le logo blanc ressorte */
+}
+
+/* --- 3. STATS BAR --- */
+.ec-stats-bar {
+    background-color: var(--ec-black) !important; /* Stats sur fond noir — inversé vs ESalon */
+    border-bottom: none;
+}
+
+.ec-stats-bar .ev-stat-label {
+    color: #c9c4a8 !important; /* Labels légèrement crème sur fond noir */
+}
+
+.ec-stat-number {
+    color: var(--ec-gold) !important; /* Chiffres en jaune doré */
+}
+
+/* Séparateurs entre les stats */
+.ec-stats-bar .ev-stat-item:not(:last-child) {
+    border-right: 1px solid rgba(245, 197, 24, 0.2);
+}
+
+/* --- 4. TITRES DE SECTION --- */
+.ec-section-title {
+    color: var(--ec-black) !important;
+    font-size: 2.2rem !important;
+    margin-bottom: 25px !important;
+    font-weight: 800 !important;
+}
+
+.ec-section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: var(--ec-gold) !important; /* Ligne d'accent dorée */
+    margin-top: 12px;
+}
+
+/* --- ICÔNES CHECK-LIST --- */
+.ec-check-icon {
+    color: var(--ec-gold);
+    margin-right: 12px;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* --- 5. CITATION / BLOCKQUOTE --- */
+.ec-quote {
+    border-left-color: var(--ec-gold) !important; /* Barre de citation en doré */
+    background-color: #1a1a1a !important;
+    color: #f0ead6 !important;
+}
+
+.ec-quote cite {
+    color: var(--ec-gold) !important;
+}
+
+/* --- 6. SIDEBAR / INFO CARD --- */
+.ec-info-card {
+    border-top-color: var(--ec-gold) !important; /* Bandeau supérieur doré */
+}
+
+.ec-info-card h3 {
+    color: var(--ec-black) !important;
+}
+
+.ec-info-icon {
+    color: var(--ec-gold) !important;
+}
+
+/* --- 7. BOUTON CTA --- */
+.ec-btn-cta {
+    background-color: var(--ec-gold) !important;
+    color: var(--ec-black) !important;            /* Texte noir sur fond doré */
+    border-color: var(--ec-gold) !important;
+    font-weight: 800 !important;
+}
+
+.ec-btn-cta:hover {
+    background-color: transparent !important;
+    color: var(--ec-black) !important;
+    border-color: var(--ec-black) !important;
+}
+
+/* --- 8. GALERIE --- */
+.ec-gallery-title-h2 {
+    color: var(--ec-black) !important;
+}
+
+.ec-gallery-title-h2::after {
+    background-color: var(--ec-gold) !important;
+}
+
+.ec-gallery-item {
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.ec-gallery-item:hover {
+    border-color: var(--ec-gold);
+}
+
+.ec-gallery-overlay {
+    background-color: rgba(26, 26, 26, 0.85) !important;
+}
+
+.ec-gallery-overlay i {
+    color: var(--ec-gold) !important; /* Icône loupe en doré au survol */
+}
+
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .ev-detail-container { grid-template-columns: 1fr; }
-    .footer-container { grid-template-columns: 1fr; }
+    .ec-stats-bar .ev-stat-item:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(245, 197, 24, 0.2);
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
 }
