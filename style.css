@@ -3199,6 +3199,13 @@ body:not(.projects-page) .category-tag {
     top: -55px !important;
 }
 
+.ec-logo-container .ev-salon-img {
+    padding: 0 !important;
+    object-fit: contain !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
 /* --- 3. STATS BAR --- */
 .ec-stats-bar {
     background-color: var(--ec-black) !important; /* Stats sur fond noir — inversé vs ESalon */
