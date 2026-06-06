@@ -3374,7 +3374,7 @@ body:not(.projects-page) .category-tag {
 
 .po-salon-img {
     padding: 0 !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
     width: 100% !important;
     height: 100% !important;
 }
