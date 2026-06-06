@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experts Connect - ESMaroc</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="experts-connect.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
 </head>
 <body class="events-detail-page-body">
 
-<!-- HEADER COMPLET (Exactement comme dans souk.html) -->
 <header>
     <div class="header-container">
-        <div class="logo"><img src="ESMAROC LOGO.png" alt="Logo ESMaroc"></div>
+        <div class="logo">
+            <img src="ESMAROC LOGO.png" alt="Logo ESMaroc">
+        </div>
+        
         <nav>
             <a href="index.html">Accueil</a>
+            
             <div class="dropdown">
                 <a href="#" class="dropdown-trigger">ESMaroc <i class="fas fa-chevron-down nav-arrow"></i></a>
                 <div class="dropdown-menu">
@@ -24,11 +28,13 @@
                     <a href="equipe.html">Notre Équipe</a>
                 </div>
             </div>
+
             <a href="evenements.html" class="active">Évènements</a>
             <a href="projets.html">Projets</a>
             <a href="#">École E-learning</a>
             <a href="#">Contact</a>
         </nav>
+
         <div class="header-icons">
             <a href="#" class="icon-link"><i class="fas fa-search"></i></a> 
             <a href="#" class="icon-link"><i class="fas fa-map-marker-alt"></i></a> 
@@ -38,75 +44,151 @@
 </header>
     
 <main class="events-detail-layout">
-    <section class="ev-detail-hero">
+            
+    <section class="ev-detail-hero ec-hero">
         <div class="ev-detail-hero-content">
-            <span class="ev-badge">Initiative en ligne</span>
-            <h1>Experts Connect ESMaroc</h1>
+            <span class="ev-badge ec-badge">Networking & Expertise</span>
+            <h1 class="ec-h1">Experts Connect ESMaroc</h1>
+            <nav class="ev-breadcrumb">
+                <a href="index.html">Accueil</a> <i class="fas fa-chevron-right breadcrumb-sep"></i> 
+                <a href="evenements.html">Événements</a> <i class="fas fa-chevron-right breadcrumb-sep"></i> 
+                <span>Experts Connect</span>
+            </nav>
         </div>
     </section>
 
-    <div class="ev-brand-separator">
-        <div class="ev-logo-salon-container">
-            <img src="experts-logo.png" alt="Logo Experts Connect" class="ev-salon-img">
+    <div class="ev-brand-separator ec-brand-separator">
+        <div class="ev-logo-salon-container ec-logo-container">
+            <img src="1780783414505_image.png" alt="Logo Officiel Experts Connect" class="ev-salon-img">
         </div>
     </div>
 
-    <section class="ev-stats-bar">
+    <section class="ev-stats-bar ec-stats-bar">
         <div class="ev-stat-item">
-            <span class="ev-stat-number">100%</span>
-            <span class="ev-stat-label">En ligne</span>
+            <span class="ev-stat-number ec-stat-number">50+</span>
+            <span class="ev-stat-label">Experts Intervenants</span>
         </div>
         <div class="ev-stat-item">
-            <span class="ev-stat-number">Mixte</span>
-            <span class="ev-stat-label">Experts & Jeunes</span>
+            <span class="ev-stat-number ec-stat-number">300+</span>
+            <span class="ev-stat-label">Participants en Ligne</span>
         </div>
         <div class="ev-stat-item">
-            <span class="ev-stat-number">Expert</span>
-            <span class="ev-stat-label">Réseautage Pro</span>
+            <span class="ev-stat-number ec-stat-number">4</span>
+            <span class="ev-stat-label">Thématiques Clés</span>
         </div>
     </section>
 
     <section class="ev-detail-container">
+        
         <article class="ev-main-content">
-            <h2>À propos de l'événement</h2>
-            <p>Experts Connect ESMaroc est une initiative en ligne réunissant experts, professionnels, entrepreneurs et jeunes porteurs de projets autour de thématiques clés :</p>
-            <ul style="list-style: none; padding: 0; margin: 20px 0;">
-                <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #F7C600; margin-right: 10px;"></i> Entrepreneuriat</li>
-                <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #F7C600; margin-right: 10px;"></i> Développement personnel</li>
-                <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #F7C600; margin-right: 10px;"></i> Soft skills</li>
-                <li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: #F7C600; margin-right: 10px;"></i> Participation citoyenne</li>
+            <h2 class="ec-section-title">À propos de l'événement</h2>
+            <p class="ev-lead">Experts Connect ESMaroc est une initiative en ligne réunissant experts, professionnels, entrepreneurs et jeunes porteurs de projets autour de thématiques clés.</p>
+            
+            <p>Cette plateforme digitale rassemble une communauté engagée autour de quatre axes fondamentaux :</p>
+            
+            <ul style="list-style-type: none; padding-left: 5px; margin: 20px 0;">
+                <li style="margin-bottom: 12px; font-size: 1.05rem; color: #4a5568; display: flex; align-items: center;">
+                    <span class="ec-check-icon">✔</span>
+                    <strong>Entrepreneuriat</strong>
+                </li>
+                <li style="margin-bottom: 12px; font-size: 1.05rem; color: #4a5568; display: flex; align-items: center;">
+                    <span class="ec-check-icon">✔</span>
+                    <strong>Développement personnel</strong>
+                </li>
+                <li style="margin-bottom: 12px; font-size: 1.05rem; color: #4a5568; display: flex; align-items: center;">
+                    <span class="ec-check-icon">✔</span>
+                    <strong>Soft skills</strong>
+                </li>
+                <li style="margin-bottom: 12px; font-size: 1.05rem; color: #4a5568; display: flex; align-items: center;">
+                    <span class="ec-check-icon">✔</span>
+                    <strong>Participation citoyenne</strong>
+                </li>
             </ul>
 
-            <h2>Objectifs principaux</h2>
-            <ul style="list-style: none; padding: 0; margin: 20px 0;">
-                <li style="margin-bottom: 12px;"><i class="fas fa-arrow-right" style="color: #F7C600; margin-right: 10px;"></i> Inspirer et motiver les participants</li>
-                <li style="margin-bottom: 12px;"><i class="fas fa-arrow-right" style="color: #F7C600; margin-right: 10px;"></i> Transmettre des compétences pratiques</li>
-                <li style="margin-bottom: 12px;"><i class="fas fa-arrow-right" style="color: #F7C600; margin-right: 10px;"></i> Renforcer le réseautage professionnel</li>
+            <h2 class="ec-section-title" style="margin-top: 45px;">Objectifs principaux</h2>
+
+            <ul style="list-style-type: none; padding-left: 5px; margin: 20px 0;">
+                <li style="margin-bottom: 12px; font-size: 1.05rem; color: #4a5568; display: flex; align-items: center;">
+                    <span class="ec-check-icon">→</span>
+                    Inspirer et <strong style="margin-left:5px;">motiver</strong> les participants
+                </li>
+                <li style="margin-bottom: 12px; font-size: 1.05rem; color: #4a5568; display: flex; align-items: center;">
+                    <span class="ec-check-icon">→</span>
+                    Transmettre des <strong style="margin-left:5px;">compétences pratiques</strong>
+                </li>
+                <li style="margin-bottom: 12px; font-size: 1.05rem; color: #4a5568; display: flex; align-items: center;">
+                    <span class="ec-check-icon">→</span>
+                    Renforcer le <strong style="margin-left:5px;">réseautage professionnel</strong>
+                </li>
             </ul>
-            <p><em>Cette activité renforce les liens entre talents, expertise et écosystème entrepreneurial.</em></p>
+            
+            <blockquote class="ev-quote ec-quote">
+                <i class="fas fa-quote-left quote-icon"></i>
+                "Cette activité renforce les liens entre talents, expertise et écosystème entrepreneurial, en offrant un espace d'échange ouvert et accessible à tous."
+                <cite>— Équipe ESMaroc</cite>
+            </blockquote>
         </article>
 
         <aside class="ev-sidebar">
-            <div class="ev-info-card">
+            <div class="ev-info-card ec-info-card">
                 <h3>Infos Pratiques</h3>
-                <p>Initiative digitale ouverte aux entrepreneurs et porteurs de projets.</p>
-                <a href="#" class="ev-btn-cta">Rejoindre la session</a>
+                <ul>
+                    <li>
+                        <i class="fas fa-wifi info-icon ec-info-icon"></i>
+                        <div><strong>Format :</strong> 100% en ligne</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-calendar-alt info-icon ec-info-icon"></i>
+                        <div><strong>Fréquence :</strong> Récurrent</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-users info-icon ec-info-icon"></i>
+                        <div><strong>Public :</strong> Entrepreneurs, Jeunes, Professionnels</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-globe info-icon ec-info-icon"></i>
+                        <div><strong>Accès :</strong> Ouvert au grand public</div>
+                    </li>
+                </ul>
+                <a href="#contact" class="ev-btn-cta ec-btn-cta">Devenir Intervenant</a>
             </div>
         </aside>
+
     </section>
 
     <section class="ev-gallery-section">
         <div class="ev-gallery-title">
-            <h2>Retour en images</h2>
-            <p>Découvrez l'énergie de nos sessions</p>
+            <h2 class="ec-gallery-title-h2">Retour en images</h2>
+            <p>Découvrez les moments forts de nos sessions Experts Connect</p>
         </div>
+
         <div class="ev-standard-gallery">
-            <!-- Tes images ici -->
+            
+            <a href="https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=800" data-lightbox="ec-album" class="ev-gallery-item ec-gallery-item">
+                <img src="https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=600" alt="Session Experts Connect">
+                <div class="gallery-overlay ec-gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </a>
+
+            <a href="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=800" data-lightbox="ec-album" class="ev-gallery-item ec-gallery-item">
+                <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=600" alt="Webinaire ESMaroc">
+                <div class="gallery-overlay ec-gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </a>
+
+            <a href="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=800" data-lightbox="ec-album" class="ev-gallery-item ec-gallery-item">
+                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=600" alt="Networking en ligne">
+                <div class="gallery-overlay ec-gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </a>
+
+            <a href="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800" data-lightbox="ec-album" class="ev-gallery-item ec-gallery-item">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600" alt="Conférence Experts">
+                <div class="gallery-overlay ec-gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </a>
+
         </div>
     </section>
-</main>
 
-<!-- FOOTER COMPLET (Exactement comme dans souk.html) -->
+</main>
+            
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-left">
@@ -136,5 +218,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
