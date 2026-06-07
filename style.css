@@ -3615,7 +3615,7 @@ body:not(.projects-page) .category-tag {
     box-sizing: border-box !important;
     /* Supprime le fond blanc du PNG via mix-blend-mode */
     mix-blend-mode: multiply !important;
-    transform: scale(1.6) !important; /* Agrandit le logo visuellement */
+    transform: scale(2.0) !important; /* Agrandit le logo visuellement */
 }
 
 /* --- 3. STATS BAR --- */
