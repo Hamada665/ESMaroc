@@ -3599,8 +3599,9 @@ body:not(.projects-page) .category-tag {
 }
 
 .ed-logo-container {
-    width: 380px !important;
-    height: 140px !important;
+    width: 500px !important;
+    height: 200px !important;
+    top: -100px !important;
     border-radius: 8px !important;
     border-color: var(--ed-teal) !important;
     background-color: var(--ed-white) !important;
@@ -3728,6 +3729,6 @@ body:not(.projects-page) .category-tag {
     }
 
     .ed-brand-separator {
-        height: 50px !important;
+        height: 100px !important;
     }
 }
