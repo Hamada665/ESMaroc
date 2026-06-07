@@ -1,22 +1,33 @@
 /* ==========================================================================
-   ACCORDION — COMITÉ CONSULTATIF
-   Cohérence parfaite avec la charte de la page événements
+   ACCORDION LATÉRAL — COMITÉ CONSULTATIF
    ========================================================================== */
 
-/* La carte accordion n'est pas un lien, on retire le curseur par défaut */
-.accordion-card {
-    cursor: default;
-    height: auto !important;        /* La hauteur s'adapte à l'ouverture */
-    min-height: 520px;
-    transition: box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+/* Wrapper qui contient la carte + le panneau côte à côte */
+.accordion-wrapper {
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
 }
 
-/* Le bouton trigger imite exactement .page-ev-read-more */
-.accordion-trigger {
-    background: none;
-    border: none;
-    padding: 0;
+/* La carte accordion */
+.accordion-card {
     cursor: pointer;
+    flex-shrink: 0;
+    width: 100%;
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s ease;
+}
+
+/* Quand ouvert : la carte se rétrécit pour laisser place au panneau */
+.accordion-card.accordion-open {
+    width: 55%;
+    box-shadow: 0 20px 50px rgba(0, 51, 153, 0.1) !important;
+}
+
+/* Le trigger imite .page-ev-read-more */
+.accordion-trigger {
     font-size: 0.8rem;
     font-weight: 700;
     color: #0f2547;
@@ -24,10 +35,11 @@
     letter-spacing: 0.5px;
     padding-bottom: 2px;
     border-bottom: 2px solid #e0ab00;
-    transition: all 0.3s ease;
-    display: flex;
+    cursor: pointer;
+    display: inline-flex;
     align-items: center;
     gap: 6px;
+    transition: all 0.3s ease;
 }
 
 .accordion-trigger:hover {
@@ -35,86 +47,112 @@
     border-bottom-color: #003399;
 }
 
-.accordion-arrow {
-    transition: transform 0.3s ease;
-    font-size: 0.7rem;
-}
-
-/* --- PANNEAU ACCORDION --- */
-.accordion-panel {
-    max-height: 0;
+/* --- PANNEAU LATÉRAL --- */
+.accordion-side-panel {
+    width: 0;
     overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     background-color: #f7f9fc;
-    border-top: 2px solid #e0ab00;
+    border-left: 3px solid #e0ab00;
+    flex-shrink: 0;
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                padding 0.5s ease,
+                opacity 0.4s ease;
+    opacity: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.accordion-panel.open {
-    max-height: 500px;
+.accordion-side-panel.open {
+    width: 45%;
+    opacity: 1;
+    padding: 30px 25px;
 }
 
-.accordion-content {
-    padding: 28px 25px;
+/* Bouton fermer */
+.accordion-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #718096;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    padding: 4px;
 }
 
-.accordion-content h4 {
+.accordion-close:hover {
+    color: #003399;
+}
+
+/* Contenu du panneau */
+.accordion-side-panel h4 {
     font-size: 1rem;
     font-weight: 800;
     color: #003399;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
     padding-bottom: 10px;
     border-bottom: 1px solid #e2e8f0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.accordion-content p {
-    font-size: 0.92rem;
+.accordion-side-panel p {
+    font-size: 0.88rem;
     color: #4a5568;
-    line-height: 1.7;
-    margin-bottom: 18px;
+    line-height: 1.65;
+    margin-bottom: 16px;
 }
 
-.accordion-content ul {
+/* Liste */
+.accordion-list {
     list-style: none;
     padding: 0;
-    margin: 0 0 20px 0;
+    margin: 0 0 18px 0;
 }
 
-.accordion-content ul li {
+.accordion-list li {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 12px;
-    font-size: 0.92rem;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 0.88rem;
     color: #4a5568;
+    line-height: 1.5;
 }
 
 .accordion-check {
     background-color: #003399;
     color: #ffffff;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     flex-shrink: 0;
     margin-top: 2px;
 }
 
+/* Bloc objectif */
 .accordion-objective {
     background-color: #ffffff;
     border-left: 3px solid #e0ab00;
-    padding: 14px 16px !important;
+    padding: 12px 14px;
     border-radius: 0 4px 4px 0;
-    font-size: 0.92rem !important;
-    color: #2d3748 !important;
+    font-size: 0.88rem;
+    color: #2d3748;
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    margin-bottom: 0 !important;
 }
 
 .accordion-objective i {
@@ -123,11 +161,19 @@
     flex-shrink: 0;
 }
 
-/* Quand la carte est ouverte */
-.accordion-open {
-    box-shadow: 0 20px 50px rgba(0, 51, 153, 0.1) !important;
-}
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .accordion-wrapper {
+        flex-direction: column;
+    }
 
-.accordion-open .page-ev-floating-box {
-    transform: none !important;
+    .accordion-card.accordion-open {
+        width: 100%;
+    }
+
+    .accordion-side-panel.open {
+        width: 100%;
+        border-left: none;
+        border-top: 3px solid #e0ab00;
+    }
 }
