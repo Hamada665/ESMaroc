@@ -195,9 +195,55 @@ document.addEventListener("DOMContentLoaded", () => {
 if (typeof lightbox !== 'undefined') {
     lightbox.option({
         'resizeDuration': 200,
-        'wrapAround': true, // Permet de boucler indéfiniment (gauche <-> droite)
+        'wrapAround': true, 
         'albumLabel': "Image %1 sur %2",
         'fadeDuration': 300,
         'imageFadeDuration': 300
     });
 }
+
+/* ==========================================================================
+   CARROUSEL TÉMOIGNAGES — PAGE E-LEARNING
+   ========================================================================== */
+(function() {
+    const track = document.getElementById('elCarouselTrack');
+    if (!track) return; // Ne s'exécute que sur la page e-learning
+
+    const dotsContainer = document.getElementById('elCarouselDots');
+    const cards = track.querySelectorAll('.el-testimonial-card');
+    const totalCards = cards.length;
+    const visibleCards = window.innerWidth <= 768 ? 1 : 3;
+    const maxIndex = Math.max(0, totalCards - visibleCards);
+    let currentIndex = 0;
+
+    // Créer les dots
+    for (let i = 0; i <= maxIndex; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('el-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+    }
+
+    function goTo(index) {
+        currentIndex = Math.max(0, Math.min(index, maxIndex));
+        const cardWidth = cards[0].offsetWidth + 25; // largeur + gap
+        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+        // Mettre à jour les dots
+        document.querySelectorAll('.el-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    window.elCarouselNext = function() {
+        goTo(currentIndex < maxIndex ? currentIndex + 1 : 0);
+    };
+
+    window.elCarouselPrev = function() {
+        goTo(currentIndex > 0 ? currentIndex - 1 : maxIndex);
+    };
+
+    // Recalcul au resize
+    window.addEventListener('resize', () => goTo(0));
+})();
