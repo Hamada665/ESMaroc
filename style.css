@@ -4101,3 +4101,172 @@ body:not(.projects-page) .category-tag {
         margin-bottom: 10px !important;
     }
 }
+
+/* ==========================================================================
+   PAGE RSE & PARTENARIATS — Charte globale ESMaroc 
+   ========================================================================== */
+
+:root {
+    --rse-blue: #084695;
+    --rse-yellow: #efba05;
+    --rse-blue-light: rgba(8, 70, 149, 0.06);
+}
+
+/* =============================================
+   HERO
+   ============================================= */
+[data-page="rse"] .ev-detail-hero {
+    background-color: #f7f9fc;
+    border-bottom: 1px solid #dde6f5;
+}
+
+[data-page="rse"] .ev-detail-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+[data-page="rse"] .ev-badge {
+    background-color: var(--rse-blue);
+    color: #ffffff;
+}
+
+[data-page="rse"] .ev-detail-hero h1 {
+    color: var(--rse-blue);
+}
+
+[data-page="rse"] .ev-detail-hero h1::after {
+    background-color: var(--rse-yellow);
+}
+
+[data-page="rse"] .ev-breadcrumb a:hover {
+    color: var(--rse-blue);
+}
+
+/* Masquer le séparateur logo */
+[data-page="rse"] .ev-brand-separator {
+    display: none;
+}
+
+/* =============================================
+   STATS BAR
+   ============================================= */
+[data-page="rse"] .ev-stats-bar {
+    background-color: var(--rse-blue-light);
+    border-bottom: 2px solid var(--rse-blue);
+}
+
+[data-page="rse"] .ev-stat-number {
+    color: var(--rse-blue);
+}
+
+[data-page="rse"] .ev-stat-label {
+    color: #4a5568;
+}
+
+[data-page="rse"] .ev-stat-item:not(:last-child) {
+    border-right: 1px solid rgba(8, 70, 149, 0.2);
+}
+
+/* =============================================
+   TITRES DE SECTION
+   ============================================= */
+[data-page="rse"] .ev-main-content h2 {
+    color: var(--rse-blue);
+}
+
+[data-page="rse"] .ev-main-content h2::after {
+    background-color: var(--rse-yellow);
+}
+
+/* =============================================
+   CHECK ICONS
+   ============================================= */
+.rse-check-icon {
+    color: #ffffff;
+    background-color: var(--rse-blue);
+    margin-right: 12px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+/* =============================================
+   BLOCKQUOTE
+   ============================================= */
+[data-page="rse"] .ev-quote {
+    border-left-color: var(--rse-blue);
+    background-color: var(--rse-blue-light);
+}
+
+[data-page="rse"] .ev-quote cite {
+    color: var(--rse-blue);
+}
+
+/* =============================================
+   SIDEBAR / INFO CARD
+   ============================================= */
+[data-page="rse"] .ev-info-card {
+    border-top-color: var(--rse-blue);
+}
+
+[data-page="rse"] .ev-info-card h3 {
+    color: var(--rse-blue);
+}
+
+[data-page="rse"] .info-icon {
+    color: var(--rse-yellow);
+}
+
+/* =============================================
+   BOUTON CTA
+   ============================================= */
+[data-page="rse"] .ev-btn-cta {
+    background-color: var(--rse-yellow);
+    color: var(--rse-blue);
+    border-color: var(--rse-yellow);
+    font-weight: 800;
+}
+
+[data-page="rse"] .ev-btn-cta:hover {
+    background-color: transparent;
+    color: var(--rse-blue);
+    border-color: var(--rse-blue);
+}
+
+/* =============================================
+   GALERIE
+   ============================================= */
+[data-page="rse"] .ev-gallery-title h2 {
+    color: var(--rse-blue);
+}
+
+[data-page="rse"] .ev-gallery-title h2::after {
+    background-color: var(--rse-yellow);
+}
+
+[data-page="rse"] .gallery-overlay {
+    background-color: rgba(8, 70, 149, 0.85);
+}
+
+[data-page="rse"] .gallery-overlay i {
+    color: var(--rse-yellow);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 768px) {
+    [data-page="rse"] .ev-stat-item:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(8, 70, 149, 0.15);
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+}
