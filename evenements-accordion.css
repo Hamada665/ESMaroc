@@ -1,32 +1,155 @@
 /* ==========================================================================
-   ACCORDION LATÉRAL — COMITÉ CONSULTATIF
+   ACCORDION FLIP — COMITÉ CONSULTATIF
    ========================================================================== */
 
-/* Wrapper qui contient la carte + le panneau côte à côte */
 .accordion-wrapper {
-    display: flex;
-    align-items: stretch;
     position: relative;
-    overflow: hidden;
-    border-radius: 0;
+    height: 520px;
 }
 
-/* La carte accordion */
+/* --- CARTE (face avant) --- */
 .accordion-card {
-    cursor: pointer;
-    flex-shrink: 0;
+    position: absolute;
+    top: 0; left: 0;
     width: 100%;
-    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.4s ease;
+    height: 100%;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Quand ouvert : la carte se rétrécit pour laisser place au panneau */
 .accordion-card.accordion-open {
-    width: 55%;
-    box-shadow: 0 20px 50px rgba(0, 51, 153, 0.1) !important;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.97);
 }
 
-/* Le trigger imite .page-ev-read-more */
+/* --- PANNEAU (face arrière) --- */
+.accordion-side-panel {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f9fc;
+    border-top: 4px solid #003399;
+    border-left: 4px solid #e0ab00;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    padding: 30px 28px;
+    box-sizing: border-box;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.97);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.accordion-side-panel.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+}
+
+/* Bouton Réduire */
+.accordion-close {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #e0ab00;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #0f2547;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0 0 2px 0;
+    margin-bottom: 4px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    align-self: flex-start;
+}
+
+.accordion-close:hover {
+    color: #003399;
+    border-bottom-color: #003399;
+}
+
+/* Titre panneau */
+.accordion-side-panel h4 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #003399;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Texte intro */
+.accordion-side-panel p {
+    font-size: 0.9rem;
+    color: #4a5568;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* Liste */
+.accordion-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.accordion-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #4a5568;
+    line-height: 1.5;
+}
+
+.accordion-check {
+    background-color: #003399;
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Bloc objectif */
+.accordion-objective {
+    background-color: #ffffff;
+    border-left: 3px solid #e0ab00;
+    padding: 12px 14px;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.9rem;
+    color: #2d3748;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 0;
+}
+
+.accordion-objective i {
+    color: #003399;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+/* Trigger "En savoir plus" */
 .accordion-trigger {
     font-size: 0.8rem;
     font-weight: 700;
@@ -47,133 +170,24 @@
     border-bottom-color: #003399;
 }
 
-/* --- PANNEAU LATÉRAL --- */
-.accordion-side-panel {
-    width: 0;
-    overflow: hidden;
-    background-color: #f7f9fc;
-    border-left: 3px solid #e0ab00;
-    flex-shrink: 0;
-    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                padding 0.5s ease,
-                opacity 0.4s ease;
-    opacity: 0;
-    padding: 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.accordion-side-panel.open {
-    width: 45%;
-    opacity: 1;
-    padding: 30px 25px;
-}
-
-/* Bouton fermer */
-.accordion-close {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #718096;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-    padding: 4px;
-}
-
-.accordion-close:hover {
-    color: #003399;
-}
-
-/* Contenu du panneau */
-.accordion-side-panel h4 {
-    font-size: 1rem;
-    font-weight: 800;
-    color: #003399;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 14px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #e2e8f0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.accordion-side-panel p {
-    font-size: 0.88rem;
-    color: #4a5568;
-    line-height: 1.65;
-    margin-bottom: 16px;
-}
-
-/* Liste */
-.accordion-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 18px 0;
-}
-
-.accordion-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 10px;
-    font-size: 0.88rem;
-    color: #4a5568;
-    line-height: 1.5;
-}
-
-.accordion-check {
-    background-color: #003399;
-    color: #ffffff;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.6rem;
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-/* Bloc objectif */
-.accordion-objective {
-    background-color: #ffffff;
-    border-left: 3px solid #e0ab00;
-    padding: 12px 14px;
-    border-radius: 0 4px 4px 0;
-    font-size: 0.88rem;
-    color: #2d3748;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.accordion-objective i {
-    color: #003399;
-    margin-top: 3px;
-    flex-shrink: 0;
-}
-
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     .accordion-wrapper {
-        flex-direction: column;
+        height: auto;
+        min-height: 520px;
     }
-
+    .accordion-card,
+    .accordion-side-panel {
+        position: relative;
+        height: auto;
+    }
     .accordion-card.accordion-open {
-        width: 100%;
+        display: none;
     }
-
+    .accordion-side-panel {
+        display: none;
+    }
     .accordion-side-panel.open {
-        width: 100%;
-        border-left: none;
-        border-top: 3px solid #e0ab00;
+        display: flex;
     }
 }
