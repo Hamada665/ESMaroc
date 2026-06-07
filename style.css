@@ -3734,3 +3734,212 @@ body:not(.projects-page) .category-tag {
         height: 45px !important;
     }
 }
+
+/* ==========================================================================
+   PAGE ÉVÉNEMENT : SOIRÉE DES ENTREPRISES CITOYENNES
+   ========================================================================== */
+
+:root {
+    --sec-blue: #084695;
+    --sec-yellow: #efba05;
+    --sec-blue-light: rgba(8, 70, 149, 0.06);
+}
+
+/* --- 1. HERO --- */
+.sec-hero {
+    background-color: #f7f9fc;
+    border-bottom: 1px solid #dde6f5;
+}
+
+.sec-hero .ev-detail-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.sec-badge {
+    background-color: var(--sec-blue) !important;
+    color: #ffffff !important;
+    display: inline-block !important;
+    margin-bottom: 20px !important;
+}
+
+.sec-h1 {
+    color: var(--sec-blue) !important;
+    display: block !important;
+}
+
+.sec-h1::after {
+    background-color: var(--sec-yellow) !important;
+    display: block !important;
+    content: '' !important;
+    width: 60px !important;
+    height: 4px !important;
+    margin: 15px auto 0 auto !important;
+    border-radius: 2px !important;
+}
+
+.sec-hero .ev-breadcrumb a:hover {
+    color: var(--sec-blue) !important;
+}
+
+/* --- 2. BANNIÈRE TYPOGRAPHIQUE (remplace le logo) --- */
+.sec-title-banner {
+    background-color: var(--sec-blue);
+    padding: 40px 20px 35px;
+    text-align: center;
+}
+
+.sec-title-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
+.sec-title-text {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sec-deco {
+    color: var(--sec-yellow);
+    font-size: 1.4rem;
+}
+
+.sec-title-line {
+    width: 80px;
+    height: 4px;
+    background-color: var(--sec-yellow);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* --- 3. STATS BAR --- */
+.sec-stats-bar {
+    background-color: var(--sec-blue-light) !important;
+    border-bottom: 2px solid var(--sec-blue) !important;
+}
+
+.sec-stats-bar .ev-stat-label {
+    color: #4a5568 !important;
+}
+
+.sec-stat-number {
+    color: var(--sec-blue) !important;
+}
+
+.sec-stats-bar .ev-stat-item:not(:last-child) {
+    border-right: 1px solid rgba(8, 70, 149, 0.2);
+}
+
+/* --- 4. TITRES DE SECTION --- */
+.sec-section-title {
+    color: var(--sec-blue) !important;
+    font-size: 2.2rem !important;
+    margin-bottom: 25px !important;
+    font-weight: 800 !important;
+}
+
+.sec-section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: var(--sec-yellow);
+    margin-top: 12px;
+}
+
+/* --- CHECK ICONS --- */
+.sec-check-icon {
+    color: var(--sec-yellow);
+    margin-right: 12px;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    background-color: var(--sec-blue);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+}
+
+/* --- 5. BLOCKQUOTE --- */
+.sec-quote {
+    border-left-color: var(--sec-blue) !important;
+    background-color: var(--sec-blue-light) !important;
+}
+
+.sec-quote cite {
+    color: var(--sec-blue) !important;
+}
+
+/* --- 6. SIDEBAR / INFO CARD --- */
+.sec-info-card {
+    border-top-color: var(--sec-blue) !important;
+}
+
+.sec-info-card h3 {
+    color: var(--sec-blue) !important;
+}
+
+.sec-info-icon {
+    color: var(--sec-yellow) !important;
+}
+
+/* --- 7. BOUTON CTA --- */
+.sec-btn-cta {
+    background-color: var(--sec-yellow) !important;
+    color: var(--sec-blue) !important;
+    border-color: var(--sec-yellow) !important;
+    font-weight: 800 !important;
+}
+
+.sec-btn-cta:hover {
+    background-color: transparent !important;
+    color: var(--sec-blue) !important;
+    border-color: var(--sec-blue) !important;
+}
+
+/* --- 8. GALERIE --- */
+.sec-gallery-title-h2 {
+    color: var(--sec-blue) !important;
+}
+
+.sec-gallery-title-h2::after {
+    background-color: var(--sec-yellow) !important;
+}
+
+.sec-gallery-overlay {
+    background-color: rgba(8, 70, 149, 0.85) !important;
+}
+
+.sec-gallery-overlay i {
+    color: var(--sec-yellow) !important;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .sec-title-text {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+
+    .sec-title-inner {
+        gap: 12px;
+    }
+
+    .sec-stats-bar .ev-stat-item:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(8, 70, 149, 0.15);
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+}
