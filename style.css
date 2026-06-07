@@ -3747,15 +3747,15 @@ body:not(.projects-page) .category-tag {
 
 /* --- 1. HERO --- */
 .sec-hero {
-    background-color: #f7f9fc;
-    border-bottom: 1px solid #dde6f5;
+    background-color: #f7f9fc !important;
+    border-bottom: 1px solid #dde6f5 !important;
 }
 
 .sec-hero .ev-detail-hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
 }
 
 .sec-badge {
@@ -3771,11 +3771,11 @@ body:not(.projects-page) .category-tag {
 }
 
 .sec-h1::after {
-    background-color: var(--sec-yellow) !important;
-    display: block !important;
     content: '' !important;
+    display: block !important;
     width: 60px !important;
     height: 4px !important;
+    background-color: var(--sec-yellow) !important;
     margin: 15px auto 0 auto !important;
     border-radius: 2px !important;
 }
@@ -3784,45 +3784,20 @@ body:not(.projects-page) .category-tag {
     color: var(--sec-blue) !important;
 }
 
-/* --- 2. BANNIÈRE TYPOGRAPHIQUE (remplace le logo) --- */
+/* --- 2. SUPPRESSION BANNIÈRE — zone vide invisible --- */
 .sec-title-banner {
-    background-color: var(--sec-blue);
-    padding: 40px 20px 35px;
-    text-align: center;
+    display: none !important;
 }
 
-.sec-title-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 18px;
-}
-
-.sec-title-text {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.sec-deco {
-    color: var(--sec-yellow);
-    font-size: 1.4rem;
-}
-
-.sec-title-line {
-    width: 80px;
-    height: 4px;
-    background-color: var(--sec-yellow);
-    margin: 0 auto;
-    border-radius: 2px;
+/* On masque aussi le séparateur logo qui n'a rien à afficher */
+.sec-hero + .ev-brand-separator {
+    display: none !important;
 }
 
 /* --- 3. STATS BAR --- */
 .sec-stats-bar {
     background-color: var(--sec-blue-light) !important;
+    border-top: none !important;
     border-bottom: 2px solid var(--sec-blue) !important;
 }
 
@@ -3830,12 +3805,18 @@ body:not(.projects-page) .category-tag {
     color: #4a5568 !important;
 }
 
+/* Écrase l'orange du CSS global */
+.sec-stats-bar .ev-stat-number,
+.sec-stats-bar span.ev-stat-number {
+    color: var(--sec-blue) !important;
+}
+
 .sec-stat-number {
     color: var(--sec-blue) !important;
 }
 
 .sec-stats-bar .ev-stat-item:not(:last-child) {
-    border-right: 1px solid rgba(8, 70, 149, 0.2);
+    border-right: 1px solid rgba(8, 70, 149, 0.2) !important;
 }
 
 /* --- 4. TITRES DE SECTION --- */
@@ -3847,28 +3828,27 @@ body:not(.projects-page) .category-tag {
 }
 
 .sec-section-title::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 4px;
-    background-color: var(--sec-yellow);
-    margin-top: 12px;
+    content: '' !important;
+    display: block !important;
+    width: 50px !important;
+    height: 4px !important;
+    background-color: var(--sec-yellow) !important;
+    margin-top: 12px !important;
 }
 
 /* --- CHECK ICONS --- */
 .sec-check-icon {
-    color: var(--sec-yellow);
-    margin-right: 12px;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-    background-color: var(--sec-blue);
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
+    color: #ffffff !important;
+    background-color: var(--sec-blue) !important;
+    margin-right: 12px !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.8rem !important;
+    flex-shrink: 0 !important;
 }
 
 /* --- 5. BLOCKQUOTE --- */
@@ -3914,7 +3894,12 @@ body:not(.projects-page) .category-tag {
 }
 
 .sec-gallery-title-h2::after {
+    content: '' !important;
+    display: block !important;
+    width: 50px !important;
+    height: 4px !important;
     background-color: var(--sec-yellow) !important;
+    margin: 12px auto 15px !important;
 }
 
 .sec-gallery-overlay {
@@ -3927,19 +3912,10 @@ body:not(.projects-page) .category-tag {
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .sec-title-text {
-        font-size: 1.1rem;
-        letter-spacing: 1px;
-    }
-
-    .sec-title-inner {
-        gap: 12px;
-    }
-
     .sec-stats-bar .ev-stat-item:not(:last-child) {
-        border-right: none;
-        border-bottom: 1px solid rgba(8, 70, 149, 0.15);
-        padding-bottom: 20px;
-        margin-bottom: 10px;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(8, 70, 149, 0.15) !important;
+        padding-bottom: 20px !important;
+        margin-bottom: 10px !important;
     }
 }
