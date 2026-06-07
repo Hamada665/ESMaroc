@@ -3558,7 +3558,6 @@ body:not(.projects-page) .category-tag {
     border-bottom: 1px solid #e8f5f5;
 }
 
-/* FIX alignement hero : badge centré au-dessus du titre */
 .ed-hero .ev-detail-hero-content {
     display: flex;
     flex-direction: column;
@@ -3578,7 +3577,6 @@ body:not(.projects-page) .category-tag {
     display: block !important;
 }
 
-/* FIX underline : force teal au lieu du jaune global */
 .ed-h1::after {
     background-color: var(--ed-teal) !important;
     display: block !important;
@@ -3593,27 +3591,31 @@ body:not(.projects-page) .category-tag {
     color: var(--ed-teal) !important;
 }
 
-/* --- 2. LOGO CONTENEUR RECTANGULAIRE --- */
+/* --- 2. LOGO CONTENEUR --- */
 .ed-brand-separator {
-    height: 70px !important;
+    height: 55px !important;
 }
 
 .ed-logo-container {
-    width: 500px !important;
-    height: 200px !important;
-    top: -100px !important;
+    width: 320px !important;
+    height: 110px !important;
     border-radius: 8px !important;
     border-color: var(--ed-teal) !important;
-    background-color: var(--ed-white) !important;
-    top: -70px !important;
+    background-color: transparent !important; /* Fond transparent */
+    top: -55px !important;
+    box-shadow: none !important;
+    border-width: 2px !important;
 }
 
 .ed-salon-img {
-    padding: 12px !important;
+    padding: 0 !important;
     object-fit: contain !important;
     width: 100% !important;
     height: 100% !important;
     box-sizing: border-box !important;
+    /* Supprime le fond blanc du PNG via mix-blend-mode */
+    mix-blend-mode: multiply !important;
+    transform: scale(1.4) !important; /* Agrandit le logo visuellement */
 }
 
 /* --- 3. STATS BAR --- */
@@ -3724,11 +3726,11 @@ body:not(.projects-page) .category-tag {
 
     .ed-logo-container {
         width: 260px !important;
-        height: 100px !important;
-        top: -50px !important;
+        height: 90px !important;
+        top: -45px !important;
     }
 
     .ed-brand-separator {
-        height: 100px !important;
+        height: 45px !important;
     }
 }
