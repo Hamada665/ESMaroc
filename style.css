@@ -4112,161 +4112,142 @@ body:not(.projects-page) .category-tag {
     --rse-blue-light: rgba(8, 70, 149, 0.06);
 }
 
-/* =============================================
-   HERO
-   ============================================= */
+/* --- HERO --- */
 [data-page="rse"] .ev-detail-hero {
-    background-color: #f7f9fc;
-    border-bottom: 1px solid #dde6f5;
+    background-color: #f7f9fc !important;
+    border-bottom: 1px solid #dde6f5 !important;
 }
 
 [data-page="rse"] .ev-detail-hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
 }
 
 [data-page="rse"] .ev-badge {
-    background-color: var(--rse-blue);
-    color: #ffffff;
+    background-color: var(--rse-blue) !important;
+    color: #ffffff !important;
 }
 
 [data-page="rse"] .ev-detail-hero h1 {
-    color: var(--rse-blue);
+    color: var(--rse-blue) !important;
 }
 
 [data-page="rse"] .ev-detail-hero h1::after {
-    background-color: var(--rse-yellow);
+    background-color: var(--rse-yellow) !important;
 }
 
 [data-page="rse"] .ev-breadcrumb a:hover {
-    color: var(--rse-blue);
+    color: var(--rse-blue) !important;
 }
 
-/* Masquer le séparateur logo */
 [data-page="rse"] .ev-brand-separator {
-    display: none;
+    display: none !important;
 }
 
-/* =============================================
-   STATS BAR
-   ============================================= */
+/* --- STATS BAR --- */
 [data-page="rse"] .ev-stats-bar {
-    background-color: var(--rse-blue-light);
-    border-bottom: 2px solid var(--rse-blue);
+    background-color: var(--rse-blue-light) !important;
+    border-bottom: 2px solid var(--rse-blue) !important;
 }
 
 [data-page="rse"] .ev-stat-number {
-    color: var(--rse-blue);
+    color: var(--rse-blue) !important;
 }
 
 [data-page="rse"] .ev-stat-label {
-    color: #4a5568;
+    color: #4a5568 !important;
 }
 
 [data-page="rse"] .ev-stat-item:not(:last-child) {
-    border-right: 1px solid rgba(8, 70, 149, 0.2);
+    border-right: 1px solid rgba(8, 70, 149, 0.2) !important;
 }
 
-/* =============================================
-   TITRES DE SECTION
-   ============================================= */
+/* --- TITRES DE SECTION --- */
 [data-page="rse"] .ev-main-content h2 {
-    color: var(--rse-blue);
+    color: var(--rse-blue) !important;
 }
 
 [data-page="rse"] .ev-main-content h2::after {
-    background-color: var(--rse-yellow);
+    background-color: var(--rse-yellow) !important;
 }
 
-/* =============================================
-   CHECK ICONS
-   ============================================= */
+/* --- CHECK ICONS --- */
 .rse-check-icon {
-    color: #ffffff;
-    background-color: var(--rse-blue);
-    margin-right: 12px;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    flex-shrink: 0;
+    color: #ffffff !important;
+    background-color: var(--rse-blue) !important;
+    margin-right: 12px !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.8rem !important;
+    flex-shrink: 0 !important;
 }
 
-/* =============================================
-   BLOCKQUOTE
-   ============================================= */
+/* --- BLOCKQUOTE --- */
 [data-page="rse"] .ev-quote {
-    border-left-color: var(--rse-blue);
-    background-color: var(--rse-blue-light);
+    border-left-color: var(--rse-blue) !important;
+    background-color: var(--rse-blue-light) !important;
 }
 
 [data-page="rse"] .ev-quote cite {
-    color: var(--rse-blue);
+    color: var(--rse-blue) !important;
 }
 
-/* =============================================
-   SIDEBAR / INFO CARD
-   ============================================= */
+/* --- SIDEBAR / INFO CARD --- */
 [data-page="rse"] .ev-info-card {
-    border-top-color: var(--rse-blue);
+    border-top-color: var(--rse-blue) !important;
 }
 
 [data-page="rse"] .ev-info-card h3 {
-    color: var(--rse-blue);
+    color: var(--rse-blue) !important;
 }
 
 [data-page="rse"] .info-icon {
-    color: var(--rse-yellow);
+    color: var(--rse-yellow) !important;
 }
 
-/* =============================================
-   BOUTON CTA
-   ============================================= */
+/* --- BOUTON CTA --- */
 [data-page="rse"] .ev-btn-cta {
-    background-color: var(--rse-yellow);
-    color: var(--rse-blue);
-    border-color: var(--rse-yellow);
-    font-weight: 800;
+    background-color: var(--rse-yellow) !important;
+    color: var(--rse-blue) !important;
+    border-color: var(--rse-yellow) !important;
+    font-weight: 800 !important;
 }
 
 [data-page="rse"] .ev-btn-cta:hover {
-    background-color: transparent;
-    color: var(--rse-blue);
-    border-color: var(--rse-blue);
+    background-color: transparent !important;
+    color: var(--rse-blue) !important;
+    border-color: var(--rse-blue) !important;
 }
 
-/* =============================================
-   GALERIE
-   ============================================= */
+/* --- GALERIE --- */
 [data-page="rse"] .ev-gallery-title h2 {
-    color: var(--rse-blue);
+    color: var(--rse-blue) !important;
 }
 
 [data-page="rse"] .ev-gallery-title h2::after {
-    background-color: var(--rse-yellow);
+    background-color: var(--rse-yellow) !important;
 }
 
 [data-page="rse"] .gallery-overlay {
-    background-color: rgba(8, 70, 149, 0.85);
+    background-color: rgba(8, 70, 149, 0.85) !important;
 }
 
 [data-page="rse"] .gallery-overlay i {
-    color: var(--rse-yellow);
+    color: var(--rse-yellow) !important;
 }
 
-/* =============================================
-   RESPONSIVE
-   ============================================= */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     [data-page="rse"] .ev-stat-item:not(:last-child) {
-        border-right: none;
-        border-bottom: 1px solid rgba(8, 70, 149, 0.15);
-        padding-bottom: 20px;
-        margin-bottom: 10px;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(8, 70, 149, 0.15) !important;
+        padding-bottom: 20px !important;
+        margin-bottom: 10px !important;
     }
 }
