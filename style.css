@@ -3920,3 +3920,184 @@ body:not(.projects-page) .category-tag {
         margin-bottom: 10px !important;
     }
 }
+
+/* ==========================================================================
+   PAGE ÉVÉNEMENT : DÉPLOIEMENT AFRIQUE & COOPÉRATION SUD-SUD
+   ========================================================================== */
+
+:root {
+    --afs-blue: #084695;
+    --afs-yellow: #efba05;
+    --afs-blue-light: rgba(8, 70, 149, 0.06);
+}
+
+/* --- 1. HERO --- */
+.afs-hero {
+    background-color: #f7f9fc !important;
+    border-bottom: 1px solid #dde6f5 !important;
+}
+
+.afs-hero .ev-detail-hero-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.afs-badge {
+    background-color: var(--afs-blue) !important;
+    color: #ffffff !important;
+    display: inline-block !important;
+    margin-bottom: 20px !important;
+}
+
+.afs-hero h1,
+.afs-hero .afs-h1 {
+    color: var(--afs-blue) !important;
+    display: block !important;
+}
+
+.afs-hero h1::after,
+.afs-hero .afs-h1::after {
+    content: '' !important;
+    display: block !important;
+    width: 60px !important;
+    height: 4px !important;
+    background-color: var(--afs-yellow) !important;
+    margin: 15px auto 0 auto !important;
+    border-radius: 2px !important;
+}
+
+.afs-hero .ev-breadcrumb a:hover {
+    color: var(--afs-blue) !important;
+}
+
+/* Masquer le séparateur logo inutile */
+.afs-hero + .ev-brand-separator {
+    display: none !important;
+}
+
+/* --- 2. STATS BAR --- */
+.afs-stats-bar {
+    background-color: var(--afs-blue-light) !important;
+    border-top: none !important;
+    border-bottom: 2px solid var(--afs-blue) !important;
+}
+
+.afs-stats-bar .ev-stat-label {
+    color: #4a5568 !important;
+}
+
+.afs-stats-bar .ev-stat-number,
+.afs-stats-bar span.ev-stat-number {
+    color: var(--afs-blue) !important;
+}
+
+.afs-stat-number {
+    color: var(--afs-blue) !important;
+}
+
+.afs-stats-bar .ev-stat-item:not(:last-child) {
+    border-right: 1px solid rgba(8, 70, 149, 0.2) !important;
+}
+
+/* --- 3. TITRES DE SECTION --- */
+.afs-section-title {
+    color: var(--afs-blue) !important;
+    font-size: 2.2rem !important;
+    margin-bottom: 25px !important;
+    font-weight: 800 !important;
+}
+
+.afs-section-title::after {
+    content: '' !important;
+    display: block !important;
+    width: 50px !important;
+    height: 4px !important;
+    background-color: var(--afs-yellow) !important;
+    margin-top: 12px !important;
+}
+
+/* --- CHECK ICONS --- */
+.afs-check-icon {
+    color: #ffffff !important;
+    background-color: var(--afs-blue) !important;
+    margin-right: 12px !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.8rem !important;
+    flex-shrink: 0 !important;
+}
+
+/* --- 4. BLOCKQUOTE --- */
+.afs-quote {
+    border-left-color: var(--afs-blue) !important;
+    background-color: var(--afs-blue-light) !important;
+}
+
+.afs-quote cite {
+    color: var(--afs-blue) !important;
+}
+
+/* --- 5. SIDEBAR / INFO CARD --- */
+.afs-info-card {
+    border-top-color: var(--afs-blue) !important;
+}
+
+.afs-info-card h3 {
+    color: var(--afs-blue) !important;
+}
+
+.afs-info-icon {
+    color: var(--afs-yellow) !important;
+}
+
+/* --- 6. BOUTON CTA --- */
+.afs-btn-cta {
+    background-color: var(--afs-yellow) !important;
+    color: var(--afs-blue) !important;
+    border-color: var(--afs-yellow) !important;
+    font-weight: 800 !important;
+}
+
+.afs-btn-cta:hover {
+    background-color: transparent !important;
+    color: var(--afs-blue) !important;
+    border-color: var(--afs-blue) !important;
+}
+
+/* --- 7. GALERIE --- */
+.afs-gallery-title-h2 {
+    color: var(--afs-blue) !important;
+}
+
+.afs-gallery-title-h2::after {
+    content: '' !important;
+    display: block !important;
+    width: 50px !important;
+    height: 4px !important;
+    background-color: var(--afs-yellow) !important;
+    margin: 12px auto 15px !important;
+}
+
+.afs-gallery-overlay {
+    background-color: rgba(8, 70, 149, 0.85) !important;
+}
+
+.afs-gallery-overlay i {
+    color: var(--afs-yellow) !important;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .afs-stats-bar .ev-stat-item:not(:last-child) {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(8, 70, 149, 0.15) !important;
+        padding-bottom: 20px !important;
+        margin-bottom: 10px !important;
+    }
+}
