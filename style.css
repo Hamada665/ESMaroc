@@ -3558,17 +3558,35 @@ body:not(.projects-page) .category-tag {
     border-bottom: 1px solid #e8f5f5;
 }
 
+/* FIX alignement hero : badge centré au-dessus du titre */
+.ed-hero .ev-detail-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .ed-badge {
-    background-color: var(--ed-teal) !important; /* Badge teal — signature propre à l'École d'Été */
+    background-color: var(--ed-teal) !important;
     color: var(--ed-white) !important;
+    display: inline-block !important;
+    margin-bottom: 20px !important;
 }
 
 .ed-h1 {
     color: var(--ed-black) !important;
+    display: block !important;
 }
 
+/* FIX underline : force teal au lieu du jaune global */
 .ed-h1::after {
     background-color: var(--ed-teal) !important;
+    display: block !important;
+    content: '' !important;
+    width: 60px !important;
+    height: 4px !important;
+    margin: 15px auto 0 auto !important;
+    border-radius: 2px !important;
 }
 
 .ed-hero .ev-breadcrumb a:hover {
@@ -3577,23 +3595,24 @@ body:not(.projects-page) .category-tag {
 
 /* --- 2. LOGO CONTENEUR RECTANGULAIRE --- */
 .ed-brand-separator {
-    height: 55px !important;
+    height: 70px !important;
 }
 
 .ed-logo-container {
-    width: 320px !important;
-    height: 110px !important;
+    width: 380px !important;
+    height: 140px !important;
     border-radius: 8px !important;
     border-color: var(--ed-teal) !important;
     background-color: var(--ed-white) !important;
-    top: -55px !important;
+    top: -70px !important;
 }
 
 .ed-salon-img {
-    padding: 0 !important;
+    padding: 12px !important;
     object-fit: contain !important;
     width: 100% !important;
     height: 100% !important;
+    box-sizing: border-box !important;
 }
 
 /* --- 3. STATS BAR --- */
@@ -3704,6 +3723,11 @@ body:not(.projects-page) .category-tag {
 
     .ed-logo-container {
         width: 260px !important;
-        height: 90px !important;
+        height: 100px !important;
+        top: -50px !important;
+    }
+
+    .ed-brand-separator {
+        height: 50px !important;
     }
 }
