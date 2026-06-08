@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet FLOWER | ESMaroc.Org</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="flower.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="flower-page-body">
+
+<!-- ===================== HEADER ===================== -->
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="ESMAROC LOGO.png" alt="Logo ESMaroc">
+        </div>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-trigger">ESMaroc <i class="fas fa-chevron-down nav-arrow"></i></a>
+                <div class="dropdown-menu">
+                    <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
+                    <a href="histoire.html">Notre Histoire & Vision</a>
+                    <a href="equipe.html">Notre Équipe</a>
+                </div>
+            </div>
+            <a href="evenements.html">Évènements</a>
+            <a href="projets.html" class="active">Projets</a>
+            <a href="#">École E-learning</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="header-icons">
+            <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
+            <a href="#" class="icon-link"><i class="fas fa-map-marker-alt"></i></a>
+            <button class="burger-menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="fl-hero">
+
+        <!-- Pétales SVG décoratifs flottants -->
+        <div class="fl-petals" aria-hidden="true">
+            <svg class="fl-petal fl-petal--1" viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M60 10 C90 10, 110 50, 110 90 C110 140, 80 170, 60 170 C40 170, 10 140, 10 90 C10 50, 30 10, 60 10Z" fill="rgba(255,255,255,0.06)"/>
+            </svg>
+            <svg class="fl-petal fl-petal--2" viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M60 10 C90 10, 110 50, 110 90 C110 140, 80 170, 60 170 C40 170, 10 140, 10 90 C10 50, 30 10, 60 10Z" fill="rgba(255,255,255,0.04)"/>
+            </svg>
+            <svg class="fl-petal fl-petal--3" viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M60 10 C90 10, 110 50, 110 90 C110 140, 80 170, 60 170 C40 170, 10 140, 10 90 C10 50, 30 10, 60 10Z" fill="rgba(255,255,255,0.05)"/>
+            </svg>
+            <svg class="fl-petal fl-petal--4" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="100" cy="100" rx="90" ry="60" fill="rgba(248,252,249,0.04)" transform="rotate(30 100 100)"/>
+            </svg>
+            <svg class="fl-petal fl-petal--5" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="100" cy="100" rx="90" ry="55" fill="rgba(248,252,249,0.03)" transform="rotate(-20 100 100)"/>
+            </svg>
+        </div>
+
+        <!-- Cercle décoratif éditorial -->
+        <div class="fl-hero-circle" aria-hidden="true"></div>
+
+        <div class="fl-hero-content">
+            <nav class="fl-breadcrumb">
+                <a href="index.html">Accueil</a>
+                <span class="fl-breadcrumb-sep">·</span>
+                <a href="projets.html">Projets</a>
+                <span class="fl-breadcrumb-sep">·</span>
+                <span>FLOWER</span>
+            </nav>
+
+            <div class="fl-hero-tag-row">
+                <span class="fl-tag">Maroc & Tunisie</span>
+                <span class="fl-tag fl-tag--outline">Autonomisation des femmes</span>
+            </div>
+
+            <h1 class="fl-hero-title">
+                <span class="fl-title-line1">FLOW</span><span class="fl-title-er">ER</span>
+            </h1>
+
+            <p class="fl-hero-accroche">
+                Favoriser les Opportunités du marché Local pour le renforcement de la résilience et Leadership de la fEemme au maRoc
+            </p>
+
+            <p class="fl-hero-description">
+                ESMaroc a formé plus de <strong>2 000 femmes</strong> au Maroc et en Tunisie, amélioré leur accès aux marchés, renforcé leurs revenus et favorisé leur intégration à la sécurité sociale, tout en développant des circuits courts et des produits de qualité traçable.
+            </p>
+
+            <div class="fl-hero-scroll-hint">
+                <span>Découvrir</span>
+                <i class="fas fa-arrow-down"></i>
+            </div>
+        </div>
+
+        <!-- Vague organique de transition -->
+        <div class="fl-hero-wave" aria-hidden="true">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,60 C200,110 400,20 600,70 C800,120 1000,30 1200,65 C1320,85 1380,75 1440,60 L1440,120 L0,120 Z" fill="#f8fcf9"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ===================== LOGO FLOTTANT ===================== -->
+    <div class="fl-brand-bar">
+        <div class="fl-logo-wrapper">
+            <img src="flower-logo.png" alt="Logo officiel FLOWER" class="fl-logo-img">
+        </div>
+        <div class="fl-brand-tagline">
+            <p>Un projet financé par l'<strong>Union Européenne</strong></p>
+            <p>Mis en œuvre au <strong>Maroc</strong> et en <strong>Tunisie</strong></p>
+        </div>
+    </div>
+
+    <!-- ===================== STATS ===================== -->
+    <section class="fl-stats-section">
+        <div class="fl-stats-inner">
+
+            <div class="fl-stat-card">
+                <div class="fl-stat-petal" aria-hidden="true"></div>
+                <span class="fl-stat-number">+2 000</span>
+                <span class="fl-stat-label">Femmes formées</span>
+                <span class="fl-stat-geo">Maroc & Tunisie</span>
+            </div>
+
+            <div class="fl-stat-divider"></div>
+
+            <div class="fl-stat-card">
+                <div class="fl-stat-petal fl-stat-petal--2" aria-hidden="true"></div>
+                <span class="fl-stat-number">Centaines</span>
+                <span class="fl-stat-label">Accès aux marchés amélioré</span>
+                <span class="fl-stat-geo">Bénéficiaires accompagnées</span>
+            </div>
+
+            <div class="fl-stat-divider"></div>
+
+            <div class="fl-stat-card">
+                <div class="fl-stat-petal fl-stat-petal--3" aria-hidden="true"></div>
+                <span class="fl-stat-number">✓</span>
+                <span class="fl-stat-label">Intégration à la sécurité sociale</span>
+                <span class="fl-stat-geo">Insertion formelle</span>
+            </div>
+
+            <div class="fl-stat-divider"></div>
+
+            <div class="fl-stat-card">
+                <div class="fl-stat-petal fl-stat-petal--4" aria-hidden="true"></div>
+                <span class="fl-stat-number">↑</span>
+                <span class="fl-stat-label">Revenus & qualité de vie</span>
+                <span class="fl-stat-geo">Impact durable</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================== CONTENU PRINCIPAL + SIDEBAR ===================== -->
+    <section class="fl-detail-container">
+
+        <article class="fl-main-content">
+
+            <!-- À propos -->
+            <div class="fl-content-block">
+                <span class="fl-section-eyebrow">Le projet</span>
+                <h2 class="fl-section-title">À propos de FLOWER</h2>
+                <p class="fl-lead">
+                    FLOWER est un projet emblématique d'ESMaroc, conçu pour répondre aux inégalités structurelles que vivent les femmes dans leur accès à l'économie formelle — en particulier dans les zones rurales et périurbaines du Maroc et de la Tunisie.
+                </p>
+                <p>
+                    Financé par l'Union Européenne, le projet repose sur une approche holistique : former, connecter, valoriser. Il ne s'agit pas seulement d'apporter des compétences techniques, mais de transformer durablement la position économique et sociale des femmes bénéficiaires — en développant leur leadership, leur visibilité sur les marchés et leur accès aux droits sociaux fondamentaux.
+                </p>
+            </div>
+
+            <!-- Axes d'intervention sous forme de "pétales" thématiques -->
+            <div class="fl-content-block">
+                <span class="fl-section-eyebrow">Axes d'intervention</span>
+                <h2 class="fl-section-title">Une approche en quatre dimensions</h2>
+
+                <div class="fl-axes-grid">
+
+                    <div class="fl-axe">
+                        <div class="fl-axe-num">01</div>
+                        <div class="fl-axe-body">
+                            <h4>Formation & Renforcement des Capacités</h4>
+                            <p>Plus de 2 000 femmes formées au Maroc et en Tunisie sur des compétences techniques, entrepreneuriales et de gestion, pour renforcer leur autonomie et leur confiance dans l'économie formelle.</p>
+                        </div>
+                    </div>
+
+                    <div class="fl-axe">
+                        <div class="fl-axe-num">02</div>
+                        <div class="fl-axe-body">
+                            <h4>Accès aux Marchés</h4>
+                            <p>Accompagnement de centaines de bénéficiaires pour accéder à de nouveaux débouchés commerciaux, développer des circuits courts et améliorer la traçabilité et la qualité de leurs produits.</p>
+                        </div>
+                    </div>
+
+                    <div class="fl-axe">
+                        <div class="fl-axe-num">03</div>
+                        <div class="fl-axe-body">
+                            <h4>Intégration à la Sécurité Sociale</h4>
+                            <p>Actions concrètes pour favoriser l'insertion des femmes dans les dispositifs de protection sociale, garantissant une reconnaissance formelle de leur activité économique.</p>
+                        </div>
+                    </div>
+
+                    <div class="fl-axe">
+                        <div class="fl-axe-num">04</div>
+                        <div class="fl-axe-body">
+                            <h4>Circuits Courts & Produits Valorisés</h4>
+                            <p>Développement de filières locales et de chaînes de valeur courtes, avec une attention particulière à la qualité, à l'identité territoriale et à la traçabilité des produits issus du travail des femmes.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Citation -->
+            <figure class="fl-quote">
+                <div class="fl-quote-bloom" aria-hidden="true">
+                    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="100" cy="100" rx="80" ry="45" fill="rgba(5,102,120,0.06)" transform="rotate(0 100 100)"/>
+                        <ellipse cx="100" cy="100" rx="80" ry="45" fill="rgba(5,102,120,0.05)" transform="rotate(45 100 100)"/>
+                        <ellipse cx="100" cy="100" rx="80" ry="45" fill="rgba(5,102,120,0.04)" transform="rotate(90 100 100)"/>
+                        <ellipse cx="100" cy="100" rx="80" ry="45" fill="rgba(5,102,120,0.04)" transform="rotate(135 100 100)"/>
+                        <circle cx="100" cy="100" r="12" fill="rgba(5,102,120,0.12)"/>
+                    </svg>
+                </div>
+                <blockquote>
+                    "Quand une femme prospère économiquement, c'est toute une communauté qui s'élève. FLOWER a été conçu sur cette conviction profonde."
+                </blockquote>
+                <figcaption>— Équipe ESMaroc, Programme FLOWER</figcaption>
+            </figure>
+
+        </article>
+
+        <!-- ===================== SIDEBAR ===================== -->
+        <aside class="fl-sidebar">
+
+            <!-- Carte infos -->
+            <div class="fl-info-card">
+                <div class="fl-info-card-top">
+                    <h3>Informations Clés</h3>
+                </div>
+                <ul class="fl-info-list">
+                    <li>
+                        <span class="fl-info-icon"><i class="fas fa-globe-africa"></i></span>
+                        <div>
+                            <strong>Financement</strong>
+                            <span>Union Européenne</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="fl-info-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <div>
+                            <strong>Zones d'intervention</strong>
+                            <span>Maroc & Tunisie</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="fl-info-icon"><i class="fas fa-venus"></i></span>
+                        <div>
+                            <strong>Cible principale</strong>
+                            <span>Femmes entrepreneurs & artisanes</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="fl-info-icon"><i class="fas fa-seedling"></i></span>
+                        <div>
+                            <strong>Thématiques</strong>
+                            <span>Économie, Marché, Inclusion sociale</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="fl-info-icon"><i class="fas fa-link"></i></span>
+                        <div>
+                            <strong>Circuits</strong>
+                            <span>Courts, traçables, valorisés</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Résultats -->
+            <div class="fl-results-card">
+                <h3>Résultats Clés</h3>
+
+                <div class="fl-result-item">
+                    <div class="fl-result-header">
+                        <span class="fl-result-num">+2 000</span>
+                    </div>
+                    <p class="fl-result-desc">femmes formées au Maroc et en Tunisie</p>
+                    <div class="fl-result-bloom">
+                        <div class="fl-bloom-bar" style="--bloom-w: 100%"></div>
+                    </div>
+                </div>
+
+                <div class="fl-result-item">
+                    <div class="fl-result-header">
+                        <span class="fl-result-num">Centaines</span>
+                    </div>
+                    <p class="fl-result-desc">de bénéficiaires avec accès aux marchés amélioré</p>
+                    <div class="fl-result-bloom">
+                        <div class="fl-bloom-bar" style="--bloom-w: 75%"></div>
+                    </div>
+                </div>
+
+                <div class="fl-result-item">
+                    <div class="fl-result-header">
+                        <span class="fl-result-num">✓</span>
+                    </div>
+                    <p class="fl-result-desc">revenus renforcés et intégration à la sécurité sociale</p>
+                    <div class="fl-result-bloom">
+                        <div class="fl-bloom-bar" style="--bloom-w: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="fl-result-item">
+                    <div class="fl-result-header">
+                        <span class="fl-result-num">↑</span>
+                    </div>
+                    <p class="fl-result-desc">circuits courts et produits de qualité développés</p>
+                    <div class="fl-result-bloom">
+                        <div class="fl-bloom-bar" style="--bloom-w: 70%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+    <!-- ===================== GALERIE ===================== -->
+    <section class="fl-gallery-section">
+
+        <!-- Fond décoratif -->
+        <div class="fl-gallery-bg-pattern" aria-hidden="true"></div>
+
+        <div class="fl-gallery-header">
+            <span class="fl-section-eyebrow">Galerie</span>
+            <h2 class="fl-gallery-title">Retour en images</h2>
+            <p>Portraits et moments du programme FLOWER au Maroc et en Tunisie</p>
+        </div>
+
+        <div class="fl-gallery-grid">
+
+            <a href="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1200" data-lightbox="flower-album" data-title="Atelier de formation FLOWER" class="fl-gallery-item fl-gallery-item--tall">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800" alt="Formation FLOWER">
+                <div class="fl-gallery-caption">Atelier de formation</div>
+            </a>
+
+            <a href="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?q=80&w=1200" data-lightbox="flower-album" data-title="Accès aux marchés – FLOWER" class="fl-gallery-item">
+                <img src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?q=80&w=600" alt="Marché FLOWER">
+                <div class="fl-gallery-caption">Accès aux marchés</div>
+            </a>
+
+            <a href="https://images.unsplash.com/photo-1607748851687-ba9a10438621?q=80&w=1200" data-lightbox="flower-album" data-title="Produits valorisés – circuits courts" class="fl-gallery-item">
+                <img src="https://images.unsplash.com/photo-1607748851687-ba9a10438621?q=80&w=600" alt="Circuits courts FLOWER">
+                <div class="fl-gallery-caption">Circuits courts</div>
+            </a>
+
+            <a href="https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?q=80&w=1200" data-lightbox="flower-album" data-title="Entrepreneuriat féminin – FLOWER" class="fl-gallery-item fl-gallery-item--wide">
+                <img src="https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?q=80&w=1000" alt="Entrepreneuriat FLOWER">
+                <div class="fl-gallery-caption">Entrepreneuriat féminin</div>
+            </a>
+
+            <a href="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?q=80&w=1200" data-lightbox="flower-album" data-title="Renforcement des capacités" class="fl-gallery-item">
+                <img src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?q=80&w=600" alt="Capacités FLOWER">
+                <div class="fl-gallery-caption">Renforcement des capacités</div>
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h2 class="footer-logo">ES.Maroc<span>.Org</span></h2>
+            <p class="footer-description">
+                EsMaroc.Org est une association qui promeut l'innovation sociale au Maroc.
+                Nous accompagnons les entrepreneurs pour créer un impact durable et responsable.
+            </p>
+            <div class="footer-contact">
+                <p><i class="fa-solid fa-location-dot"></i> 12 rue Pékin, Océan Résidence Les Fleurs, App. 1 Rabat</p>
+                <p><i class="fa-solid fa-phone"></i> +212 (0) 537 762 872</p>
+                <p><i class="fa-solid fa-envelope"></i> contact@entreprisesocialemaroc.org</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <h3>REJOIGNEZ-NOUS</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p class="copyright">ES.Maroc © Copyright 2026. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
