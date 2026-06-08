@@ -305,7 +305,7 @@
    2. LOGO FLOTTANT
    ============================================================ */
 .dl-brand-bar {
-    background-color: var(--dl-white);
+    background-color: var(--dl-cream);
     display: flex;
     align-items: center;
     gap: 40px;
@@ -318,7 +318,7 @@
 .dl-logo-wrapper {
     width: 220px;
     height: 160px;
-    background-color: var(--dl-orange);
+    background-color: var(--dl-white);
     border-radius: 12px;
     display: flex;
     align-items: center;
