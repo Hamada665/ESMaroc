@@ -305,7 +305,7 @@
    2. LOGO FLOTTANT
    ============================================================ */
 .dl-brand-bar {
-    background-color: var(--dl-cream);
+    background-color: var(--dl-white);
     display: flex;
     align-items: center;
     gap: 40px;
