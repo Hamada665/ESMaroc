@@ -1,0 +1,428 @@
+/* ============================================================
+   CONTACT.CSS — Styles spécifiques à la page contact.html
+   ============================================================ */
+
+
+/* ============================================================
+   SECTION 1 : HERO CONTACT
+   (Même structure que .about-hero dans qui-sommes-nous)
+   ============================================================ */
+.contact-hero {
+    background-color: var(--bg-light);
+    padding: 80px 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-hero .hero-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* .soft-frame est déjà défini dans style.css — on le réutilise tel quel */
+
+
+/* ============================================================
+   SECTION 2 : GRILLE PRINCIPALE (Info + Formulaire)
+   ============================================================ */
+.contact-main {
+    padding: 100px 5%;
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+}
+
+.contact-grid {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 60px;
+    align-items: start;
+}
+
+
+/* ============================================================
+   COLONNE GAUCHE : COORDONNÉES
+   ============================================================ */
+.contact-info-col h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--blue);
+    margin-bottom: 20px;
+}
+
+/* Ligne jaune décorative — cohérente avec les autres sections du site */
+.contact-info-col h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--yellow);
+    margin-top: 12px;
+}
+
+.contact-info-col .intro-text {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+/* --- Cartes d'information --- */
+.info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    background: var(--bg-light);
+    border-radius: 4px;
+    padding: 22px 25px;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    border-left-color: var(--yellow);
+    transform: translateX(5px);
+    box-shadow: 0 8px 20px rgba(0, 43, 149, 0.07);
+}
+
+.info-card-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--blue);
+    box-shadow: 0 4px 10px rgba(0, 43, 149, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* Hover icône : jaune comme les mission-cards de la page À propos */
+.info-card:hover .info-card-icon {
+    background: var(--yellow);
+    color: var(--text-dark);
+}
+
+.info-card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-card-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-light);
+    margin-bottom: 4px;
+}
+
+.info-card-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--blue);
+    line-height: 1.5;
+}
+
+.info-card-value a {
+    color: var(--blue);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.info-card-value a:hover {
+    color: var(--yellow);
+}
+
+/* --- Réseaux sociaux --- */
+.social-contact {
+    margin-top: 35px;
+}
+
+.social-contact p {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-link {
+    width: 42px;
+    height: 42px;
+    background: var(--bg-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--blue);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+
+/* ============================================================
+   COLONNE DROITE : FORMULAIRE
+   ============================================================ */
+.contact-form-col {
+    background: var(--bg-light);
+    border-radius: 4px;
+    padding: 50px;
+    border-top: 4px solid var(--blue);
+}
+
+.contact-form-col h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--blue);
+    margin-bottom: 8px;
+}
+
+.contact-form-col .form-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+/* --- Grille interne du formulaire --- */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+/* Un champ qui prend toute la largeur de la ligne */
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    background: var(--white);
+    border: 1.5px solid rgba(0, 43, 149, 0.12);
+    border-radius: 4px;
+    padding: 13px 16px;
+    outline: none;
+    transition: all 0.25s ease;
+    width: 100%;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #b0b7c3;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(0, 51, 153, 0.08);
+}
+
+/* --- Select personnalisé (flèche bleue) --- */
+.select-wrapper {
+    position: relative;
+}
+
+.form-group select {
+    appearance: none;
+    cursor: pointer;
+}
+
+.select-wrapper::after {
+    content: '\f078'; /* fa-chevron-down */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--blue);
+    pointer-events: none;
+    font-size: 0.75rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+/* --- Bouton d'envoi --- */
+.btn-submit {
+    margin-top: 10px;
+    width: 100%;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    padding: 16px 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #002277;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 43, 149, 0.25);
+}
+
+.btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* --- Message de succès après envoi --- */
+.form-success {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.form-success .success-icon {
+    font-size: 3.5rem;
+    color: var(--yellow);
+    margin-bottom: 15px;
+}
+
+.form-success h4 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.form-success p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+
+/* ============================================================
+   SECTION 3 : CARTE GOOGLE MAPS
+   ============================================================ */
+.contact-map-section {
+    padding: 0 5% 100px 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.map-wrapper {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.map-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.map-label i {
+    color: var(--yellow);
+}
+
+.map-embed {
+    width: 100%;
+    height: 380px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 43, 149, 0.1);
+}
+
+.map-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablette */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-form-col {
+        padding: 35px 25px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr; /* Une colonne sur mobile */
+    }
+
+    .contact-hero .soft-frame h1 {
+        font-size: 2.5rem;
+    }
+
+    .map-embed {
+        height: 260px;
+    }
+}
