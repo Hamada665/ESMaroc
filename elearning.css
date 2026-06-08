@@ -726,3 +726,141 @@
     .el-editions-grid { grid-template-columns: 1fr; }
     .el-testimonial-card { flex: 0 0 100%; }
 }
+
+/* ==========================================================================
+   PATCH STYLE — CHIFFRES & MODULES
+   À ajouter à la fin de elearning.css
+   ========================================================================== */
+
+/* ===================== CHIFFRES — STYLE PAGE ACCUEIL ===================== */
+.el-stats {
+    background-color: #ffffff;
+    padding: 80px 8%;
+}
+
+.el-stats-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--el-blue);
+    margin-bottom: 50px;
+}
+
+.el-stats-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: var(--el-orange);
+    margin: 14px auto 0;
+}
+
+.el-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.el-stat-item {
+    text-align: center;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Icône bleue comme page accueil */
+.el-stat-icon {
+    font-size: 2rem;
+    color: var(--el-blue);
+    margin-bottom: 8px;
+}
+
+/* Chiffre orange grand comme page accueil */
+.el-stat-number {
+    display: block;
+    font-size: 3.2rem !important;
+    font-weight: 900 !important;
+    color: var(--el-orange) !important;
+    line-height: 1 !important;
+}
+
+/* Label en gris uppercase comme page accueil */
+.el-stat-label {
+    font-size: 0.78rem;
+    color: var(--el-text);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    line-height: 1.4;
+}
+
+/* ===================== MODULES — FOND DOUX & CARTES BLANCHES ===================== */
+.el-modules {
+    background-color: #f0f4fb !important; /* Bleu très pâle institutionnel */
+    background-image: none !important;
+    padding: 80px 8%;
+}
+
+.el-modules-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--el-blue) !important; /* Titre en bleu sur fond clair */
+    margin-bottom: 15px;
+}
+
+.el-modules-title::after {
+    background-color: var(--el-orange) !important;
+}
+
+.el-modules-subtitle {
+    color: var(--el-text) !important; /* Texte gris lisible sur fond clair */
+}
+
+/* Cartes blanches avec bordure bleue subtile */
+.el-module-card {
+    background-color: #ffffff !important;
+    border: 1px solid #dce8f5 !important;
+    border-top: 3px solid var(--el-blue) !important;
+    border-radius: 8px !important;
+    padding: 35px 20px;
+    box-shadow: 0 4px 15px rgba(45, 95, 166, 0.06) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.el-module-card:hover {
+    background-color: #ffffff !important;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 12px 30px rgba(45, 95, 166, 0.12) !important;
+}
+
+/* Icône orange sur fond clair */
+.el-module-icon {
+    font-size: 2.2rem;
+    color: var(--el-orange) !important;
+    margin-bottom: 18px;
+}
+
+/* Titre de module en bleu foncé */
+.el-module-card h3 {
+    color: var(--el-blue) !important;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* Texte détail en gris */
+.el-modules-detail {
+    color: var(--el-text) !important;
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 20px 25px;
+    margin-top: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
