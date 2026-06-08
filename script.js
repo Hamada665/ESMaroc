@@ -249,31 +249,93 @@ if (typeof lightbox !== 'undefined') {
 })();
 
 /* ==========================================================================
-   FORMULAIRE DE CONTACT — PAGE CONTACT
+   CONTACT.JS — Page Contact ESMaroc
    À coller à la fin de ton fichier script.js existant.
 
-   Fonctionnement :
-   - Intercepte la soumission du formulaire #contactForm
-   - L'envoie en AJAX vers Formspree (pas de rechargement de page)
-   - Affiche un message de confirmation stylisé (#formSuccess) en cas de succès
-   - Réaffiche le bouton avec un message d'erreur en cas d'échec
+   Contient :
+   1. Switcher Hub Rabat / Hub Tanger (colonne gauche)
+   2. Switcher Map Rabat / Map Tanger (section carte)
+   3. Gestion AJAX du formulaire Formspree
    ========================================================================== */
 (function () {
 
-    // On attend que le DOM soit prêt avant de chercher les éléments
-    // (ce bloc est dans une IIFE pour ne pas polluer le scope global)
+    // ── 1. SWITCHER HUB (coordonnées gauche) ─────────────────────────────
+    const hubBtns = document.querySelectorAll('.hub-btn');
+    const hubPanels = document.querySelectorAll('.hub-info');
+
+    hubBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const target = this.dataset.hub; // "rabat" ou "tanger"
+
+            // Mettre à jour les boutons
+            hubBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            // Mettre à jour les panneaux d'info
+            hubPanels.forEach(panel => panel.classList.remove('active'));
+            const activePanel = document.getElementById('hub-' + target);
+            if (activePanel) activePanel.classList.add('active');
+
+            // Synchroniser automatiquement la map avec le même hub
+            switchMap(target);
+        });
+    });
+
+
+    // ── 2. SWITCHER MAP (section carte) ──────────────────────────────────
+    const mapTabs  = document.querySelectorAll('.map-tab');
+    const mapInfoText = document.getElementById('map-info-text');
+
+    const mapData = {
+        rabat:  'Hub Rabat — 12 rue Pékin, Océan Résidence Les Fleurs, App. 1',
+        tanger: 'Hub Tanger — Centre des Services à la Jeunesse, Hay Hassani Bni Touzine'
+    };
+
+    function switchMap(target) {
+        // Onglets de la map
+        mapTabs.forEach(t => t.classList.remove('active'));
+        const activeTab = document.querySelector('.map-tab[data-map="' + target + '"]');
+        if (activeTab) activeTab.classList.add('active');
+
+        // Iframes
+        document.querySelectorAll('.map-frame').forEach(f => f.classList.remove('active'));
+        const activeFrame = document.getElementById('map-' + target);
+        if (activeFrame) activeFrame.classList.add('active');
+
+        // Bande d'info sous la carte
+        if (mapInfoText && mapData[target]) {
+            mapInfoText.textContent = mapData[target];
+        }
+    }
+
+    // Clics directs sur les onglets de la map (indépendants du switcher hub)
+    mapTabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            const target = this.dataset.map;
+            switchMap(target);
+
+            // Synchroniser le switcher hub côté gauche aussi
+            hubBtns.forEach(b => b.classList.remove('active'));
+            const matchingBtn = document.querySelector('.hub-btn[data-hub="' + target + '"]');
+            if (matchingBtn) matchingBtn.classList.add('active');
+
+            hubPanels.forEach(panel => panel.classList.remove('active'));
+            const matchingPanel = document.getElementById('hub-' + target);
+            if (matchingPanel) matchingPanel.classList.add('active');
+        });
+    });
+
+
+    // ── 3. FORMULAIRE FORMSPREE (AJAX) ───────────────────────────────────
     const form       = document.getElementById('contactForm');
     const successMsg = document.getElementById('formSuccess');
 
-    // Sécurité : on ne fait rien si on n'est pas sur la page contact
     if (!form || !successMsg) return;
 
     form.addEventListener('submit', async function (e) {
-        e.preventDefault(); // Empêche le rechargement de page par défaut
+        e.preventDefault();
 
         const btn = form.querySelector('.btn-submit');
-
-        // --- État "chargement" ---
         btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>&nbsp; Envoi en cours…';
         btn.disabled = true;
 
@@ -285,18 +347,14 @@ if (typeof lightbox !== 'undefined') {
             });
 
             if (response.ok) {
-                // Succès : on masque le formulaire et on affiche la confirmation
-                form.style.display   = 'none';
+                form.style.display       = 'none';
                 successMsg.style.display = 'block';
             } else {
-                // Erreur côté serveur Formspree
                 btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i>&nbsp; Envoyer le message';
                 btn.disabled  = false;
                 alert('Une erreur est survenue. Veuillez réessayer ou nous écrire directement à contact@entreprisesocialemaroc.org');
             }
-
         } catch (err) {
-            // Erreur réseau (pas de connexion, timeout…)
             btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i>&nbsp; Envoyer le message';
             btn.disabled  = false;
             alert('Connexion impossible. Veuillez vérifier votre réseau et réessayer.');
