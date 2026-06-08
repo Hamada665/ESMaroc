@@ -57,7 +57,7 @@
             <div class="hero-container">
                 <div class="soft-frame">
                     <h1>Contactez-nous</h1>
-                    <p class="subtitle">Une question, un projet, une idée de collaboration ? Notre équipe est à votre écoute et vous répondra dans les meilleurs délais.</p>
+                    <p class="subtitle">Une question, un projet, une idée de collaboration ? Notre équipe est à votre écoute dans nos deux hubs — Rabat et Tanger.</p>
                 </div>
             </div>
         </section>
@@ -66,52 +66,114 @@
         <section class="contact-main">
             <div class="contact-grid">
 
-                <!-- COLONNE GAUCHE : coordonnées -->
+                <!-- ── COLONNE GAUCHE : coordonnées ── -->
                 <div class="contact-info-col">
                     <h2>Nos coordonnées</h2>
-                    <p class="intro-text">Retrouvez-nous à notre siège ou contactez-nous directement par email ou téléphone. Nous serons ravis d'échanger avec vous.</p>
+                    <p class="intro-text">Retrouvez-nous dans l'un de nos deux hubs ou contactez-nous directement par email ou téléphone.</p>
 
-                    <div class="info-cards">
-
-                        <div class="info-card">
-                            <div class="info-card-icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div class="info-card-body">
-                                <span class="info-card-label">Adresse</span>
-                                <span class="info-card-value">12 rue Pékin, Océan Résidence Les Fleurs,<br>App. 1 — Rabat, Maroc</span>
-                            </div>
-                        </div>
-
-                        <div class="info-card">
-                            <div class="info-card-icon"><i class="fa-solid fa-envelope"></i></div>
-                            <div class="info-card-body">
-                                <span class="info-card-label">Email</span>
-                                <span class="info-card-value">
-                                    <a href="mailto:contact@entreprisesocialemaroc.org">contact@entreprisesocialemaroc.org</a>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="info-card">
-                            <div class="info-card-icon"><i class="fa-solid fa-phone"></i></div>
-                            <div class="info-card-body">
-                                <span class="info-card-label">Téléphone</span>
-                                <span class="info-card-value">
-                                    <a href="tel:+212537762872">+212 (0) 537 762 872</a>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="info-card">
-                            <div class="info-card-icon"><i class="fa-regular fa-clock"></i></div>
-                            <div class="info-card-body">
-                                <span class="info-card-label">Horaires</span>
-                                <span class="info-card-value">Lun – Ven : 9h00 – 17h00<br>Samedi : 9h00 – 13h00</span>
-                            </div>
-                        </div>
-
+                    <!-- ── SWITCHER HUBS ── -->
+                    <div class="hub-switcher">
+                        <button class="hub-btn active" data-hub="rabat">
+                            <i class="fa-solid fa-location-dot"></i> Hub Rabat
+                        </button>
+                        <button class="hub-btn" data-hub="tanger">
+                            <i class="fa-solid fa-location-dot"></i> Hub Tanger
+                        </button>
                     </div>
 
-                    <!-- Réseaux sociaux -->
+                    <!-- ── HUB RABAT ── -->
+                    <div class="hub-info active" id="hub-rabat">
+                        <div class="hub-badge">
+                            <span class="hub-badge-dot"></span> Siège principal
+                        </div>
+                        <div class="info-cards">
+
+                            <div class="info-card">
+                                <div class="info-card-icon"><i class="fa-solid fa-building"></i></div>
+                                <div class="info-card-body">
+                                    <span class="info-card-label">Adresse — Rabat</span>
+                                    <span class="info-card-value">12 rue Pékin, Océan Résidence Les Fleurs,<br>App. 1 — Rabat, Maroc</span>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-card-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="info-card-body">
+                                    <span class="info-card-label">Téléphone — Rabat</span>
+                                    <span class="info-card-value">
+                                        <a href="tel:+212537762872">+212 (0) 537 762 872</a>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="info-card-body">
+                                    <span class="info-card-label">Email</span>
+                                    <span class="info-card-value">
+                                        <a href="mailto:contact@entreprisesocialemaroc.org">contact@entreprisesocialemaroc.org</a>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-card-icon"><i class="fa-regular fa-clock"></i></div>
+                                <div class="info-card-body">
+                                    <span class="info-card-label">Horaires</span>
+                                    <span class="info-card-value">Lun – Ven : 9h00 – 17h00<br>Samedi : 9h00 – 13h00</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- ── HUB TANGER ── -->
+                    <div class="hub-info" id="hub-tanger">
+                        <div class="hub-badge">
+                            <span class="hub-badge-dot"></span> Hub régional
+                        </div>
+                        <div class="info-cards">
+
+                            <div class="info-card">
+                                <div class="info-card-icon"><i class="fa-solid fa-building"></i></div>
+                                <div class="info-card-body">
+                                    <span class="info-card-label">Adresse — Tanger</span>
+                                    <span class="info-card-value">Centre des Services à la Jeunesse,<br>Hay Hassani Bni Touzine — Tanger, Maroc</span>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-card-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="info-card-body">
+                                    <span class="info-card-label">Téléphone — Tanger</span>
+                                    <span class="info-card-value">
+                                        <a href="tel:+212526131326">+212 (0) 5 26 13 13 26</a>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="info-card-body">
+                                    <span class="info-card-label">Email</span>
+                                    <span class="info-card-value">
+                                        <a href="mailto:contact@entreprisesocialemaroc.org">contact@entreprisesocialemaroc.org</a>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-card-icon"><i class="fa-regular fa-clock"></i></div>
+                                <div class="info-card-body">
+                                    <span class="info-card-label">Horaires</span>
+                                    <span class="info-card-value">Lun – Ven : 9h00 – 17h00<br>Samedi : 9h00 – 13h00</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Réseaux sociaux (communs aux deux hubs) -->
                     <div class="social-contact">
                         <p>Suivez-nous</p>
                         <div class="social-links">
@@ -123,7 +185,7 @@
                     </div>
                 </div>
 
-                <!-- COLONNE DROITE : formulaire -->
+                <!-- ── COLONNE DROITE : formulaire ── -->
                 <div class="contact-form-col">
                     <h3>Envoyez-nous un message</h3>
                     <p class="form-subtitle">Remplissez le formulaire ci-dessous. Votre message sera transmis directement à notre équipe.</p>
@@ -139,9 +201,8 @@
                     -->
                     <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
-                        <!-- Champs cachés Formspree -->
-                        <input type="hidden" name="_replyto"  value="contact@entreprisesocialemaroc.org">
-                        <input type="hidden" name="_subject"  value="Nouveau message depuis le site ESMaroc">
+                        <input type="hidden" name="_replyto" value="contact@entreprisesocialemaroc.org">
+                        <input type="hidden" name="_subject" value="Nouveau message depuis le site ESMaroc">
 
                         <div class="form-row">
                             <div class="form-group">
@@ -195,7 +256,6 @@
                         </button>
                     </form>
 
-                    <!-- Confirmation affichée après envoi réussi -->
                     <div class="form-success" id="formSuccess">
                         <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
                         <h4>Message envoyé !</h4>
@@ -206,27 +266,64 @@
             </div>
         </section>
 
-        <!-- ===== SECTION 3 : CARTE GOOGLE MAPS ===== -->
+        <!-- ===== SECTION 3 : CARTE INTERACTIVE DOUBLE HUB ===== -->
         <section class="contact-map-section">
             <div class="map-wrapper">
-                <p class="map-label">
-                    <i class="fa-solid fa-map-pin"></i> Notre localisation — Rabat, Maroc
-                </p>
+
+                <!-- En-tête de la section carte avec switcher -->
+                <div class="map-header">
+                    <p class="map-label">
+                        <i class="fa-solid fa-map-pin"></i> Nos localisations
+                    </p>
+                    <div class="map-tab-switcher">
+                        <button class="map-tab active" data-map="rabat">
+                            <i class="fa-solid fa-circle-dot"></i> Rabat
+                        </button>
+                        <button class="map-tab" data-map="tanger">
+                            <i class="fa-solid fa-circle-dot"></i> Tanger
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Conteneur des deux iframes superposées -->
                 <div class="map-embed">
+
+                    <!-- Map Rabat : 12 rue Pékin, Océan, Rabat -->
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.2!2d-6.8498!3d34.0209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76b871c38f063%3A0x9abd1ccb1456bf34!2sOc%C3%A9an%2C%20Rabat!5e0!3m2!1sfr!2sma!4v1680000000000"
+                        id="map-rabat"
+                        class="map-frame active"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.8!2d-6.8533!3d34.0217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76b8f5555b6a5%3A0x1!2s12+Rue+P%C3%A9kin%2C+Rabat!5e0!3m2!1sfr!2sma!4v1680000000001"
                         allowfullscreen=""
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"
-                        title="Localisation ESMaroc — Rabat">
+                        title="Hub ESMaroc — Rabat">
                     </iframe>
+
+                    <!-- Map Tanger : Hay Hassani Bni Touzine, Tanger -->
+                    <iframe
+                        id="map-tanger"
+                        class="map-frame"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.5!2d-5.8340!3d35.7722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b40e7b1e8c7fd%3A0x1!2sHay+Hassani+Bni+Touzine%2C+Tanger!5e0!3m2!1sfr!2sma!4v1680000000002"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Hub ESMaroc — Tanger">
+                    </iframe>
+
                 </div>
+
+                <!-- Info-bulle sous la carte -->
+                <div class="map-info-strip" id="map-info-strip">
+                    <i class="fa-solid fa-building"></i>
+                    <span id="map-info-text">Hub Rabat — 12 rue Pékin, Océan Résidence Les Fleurs, App. 1</span>
+                </div>
+
             </div>
         </section>
 
     </main>
 
-    <!-- ===== FOOTER (identique aux autres pages – stylisé par style.css) ===== -->
+    <!-- ===== FOOTER ===== -->
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-left">
@@ -254,7 +351,6 @@
         </div>
     </footer>
 
-    <!-- Scripts : global d'abord, puis spécifique Contact -->
     <script src="script.js"></script>
     <script src="contact.js"></script>
 
