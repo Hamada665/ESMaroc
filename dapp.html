@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme DAPP | ESMaroc.Org</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dapp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="dapp-page-body">
+
+<!-- ===================== HEADER ===================== -->
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="ESMAROC LOGO.png" alt="Logo ESMaroc">
+        </div>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-trigger">ESMaroc <i class="fas fa-chevron-down nav-arrow"></i></a>
+                <div class="dropdown-menu">
+                    <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
+                    <a href="histoire.html">Notre Histoire & Vision</a>
+                    <a href="equipe.html">Notre Équipe</a>
+                </div>
+            </div>
+            <a href="evenements.html">Évènements</a>
+            <a href="projets.html" class="active">Projets</a>
+            <a href="#">École E-learning</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="header-icons">
+            <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
+            <a href="#" class="icon-link"><i class="fas fa-map-marker-alt"></i></a>
+            <button class="burger-menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="dp-hero">
+
+        <!-- Motif zellige SVG en fond -->
+        <div class="dp-zellige-bg" aria-hidden="true">
+            <svg class="dp-zellige-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <!-- Étoile islamique 8 branches répétée -->
+                <defs>
+                    <pattern id="zellige" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                        <!-- Octogone central -->
+                        <polygon points="40,10 56,24 70,24 70,40 56,56 40,70 24,56 10,40 10,24 24,10"
+                            fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.8"/>
+                        <!-- Carré intérieur tourné -->
+                        <polygon points="40,15 65,40 40,65 15,40"
+                            fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="0.6"/>
+                        <!-- Point central -->
+                        <circle cx="40" cy="40" r="2" fill="rgba(255,255,255,0.04)"/>
+                        <!-- Lignes de connexion -->
+                        <line x1="0" y1="40" x2="10" y2="40" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+                        <line x1="70" y1="40" x2="80" y2="40" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+                        <line x1="40" y1="0" x2="40" y2="10" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+                        <line x1="40" y1="70" x2="40" y2="80" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#zellige)"/>
+            </svg>
+        </div>
+
+        <!-- Ligne d'horizon diplomatique -->
+        <div class="dp-horizon-line" aria-hidden="true"></div>
+
+        <!-- Points de pays sur la ligne -->
+        <div class="dp-country-dots" aria-hidden="true">
+            <div class="dp-country-dot dp-country-dot--ma">
+                <span class="dp-dot-pulse"></span>
+                <span class="dp-dot-label">Maroc</span>
+            </div>
+            <div class="dp-country-dot dp-country-dot--tn">
+                <span class="dp-dot-pulse"></span>
+                <span class="dp-dot-label">Tunisie</span>
+            </div>
+            <div class="dp-country-dot dp-country-dot--eg">
+                <span class="dp-dot-pulse"></span>
+                <span class="dp-dot-label">Égypte</span>
+            </div>
+            <div class="dp-country-dot dp-country-dot--jo">
+                <span class="dp-dot-pulse"></span>
+                <span class="dp-dot-label">Jordanie</span>
+            </div>
+        </div>
+
+        <div class="dp-hero-content">
+            <nav class="dp-breadcrumb">
+                <a href="index.html">Accueil</a>
+                <span>·</span>
+                <a href="projets.html">Projets</a>
+                <span>·</span>
+                <span class="dp-breadcrumb-active">Programme DAPP</span>
+            </nav>
+
+            <div class="dp-hero-meta">
+                <span class="dp-badge">
+                    <span class="dp-badge-flag dp-badge-flag--dk"></span>
+                    Danida · Ministère des Affaires étrangères danois
+                </span>
+                <span class="dp-badge dp-badge--teal">2022 – 2027</span>
+            </div>
+
+            <h1 class="dp-hero-title">
+                <span class="dp-title-main">DAPP</span>
+                <span class="dp-title-sub">Danish Arab<br>Partnership Programme</span>
+            </h1>
+
+            <p class="dp-hero-description">
+                Créé en <strong>2003</strong>, le Programme de Partenariat Dano-Arabe œuvre pour l'<strong>emploi</strong>, l'<strong>entrepreneuriat</strong> et les <strong>droits humains</strong> dans la région MENA — avec une cible prioritaire : les jeunes de <strong>18 à 35 ans</strong>.
+            </p>
+
+            <!-- Deux axes du programme dans le hero -->
+            <div class="dp-hero-axes">
+                <div class="dp-hero-axe dp-hero-axe--terracotta">
+                    <i class="fas fa-briefcase"></i>
+                    <span>YEE — Youth Employment & Entrepreneurship</span>
+                </div>
+                <div class="dp-hero-axe dp-hero-axe--teal">
+                    <i class="fas fa-balance-scale"></i>
+                    <span>HRI — Human Rights & Inclusion</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transition vague géométrique -->
+        <div class="dp-hero-transition" aria-hidden="true">
+            <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,0 L1440,0 L1440,90 L720,40 L0,90 Z" fill="#f7f4f1"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ===================== LOGO FLOTTANT ===================== -->
+    <div class="dp-brand-bar">
+        <div class="dp-logo-wrapper">
+            <img src="dano-logo.png" alt="Logo Programme DAPP" class="dp-logo-img">
+        </div>
+        <div class="dp-brand-copy">
+            <p class="dp-brand-title">Programme de Partenariat Dano-Arabe</p>
+            <p class="dp-brand-detail">
+                Financé par le <strong>Ministère des Affaires étrangères danois (Danida)</strong> · Actif depuis <strong>2003</strong>
+            </p>
+            <div class="dp-brand-regions">
+                <span>Maroc</span>
+                <span>Tunisie</span>
+                <span>Égypte</span>
+                <span>Jordanie</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== STATS ===================== -->
+    <section class="dp-stats-section">
+        <div class="dp-stats-inner">
+
+            <div class="dp-stat">
+                <span class="dp-stat-num">2003</span>
+                <span class="dp-stat-label">Année de création</span>
+                <span class="dp-stat-sub">Plus de 20 ans d'engagement</span>
+            </div>
+
+            <div class="dp-stat-sep"></div>
+
+            <div class="dp-stat">
+                <span class="dp-stat-num">4</span>
+                <span class="dp-stat-label">Pays MENA</span>
+                <span class="dp-stat-sub">Maroc · Tunisie · Égypte · Jordanie</span>
+            </div>
+
+            <div class="dp-stat-sep"></div>
+
+            <div class="dp-stat">
+                <span class="dp-stat-num">18–35</span>
+                <span class="dp-stat-label">Tranche d'âge cible</span>
+                <span class="dp-stat-sub">Jeunes en priorité</span>
+            </div>
+
+            <div class="dp-stat-sep"></div>
+
+            <div class="dp-stat">
+                <span class="dp-stat-num">2</span>
+                <span class="dp-stat-label">Axes complémentaires</span>
+                <span class="dp-stat-sub">YEE · HRI</span>
+            </div>
+
+            <div class="dp-stat-sep"></div>
+
+            <div class="dp-stat">
+                <span class="dp-stat-num">3</span>
+                <span class="dp-stat-label">Régions au Maroc</span>
+                <span class="dp-stat-sub">RSK · TTA · Fès-Meknès</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================== CONTENU + SIDEBAR ===================== -->
+    <section class="dp-detail-container">
+
+        <article class="dp-main-content">
+
+            <!-- À propos -->
+            <div class="dp-block">
+                <span class="dp-eyebrow">Le programme</span>
+                <h2 class="dp-section-title">À propos du DAPP</h2>
+                <p class="dp-lead">
+                    Le Programme de Partenariat Dano-Arabe (DAPP) est une initiative diplomatique de long terme portée par le Ministère des Affaires étrangères danois à travers son agence de développement Danida. Fondé en 2003, il incarne une vision durable de la coopération Nord-Sud centrée sur la jeunesse, l'emploi et les droits fondamentaux.
+                </p>
+                <p>
+                    La phase actuelle du programme (2022–2027) se concentre sur les causes profondes de la migration des jeunes dans la région MENA, en leur offrant des alternatives concrètes : des opportunités économiques locales, une inclusion sociale renforcée et des espaces de participation citoyenne.
+                </p>
+                <p>
+                    Au Maroc, <strong>ESMaroc</strong> intervient comme acteur de mise en œuvre dans trois régions stratégiques — Rabat–Salé–Kénitra, Tanger–Tétouan–Al Hoceima et Fès–Meknès — en partenariat avec des organisations de la société civile, des incubateurs et des acteurs territoriaux engagés dans le développement durable.
+                </p>
+            </div>
+
+            <!-- Les deux axes -->
+            <div class="dp-block">
+                <span class="dp-eyebrow">Axes d'intervention</span>
+                <h2 class="dp-section-title">Deux axes complémentaires</h2>
+
+                <div class="dp-axes-diptych">
+
+                    <div class="dp-axe-panel dp-axe-panel--terracotta">
+                        <div class="dp-axe-panel-inner">
+                            <div class="dp-axe-icon-wrap">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="dp-axe-label">Axe 1</div>
+                            <h3>Youth Employment &amp; Entrepreneurship</h3>
+                            <p class="dp-axe-acro">YEE</p>
+                            <p>Renforcement des opportunités économiques locales pour les jeunes à travers le soutien à l'emploi, à l'entrepreneuriat et au développement de compétences adaptées aux marchés du travail de la région MENA.</p>
+                            <ul class="dp-axe-bullets">
+                                <li>Accompagnement à l'emploi des 18–35 ans</li>
+                                <li>Soutien à la création d'entreprises</li>
+                                <li>Développement de compétences professionnelles</li>
+                                <li>Partenariats avec incubateurs locaux</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="dp-axe-panel dp-axe-panel--teal">
+                        <div class="dp-axe-panel-inner">
+                            <div class="dp-axe-icon-wrap">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="dp-axe-label">Axe 2</div>
+                            <h3>Human Rights &amp; Inclusion</h3>
+                            <p class="dp-axe-acro">HRI</p>
+                            <p>Promotion de l'inclusion sociale, des droits humains et de la participation citoyenne des jeunes, avec une attention particulière aux populations vulnérables et aux groupes marginalisés dans la région MENA.</p>
+                            <ul class="dp-axe-bullets">
+                                <li>Promotion des droits fondamentaux</li>
+                                <li>Inclusion sociale des groupes vulnérables</li>
+                                <li>Renforcement de la participation citoyenne</li>
+                                <li>Lutte contre les causes de la migration</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Intervention au Maroc -->
+            <div class="dp-block">
+                <span class="dp-eyebrow">Au Maroc</span>
+                <h2 class="dp-section-title">L'intervention d'ESMaroc</h2>
+
+                <div class="dp-regions-grid">
+
+                    <div class="dp-region">
+                        <div class="dp-region-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Rabat–Salé–Kénitra</h4>
+                        </div>
+                        <p>Coordination régionale et mise en œuvre des axes YEE et HRI en partenariat avec des organisations de la société civile et des incubateurs de la région capitale.</p>
+                    </div>
+
+                    <div class="dp-region">
+                        <div class="dp-region-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Tanger–Tétouan–Al Hoceima</h4>
+                        </div>
+                        <p>Intervention dans une région à forte dynamique migratoire, avec un focus sur l'employabilité des jeunes et la promotion des droits humains en zone frontalière.</p>
+                    </div>
+
+                    <div class="dp-region">
+                        <div class="dp-region-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Fès–Meknès</h4>
+                        </div>
+                        <p>Actions ciblées sur l'entrepreneuriat social, le renforcement des capacités des acteurs associatifs et la structuration de réseaux territoriaux pour l'inclusion des jeunes.</p>
+                    </div>
+
+                </div>
+
+                <div class="dp-partners-note">
+                    <i class="fas fa-handshake"></i>
+                    <p>ESMaroc intervient en partenariat avec des <strong>organisations de la société civile</strong>, des <strong>incubateurs</strong> et des <strong>acteurs territoriaux</strong> engagés dans le développement durable au Maroc.</p>
+                </div>
+            </div>
+
+            <!-- Citation -->
+            <blockquote class="dp-quote">
+                <div class="dp-quote-zellige" aria-hidden="true">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="100,5 120,40 160,40 130,65 145,100 100,80 55,100 70,65 40,40 80,40"
+                            fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                        <polygon points="100,25 115,50 145,50 122,68 132,95 100,78 68,95 78,68 55,50 85,50"
+                            fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+                        <circle cx="100" cy="100" r="8" fill="rgba(255,255,255,0.08)"/>
+                    </svg>
+                </div>
+                <p>"Le DAPP est construit sur la conviction que la jeunesse arabe, quand elle est accompagnée et entendue, est le moteur le plus puissant de transformation de sa région."</p>
+                <cite>— ESMaroc, acteur de mise en œuvre au Maroc · 2022–2027</cite>
+            </blockquote>
+
+        </article>
+
+        <!-- ===================== SIDEBAR ===================== -->
+        <aside class="dp-sidebar">
+
+            <!-- Infos clés -->
+            <div class="dp-info-card">
+                <div class="dp-info-header">
+                    <div class="dp-info-header-motif" aria-hidden="true">
+                        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="30,5 38,22 58,22 42,34 48,52 30,40 12,52 18,34 2,22 22,22"
+                                fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <h3>Informations Clés</h3>
+                </div>
+                <ul class="dp-info-list">
+                    <li>
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <strong>Financeur</strong>
+                            <span>Danida — Ministère des AE danois</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-calendar-alt"></i>
+                        <div>
+                            <strong>Phase actuelle</strong>
+                            <span>2022 – 2027</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-history"></i>
+                        <div>
+                            <strong>Création</strong>
+                            <span>2003 (plus de 20 ans)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <strong>Cible prioritaire</strong>
+                            <span>Jeunes 18–35 ans</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-map"></i>
+                        <div>
+                            <strong>Pays</strong>
+                            <span>Maroc · Tunisie · Égypte · Jordanie</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Régions Maroc</strong>
+                            <span>RSK · TTA · Fès-Meknès</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-cogs"></i>
+                        <div>
+                            <strong>Mise en œuvre</strong>
+                            <span>ESMaroc + OSC + Incubateurs</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Les objectifs -->
+            <div class="dp-objectives-card">
+                <h3>Objectifs Stratégiques</h3>
+
+                <div class="dp-obj-item">
+                    <div class="dp-obj-icon dp-obj-icon--terracotta">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <strong>Opportunités économiques</strong>
+                        <p>Renforcer les débouchés locaux pour réduire la pression migratoire</p>
+                    </div>
+                </div>
+
+                <div class="dp-obj-item">
+                    <div class="dp-obj-icon dp-obj-icon--teal">
+                        <i class="fas fa-people-arrows"></i>
+                    </div>
+                    <div>
+                        <strong>Inclusion sociale</strong>
+                        <p>Promouvoir l'égalité et l'intégration des groupes marginalisés</p>
+                    </div>
+                </div>
+
+                <div class="dp-obj-item">
+                    <div class="dp-obj-icon dp-obj-icon--yellow">
+                        <i class="fas fa-vote-yea"></i>
+                    </div>
+                    <div>
+                        <strong>Participation citoyenne</strong>
+                        <p>Développer l'engagement civique des jeunes dans la vie démocratique</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+    <!-- ===================== GALERIE ===================== -->
+    <section class="dp-gallery-section">
+
+        <div class="dp-gallery-header">
+            <span class="dp-eyebrow dp-eyebrow--light">Galerie</span>
+            <h2 class="dp-gallery-title">Retour en images</h2>
+            <p>Le programme DAPP en action au Maroc</p>
+        </div>
+
+        <div class="dp-gallery-grid">
+
+            <a href="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1200" data-lightbox="dapp-album" data-title="Atelier DAPP — YEE" class="dp-gallery-item dp-gallery-item--hero">
+                <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=900" alt="DAPP YEE">
+                <div class="dp-gallery-overlay">
+                    <span class="dp-gal-tag dp-gal-tag--terracotta">YEE</span>
+                    <p>Atelier Emploi & Entrepreneuriat</p>
+                </div>
+            </a>
+
+            <div class="dp-gallery-col">
+                <a href="https://images.unsplash.com/photo-1434030216411-0b793f4b6f6d?q=80&w=1200" data-lightbox="dapp-album" data-title="Formation droits humains — HRI" class="dp-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b6f6d?q=80&w=600" alt="DAPP HRI">
+                    <div class="dp-gallery-overlay">
+                        <span class="dp-gal-tag dp-gal-tag--teal">HRI</span>
+                        <p>Formation droits humains</p>
+                    </div>
+                </a>
+
+                <a href="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200" data-lightbox="dapp-album" data-title="Session jeunesse MENA" class="dp-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600" alt="DAPP Jeunesse">
+                    <div class="dp-gallery-overlay">
+                        <span class="dp-gal-tag dp-gal-tag--terracotta">Jeunesse</span>
+                        <p>Session jeunesse MENA</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="dp-gallery-col">
+                <a href="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1200" data-lightbox="dapp-album" data-title="Partenariats territoriaux" class="dp-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=600" alt="DAPP Partenariats">
+                    <div class="dp-gallery-overlay">
+                        <span class="dp-gal-tag dp-gal-tag--teal">Partenariats</span>
+                        <p>Acteurs territoriaux</p>
+                    </div>
+                </a>
+
+                <a href="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200" data-lightbox="dapp-album" data-title="Inclusion & Participation citoyenne" class="dp-gallery-item">
+                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=600" alt="DAPP Inclusion">
+                    <div class="dp-gallery-overlay">
+                        <span class="dp-gal-tag dp-gal-tag--terracotta">Inclusion</span>
+                        <p>Participation citoyenne</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h2 class="footer-logo">ES.Maroc<span>.Org</span></h2>
+            <p class="footer-description">
+                EsMaroc.Org est une association qui promeut l'innovation sociale au Maroc.
+                Nous accompagnons les entrepreneurs pour créer un impact durable et responsable.
+            </p>
+            <div class="footer-contact">
+                <p><i class="fa-solid fa-location-dot"></i> 12 rue Pékin, Océan Résidence Les Fleurs, App. 1 Rabat</p>
+                <p><i class="fa-solid fa-phone"></i> +212 (0) 537 762 872</p>
+                <p><i class="fa-solid fa-envelope"></i> contact@entreprisesocialemaroc.org</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <h3>REJOIGNEZ-NOUS</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p class="copyright">ES.Maroc © Copyright 2026. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
