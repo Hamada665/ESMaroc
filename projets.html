@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos Projets - ESMaroc</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projets-page.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body class="projects-page-body">
 
@@ -14,10 +16,8 @@
         <div class="logo">
             <img src="ESMAROC LOGO.png" alt="Logo ESMaroc">
         </div>
-        
         <nav>
             <a href="index.html">Accueil</a>
-            
             <div class="dropdown">
                 <a href="#" class="dropdown-trigger">ESMaroc <i class="fas fa-chevron-down nav-arrow"></i></a>
                 <div class="dropdown-menu">
@@ -26,45 +26,50 @@
                     <a href="equipe.html">Notre Équipe</a>
                 </div>
             </div>
-
             <a href="#">Évènements</a>
             <a href="projets.html" class="active">Projets</a>
             <a href="#">École E-learning</a>
             <a href="#">Contact</a>
         </nav>
-
         <div class="header-icons">
-            <a href="#" class="icon-link"><i class="fas fa-search"></i></a> 
-            <a href="#" class="icon-link"><i class="fas fa-map-marker-alt"></i></a> 
+            <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
+            <a href="#" class="icon-link"><i class="fas fa-map-marker-alt"></i></a>
             <button class="burger-menu"><i class="fas fa-bars"></i></button>
         </div>
-    </div> 
+    </div>
 </header>
-    
+
 <main class="portfolio-layout">
-            
+
+    <!-- ===== HERO ===== -->
     <section class="portfolio-hero">
         <div class="portfolio-hero-content">
             <h1>Notre Portefeuille de Projets</h1>
-            <p>ESMaroc dispose d’un portefeuille riche de projets structurants développés en partenariat avec des bailleurs internationaux, des institutions publiques et des acteurs de terrain pour concevoir, piloter et déployer des programmes d’envergure.</p>
+            <p>ESMaroc dispose d'un portefeuille riche de projets structurants développés en partenariat avec des bailleurs internationaux, des institutions publiques et des acteurs de terrain pour concevoir, piloter et déployer des programmes d'envergure.</p>
         </div>
     </section>
 
+    <!-- ===== SÉPARATEUR DE SECTIONS ===== -->
+    <div class="portfolio-section-label">
+        <span><i class="fas fa-folder-open"></i> Projets avec pages dédiées</span>
+    </div>
+
+    <!-- ===== GRILLE PROJETS AVEC PAGES DÉDIÉES ===== -->
     <section class="portfolio-grid-section">
         <div class="portfolio-container">
-            
-            <a href="projet-upshift.html" class="logo-project-card">
+
+            <a href="upshift.html" class="logo-project-card">
                 <div class="project-logo-wrapper">
                     <img src="UPSHIFT LOGO.png" alt="Logo Projet UPSHIFT" class="project-logo-img">
                 </div>
                 <div class="project-logo-info">
                     <h3>UPSHIFT</h3>
-                    <span class="project-institution">UNICEF • Tanger</span>
+                    <span class="project-institution">UNICEF · Tanger</span>
                     <span class="view-project-link">Découvrir le projet <i class="fas fa-arrow-right"></i></span>
                 </div>
             </a>
 
-            <a href="projet-nawat.html" class="logo-project-card">
+            <a href="nawat.html" class="logo-project-card">
                 <div class="project-logo-wrapper">
                     <img src="NAWAT LOGO.png" alt="Logo Projet NAWAT" class="project-logo-img logo-wide">
                 </div>
@@ -75,13 +80,13 @@
                 </div>
             </a>
 
-            <a href="projet-restart.html" class="logo-project-card">
+            <a href="restart.html" class="logo-project-card">
                 <div class="project-logo-wrapper">
                     <img src="RESTART LOGO.png" alt="Logo Projet RESTART" class="project-logo-img logo-wide">
                 </div>
                 <div class="project-logo-info">
                     <h3>RESTART</h3>
-                    <span class="project-institution">ESMaroc Innovation</span>
+                    <span class="project-institution">Entrepreneuriat Social</span>
                     <span class="view-project-link">Découvrir le projet <i class="fas fa-arrow-right"></i></span>
                 </div>
             </a>
@@ -97,20 +102,9 @@
                 </div>
             </a>
 
-            <a href="projet-w4l.html" class="logo-project-card">
-                <div class="project-logo-wrapper">
-                    <img src="WORK FOR LIFE.png" alt="Logo Projet Work 4 Life" class="project-logo-img logo-tall">
-                </div>
-                <div class="project-logo-info">
-                    <h3>WORK 4 LIFE</h3>
-                    <span class="project-institution">Union Européenne</span>
-                    <span class="view-project-link">Découvrir le projet <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
-
             <a href="projet-flower.html" class="logo-project-card">
                 <div class="project-logo-wrapper">
-                    <img src="FLOWER LOGO.png" alt="Logo Projet FLOWER" class="project-logo-img logo-text">
+                    <img src="flower-logo.png" alt="Logo Projet FLOWER" class="project-logo-img logo-text">
                 </div>
                 <div class="project-logo-info">
                     <h3>FLOWER</h3>
@@ -121,40 +115,19 @@
 
             <a href="projet-migration.html" class="logo-project-card">
                 <div class="project-logo-wrapper">
-                    <img src="ONU LOGO.png" alt="Logo Projet OIM" class="project-logo-img logo-tall">
+                    <img src="onu-logo.png" alt="Logo Projet OIM" class="project-logo-img logo-tall">
                 </div>
                 <div class="project-logo-info">
                     <h3>MIGRATION & DD</h3>
-                    <span class="project-institution">OIM (Migrants & Communautés)</span>
-                    <span class="view-project-link">Découvrir le projet <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
-
-            <a href="projet-giz.html" class="logo-project-card">
-                <div class="project-logo-wrapper">
-                    <img src="GIZ LOGO.png" alt="Logo Cluster GIZ" class="project-logo-img logo-wide">
-                </div>
-                <div class="project-logo-info">
-                    <h3>CLUSTER INDUSTRIEL</h3>
-                    <span class="project-institution">GIZ (Tech d'assemblage)</span>
-                    <span class="view-project-link">Découvrir le projet <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
-
-            <a href="projet-logmed.html" class="logo-project-card">
-                <div class="project-logo-wrapper">
-                    <img src="logo-logmed.png" alt="Logo LOG MED" class="project-logo-img logo-wide">
-                </div>
-                <div class="project-logo-info">
-                    <h3>LOG MED</h3>
-                    <span class="project-institution">Coopération Italienne</span>
+                    <span class="project-institution">OIM · ONU Migration</span>
                     <span class="view-project-link">Découvrir le projet <i class="fas fa-arrow-right"></i></span>
                 </div>
             </a>
 
             <a href="projet-jisr.html" class="logo-project-card">
                 <div class="project-logo-wrapper">
-                    <img src="logo-jisr.png" alt="Logo Projet JISR" class="project-logo-img logo-wide">
+                    <!-- Pas de logo : initiales stylisées -->
+                    <div class="project-logo-initials" style="background:#f5c842; color:#1a1a1a;">JISR</div>
                 </div>
                 <div class="project-logo-info">
                     <h3>JISR</h3>
@@ -165,7 +138,7 @@
 
             <a href="projet-dar-libtikar.html" class="logo-project-card">
                 <div class="project-logo-wrapper">
-                    <img src="DAR LIBTIKAR LOGO.png" alt="Logo Label Dar-Libtikar" class="project-logo-img logo-libtikar-fix">
+                    <img src="darlibtikar-logo.png" alt="Logo Label Dar-Libtikar" class="project-logo-img logo-libtikar-fix">
                 </div>
                 <div class="project-logo-info">
                     <h3>DAR-LIBTIKAR</h3>
@@ -176,7 +149,7 @@
 
             <a href="projet-dapp.html" class="logo-project-card">
                 <div class="project-logo-wrapper">
-                    <img src="DANO ARABE LOGO.png" alt="Logo DAPP Danida" class="project-logo-img logo-dapp-fix">
+                    <img src="dano-logo.png" alt="Logo DAPP Danida" class="project-logo-img logo-dapp-fix">
                 </div>
                 <div class="project-logo-info">
                     <h3>PROGRAMME DAPP</h3>
@@ -199,14 +172,169 @@
         </div>
     </section>
 
+    <!-- ===== SÉPARATEUR ACCORDÉONS ===== -->
+    <div class="portfolio-section-label portfolio-section-label--alt">
+        <span><i class="fas fa-layer-group"></i> Autres projets & initiatives</span>
+    </div>
+
+    <!-- ===== SECTION ACCORDÉONS : W4L, GIZ, LOG MED ===== -->
+    <section class="portfolio-accordion-section">
+        <div class="portfolio-accordion-container">
+
+            <!-- ===== W4L – WORK FOR LIFE ===== -->
+            <div class="acc-project-item" data-project="w4l">
+                <button class="acc-project-trigger" type="button">
+                    <div class="acc-trigger-left">
+                        <div class="acc-logo-thumb acc-logo-thumb--w4l">
+                            <img src="WORK FOR LIFE.png" alt="Logo Work 4 Life">
+                        </div>
+                        <div class="acc-trigger-info">
+                            <span class="acc-project-name">WORK 4 LIFE</span>
+                            <span class="acc-project-partner">Union Européenne · Entrepreneuriat collectif</span>
+                        </div>
+                    </div>
+                    <div class="acc-trigger-right">
+                        <span class="acc-tag acc-tag--ue">UE</span>
+                        <span class="acc-chevron"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                </button>
+
+                <div class="acc-project-content">
+                    <div class="acc-content-inner acc-inner--w4l">
+                        <div class="acc-content-logo">
+                            <img src="WORK FOR LIFE.png" alt="Work 4 Life Logo">
+                        </div>
+                        <div class="acc-content-body">
+                            <div class="acc-content-badge" style="background:#ea9333; color:#fff;">Union Européenne · W4L</div>
+                            <h3>Work for Life – Entrepreneuriat Collectif</h3>
+                            <p>Le projet <strong>W4L – Work for Life</strong>, financé par l'Union Européenne, a soutenu l'insertion socio-économique des personnes migrantes via l'entrepreneuriat collectif, avec la création et la structuration de plus d'une vingtaine de coopératives et entreprises sociales viables.</p>
+                            <div class="acc-highlight-stat">
+                                <div class="acc-stat acc-stat--w4l">
+                                    <i class="fas fa-people-group"></i>
+                                    <span class="acc-stat-num">20+</span>
+                                    <span class="acc-stat-label">Coopératives & entreprises sociales créées</span>
+                                </div>
+                                <div class="acc-stat acc-stat--w4l-alt">
+                                    <i class="fas fa-earth-africa"></i>
+                                    <span class="acc-stat-num">100%</span>
+                                    <span class="acc-stat-label">Dédiées aux personnes migrantes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== GIZ – CLUSTER INDUSTRIEL ===== -->
+            <div class="acc-project-item" data-project="giz">
+                <button class="acc-project-trigger" type="button">
+                    <div class="acc-trigger-left">
+                        <div class="acc-logo-thumb acc-logo-thumb--giz">
+                            <img src="giz-logo.png" alt="Logo GIZ">
+                        </div>
+                        <div class="acc-trigger-info">
+                            <span class="acc-project-name">CLUSTER INDUSTRIEL</span>
+                            <span class="acc-project-partner">GIZ · Technologies d'assemblage</span>
+                        </div>
+                    </div>
+                    <div class="acc-trigger-right">
+                        <span class="acc-tag acc-tag--giz">GIZ</span>
+                        <span class="acc-chevron"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                </button>
+
+                <div class="acc-project-content">
+                    <div class="acc-content-inner acc-inner--giz">
+                        <div class="acc-content-logo">
+                            <img src="giz-logo.png" alt="GIZ Logo">
+                        </div>
+                        <div class="acc-content-body">
+                            <div class="acc-content-badge" style="background:#f1090e; color:#fff;">GIZ · Deutsche Gesellschaft</div>
+                            <h3>Cluster Industriel – Technologies d'Assemblage</h3>
+                            <p>ESMaroc a contribué à la <strong>structuration d'un cluster industriel</strong> en partenariat avec la GIZ dans le secteur des technologies d'assemblage, renforçant la compétitivité et l'innovation sectorielle au Maroc.</p>
+                            <div class="acc-highlight-stat">
+                                <div class="acc-stat acc-stat--giz">
+                                    <i class="fas fa-industry"></i>
+                                    <span class="acc-stat-num">1</span>
+                                    <span class="acc-stat-label">Cluster structuré dans les technologies d'assemblage</span>
+                                </div>
+                                <div class="acc-stat acc-stat--giz-alt">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span class="acc-stat-num">+</span>
+                                    <span class="acc-stat-label">Compétitivité & innovation renforcées</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== LOG MED ===== -->
+            <div class="acc-project-item" data-project="logmed">
+                <button class="acc-project-trigger" type="button">
+                    <div class="acc-trigger-left">
+                        <!-- Pas de logo : drapeau italien stylisé -->
+                        <div class="acc-logo-thumb acc-logo-thumb--logmed">
+                            <span class="acc-flag-it">
+                                <span style="background:#009246"></span>
+                                <span style="background:#ffffff"></span>
+                                <span style="background:#ce2b37"></span>
+                            </span>
+                        </div>
+                        <div class="acc-trigger-info">
+                            <span class="acc-project-name">LOG MED</span>
+                            <span class="acc-project-partner">Coopération Italienne · Rabat & Tanger</span>
+                        </div>
+                    </div>
+                    <div class="acc-trigger-right">
+                        <span class="acc-tag acc-tag--logmed">IT</span>
+                        <span class="acc-chevron"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                </button>
+
+                <div class="acc-project-content">
+                    <div class="acc-content-inner acc-inner--logmed">
+                        <div class="acc-content-logo acc-content-logo--flag">
+                            <div class="acc-flag-big">
+                                <span style="background:#009246"></span>
+                                <span style="background:#ffffff"></span>
+                                <span style="background:#ce2b37"></span>
+                            </div>
+                            <p class="acc-flag-label">Coopération<br><strong>Italienne</strong></p>
+                        </div>
+                        <div class="acc-content-body">
+                            <div class="acc-content-badge" style="background:#009246; color:#fff;">Coopération Italienne · LOG MED</div>
+                            <h3>LOG MED – Connecter l'Avenir</h3>
+                            <p>Le projet <strong>LOG MED</strong>, soutenu par la coopération italienne, vise à renforcer l'employabilité et le potentiel entrepreneurial des jeunes et des femmes dans les régions de <strong>Rabat-Salé-Kénitra</strong> et <strong>Tanger-Tétouan-Al Hoceima</strong>.</p>
+                            <p>À travers ses Hubs, il active un écosystème de stages de perfectionnement rémunérés et un accompagnement technique sur mesure pour favoriser une croissance économique inclusive et durable.</p>
+                            <div class="acc-highlight-stat">
+                                <div class="acc-stat acc-stat--logmed">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span class="acc-stat-num">2</span>
+                                    <span class="acc-stat-label">Régions cibles : Rabat & Tanger</span>
+                                </div>
+                                <div class="acc-stat acc-stat--logmed-alt">
+                                    <i class="fas fa-users"></i>
+                                    <span class="acc-stat-num">Hub</span>
+                                    <span class="acc-stat-label">Stages rémunérés & accompagnement technique</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 </main>
-            
+
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-left">
             <h2 class="footer-logo">ES.Maroc<span>.Org</span></h2>
             <p class="footer-description">
-                EsMaroc.Org est une association qui promeut l'innovation sociale au Maroc. 
+                EsMaroc.Org est une association qui promeut l'innovation sociale au Maroc.
                 Nous accompagnons les entrepreneurs pour créer un impact durable et responsable.
             </p>
             <div class="footer-contact">
@@ -228,5 +356,28 @@
     </div>
 </footer>
 
+<script src="script.js"></script>
+<script>
+// Accordéons projets
+document.querySelectorAll('.acc-project-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+        const item = trigger.closest('.acc-project-item');
+        const content = item.querySelector('.acc-project-content');
+        const isOpen = item.classList.contains('acc-open');
+
+        // Fermer tous les autres
+        document.querySelectorAll('.acc-project-item.acc-open').forEach(openItem => {
+            openItem.classList.remove('acc-open');
+            openItem.querySelector('.acc-project-content').style.maxHeight = null;
+        });
+
+        // Ouvrir/fermer le cliqué
+        if (!isOpen) {
+            item.classList.add('acc-open');
+            content.style.maxHeight = content.scrollHeight + 'px';
+        }
+    });
+});
+</script>
 </body>
 </html>
