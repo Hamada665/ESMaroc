@@ -1,11 +1,12 @@
 /* ============================================================
    CONTACT.CSS — Styles spécifiques à la page contact.html
+   Les styles du header, footer et variables CSS globales
+   sont gérés par style.css (déjà chargé en premier dans le HTML)
    ============================================================ */
 
 
 /* ============================================================
    SECTION 1 : HERO CONTACT
-   (Même structure que .about-hero dans qui-sommes-nous)
    ============================================================ */
 .contact-hero {
     background-color: var(--bg-light);
@@ -18,8 +19,6 @@
     width: 100%;
     max-width: 1200px;
 }
-
-/* .soft-frame est déjà défini dans style.css — on le réutilise tel quel */
 
 
 /* ============================================================
@@ -52,7 +51,6 @@
     margin-bottom: 20px;
 }
 
-/* Ligne jaune décorative — cohérente avec les autres sections du site */
 .contact-info-col h2::after {
     content: '';
     display: block;
@@ -66,14 +64,92 @@
     font-size: 1rem;
     color: var(--text-light);
     line-height: 1.7;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
-/* --- Cartes d'information --- */
+/* ── Switcher Rabat / Tanger ── */
+.hub-switcher {
+    display: flex;
+    gap: 0;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1.5px solid rgba(0, 43, 149, 0.15);
+}
+
+.hub-btn {
+    flex: 1;
+    padding: 11px 18px;
+    background: var(--white);
+    color: var(--text-light);
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    letter-spacing: 0.3px;
+}
+
+.hub-btn:first-child {
+    border-right: 1.5px solid rgba(0, 43, 149, 0.15);
+}
+
+.hub-btn.active {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.hub-btn:not(.active):hover {
+    background: var(--bg-light);
+    color: var(--blue);
+}
+
+/* ── Badge hub (Siège principal / Hub régional) ── */
+.hub-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-light);
+    margin-bottom: 18px;
+}
+
+.hub-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--yellow);
+    display: inline-block;
+}
+
+/* ── Panneaux hub (affichage/masquage) ── */
+.hub-info {
+    display: none;
+    animation: fadeInHub 0.3s ease;
+}
+
+.hub-info.active {
+    display: block;
+}
+
+@keyframes fadeInHub {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Cartes d'information ── */
 .info-cards {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
 }
 
 .info-card {
@@ -82,7 +158,7 @@
     gap: 18px;
     background: var(--bg-light);
     border-radius: 4px;
-    padding: 22px 25px;
+    padding: 20px 22px;
     border-left: 4px solid transparent;
     transition: all 0.3s ease;
 }
@@ -94,21 +170,20 @@
 }
 
 .info-card-icon {
-    width: 46px;
-    height: 46px;
-    min-width: 46px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
     background: var(--white);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--blue);
     box-shadow: 0 4px 10px rgba(0, 43, 149, 0.08);
     transition: all 0.3s ease;
 }
 
-/* Hover icône : jaune comme les mission-cards de la page À propos */
 .info-card:hover .info-card-icon {
     background: var(--yellow);
     color: var(--text-dark);
@@ -120,7 +195,7 @@
 }
 
 .info-card-label {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -129,7 +204,7 @@
 }
 
 .info-card-value {
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     font-weight: 600;
     color: var(--blue);
     line-height: 1.5;
@@ -145,18 +220,18 @@
     color: var(--yellow);
 }
 
-/* --- Réseaux sociaux --- */
+/* ── Réseaux sociaux ── */
 .social-contact {
-    margin-top: 35px;
+    margin-top: 30px;
 }
 
 .social-contact p {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: var(--text-light);
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 }
 
 .social-links {
@@ -165,15 +240,15 @@
 }
 
 .social-link {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     background: var(--bg-light);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--blue);
-    font-size: 1rem;
+    font-size: 0.95rem;
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -209,7 +284,6 @@
     line-height: 1.6;
 }
 
-/* --- Grille interne du formulaire --- */
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -223,7 +297,6 @@
     gap: 7px;
 }
 
-/* Un champ qui prend toute la largeur de la ligne */
 .form-group.full {
     grid-column: 1 / -1;
 }
@@ -263,7 +336,6 @@
     box-shadow: 0 0 0 3px rgba(0, 51, 153, 0.08);
 }
 
-/* --- Select personnalisé (flèche bleue) --- */
 .select-wrapper {
     position: relative;
 }
@@ -274,7 +346,7 @@
 }
 
 .select-wrapper::after {
-    content: '\f078'; /* fa-chevron-down */
+    content: '\f078';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     position: absolute;
@@ -291,7 +363,6 @@
     min-height: 130px;
 }
 
-/* --- Bouton d'envoi --- */
 .btn-submit {
     margin-top: 10px;
     width: 100%;
@@ -324,7 +395,6 @@
     transform: none;
 }
 
-/* --- Message de succès après envoi --- */
 .form-success {
     display: none;
     text-align: center;
@@ -352,7 +422,7 @@
 
 
 /* ============================================================
-   SECTION 3 : CARTE GOOGLE MAPS
+   SECTION 3 : CARTE INTERACTIVE DOUBLE HUB
    ============================================================ */
 .contact-map-section {
     padding: 0 5% 100px 5%;
@@ -365,42 +435,124 @@
     max-width: 1200px;
 }
 
+/* En-tête de la section carte */
+.map-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
 .map-label {
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--text-light);
-    margin-bottom: 15px;
     display: flex;
     align-items: center;
     gap: 8px;
+    margin: 0;
 }
 
 .map-label i {
     color: var(--yellow);
 }
 
+/* ── Switcher d'onglets au-dessus de la map ── */
+.map-tab-switcher {
+    display: flex;
+    gap: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1.5px solid rgba(0, 43, 149, 0.15);
+}
+
+.map-tab {
+    padding: 9px 22px;
+    background: var(--white);
+    color: var(--text-light);
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    letter-spacing: 0.3px;
+}
+
+.map-tab:first-child {
+    border-right: 1.5px solid rgba(0, 43, 149, 0.15);
+}
+
+.map-tab.active {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.map-tab:not(.active):hover {
+    background: var(--bg-light);
+    color: var(--blue);
+}
+
+/* ── Conteneur des cartes (position relative pour superposition) ── */
 .map-embed {
     width: 100%;
-    height: 380px;
+    height: 400px;
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid rgba(0, 43, 149, 0.1);
+    position: relative; /* Nécessaire pour superposer les deux iframes */
 }
 
-.map-embed iframe {
+/* ── Les deux iframes superposées ── */
+.map-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none; /* Désactivé quand invisible */
+}
+
+.map-frame.active {
+    opacity: 1;
+    pointer-events: auto; /* Réactivé quand visible */
+}
+
+/* ── Bande d'info sous la carte ── */
+.map-info-strip {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-light);
+    padding: 12px 20px;
+    border-radius: 4px;
+    border-left: 4px solid var(--yellow);
+    font-size: 0.88rem;
+    color: var(--blue);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.map-info-strip i {
+    color: var(--yellow);
+    font-size: 1rem;
 }
 
 
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-
-/* Tablette */
 @media (max-width: 900px) {
     .contact-grid {
         grid-template-columns: 1fr;
@@ -412,10 +564,9 @@
     }
 }
 
-/* Mobile */
 @media (max-width: 600px) {
     .form-row {
-        grid-template-columns: 1fr; /* Une colonne sur mobile */
+        grid-template-columns: 1fr;
     }
 
     .contact-hero .soft-frame h1 {
@@ -423,6 +574,11 @@
     }
 
     .map-embed {
-        height: 260px;
+        height: 280px;
+    }
+
+    .map-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
