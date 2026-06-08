@@ -80,6 +80,73 @@
     transform: translateY(-2px);
 }
 
+/* ===================== LOGO ÉCOLE ===================== */
+.el-logo-section {
+    background-color: #ffffff;
+    padding: 35px 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.el-logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 40px;
+    border: 2px solid #edf2f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.el-logo-wrapper img {
+    height: 80px;
+    object-fit: contain;
+}
+
+.el-logo-divider {
+    width: 1px;
+    height: 60px;
+    background-color: #e2e8f0;
+}
+
+.el-logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.el-logo-text strong {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--el-blue);
+}
+
+.el-logo-text span {
+    font-size: 0.85rem;
+    color: var(--el-text);
+    margin-top: 4px;
+}
+
+/* ===================== PITCH AMOUNT ===================== */
+.el-pitch-amount {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--el-blue-light);
+    border-left: 4px solid var(--el-orange);
+    padding: 14px 20px;
+    border-radius: 0 4px 4px 0;
+    font-size: 1.1rem;
+    color: var(--el-blue);
+    margin-top: 10px;
+}
+
+.el-pitch-amount i {
+    color: var(--el-orange);
+    font-size: 1.2rem;
+}
+
 /* ===================== PRÉSENTATION ===================== */
 .el-presentation {
     padding: 90px 8%;
