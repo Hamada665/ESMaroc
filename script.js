@@ -247,3 +247,60 @@ if (typeof lightbox !== 'undefined') {
     // Recalcul au resize
     window.addEventListener('resize', () => goTo(0));
 })();
+
+/* ==========================================================================
+   FORMULAIRE DE CONTACT — PAGE CONTACT
+   À coller à la fin de ton fichier script.js existant.
+
+   Fonctionnement :
+   - Intercepte la soumission du formulaire #contactForm
+   - L'envoie en AJAX vers Formspree (pas de rechargement de page)
+   - Affiche un message de confirmation stylisé (#formSuccess) en cas de succès
+   - Réaffiche le bouton avec un message d'erreur en cas d'échec
+   ========================================================================== */
+(function () {
+
+    // On attend que le DOM soit prêt avant de chercher les éléments
+    // (ce bloc est dans une IIFE pour ne pas polluer le scope global)
+    const form       = document.getElementById('contactForm');
+    const successMsg = document.getElementById('formSuccess');
+
+    // Sécurité : on ne fait rien si on n'est pas sur la page contact
+    if (!form || !successMsg) return;
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault(); // Empêche le rechargement de page par défaut
+
+        const btn = form.querySelector('.btn-submit');
+
+        // --- État "chargement" ---
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>&nbsp; Envoi en cours…';
+        btn.disabled = true;
+
+        try {
+            const response = await fetch(form.action, {
+                method:  'POST',
+                body:    new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                // Succès : on masque le formulaire et on affiche la confirmation
+                form.style.display   = 'none';
+                successMsg.style.display = 'block';
+            } else {
+                // Erreur côté serveur Formspree
+                btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i>&nbsp; Envoyer le message';
+                btn.disabled  = false;
+                alert('Une erreur est survenue. Veuillez réessayer ou nous écrire directement à contact@entreprisesocialemaroc.org');
+            }
+
+        } catch (err) {
+            // Erreur réseau (pas de connexion, timeout…)
+            btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i>&nbsp; Envoyer le message';
+            btn.disabled  = false;
+            alert('Connexion impossible. Veuillez vérifier votre réseau et réessayer.');
+        }
+    });
+
+})();
