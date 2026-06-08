@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | ES.Maroc.Org</title>
+
+    <!-- Styles globaux du site (header, footer, variables CSS…) -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Styles spécifiques à la page Contact -->
+    <link rel="stylesheet" href="contact.css">
+
+    <!-- Font Awesome & Google Fonts (déjà présents dans tes autres pages) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===== HEADER (identique aux autres pages – stylisé par style.css) ===== -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="ESMAROC LOGO.png" alt="Logo ESMaroc">
+            </div>
+
+            <nav>
+                <a href="index.html">Accueil</a>
+
+                <div class="dropdown">
+                    <a href="#" class="dropdown-trigger">ESMaroc <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
+                        <a href="histoire.html">Notre Histoire & Vision</a>
+                        <a href="equipe.html">Notre Équipe</a>
+                    </div>
+                </div>
+
+                <a href="#">Évènements</a>
+                <a href="#">Projets</a>
+                <a href="#">École E-learning</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+
+            <div class="header-icons">
+                <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
+                <a href="#" class="icon-link"><i class="fas fa-map-marker-alt"></i></a>
+                <button class="burger-menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ===== SECTION 1 : HERO ===== -->
+        <section class="contact-hero">
+            <div class="hero-container">
+                <div class="soft-frame">
+                    <h1>Contactez-nous</h1>
+                    <p class="subtitle">Une question, un projet, une idée de collaboration ? Notre équipe est à votre écoute et vous répondra dans les meilleurs délais.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 2 : GRILLE CONTACT ===== -->
+        <section class="contact-main">
+            <div class="contact-grid">
+
+                <!-- COLONNE GAUCHE : coordonnées -->
+                <div class="contact-info-col">
+                    <h2>Nos coordonnées</h2>
+                    <p class="intro-text">Retrouvez-nous à notre siège ou contactez-nous directement par email ou téléphone. Nous serons ravis d'échanger avec vous.</p>
+
+                    <div class="info-cards">
+
+                        <div class="info-card">
+                            <div class="info-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="info-card-body">
+                                <span class="info-card-label">Adresse</span>
+                                <span class="info-card-value">12 rue Pékin, Océan Résidence Les Fleurs,<br>App. 1 — Rabat, Maroc</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="info-card-body">
+                                <span class="info-card-label">Email</span>
+                                <span class="info-card-value">
+                                    <a href="mailto:contact@entreprisesocialemaroc.org">contact@entreprisesocialemaroc.org</a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-card-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="info-card-body">
+                                <span class="info-card-label">Téléphone</span>
+                                <span class="info-card-value">
+                                    <a href="tel:+212537762872">+212 (0) 537 762 872</a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-card-icon"><i class="fa-regular fa-clock"></i></div>
+                            <div class="info-card-body">
+                                <span class="info-card-label">Horaires</span>
+                                <span class="info-card-value">Lun – Ven : 9h00 – 17h00<br>Samedi : 9h00 – 13h00</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Réseaux sociaux -->
+                    <div class="social-contact">
+                        <p>Suivez-nous</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLONNE DROITE : formulaire -->
+                <div class="contact-form-col">
+                    <h3>Envoyez-nous un message</h3>
+                    <p class="form-subtitle">Remplissez le formulaire ci-dessous. Votre message sera transmis directement à notre équipe.</p>
+
+                    <!--
+                    ╔══════════════════════════════════════════════════════════════╗
+                    ║  FORMSPREE — COMMENT CONFIGURER :                            ║
+                    ║  1. Créez un compte gratuit sur https://formspree.io         ║
+                    ║  2. Créez un nouveau formulaire → email : contact@...        ║
+                    ║  3. Remplacez YOUR_FORM_ID par votre identifiant Formspree   ║
+                    ║     Exemple : action="https://formspree.io/f/xpwzqrgk"      ║
+                    ╚══════════════════════════════════════════════════════════════╝
+                    -->
+                    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+                        <!-- Champs cachés Formspree -->
+                        <input type="hidden" name="_replyto"  value="contact@entreprisesocialemaroc.org">
+                        <input type="hidden" name="_subject"  value="Nouveau message depuis le site ESMaroc">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="prenom">Prénom *</label>
+                                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nom">Nom *</label>
+                                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Adresse email *</label>
+                                <input type="email" id="email" name="email" placeholder="exemple@mail.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telephone">Téléphone</label>
+                                <input type="tel" id="telephone" name="telephone" placeholder="+212 6XX XXX XXX">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full">
+                                <label for="sujet">Objet de votre message *</label>
+                                <div class="select-wrapper">
+                                    <select id="sujet" name="sujet" required>
+                                        <option value="" disabled selected>— Sélectionnez un sujet —</option>
+                                        <option value="information">Demande d'information</option>
+                                        <option value="partenariat">Proposition de partenariat</option>
+                                        <option value="accompagnement">Demande d'accompagnement</option>
+                                        <option value="media">Presse & Médias</option>
+                                        <option value="benevolat">Bénévolat & Engagement</option>
+                                        <option value="autre">Autre</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full">
+                                <label for="message">Votre message *</label>
+                                <textarea id="message" name="message" placeholder="Décrivez votre demande en quelques lignes…" required></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Envoyer le message
+                        </button>
+                    </form>
+
+                    <!-- Confirmation affichée après envoi réussi -->
+                    <div class="form-success" id="formSuccess">
+                        <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+                        <h4>Message envoyé !</h4>
+                        <p>Merci pour votre message. Notre équipe vous contactera dans les plus brefs délais.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== SECTION 3 : CARTE GOOGLE MAPS ===== -->
+        <section class="contact-map-section">
+            <div class="map-wrapper">
+                <p class="map-label">
+                    <i class="fa-solid fa-map-pin"></i> Notre localisation — Rabat, Maroc
+                </p>
+                <div class="map-embed">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.2!2d-6.8498!3d34.0209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76b871c38f063%3A0x9abd1ccb1456bf34!2sOc%C3%A9an%2C%20Rabat!5e0!3m2!1sfr!2sma!4v1680000000000"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localisation ESMaroc — Rabat">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER (identique aux autres pages – stylisé par style.css) ===== -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2 class="footer-logo">ES.Maroc<span>.Org</span></h2>
+                <p class="footer-description">
+                    EsMaroc.Org est une association qui promeut l'innovation sociale au Maroc.
+                    Nous accompagnons les entrepreneurs pour créer un impact durable et responsable.
+                </p>
+                <div class="footer-contact">
+                    <p><i class="fa-solid fa-location-dot"></i> 12 rue Pékin, Océan Résidence Les Fleurs, App. 1 Rabat</p>
+                    <p><i class="fa-solid fa-phone"></i> +212 (0) 537 762 872</p>
+                    <p><i class="fa-solid fa-envelope"></i> contact@entreprisesocialemaroc.org</p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h3>REJOIGNEZ-NOUS</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <p class="copyright">ES.Maroc © Copyright 2026. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts : global d'abord, puis spécifique Contact -->
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+
+</body>
+</html>
