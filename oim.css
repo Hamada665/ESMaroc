@@ -1,0 +1,838 @@
+/* ==========================================================================
+   PAGE PROJET : MIGRATION & DÉVELOPPEMENT DURABLE – OIM
+   Charte graphique : Bleu ONU #0033a0 · Blanc #ffffff
+   Âme : Institutionnel · Humain · Dignité · Connexion · Migration
+   Typographie : Montserrat uniquement
+   ========================================================================== */
+
+:root {
+    --oi-blue:         #0033a0;
+    --oi-blue-dark:    #002280;
+    --oi-blue-deeper:  #001560;
+    --oi-blue-mid:     #0044cc;
+    --oi-blue-light:   #3366cc;
+    --oi-blue-pale:    #e8eef9;
+    --oi-blue-ghost:   #f0f4fc;
+    --oi-white:        #ffffff;
+    --oi-off-white:    #f6f8fc;
+    --oi-text-dark:    #060f2a;
+    --oi-text-mid:     #3a4a6b;
+    --oi-text-light:   #7a8ebc;
+    --oi-border:       rgba(0,51,160,0.12);
+    --oi-border-soft:  rgba(0,51,160,0.07);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+.oim-page-body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--oi-off-white);
+    color: var(--oi-text-dark);
+}
+
+/* ============================================================
+   1. HERO
+   ============================================================ */
+.oi-hero {
+    position: relative;
+    background: var(--oi-blue-deeper);
+    padding: 120px 5% 180px;
+    overflow: hidden;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Cercles concentriques — ondes de connexion/migration */
+.oi-rings {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.oi-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.06);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.oi-ring--1 {
+    width: 300px;
+    height: 300px;
+    border-color: rgba(255,255,255,0.10);
+    animation: oi-pulse-ring 4s ease-out infinite;
+}
+.oi-ring--2 {
+    width: 500px;
+    height: 500px;
+    border-color: rgba(255,255,255,0.07);
+    animation: oi-pulse-ring 4s ease-out infinite 0.8s;
+}
+.oi-ring--3 {
+    width: 700px;
+    height: 700px;
+    border-color: rgba(255,255,255,0.04);
+    animation: oi-pulse-ring 4s ease-out infinite 1.6s;
+}
+.oi-ring--4 {
+    width: 900px;
+    height: 900px;
+    border-color: rgba(255,255,255,0.025);
+    animation: oi-pulse-ring 4s ease-out infinite 2.4s;
+}
+
+@keyframes oi-pulse-ring {
+    0%   { opacity: 0.8; transform: translate(-50%, -50%) scale(0.95); }
+    50%  { opacity: 0.5; }
+    100% { opacity: 0;   transform: translate(-50%, -50%) scale(1.05); }
+}
+
+/* Grille de points */
+.oi-dot-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
+}
+
+.oi-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Breadcrumb */
+.oi-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 30px;
+    letter-spacing: 0.3px;
+}
+.oi-breadcrumb a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.oi-breadcrumb a:hover { color: var(--oi-white); }
+.oi-breadcrumb span:last-child {
+    color: rgba(255,255,255,0.8);
+    font-weight: 600;
+}
+
+/* Tags */
+.oi-hero-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+}
+
+.oi-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.85);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 7px 16px;
+    border-radius: 2px;
+}
+
+.oi-tag i { opacity: 0.7; }
+
+.oi-tag--outline {
+    background: transparent;
+    border-color: rgba(255,255,255,0.25);
+}
+
+/* Titre héro — empilé, typographie forte */
+.oi-hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.8rem, 6vw, 6rem);
+    font-weight: 800;
+    color: var(--oi-white);
+    line-height: 1.0;
+    letter-spacing: -1.5px;
+    margin-bottom: 32px;
+}
+
+.oi-title-accent {
+    font-weight: 300;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 1px;
+    font-size: 0.65em;
+    display: inline;
+    font-style: italic;
+}
+
+.oi-hero-description {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    max-width: 620px;
+    line-height: 1.85;
+    border-left: 3px solid rgba(255,255,255,0.3);
+    padding-left: 22px;
+}
+
+.oi-hero-description strong {
+    color: var(--oi-white);
+    font-weight: 700;
+}
+
+/* Bande de transition */
+.oi-hero-band {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: var(--oi-blue);
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+    z-index: 3;
+}
+
+/* ============================================================
+   2. LOGO FLOTTANT
+   ============================================================ */
+.oi-brand-bar {
+    background-color: var(--oi-blue);
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 30px 5% 50px;
+    flex-wrap: wrap;
+}
+
+.oi-logo-wrapper {
+    background-color: var(--oi-white);
+    border-radius: 6px;
+    padding: 20px 32px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    margin-top: -55px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.oi-logo-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 55px rgba(0,0,0,0.3);
+}
+
+.oi-logo-img {
+    max-width: 240px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.oi-brand-text { padding-top: 6px; }
+
+.oi-brand-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--oi-white);
+    margin: 0 0 8px 0;
+    letter-spacing: -0.3px;
+}
+
+.oi-brand-sub {
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.oi-brand-sub strong {
+    color: rgba(255,255,255,0.9);
+    font-weight: 600;
+}
+
+/* ============================================================
+   3. STATS
+   ============================================================ */
+.oi-stats-section {
+    background-color: var(--oi-white);
+    border-bottom: 1px solid var(--oi-border);
+}
+
+.oi-stats-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.oi-stat-item {
+    flex: 1;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 24px;
+    text-align: center;
+    border-right: 1px solid var(--oi-border);
+    transition: background-color 0.3s;
+}
+
+.oi-stat-item:last-child { border-right: none; }
+.oi-stat-item:hover { background-color: var(--oi-blue-ghost); }
+
+.oi-stat-num {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--oi-blue);
+    letter-spacing: -1.5px;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.oi-stat-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--oi-text-light);
+    line-height: 1.5;
+}
+
+.oi-stat-sep {
+    width: 1px;
+    background: var(--oi-border);
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+/* ============================================================
+   4. CONTENU + SIDEBAR
+   ============================================================ */
+.oi-detail-container {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 70px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 5%;
+    align-items: start;
+}
+
+.oi-main-content {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+}
+
+.oi-block {}
+
+.oi-eyebrow {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--oi-blue);
+    margin-bottom: 10px;
+}
+
+.oi-eyebrow--light { color: rgba(255,255,255,0.45); }
+
+.oi-section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    font-weight: 800;
+    color: var(--oi-text-dark);
+    line-height: 1.15;
+    margin-bottom: 28px;
+    letter-spacing: -0.5px;
+}
+
+.oi-section-title::after {
+    content: '';
+    display: block;
+    width: 44px;
+    height: 4px;
+    background: var(--oi-blue);
+    margin-top: 14px;
+}
+
+.oi-lead {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--oi-text-dark);
+    line-height: 1.85;
+    margin-bottom: 18px;
+}
+
+.oi-main-content p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--oi-text-mid);
+    line-height: 1.85;
+    margin-bottom: 16px;
+}
+
+/* Liste d'actions numérotées */
+.oi-actions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 10px;
+    border: 1px solid var(--oi-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.oi-action {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--oi-border);
+    transition: background-color 0.25s;
+}
+
+.oi-action:last-child { border-bottom: none; }
+
+.oi-action:hover {
+    background-color: var(--oi-blue-ghost);
+}
+
+.oi-action-number {
+    width: 72px;
+    min-width: 72px;
+    background: var(--oi-blue);
+    color: var(--oi-white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: -1px;
+    transition: background-color 0.25s;
+}
+
+.oi-action:hover .oi-action-number {
+    background-color: var(--oi-blue-dark);
+}
+
+/* Alterner la teinte des numéros */
+.oi-action:nth-child(even) .oi-action-number {
+    background-color: var(--oi-blue-light);
+}
+.oi-action:nth-child(even):hover .oi-action-number {
+    background-color: var(--oi-blue);
+}
+
+.oi-action-body {
+    padding: 28px 30px;
+    flex: 1;
+}
+
+.oi-action-body h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--oi-text-dark);
+    margin-bottom: 10px;
+    letter-spacing: -0.2px;
+}
+
+.oi-action-body p {
+    font-size: 0.92rem;
+    color: var(--oi-text-mid);
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* Citation */
+.oi-quote {
+    position: relative;
+    background: linear-gradient(135deg, var(--oi-blue-deeper) 0%, var(--oi-blue-dark) 60%, var(--oi-blue) 100%);
+    border-radius: 8px;
+    padding: 55px 55px 48px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.oi-quote-ring {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.06);
+    right: -100px;
+    bottom: -100px;
+    pointer-events: none;
+}
+
+.oi-quote-ring::before {
+    content: '';
+    position: absolute;
+    inset: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
+.oi-quote p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.75;
+    margin: 0 0 22px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.oi-quote p::before {
+    content: '"';
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgba(255,255,255,0.08);
+    position: absolute;
+    top: -15px;
+    left: -8px;
+    line-height: 1;
+    font-style: normal;
+    pointer-events: none;
+}
+
+.oi-quote cite {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-style: normal;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+    display: block;
+}
+
+/* ---- SIDEBAR ---- */
+.oi-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    position: sticky;
+    top: 120px;
+}
+
+.oi-info-card {
+    background: var(--oi-white);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px var(--oi-border);
+    border: 1px solid var(--oi-border-soft);
+}
+
+.oi-info-header {
+    background: var(--oi-blue);
+    padding: 20px 26px;
+}
+
+.oi-info-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin: 0;
+}
+
+.oi-info-list {
+    list-style: none;
+    padding: 20px 26px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.oi-info-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--oi-border-soft);
+}
+
+.oi-info-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.oi-info-list li > i {
+    color: var(--oi-blue);
+    font-size: 0.82rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+    width: 16px;
+    text-align: center;
+}
+
+.oi-info-list li div {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.oi-info-list li strong {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--oi-text-light);
+    display: block;
+}
+
+.oi-info-list li span {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--oi-text-dark);
+    line-height: 1.4;
+}
+
+/* Résultats */
+.oi-results-card {
+    background: var(--oi-blue-deeper);
+    border-radius: 6px;
+    padding: 28px;
+}
+
+.oi-results-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.oi-result-item {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.oi-result-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.oi-result-num {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--oi-white);
+    letter-spacing: -1.5px;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.oi-result-item p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+}
+
+.oi-result-bar {
+    height: 3px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.oi-result-fill {
+    height: 100%;
+    background: var(--oi-white);
+    border-radius: 2px;
+    transition: width 1s ease;
+}
+
+.oi-result-fill--light {
+    background: rgba(255,255,255,0.5);
+}
+
+/* ============================================================
+   5. GALERIE
+   ============================================================ */
+.oi-gallery-section {
+    background: var(--oi-off-white);
+    padding: 100px 5%;
+    border-top: 1px solid var(--oi-border);
+}
+
+.oi-gallery-header {
+    max-width: 1300px;
+    margin: 0 auto 55px;
+}
+
+.oi-gallery-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: var(--oi-text-dark);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.oi-gallery-title::after {
+    content: '';
+    display: block;
+    width: 44px;
+    height: 4px;
+    background: var(--oi-blue);
+    margin-top: 14px;
+}
+
+.oi-gallery-header p {
+    font-size: 0.9rem;
+    color: var(--oi-text-light);
+    margin-top: 22px;
+    font-weight: 400;
+}
+
+/* Grille galerie — layout standard propre */
+.oi-gallery-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 280px 280px;
+    gap: 10px;
+}
+
+.oi-gallery-item {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.oi-gallery-item--large {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+.oi-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.55s ease;
+    filter: saturate(0.9);
+}
+
+.oi-gallery-item:hover img {
+    transform: scale(1.06);
+    filter: saturate(1.05);
+}
+
+.oi-gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,33,100,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.oi-gallery-item:hover .oi-gallery-overlay { opacity: 1; }
+
+.oi-gallery-overlay i {
+    font-size: 1.5rem;
+    color: var(--oi-white);
+}
+
+/* ============================================================
+   6. RESPONSIVE
+   ============================================================ */
+@media (max-width: 1100px) {
+    .oi-detail-container {
+        grid-template-columns: 1fr;
+    }
+    .oi-sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .oi-hero {
+        padding: 100px 5% 160px;
+        min-height: auto;
+    }
+    .oi-hero-title {
+        font-size: 2.8rem;
+        letter-spacing: -0.5px;
+    }
+    .oi-rings { display: none; }
+    .oi-stats-inner {
+        flex-wrap: wrap;
+    }
+    .oi-stat-item {
+        flex: 1 1 45%;
+        border-right: none;
+        border-bottom: 1px solid var(--oi-border);
+    }
+    .oi-gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+    .oi-gallery-item--large {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        height: 260px;
+    }
+    .oi-gallery-item { height: 190px; }
+    .oi-sidebar { grid-template-columns: 1fr; }
+    .oi-brand-bar { gap: 24px; flex-direction: column; }
+    .oi-quote { padding: 36px 28px; }
+}
+
+@media (max-width: 480px) {
+    .oi-hero-title { font-size: 2.2rem; }
+    .oi-gallery-grid { grid-template-columns: 1fr; }
+    .oi-gallery-item,
+    .oi-gallery-item--large { height: 230px; }
+    .oi-stat-item { flex: 1 1 100%; }
+}
