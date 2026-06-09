@@ -5,44 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ES.Maroc.org | Hub d'Innovation Sociale</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Header (Le même sur toutes les pages) -->
+<!-- ═══════════════════════════════════════════════════════
+     HEADER GLOBAL — copier/coller sur toutes les pages
+     ═══════════════════════════════════════════════════════ -->
 <header>
     <div class="header-container">
         <div class="logo">
             <img src="ESMAROC LOGO.png" alt="Logo ESMaroc">
         </div>
-        
-        <nav>
-            <a href="index.html">Accueil</a>
-            
-            <!-- LE NOUVEAU MENU DÉROULANT ESMAROC -->
+
+        <nav id="main-nav">
+            <a href="index.html" class="active">Accueil</a>
+
             <div class="dropdown">
-                <a href="#" class="dropdown-trigger">ESMaroc <i class="fas fa-chevron-down nav-arrow"></i></a>
+                <a href="#" class="dropdown-trigger">
+                    ESMaroc <i class="fas fa-chevron-down nav-arrow"></i>
+                </a>
                 <div class="dropdown-menu">
                     <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
                     <a href="histoire.html">Notre Histoire & Vision</a>
                     <a href="equipe.html">Notre Équipe</a>
+                    <a href="rapports.html">Rapports</a>
                 </div>
             </div>
 
-            <a href="#">Évènements</a>
-            <a href="projets.html">Projets</a> <!-- Lien mis à jour -->
-            <a href="#">École E-learning</a>
-            <a href="#">Contact</a>
+            <a href="evenements.html">Évènements</a>
+            <a href="projets.html">Projets</a>
+            <a href="elearning.html">École E-learning</a>
+            <a href="contact.html">Contact</a>
         </nav>
 
         <div class="header-icons">
-            <a href="#" class="icon-link"><i class="fas fa-search"></i></a> 
-            <a href="#" class="icon-link"><i class="fas fa-map-marker-alt"></i></a> 
-            <button class="burger-menu"><i class="fas fa-bars"></i></button>
-        </div>
-    </div> 
-</header>
+            <!-- Barre de recherche -->
+            <div class="search-wrapper">
+                <button class="icon-link" id="search-toggle" aria-label="Rechercher">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div class="search-bar" id="search-bar">
+                    <input type="text" id="search-input" placeholder="Rechercher sur le site…" autocomplete="off">
+                    <button id="search-close"><i class="fas fa-times"></i></button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+            </div>
 
+            <!-- Localisation → Hub Rabat -->
+            <a href="https://maps.app.goo.gl/56zAEYm36nfkxbUT8"
+               target="_blank" rel="noopener"
+               class="icon-link" aria-label="Nous localiser">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+
+            <!-- Burger mobile -->
+            <button class="burger-menu" id="burger-btn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>
+<!-- ═══════════════════════════════════════════════════════ -->
+
+
+<!-- ── HERO ── -->
 <section class="hero">
     <div class="hero-overlay">
         <div class="hero-content">
@@ -50,50 +79,113 @@
             <div class="hero-text">
                 <h1>Donner vie aux <br>ambitions entrepreneuriales</h1>
                 <p>L'accompagnement de A à Z : Idée, Formation, Business Plan et Financement.</p>
-                <button class="cta-yellow">Découvrir nos services</button>
+                <a href="qui-sommes-nous.html" class="cta-yellow">Découvrir nos services</a>
             </div>
         </div>
     </div>
 </section>
 
-<section class="services">
-    <div class="service-card">
-        <h3>Entrepreneur(e)</h3>
-        <p>Découvrez nos services d’accompagnement d’entreprises collectives et individuelles, avec une idée de projet d’entreprise ou une entreprise déjà existante nous vous accompagnons à la formalisation ou à l’accélération via un processus intéressant avec l’aide de nos experts le Hub ES.Maroc vous offre des conseils, des ateliers de formations, et même du financement et d’autres ressources pour transformer vos ambitions en projets de vie.</p>
-        <button>Remplir le formulaire</button>
+
+<!-- ── SERVICES (4 blocs : 3 + 1 pleine largeur) ── -->
+<section class="services-section">
+    <div class="services-grid">
+
+        <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <h3>Entrepreneur(e)</h3>
+            <p>Découvrez nos services d'accompagnement d'entreprises collectives et individuelles. Avec une idée de projet ou une entreprise existante, nous vous accompagnons via un processus intéressant : conseils, ateliers, financement et ressources pour transformer vos ambitions en projets de vie.</p>
+            <button class="service-btn">Remplir le formulaire</button>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <h3>Chercheurs d'emploi</h3>
+            <p>Êtes-vous à la recherche d'un emploi ou d'un stage ? Vous êtes au bon endroit. Notre plateforme simplifie la découverte d'offres d'emploi et la mise en relation avec des entreprises qui recrutent. Ne perdez pas de temps, saisissez votre prochaine opportunité dès aujourd'hui !</p>
+            <button class="service-btn">Remplir le formulaire</button>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3>École E-Learning</h3>
+            <p>Afin de favoriser la professionnalisation du secteur associatif en Afrique francophone, nous avons créé l'École e-Learning. Cette plateforme d'apprentissage en ligne se positionne au cœur de l'amélioration des compétences des associations en Afrique et au Maroc.</p>
+            <button class="service-btn">S'inscrire</button>
+        </div>
+
     </div>
-    <div class="service-card">
-        <h3>Chercheurs d'emploi</h3>
-        <p>Êtes-vous à la recherche d’un emploi ou d’une opportunité d’apprentissage via un stage, vous êtes au bon endroit. Notre plateforme simplifie la découverte d’offres d’emploi et la mise en relation avec des entreprises qui recrutent, aussi une possibilité de formation soft et life skills afin de vous préparer à répondre au mieux aux exigences des entreprises dans votre domaine d’intérêt. Ne perdez pas du temps, saisissez votre prochaine opportunité dès aujourd’hui ! Cliquez ici pour commencer.</p>
-        <button>Remplir le formulaire</button>
-    </div>
-    <div class="service-card">
-        <h3>École E-Learning</h3>
-        <p>Afin de favoriser la professionnalisation du secteur associatif en Afrique francophone et de soutenir les acteurs et le développement durables de leurs activités, nous avons créé l’École e-Learning, Cette plateforme d’apprentissage en ligne se positionne au cœur de l’amélioration des compétences des associations en Afrique et au Maroc.</p>
-        <button>S'inscrire</button>
-    </div>
-    <div class="service-card">
-        <h3>Partenaires</h3>
-        <p>Voulez-vous contribuer à créer de l’impact dans le domaine associatif, entrepreneurial et dans l’insertion salariale, vous pouvez rejoindre notre famille des partenaires.</p>
-        <button>Contactez-nous</button>
+
+    <!-- 4ème bloc : pleine largeur -->
+    <div class="service-card service-card-full">
+        <div class="service-card-full-inner">
+            <div class="service-icon service-icon-large"><i class="fa-solid fa-handshake-angle"></i></div>
+            <div class="service-card-full-text">
+                <h3>Partenaires</h3>
+                <p>Voulez-vous contribuer à créer de l'impact dans le domaine associatif, entrepreneurial et dans l'insertion salariale ? Rejoignez notre famille des partenaires et co-construisons ensemble un écosystème social plus fort au Maroc.</p>
+            </div>
+            <a href="contact.html" class="service-btn service-btn-outline">Contactez-nous</a>
+        </div>
     </div>
 </section>
 
+
+<!-- ── ENTREPRISE SOCIALE MAROC (liste enrichie) ── -->
 <section class="methodology-section">
     <div class="content-wrapper">
         <div class="methodology-text">
             <h2>Entreprise Sociale Maroc</h2>
-            <p>EsMaroc.Org est à la fois une association de droit Marocain qui promeut l’innovation sociale et aussi un incubateur entièrement dédié à l’accompagnement d’entreprises sociales. Ces entreprises ayant des services innovants à fort impact, et responsables envers leurs communautés. A travers un programme d’accompagnement personnalisé, conseils, formations, partage d’expériences, permettant de donner vie aux plus grandes ambitions !</p>
-            
+            <p>EsMaroc.Org est à la fois une association de droit Marocain qui promeut l'innovation sociale et aussi un incubateur entièrement dédié à l'accompagnement d'entreprises sociales. Ces entreprises ayant des services innovants à fort impact, et responsables envers leurs communautés. À travers un programme d'accompagnement personnalisé, conseils, formations, partage d'expériences, permettant de donner vie aux plus grandes ambitions !</p>
+
             <h3>Nous accompagnons les entreprises à :</h3>
-            <ul>
-                <li>La réalisation d’études de marché ;</li>
-                <li>La structuration du modèle économique ;</li>
-                <li>L'élaboration du business plan ;</li>
-                <li>Le positionnement compétitif ;</li>
-                <li>La recherche de partenaires ;</li>
-                <li>La structuration d'une stratégie de communication ;</li>
-                <li>La levée de fonds.</li>
+
+            <ul class="accompagnement-list">
+                <li>
+                    <div class="acc-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <div class="acc-text">
+                        <strong>Études de marché</strong>
+                        <span>Analyse approfondie pour valider votre positionnement</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="acc-icon"><i class="fa-solid fa-sitemap"></i></div>
+                    <div class="acc-text">
+                        <strong>Modèle économique</strong>
+                        <span>Structuration d'un business model viable et impactant</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="acc-icon"><i class="fa-solid fa-file-contract"></i></div>
+                    <div class="acc-text">
+                        <strong>Business plan</strong>
+                        <span>Élaboration d'un dossier solide pour convaincre</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="acc-icon"><i class="fa-solid fa-chess-knight"></i></div>
+                    <div class="acc-text">
+                        <strong>Positionnement compétitif</strong>
+                        <span>Différenciation claire face à vos concurrents</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="acc-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <div class="acc-text">
+                        <strong>Recherche de partenaires</strong>
+                        <span>Mise en réseau avec notre écosystème de partenaires</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="acc-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <div class="acc-text">
+                        <strong>Stratégie de communication</strong>
+                        <span>Construction d'une identité de marque cohérente</span>
+                    </div>
+                </li>
+                <li class="acc-item-full">
+                    <div class="acc-icon"><i class="fa-solid fa-coins"></i></div>
+                    <div class="acc-text">
+                        <strong>Levée de fonds</strong>
+                        <span>Accès aux financements locaux et internationaux adaptés à votre stade</span>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -103,114 +195,334 @@
     </div>
 </section>
 
+
+<!-- ── CHIFFRES CLÉS (mis à jour) ── -->
 <section class="impact">
-    <h2 class="section-title">ES.Maroc.org c'est...</h2>
-    <div class="impact-container">
-        <div class="impact-item blue">
-            <i class="fa-solid fa-id-card"></i>
-            <h2 class="num" data-target="7000">0</h2>
-            <p class="impact-label">Jeunes reçus</p>
-            <p class="impact-sub">accompagnés depuis la création</p>
+    <h2 class="section-title">Notre Impact en Chiffres</h2>
+    <div class="impact-container-home">
+
+        <div class="impact-item-home">
+            <i class="fa-solid fa-users"></i>
+            <h2 class="num" data-target="13100" data-prefix="+">0</h2>
+            <p class="impact-label">Bénéficiaires accompagnés</p>
+            <p class="impact-sub">Jeunes, porteurs de projets et entrepreneurs soutenus dans leur parcours.</p>
         </div>
-        <div class="impact-item yellow">
-            <i class="fa-solid fa-handshake"></i>
-            <h2 class="num" data-target="350">0</h2>
-            <p class="impact-label">Chefs d'entreprise</p>
-            <p class="impact-sub">accompagnateurs bénévoles</p>
+
+        <div class="impact-item-home">
+            <i class="fa-solid fa-rocket"></i>
+            <h2 class="num" data-target="182">0</h2>
+            <p class="impact-label">Startups créées</p>
+            <p class="impact-sub">Des projets innovants transformés en entreprises concrètes.</p>
         </div>
-        <div class="impact-item red">
+
+        <div class="impact-item-home">
+            <i class="fa-solid fa-wallet"></i>
+            <h2 class="num" data-target="40" data-suffix=" MDHS">0</h2>
+            <p class="impact-label">Financements accordés</p>
+            <p class="impact-sub">Mobilisés pour soutenir la croissance de l'économie sociale.</p>
+        </div>
+
+        <div class="impact-item-home">
+            <i class="fa-solid fa-award"></i>
+            <h2 class="num" data-target="240">0</h2>
+            <p class="impact-label">Entreprises Lauréates</p>
+            <p class="impact-sub">Reconnues et propulsées par notre réseau depuis 2011.</p>
+        </div>
+
+        <div class="impact-item-home highlight-item">
             <i class="fa-solid fa-briefcase"></i>
-            <h2 class="num" data-target="1100">0</h2>
-            <p class="impact-label">Emplois</p>
-            <p class="impact-sub">créés ou sauvegardés</p>
-        </div>
-        <div class="impact-item light-blue">
-            <i class="fa-solid fa-chart-line"></i>
-            <h2 class="num" data-target="29" data-suffix="M">0</h2>
-            <p class="impact-label">Dirhams</p>
-            <p class="impact-sub">octroyés en prêt d'honneur</p>
-        </div>
-    </div>
-</section>
-    
-<section class="events-section">
-    <div class="section-header">
-        <h2>Nos Événements</h2>
-    </div>
-    <div class="events-grid">
-        <div class="event-card">
-            <img src="https://demarchesadministratives.fr/images/actualites/1445/le-salon-des-entrepreneurs-2019-se-tiendra-les-6-et-7-fevrier-a-paris-1.jpg" alt="E-Salon de l'Emploi">
-            <div class="event-content">
-                <h3>Le E-Salon de l'Emploi</h3>
-                <p>Événement annuel incontournable de réseautage...</p>
-                <a href="#" class="read-more">Lire la suite →</a>
-            </div>
-        </div>
-        <div class="event-card">
-            <img src="https://www.povertyactionlab.org/sites/default/files/styles/full_width_medium_cropped/public/images/2024/02/Noeim-205.jpg?itok=ARm-IW1b" alt="École d'été">
-            <div class="event-content">
-                <h3>École d'été EsMaroc</h3>
-                <p>Accompagnement des porteurs de projets...</p>
-                <a href="#" class="read-more">Lire la suite →</a>
-            </div>
-        </div>
-        <div class="event-card">
-            <img src="https://lematin.ma/lematin/uploads/images/2026/04/09/512397.webp" alt="Marché des startup">
-            <div class="event-content">
-                <h3>Marché des startup</h3>
-                <p>Découvrez les innovations de nos entrepreneurs...</p>
-                <a href="#" class="read-more">Lire la suite →</a>
-            </div>
-        </div>
-    </div>
-</section>
- 
-<section class="projects-grid-section">
-    <h2 class="section-title">Nos Projets</h2>
-    
-    <div class="projects-container">
-        <div class="project-item">
-            <div class="project-image">
-                <img src="https://www.cpaswavre.be/aides/insertion-socioprofessionnelle/insertion-socioprofessionnelle/insertion-socioprofessionnelle/@@images/image-750-8aa3ac97206df3f9797da2b2e84476a0.jpeg" alt="Projet OIM">
-            </div>
-            <div class="project-info-card">
-                <h3>Projet OIM : AMÉLIORER LA PROTECTION ET L’INSERTION SOCIO-ÉCONOMIQUE</h3>
-                <div class="card-footer">
-                    <a href="projets.html" class="read-more-link">LIRE LA SUITE</a>
-                    <span class="category-tag">ACTUALITÉS</span>
-                </div>
-            </div>
+            <h2 class="num" data-target="3000" data-prefix="+">0</h2>
+            <p class="impact-label">Emplois créés</p>
+            <p class="impact-sub">Directement générés par les entreprises de notre écosystème.</p>
         </div>
 
-        <div class="project-item">
-            <div class="project-image">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRUP32532ZfGJ3OpTDNheibT218nPr6Su6vA&s" alt="Projet Dapp">
-            </div>
-            <div class="project-info-card">
-                <h3>Projet Dapp : Accompagnement des porteurs de projets</h3>
-                <div class="card-footer">
-                    <a href="projets.html" class="read-more-link">LIRE LA SUITE</a>
-                    <span class="category-tag">ACTUALITÉS</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <div class="project-image">
-                <img src="https://www.successfinder.com/wp-content/uploads/2023/10/Employee-Development-Plan-Article-Image-1024x683.png" alt="CorpAfrica">
-            </div>
-            <div class="project-info-card">
-                <h3>CorpAfrica : Partenariat et Développement</h3>
-                <div class="card-footer">
-                    <a href="projets.html" class="read-more-link">LIRE LA SUITE</a>
-                    <span class="category-tag">ACTUALITÉS</span>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
-<!-- SECTION : AGIR AVEC ES MAROC (LOOK HARMONISÉ) -->
+
+<!-- ── CARROUSEL ÉVÉNEMENTS ── -->
+<section class="carousel-section events-carousel-section">
+    <div class="carousel-header">
+        <div>
+            <h2 class="carousel-title">Nos Événements</h2>
+        </div>
+        <a href="evenements.html" class="carousel-see-all">
+            Voir tous les événements <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="carousel-viewport">
+        <button class="carousel-arrow carousel-prev" id="ev-prev" aria-label="Précédent">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="carousel-track-wrapper">
+            <div class="carousel-track" id="ev-track">
+
+                <a href="evenement-salon-emploi.html" class="page-ev-card carousel-ev-card">
+                    <div class="page-ev-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80" alt="Salon de l'Emploi">
+                    </div>
+                    <div class="page-ev-floating-box">
+                        <h3>Le Salon de l'Emploi ESMaroc</h3>
+                        <p class="page-ev-snippet">Plateforme majeure de réseautage et de recrutement réunissant plus de 100 entreprises, 40 startups et 400 chercheurs d'emploi présélectionnés.</p>
+                        <div class="page-ev-footer-action">
+                            <span class="page-ev-read-more">Voir les éditions</span>
+                            <span class="page-ev-badge badge-recrutement">Recrutement</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="souk.html" class="page-ev-card carousel-ev-card">
+                    <div class="page-ev-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Souk des Startups">
+                    </div>
+                    <div class="page-ev-floating-box">
+                        <h3>Le Souk des Startups</h3>
+                        <p class="page-ev-snippet">Événement de référence avec le soutien du Ministère de la Jeunesse mettant en valeur l'innovation locale, marocaine et africaine.</p>
+                        <div class="page-ev-footer-action">
+                            <span class="page-ev-read-more">Découvrir le Souk</span>
+                            <span class="page-ev-badge badge-recrutement">Business</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="soireecitoyen.html" class="page-ev-card carousel-ev-card">
+                    <div class="page-ev-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80" alt="Soirée Citoyenne">
+                    </div>
+                    <div class="page-ev-floating-box">
+                        <h3>Soirée des Entreprises Citoyennes</h3>
+                        <p class="page-ev-snippet">Rassemblement exclusif des entreprises engagées dans l'emploi des jeunes, le développement durable et la RSE.</p>
+                        <div class="page-ev-footer-action">
+                            <span class="page-ev-read-more">Lire l'article</span>
+                            <span class="page-ev-badge badge-recrutement">Réseau</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="esmaroc-cafe.html" class="page-ev-card carousel-ev-card">
+                    <div class="page-ev-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Café ESMaroc">
+                    </div>
+                    <div class="page-ev-floating-box">
+                        <h3>Le Café ESMaroc</h3>
+                        <p class="page-ev-snippet">Espace hybride régulier d'échanges pour les startups incubées. Présentation des avancées et synergies.</p>
+                        <div class="page-ev-footer-action">
+                            <span class="page-ev-read-more">Participer</span>
+                            <span class="page-ev-badge badge-accompagnement">Meetup</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="ecoledete.html" class="page-ev-card carousel-ev-card">
+                    <div class="page-ev-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="École d'Été">
+                    </div>
+                    <div class="page-ev-floating-box">
+                        <h3>L'École d'Été du Hub ESMaroc</h3>
+                        <p class="page-ev-snippet">Programme immersif certifiant et gratuit destiné aux porteurs de projets innovants des grandes régions du Maroc.</p>
+                        <div class="page-ev-footer-action">
+                            <span class="page-ev-read-more">Postuler</span>
+                            <span class="page-ev-badge badge-formation">Immersion</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="experts.html" class="page-ev-card carousel-ev-card">
+                    <div class="page-ev-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=600&q=80" alt="Experts Connect">
+                    </div>
+                    <div class="page-ev-floating-box">
+                        <h3>Experts Connect ESMaroc</h3>
+                        <p class="page-ev-snippet">Initiative en ligne réunissant des experts pour inspirer et transmettre des compétences pratiques aux jeunes entrepreneurs.</p>
+                        <div class="page-ev-footer-action">
+                            <span class="page-ev-read-more">Rejoindre le Live</span>
+                            <span class="page-ev-badge badge-accompagnement">Webinaire</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <button class="carousel-arrow carousel-next" id="ev-next" aria-label="Suivant">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <div class="carousel-dots" id="ev-dots"></div>
+</section>
+
+
+<!-- ── CARROUSEL PROJETS ── -->
+<section class="carousel-section projects-carousel-section">
+    <div class="carousel-header">
+        <div>
+            <h2 class="carousel-title">Nos Projets</h2>
+        </div>
+        <a href="projets.html" class="carousel-see-all">
+            Voir tous les projets <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="carousel-viewport">
+        <button class="carousel-arrow carousel-prev" id="pr-prev" aria-label="Précédent">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="carousel-track-wrapper">
+            <div class="carousel-track" id="pr-track">
+
+                <div class="project-item carousel-proj-card">
+                    <div class="project-image">
+                        <img src="https://www.cpaswavre.be/aides/insertion-socioprofessionnelle/insertion-socioprofessionnelle/insertion-socioprofessionnelle/@@images/image-750-8aa3ac97206df3f9797da2b2e84476a0.jpeg" alt="Projet OIM">
+                    </div>
+                    <div class="project-info-card">
+                        <h3>Projet OIM : Améliorer la protection et l'insertion socio-économique</h3>
+                        <div class="card-footer">
+                            <a href="projets.html" class="read-more-link">LIRE LA SUITE</a>
+                            <span class="category-tag">ACTUALITÉS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item carousel-proj-card">
+                    <div class="project-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRUP32532ZfGJ3OpTDNheibT218nPr6Su6vA&s" alt="Projet Dapp">
+                    </div>
+                    <div class="project-info-card">
+                        <h3>Projet Dapp : Accompagnement des porteurs de projets</h3>
+                        <div class="card-footer">
+                            <a href="projets.html" class="read-more-link">LIRE LA SUITE</a>
+                            <span class="category-tag">ACTUALITÉS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item carousel-proj-card">
+                    <div class="project-image">
+                        <img src="https://www.successfinder.com/wp-content/uploads/2023/10/Employee-Development-Plan-Article-Image-1024x683.png" alt="CorpAfrica">
+                    </div>
+                    <div class="project-info-card">
+                        <h3>CorpAfrica : Partenariat et Développement</h3>
+                        <div class="card-footer">
+                            <a href="projets.html" class="read-more-link">LIRE LA SUITE</a>
+                            <span class="category-tag">ACTUALITÉS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item carousel-proj-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140e2b8?auto=format&fit=crop&w=600&q=80" alt="Coopération Sud-Sud">
+                    </div>
+                    <div class="project-info-card">
+                        <h3>Déploiement Régional & Coopération Sud-Sud</h3>
+                        <div class="card-footer">
+                            <a href="projets.html" class="read-more-link">LIRE LA SUITE</a>
+                            <span class="category-tag">INTERNATIONAL</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="carousel-arrow carousel-next" id="pr-next" aria-label="Suivant">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <div class="carousel-dots" id="pr-dots"></div>
+</section>
+
+
+<!-- ── CARROUSEL PARTENAIRES ── -->
+<section class="partners-section">
+    <div class="carousel-header">
+        <div>
+            <h2 class="carousel-title">Nos Partenaires</h2>
+        </div>
+        <a href="partenaires.html" class="carousel-see-all">
+            Tous nos partenaires <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="partners-track-wrapper">
+        <div class="partners-track" id="partners-track">
+
+            <a href="https://www.anapec.org" target="_blank" rel="noopener" class="partner-logo-card">
+                <div class="partner-logo-inner">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ANAPEC_logo.svg/320px-ANAPEC_logo.svg.png" alt="ANAPEC" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <span class="partner-name-fallback" style="display:none">ANAPEC</span>
+                </div>
+                <span class="partner-name">ANAPEC</span>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="partner-logo-card">
+                <div class="partner-logo-inner">
+                    <span class="partner-name-fallback">CMERES</span>
+                </div>
+                <span class="partner-name">CMERES</span>
+            </a>
+
+            <a href="https://www.fondazionecariplo.it" target="_blank" rel="noopener" class="partner-logo-card">
+                <div class="partner-logo-inner">
+                    <img src="https://upload.wikimedia.org/wikipedia/it/thumb/8/8b/Fondazione_Cariplo.svg/320px-Fondazione_Cariplo.svg.png" alt="Fondazione Cariplo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <span class="partner-name-fallback" style="display:none">FONDAZIONE CARIBLO</span>
+                </div>
+                <span class="partner-name">Fondazione Cariplo</span>
+            </a>
+
+            <a href="https://www.cerfa.org" target="_blank" rel="noopener" class="partner-logo-card">
+                <div class="partner-logo-inner">
+                    <span class="partner-name-fallback">CERFA</span>
+                </div>
+                <span class="partner-name">CERFA</span>
+            </a>
+
+            <a href="https://www.soleterre.org" target="_blank" rel="noopener" class="partner-logo-card">
+                <div class="partner-logo-inner">
+                    <span class="partner-name-fallback">SOLETERRE</span>
+                </div>
+                <span class="partner-name">Soleterre</span>
+            </a>
+
+            <a href="https://european-union.europa.eu" target="_blank" rel="noopener" class="partner-logo-card">
+                <div class="partner-logo-inner">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/320px-Flag_of_Europe.svg.png" alt="Union Européenne" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <span class="partner-name-fallback" style="display:none">UE</span>
+                </div>
+                <span class="partner-name">Union Européenne</span>
+            </a>
+
+            <a href="https://www.iom.int" target="_blank" rel="noopener" class="partner-logo-card">
+                <div class="partner-logo-inner">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/IOM_logo.svg/320px-IOM_logo.svg.png" alt="OIM" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <span class="partner-name-fallback" style="display:none">OIM</span>
+                </div>
+                <span class="partner-name">OIM</span>
+            </a>
+
+            <a href="https://www.efe.org" target="_blank" rel="noopener" class="partner-logo-card">
+                <div class="partner-logo-inner">
+                    <span class="partner-name-fallback">EFE MAROC</span>
+                </div>
+                <span class="partner-name">EFE Maroc</span>
+            </a>
+
+        </div>
+    </div>
+
+    <div class="partners-nav">
+        <button class="carousel-arrow carousel-prev" id="pt-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-arrow carousel-next" id="pt-next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</section>
+
+
+<!-- ── AGIR AVEC ES MAROC ── -->
 <section class="es-agir-section">
     <h2>Agir avec ES Maroc</h2>
     <div class="es-agir-header">
@@ -218,51 +530,203 @@
     </div>
 
     <div class="es-agir-container">
-        <!-- BLOC 1 : PARTICIPER -->
         <div class="es-agir-card">
             <div class="es-agir-icon"><i class="fa-solid fa-hands-helping"></i></div>
-            <a href="#" class="es-btn-agir">Participer</a>
+            <a href="contact.html" class="es-btn-agir">Participer</a>
             <p>Rejoignez nos programmes et contribuez activement au développement de l'écosystème de l'innovation sociale au Maroc.</p>
         </div>
 
-        <!-- BLOC 2 : PARTENARIAT -->
         <div class="es-agir-card">
             <div class="es-agir-icon"><i class="fa-solid fa-handshake"></i></div>
-            <a href="#" class="es-btn-agir">Partenariat</a>
+            <a href="https://forms.gle/votre-formulaire-partenariat" target="_blank" class="es-btn-agir">Devenir partenaire</a>
             <p>Co-développons des solutions durables et créons des synergies fortes pour maximiser l'impact de nos actions sur le terrain.</p>
+            <a href="partenaires.html" class="es-lire-suite">
+                Lire la suite <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
     </div>
 </section>
-    
+
+
+<!-- ── SECTION RÉSEAUX SOCIAUX ── -->
+<section class="social-section">
+    <div class="social-section-header">
+        <h2>Suivez-nous</h2>
+        <p>Retrouvez nos actualités, offres d'emploi et événements en direct</p>
+    </div>
+
+    <div class="social-feeds-grid">
+
+        <!-- Facebook -->
+        <div class="social-feed-card">
+            <div class="social-feed-top">
+                <i class="fa-brands fa-facebook social-feed-icon fb-color"></i>
+                <div>
+                    <strong>Entreprise Sociale au Maroc</strong>
+                    <span>13 600 abonnés</span>
+                </div>
+                <a href="https://www.facebook.com/share/1D5jCeXmCF/?mibextid=wwXIfr"
+                   target="_blank" rel="noopener"
+                   class="social-follow-btn fb-btn">
+                    <i class="fas fa-thumbs-up"></i> Suivre
+                </a>
+            </div>
+            <div class="social-feed-embed">
+                <iframe
+                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FEntrepriseSocialeMaroc&tabs=timeline&width=340&height=400&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false"
+                    width="100%" height="400"
+                    style="border:none;overflow:hidden"
+                    scrolling="no"
+                    frameborder="0"
+                    allowfullscreen="true"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+            </div>
+            <a href="https://www.facebook.com/share/1D5jCeXmCF/?mibextid=wwXIfr"
+               target="_blank" rel="noopener"
+               class="social-visit-link">
+                Voir la page Facebook <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+
+        <!-- YouTube -->
+        <div class="social-feed-card">
+            <div class="social-feed-top">
+                <i class="fa-brands fa-youtube social-feed-icon yt-color"></i>
+                <div>
+                    <strong>ESMaroc Org</strong>
+                    <span>Chaîne officielle</span>
+                </div>
+                <a href="https://youtube.com/@esmarocorg484?si=5d8Rrxz4J4Jl7WgH"
+                   target="_blank" rel="noopener"
+                   class="social-follow-btn yt-btn">
+                    <i class="fas fa-play"></i> S'abonner
+                </a>
+            </div>
+            <div class="social-feed-embed yt-embed-wrap">
+                <iframe
+                    width="100%" height="400"
+                    src="https://www.youtube.com/embed?listType=user_uploads&list=esmarocorg484"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <a href="https://youtube.com/@esmarocorg484?si=5d8Rrxz4J4Jl7WgH"
+               target="_blank" rel="noopener"
+               class="social-visit-link">
+                Voir la chaîne YouTube <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+
+        <!-- Instagram -->
+        <div class="social-feed-card">
+            <div class="social-feed-top">
+                <i class="fa-brands fa-instagram social-feed-icon ig-color"></i>
+                <div>
+                    <strong>es.maroc</strong>
+                    <span>Compte officiel</span>
+                </div>
+                <a href="https://www.instagram.com/es.maroc?igsh=dnB1cGllNzRmbG1n"
+                   target="_blank" rel="noopener"
+                   class="social-follow-btn ig-btn">
+                    <i class="fas fa-plus"></i> Suivre
+                </a>
+            </div>
+            <div class="social-feed-embed ig-placeholder">
+                <div class="ig-grid">
+                    <div class="ig-placeholder-item">
+                        <i class="fa-brands fa-instagram"></i>
+                        <p>Voir nos dernières publications</p>
+                        <a href="https://www.instagram.com/es.maroc?igsh=dnB1cGllNzRmbG1n"
+                           target="_blank" rel="noopener"
+                           class="ig-open-btn">
+                            Ouvrir Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a href="https://www.instagram.com/es.maroc?igsh=dnB1cGllNzRmbG1n"
+               target="_blank" rel="noopener"
+               class="social-visit-link">
+                Voir le profil Instagram <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER GLOBAL — copier/coller sur toutes les pages
+     ═══════════════════════════════════════════════════════ -->
 <footer class="main-footer">
     <div class="footer-container">
+
         <div class="footer-left">
             <h2 class="footer-logo">ES.Maroc<span>.Org</span></h2>
             <p class="footer-description">
-                EsMaroc.Org est une association qui promeut l'innovation sociale au Maroc. 
+                EsMaroc.Org est une association qui promeut l'innovation sociale au Maroc.
                 Nous accompagnons les entrepreneurs pour créer un impact durable et responsable.
             </p>
-            
-            <div class="footer-contact">
-                <p><i class="fa-solid fa-location-dot"></i> 12 rue Pékin, Océan Résidence Les Fleurs, App. 1 Rabat</p>
-                <p><i class="fa-solid fa-phone"></i> +212 (0) 537 762 872</p>
-                <p><i class="fa-solid fa-envelope"></i> contact@entreprisesocialemaroc.org</p>
+
+            <!-- DEUX HUBS -->
+            <div class="footer-hubs">
+                <div class="footer-hub">
+                    <p class="footer-hub-title">
+                        <i class="fa-solid fa-circle-dot"></i> Hub Rabat — Siège principal
+                    </p>
+                    <div class="footer-contact">
+                        <p><i class="fa-solid fa-location-dot"></i> 12 rue Pékin, Océan Résidence Les Fleurs, App. 1 — Rabat</p>
+                        <p><i class="fa-solid fa-phone"></i> <a href="tel:+212537762872">+212 (0) 537 762 872</a></p>
+                    </div>
+                </div>
+                <div class="footer-hub">
+                    <p class="footer-hub-title">
+                        <i class="fa-solid fa-circle-dot"></i> Hub Tanger — Régional
+                    </p>
+                    <div class="footer-contact">
+                        <p><i class="fa-solid fa-location-dot"></i> Centre des Services à la Jeunesse, Hay Hassani Bni Touzine — Tanger</p>
+                        <p><i class="fa-solid fa-phone"></i> <a href="tel:+212526131326">+212 (0) 5 26 13 13 26</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-contact footer-email-row">
+                <p><i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:contact@entreprisesocialemaroc.org">contact@entreprisesocialemaroc.org</a>
+                </p>
             </div>
         </div>
 
         <div class="footer-right">
             <h3>REJOIGNEZ-NOUS</h3>
             <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/1D5jCeXmCF/?mibextid=wwXIfr"
+                   target="_blank" rel="noopener" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/es-maroc-org/?originalSubdomain=mt"
+                   target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://youtube.com/@esmarocorg484?si=5d8Rrxz4J4Jl7WgH"
+                   target="_blank" rel="noopener" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/es.maroc?igsh=dnB1cGllNzRmbG1n"
+                   target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
             </div>
             <p class="copyright">ES.Maroc © Copyright 2026. Tous droits réservés.</p>
         </div>
+
     </div>
 </footer>
+<!-- ═══════════════════════════════════════════════════════ -->
 
 <script src="script.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
