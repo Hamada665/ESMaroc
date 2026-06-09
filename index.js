@@ -11,6 +11,47 @@
 (function () {
 
     /* ================================================================
+       0. BURGER MENU — fix pour index.html (#main-nav)
+       ================================================================ */
+    const burgerBtn = document.getElementById('burger-btn');
+    const mainNav   = document.getElementById('main-nav');
+
+    if (burgerBtn && mainNav) {
+        burgerBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const isOpen = mainNav.classList.toggle('active');
+            const icon   = burgerBtn.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars',  !isOpen);
+                icon.classList.toggle('fa-times',  isOpen);
+            }
+        });
+
+        document.addEventListener('click', function (e) {
+            if (mainNav.classList.contains('active') &&
+                !mainNav.contains(e.target) &&
+                !burgerBtn.contains(e.target)) {
+                mainNav.classList.remove('active');
+                const icon = burgerBtn.querySelector('i');
+                if (icon) { icon.className = 'fas fa-bars'; }
+            }
+        });
+
+        const dropdownTrigger = mainNav.querySelector('.dropdown-trigger');
+        const dropdown        = mainNav.querySelector('.dropdown');
+        if (dropdownTrigger && dropdown) {
+            dropdownTrigger.addEventListener('click', function (e) {
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdown.classList.toggle('open');
+                }
+            });
+        }
+    }
+
+
+    /* ================================================================
        1. BARRE DE RECHERCHE LIVE
        ================================================================ */
     const searchToggle  = document.getElementById('search-toggle');
