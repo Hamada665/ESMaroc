@@ -189,8 +189,103 @@
             </ul>
         </div>
 
+        <!-- ── WIDGET INTERACTIF AMPOULE + SCHÉMA BUSINESS PLAN ── -->
         <div class="methodology-image">
-            <img src="https://www.smappen.fr/wp-content/uploads/elementor/thumbs/etapes-business-plan-smappen-qm7uefnbrorzgphh86u9qdcg14r5grrv3psicdixs8.png" alt="Méthodologie Business Plan">
+            <div class="bp-widget" id="bpWidget">
+
+                <!-- Ampoule SVG interactive -->
+                <div class="bp-bulb-zone" id="bpBulb">
+                    <svg class="bp-bulb-svg" viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Rayons lumineux -->
+                        <g class="bp-rays">
+                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round" transform="rotate(45 60 60)"/>
+                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round" transform="rotate(90 60 60)"/>
+                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round" transform="rotate(135 60 60)"/>
+                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round" transform="rotate(180 60 60)"/>
+                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round" transform="rotate(225 60 60)"/>
+                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round" transform="rotate(270 60 60)"/>
+                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round" transform="rotate(315 60 60)"/>
+                        </g>
+                        <!-- Halo glow -->
+                        <circle class="bp-halo" cx="60" cy="62" r="42" fill="#f2bc00" opacity="0"/>
+                        <!-- Corps ampoule -->
+                        <path class="bp-glass" d="M60 20 C35 20 18 38 18 60 C18 76 28 88 38 96 L38 108 C38 112 42 115 46 115 L74 115 C78 115 82 112 82 108 L82 96 C92 88 102 76 102 60 C102 38 85 20 60 20Z" fill="#e8f4ff" stroke="#c0d8f0" stroke-width="2"/>
+                        <!-- Filament -->
+                        <path class="bp-filament" d="M48 95 L48 70 L52 60 L56 70 L60 55 L64 70 L68 60 L72 70 L72 95" stroke="#004595" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Socle -->
+                        <rect x="42" y="115" width="36" height="8"  rx="2" fill="#c0d0e8"/>
+                        <rect x="44" y="123" width="32" height="8"  rx="2" fill="#a8b8d0"/>
+                        <rect x="46" y="131" width="28" height="8"  rx="2" fill="#90a0b8"/>
+                        <!-- Vis/trait déco -->
+                        <line x1="42" y1="119" x2="78" y2="119" stroke="#90a0b8" stroke-width="1"/>
+                        <line x1="44" y1="127" x2="76" y2="127" stroke="#90a0b8" stroke-width="1"/>
+                    </svg>
+                    <p class="bp-hint">Passez la souris sur l'ampoule</p>
+                </div>
+
+                <!-- Schéma Business Plan animé -->
+                <div class="bp-schema" id="bpSchema">
+                    <div class="bp-schema-title">Votre parcours vers le succès</div>
+
+                    <div class="bp-flow">
+                        <!-- Nœud 1 : Idée -->
+                        <div class="bp-node bp-node--idea bp-n1">
+                            <div class="bp-node-icon"><i class="fas fa-lightbulb"></i></div>
+                            <span>Idée</span>
+                        </div>
+
+                        <div class="bp-arrow bp-a1"><i class="fas fa-arrow-right"></i></div>
+
+                        <!-- Nœud 2 : Étude -->
+                        <div class="bp-node bp-node--study bp-n2">
+                            <div class="bp-node-icon"><i class="fas fa-magnifying-glass"></i></div>
+                            <span>Étude</span>
+                        </div>
+
+                        <div class="bp-arrow bp-a2"><i class="fas fa-arrow-right"></i></div>
+
+                        <!-- Nœud 3 : Business Plan -->
+                        <div class="bp-node bp-node--bp bp-n3">
+                            <div class="bp-node-icon"><i class="fas fa-file-contract"></i></div>
+                            <span>Business<br>Plan</span>
+                        </div>
+                    </div>
+
+                    <!-- Question centrale -->
+                    <div class="bp-question bp-q1">
+                        <div class="bp-question-bubble">
+                            <i class="fas fa-circle-question"></i>
+                            Ça fonctionne ?
+                        </div>
+                        <div class="bp-branches">
+                            <div class="bp-branch bp-branch--yes">
+                                <span class="bp-branch-label yes">OUI</span>
+                                <i class="fas fa-arrow-right"></i>
+                                <div class="bp-node bp-node--money">
+                                    <div class="bp-node-icon"><i class="fas fa-sack-dollar"></i></div>
+                                    <span>Financement</span>
+                                </div>
+                                <i class="fas fa-arrow-right"></i>
+                                <div class="bp-node bp-node--launch">
+                                    <div class="bp-node-icon"><i class="fas fa-rocket"></i></div>
+                                    <span>Lancement</span>
+                                </div>
+                            </div>
+                            <div class="bp-branch bp-branch--no">
+                                <span class="bp-branch-label no">NON</span>
+                                <i class="fas fa-arrow-left"></i>
+                                <span class="bp-retry">Révision &amp; Itération</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bp-esmaroc-tag">
+                        <i class="fas fa-circle-check"></i> ESMaroc vous accompagne à chaque étape
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </section>
@@ -343,6 +438,62 @@
                     </div>
                 </a>
 
+                <a href="portesouvertes.html" class="page-ev-card carousel-ev-card">
+                    <div class="page-ev-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b90473bd58?auto=format&fit=crop&w=600&q=80" alt="Semaine Portes Ouvertes">
+                    </div>
+                    <div class="page-ev-floating-box">
+                        <h3>La Semaine Portes Ouvertes</h3>
+                        <p class="page-ev-snippet">Accompagnement personnalisé à la recherche d'emploi, ateliers CV, simulations d'entretiens et mise en relation avec des recruteurs.</p>
+                        <div class="page-ev-footer-action">
+                            <span class="page-ev-read-more">S'inscrire</span>
+                            <span class="page-ev-badge badge-accompagnement">Insertion</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="evenement-elearning-afrique.html" class="page-ev-card carousel-ev-card">
+                    <div class="page-ev-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=600&q=80" alt="Plateforme E-learning Afrique">
+                    </div>
+                    <div class="page-ev-floating-box">
+                        <h3>Plateforme E-Learning Panafricaine</h3>
+                        <p class="page-ev-snippet">Fondée avec l'ONG Soleterre, cette académie digitale a formé 253 associations à travers 15 pays africains francophones.</p>
+                        <div class="page-ev-footer-action">
+                            <span class="page-ev-read-more">Accéder aux cours</span>
+                            <span class="page-ev-badge badge-formation">Digital</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="sudsud.html" class="page-ev-card carousel-ev-card">
+                    <div class="page-ev-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140e2b8?auto=format&fit=crop&w=600&q=80" alt="Coopération Sud-Sud">
+                    </div>
+                    <div class="page-ev-floating-box">
+                        <h3>Déploiement Régional & Coopération Sud-Sud</h3>
+                        <p class="page-ev-snippet">Duplication du modèle Hub ESMaroc en Côte d'Ivoire, au Sénégal, et partenariats avec CorpsAfrica en Ouganda et au Malawi.</p>
+                        <div class="page-ev-footer-action">
+                            <span class="page-ev-read-more">Suivre l'impact</span>
+                            <span class="page-ev-badge badge-strategie">International</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="rse.html" class="page-ev-card carousel-ev-card">
+                    <div class="page-ev-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Partenariats RSE">
+                    </div>
+                    <div class="page-ev-floating-box">
+                        <h3>Développement Stratégique des Partenariats RSE</h3>
+                        <p class="page-ev-snippet">Accompagnement des entreprises pour structurer le mécénat, bootcamps et mentorat au profit des startups et coopératives.</p>
+                        <div class="page-ev-footer-action">
+                            <span class="page-ev-read-more">Devenir Partenaire</span>
+                            <span class="page-ev-badge badge-strategie">RSE</span>
+                        </div>
+                    </div>
+                </a>
+
             </div>
         </div>
 
@@ -374,57 +525,185 @@
         <div class="carousel-track-wrapper">
             <div class="carousel-track" id="pr-track">
 
-                <div class="project-item carousel-proj-card">
-                    <div class="project-image">
-                        <img src="https://www.cpaswavre.be/aides/insertion-socioprofessionnelle/insertion-socioprofessionnelle/insertion-socioprofessionnelle/@@images/image-750-8aa3ac97206df3f9797da2b2e84476a0.jpeg" alt="Projet OIM">
+                <a href="upshift.html" class="project-item carousel-proj-card">
+                    <div class="project-image proj-img-color" style="background:linear-gradient(135deg,#1a1a1a,#333);">
+                        <span class="proj-logo-text">UPSHIFT</span>
+                        <span class="proj-partner-tag">UNICEF · Tanger</span>
                     </div>
                     <div class="project-info-card">
-                        <h3>Projet OIM : Améliorer la protection et l'insertion socio-économique</h3>
+                        <h3>UPSHIFT — Entrepreneuriat Social Jeunes</h3>
+                        <p class="proj-excerpt">Sensibilisation de +1 000 jeunes et accompagnement de 5 startups via bootcamp intensif.</p>
                         <div class="card-footer">
-                            <a href="projets.html" class="read-more-link">LIRE LA SUITE</a>
-                            <span class="category-tag">ACTUALITÉS</span>
+                            <span class="read-more-link">LIRE LA SUITE</span>
+                            <span class="category-tag" style="background:#1a1a1a">UNICEF</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="project-item carousel-proj-card">
-                    <div class="project-image">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRUP32532ZfGJ3OpTDNheibT218nPr6Su6vA&s" alt="Projet Dapp">
+                <a href="nawat.html" class="project-item carousel-proj-card">
+                    <div class="project-image proj-img-color" style="background:linear-gradient(135deg,#1484a1,#0d6b84);">
+                        <span class="proj-logo-text">NAWAT</span>
+                        <span class="proj-partner-tag">Maroc PME</span>
                     </div>
                     <div class="project-info-card">
-                        <h3>Projet Dapp : Accompagnement des porteurs de projets</h3>
+                        <h3>NAWAT — Renforcement des TPE</h3>
+                        <p class="proj-excerpt">Accompagnement stratégique de 20 TPE, réseautage et conférences sectorielles.</p>
                         <div class="card-footer">
-                            <a href="projets.html" class="read-more-link">LIRE LA SUITE</a>
-                            <span class="category-tag">ACTUALITÉS</span>
+                            <span class="read-more-link">LIRE LA SUITE</span>
+                            <span class="category-tag" style="background:#1484a1">PME</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="project-item carousel-proj-card">
-                    <div class="project-image">
-                        <img src="https://www.successfinder.com/wp-content/uploads/2023/10/Employee-Development-Plan-Article-Image-1024x683.png" alt="CorpAfrica">
+                <a href="restart.html" class="project-item carousel-proj-card">
+                    <div class="project-image proj-img-color" style="background:linear-gradient(135deg,#d35546,#b8392c);">
+                        <span class="proj-logo-text">RESTART</span>
+                        <span class="proj-partner-tag">Entrepreneuriat Social</span>
                     </div>
                     <div class="project-info-card">
-                        <h3>CorpAfrica : Partenariat et Développement</h3>
+                        <h3>RESTART — Startups Éco-durables</h3>
+                        <p class="proj-excerpt">50+ startups créées, 600 idées prototypées et 450 business plans élaborés.</p>
                         <div class="card-footer">
-                            <a href="projets.html" class="read-more-link">LIRE LA SUITE</a>
-                            <span class="category-tag">ACTUALITÉS</span>
+                            <span class="read-more-link">LIRE LA SUITE</span>
+                            <span class="category-tag" style="background:#d35546">SOCIAL</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="project-item carousel-proj-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140e2b8?auto=format&fit=crop&w=600&q=80" alt="Coopération Sud-Sud">
+                <a href="projet-jeunes.html" class="project-item carousel-proj-card">
+                    <div class="project-image proj-img-color" style="background:linear-gradient(135deg,#19048f,#0d0260);">
+                        <span class="proj-logo-text">AVEC LES JEUNES</span>
+                        <span class="proj-partner-tag">Union Européenne</span>
                     </div>
                     <div class="project-info-card">
-                        <h3>Déploiement Régional & Coopération Sud-Sud</h3>
+                        <h3>Avec les Jeunes — Union Européenne</h3>
+                        <p class="proj-excerpt">147 jeunes auto-entrepreneurs et 83 insertions dans le marché du travail.</p>
                         <div class="card-footer">
-                            <a href="projets.html" class="read-more-link">LIRE LA SUITE</a>
-                            <span class="category-tag">INTERNATIONAL</span>
+                            <span class="read-more-link">LIRE LA SUITE</span>
+                            <span class="category-tag" style="background:#19048f">UE</span>
                         </div>
                     </div>
-                </div>
+                </a>
+
+                <a href="flower.html" class="project-item carousel-proj-card">
+                    <div class="project-image proj-img-color" style="background:linear-gradient(135deg,#056678,#033d47);">
+                        <span class="proj-logo-text">FLOWER</span>
+                        <span class="proj-partner-tag">Maroc & Tunisie</span>
+                    </div>
+                    <div class="project-info-card">
+                        <h3>FLOWER — Autonomisation des Femmes</h3>
+                        <p class="proj-excerpt">Formation de +2 000 femmes au Maroc et en Tunisie pour l'accès aux marchés et revenus.</p>
+                        <div class="card-footer">
+                            <span class="read-more-link">LIRE LA SUITE</span>
+                            <span class="category-tag" style="background:#056678">GENRE</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="oim.html" class="project-item carousel-proj-card">
+                    <div class="project-image proj-img-color" style="background:linear-gradient(135deg,#0033a0,#001f6b);">
+                        <span class="proj-logo-text">MIGRATION & DD</span>
+                        <span class="proj-partner-tag">OIM · ONU Migration</span>
+                    </div>
+                    <div class="project-info-card">
+                        <h3>Migration & DD — OIM</h3>
+                        <p class="proj-excerpt">Accompagnement de +200 porteurs de projets migrants avec création de coopératives.</p>
+                        <div class="card-footer">
+                            <span class="read-more-link">LIRE LA SUITE</span>
+                            <span class="category-tag" style="background:#0033a0">OIM</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="jisr.html" class="project-item carousel-proj-card">
+                    <div class="project-image proj-img-color" style="background:linear-gradient(135deg,#e0ab00,#b88900);">
+                        <span class="proj-logo-text" style="color:#1a1a1a;">JISR</span>
+                        <span class="proj-partner-tag" style="color:rgba(0,0,0,0.6);">Incubateur Social des Femmes</span>
+                    </div>
+                    <div class="project-info-card">
+                        <h3>JISR — Incubateur Social des Femmes</h3>
+                        <p class="proj-excerpt">Autonomisation de ~1 000 femmes vulnérables à Tanger-Assilah sur 24 mois.</p>
+                        <div class="card-footer">
+                            <span class="read-more-link">LIRE LA SUITE</span>
+                            <span class="category-tag" style="background:#e0ab00; color:#1a1a1a;">JISR</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="darlibtikar.html" class="project-item carousel-proj-card">
+                    <div class="project-image proj-img-color" style="background:linear-gradient(135deg,#ef8951,#c96530);">
+                        <span class="proj-logo-text">DAR-LIBTIKAR</span>
+                        <span class="proj-partner-tag">Fondation Abdelkader Bensalah</span>
+                    </div>
+                    <div class="project-info-card">
+                        <h3>DAR-LIBTIKAR — Innovation Sociale</h3>
+                        <p class="proj-excerpt">Parcours d'incubation de 8–9 mois pour dynamiser l'innovation sociale territoriale.</p>
+                        <div class="card-footer">
+                            <span class="read-more-link">LIRE LA SUITE</span>
+                            <span class="category-tag" style="background:#ef8951">INCUBATION</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="dapp.html" class="project-item carousel-proj-card">
+                    <div class="project-image proj-img-color" style="background:linear-gradient(135deg,#ba4919,#8a3210);">
+                        <span class="proj-logo-text">DAPP</span>
+                        <span class="proj-partner-tag">Ministère AF Étrangères Danois</span>
+                    </div>
+                    <div class="project-info-card">
+                        <h3>DAPP — Emploi & Droits Humains MENA</h3>
+                        <p class="proj-excerpt">Programme emploi 18–35 ans déployé dans 4 pays dont le Maroc (2022–2027).</p>
+                        <div class="card-footer">
+                            <span class="read-more-link">LIRE LA SUITE</span>
+                            <span class="category-tag" style="background:#ba4919">DANIDA</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="w4l.html" class="project-item carousel-proj-card">
+                    <div class="project-image proj-img-color" style="background:linear-gradient(135deg,#ea9333,#c07020);">
+                        <span class="proj-logo-text">WORK 4 LIFE</span>
+                        <span class="proj-partner-tag">Union Européenne · Migrants</span>
+                    </div>
+                    <div class="project-info-card">
+                        <h3>Work 4 Life — Entrepreneuriat Collectif</h3>
+                        <p class="proj-excerpt">Création de 20+ coopératives sociales pour l'insertion des personnes migrantes.</p>
+                        <div class="card-footer">
+                            <span class="read-more-link">LIRE LA SUITE</span>
+                            <span class="category-tag" style="background:#ea9333">UE</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="cluster-giz.html" class="project-item carousel-proj-card">
+                    <div class="project-image proj-img-color" style="background:linear-gradient(135deg,#f1090e,#b80008);">
+                        <span class="proj-logo-text">CLUSTER GIZ</span>
+                        <span class="proj-partner-tag">GIZ · Technologies Assemblage</span>
+                    </div>
+                    <div class="project-info-card">
+                        <h3>Cluster Industriel — GIZ</h3>
+                        <p class="proj-excerpt">Structuration d'un cluster industriel en technologies d'assemblage avec la GIZ.</p>
+                        <div class="card-footer">
+                            <span class="read-more-link">LIRE LA SUITE</span>
+                            <span class="category-tag" style="background:#f1090e">GIZ</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="logmed.html" class="project-item carousel-proj-card">
+                    <div class="project-image proj-img-color" style="background:linear-gradient(135deg,#009246,#006030);">
+                        <span class="proj-logo-text">LOG MED</span>
+                        <span class="proj-partner-tag">Coopération Italienne</span>
+                    </div>
+                    <div class="project-info-card">
+                        <h3>LOG MED — Employabilité Maroc</h3>
+                        <p class="proj-excerpt">Stages rémunérés et accompagnement dans les régions de Rabat et Tanger.</p>
+                        <div class="card-footer">
+                            <span class="read-more-link">LIRE LA SUITE</span>
+                            <span class="category-tag" style="background:#009246">ITALIE</span>
+                        </div>
+                    </div>
+                </a>
 
             </div>
         </div>
@@ -717,6 +996,11 @@
                 <a href="https://www.instagram.com/es.maroc?igsh=dnB1cGllNzRmbG1n"
                    target="_blank" rel="noopener" aria-label="Instagram">
                     <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+            <div class="footer-contact-btn-wrap">
+                <a href="contact.html" class="footer-contact-btn">
+                    <i class="fas fa-envelope"></i> Contactez-nous
                 </a>
             </div>
             <p class="copyright">ES.Maroc © Copyright 2026. Tous droits réservés.</p>
