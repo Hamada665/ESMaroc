@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Projets - ESMaroc</title>
+    <title>Nos Projets | ESMaroc.Org</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="projets-page.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 </head>
 <body class="projects-page-body">
 
 <header>
     <div class="header-container">
-        <div class="logo">
-            <img src="ESMAROC LOGO.png" alt="Logo ESMaroc">
-        </div>
+        <div class="logo"><img src="ESMAROC LOGO.png" alt="Logo ESMaroc"></div>
         <nav>
             <a href="index.html">Accueil</a>
             <div class="dropdown">
@@ -39,285 +37,385 @@
     </div>
 </header>
 
-<main class="portfolio-layout">
+<main class="pf-layout">
 
-    <!-- ===== HERO ===== -->
-    <section class="portfolio-hero">
-        <div class="portfolio-hero-content">
-            <h1>Nos Projets</h1>
-            <p>ESMaroc dispose d'un portefeuille riche de projets structurants développés en partenariat avec des bailleurs internationaux, des institutions publiques et des acteurs de terrain pour concevoir, piloter et déployer des programmes d'envergure.</p>
+    <!-- HERO -->
+    <section class="pf-hero">
+        <div class="pf-hero-bg"></div>
+        <div class="pf-hero-inner">
+            <div class="pf-hero-left">
+                <span class="pf-eyebrow"><i class="fas fa-circle-dot"></i> ESMaroc · Depuis 2011</span>
+                <h1 class="pf-hero-title">Notre<br><em>Portefeuille</em><br>de Projets</h1>
+                <p class="pf-hero-desc">Des programmes structurants déployés avec des bailleurs internationaux, des institutions publiques et des acteurs de terrain pour un impact social mesurable et durable.</p>
+            </div>
+            <div class="pf-hero-right">
+                <div class="pf-hero-stat">
+                    <span class="pf-hero-stat-num">12</span>
+                    <span class="pf-hero-stat-label">Projets<br>& Initiatives</span>
+                </div>
+                <div class="pf-hero-stat">
+                    <span class="pf-hero-stat-num">10+</span>
+                    <span class="pf-hero-stat-label">Partenaires<br>Internationaux</span>
+                </div>
+                <div class="pf-hero-stat">
+                    <span class="pf-hero-stat-num">3</span>
+                    <span class="pf-hero-stat-label">Continents<br>représentés</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- ===== SÉPARATEUR DE SECTIONS ===== -->
-    <div class="portfolio-section-label">
-        <span><i class="fas fa-folder-open"></i> Projets avec pages dédiées</span>
-    </div>
+    <!-- GRILLE PROJETS -->
+    <section class="pf-section">
+        <div class="pf-section-header">
+            <div class="pf-section-label">
+                <i class="fas fa-external-link-alt"></i>
+                <span>Projets avec pages dédiées</span>
+            </div>
+        </div>
 
-    <!-- ===== GRILLE PROJETS AVEC PAGES DÉDIÉES ===== -->
-    <section class="portfolio-grid-section">
-        <div class="portfolio-container">
+        <div class="pf-grid">
 
-            <a href="upshift.html" class="logo-project-card">
-                <div class="project-logo-wrapper">
-                    <img src="UPSHIFT LOGO.png" alt="Logo Projet UPSHIFT" class="project-logo-img">
+            <a href="upshift.html" class="pf-card" style="--card-color:#000000; --card-color-light:rgba(0,0,0,0.05);">
+                <div class="pf-card-color-bar"></div>
+                <div class="pf-card-logo-zone pf-logo-dark">
+                    <img src="UPSHIFT LOGO.png" alt="UPSHIFT" class="pf-logo-img">
                 </div>
-                <div class="project-logo-info">
-                    <h3>UPSHIFT</h3>
-                    <span class="project-institution">UNICEF · Tanger</span>
-                    <span class="view-project-link">Découvrir le projet <i class="fas fa-arrow-right"></i></span>
+                <div class="pf-card-body">
+                    <div class="pf-card-meta">
+                        <span class="pf-card-partner">UNICEF · Tanger</span>
+                        <span class="pf-card-year">2021–2022</span>
+                    </div>
+                    <h3 class="pf-card-title">UPSHIFT</h3>
+                    <p class="pf-card-excerpt">Sensibilisation de +1 000 jeunes à l'entrepreneuriat social et accompagnement de 5 startups via un bootcamp intensif de 6 jours.</p>
+                    <div class="pf-card-stats">
+                        <div class="pf-mini-stat"><span>+1 000</span><small>Jeunes</small></div>
+                        <div class="pf-mini-stat"><span>5</span><small>Startups</small></div>
+                    </div>
+                </div>
+                <div class="pf-card-footer">
+                    <span>Découvrir le projet</span>
+                    <i class="fas fa-arrow-right"></i>
                 </div>
             </a>
 
-            <a href="nawat.html" class="logo-project-card">
-                <div class="project-logo-wrapper">
-                    <img src="NAWAT LOGO.png" alt="Logo Projet NAWAT" class="project-logo-img logo-wide">
+            <a href="nawat.html" class="pf-card" style="--card-color:#1484a1; --card-color-light:rgba(20,132,161,0.07);">
+                <div class="pf-card-color-bar"></div>
+                <div class="pf-card-logo-zone pf-logo-light">
+                    <img src="NAWAT LOGO.png" alt="NAWAT" class="pf-logo-img">
                 </div>
-                <div class="project-logo-info">
-                    <h3>NAWAT</h3>
-                    <span class="project-institution">Maroc PME</span>
-                    <span class="view-project-link">Découvrir le projet <i class="fas fa-arrow-right"></i></span>
+                <div class="pf-card-body">
+                    <div class="pf-card-meta">
+                        <span class="pf-card-partner">Maroc PME</span>
+                    </div>
+                    <h3 class="pf-card-title">NAWAT</h3>
+                    <p class="pf-card-excerpt">Renforcement des capacités de 20 TPE à travers un accompagnement stratégique, du réseautage et des conférences sectorielles.</p>
+                    <div class="pf-card-stats">
+                        <div class="pf-mini-stat"><span>20</span><small>TPE</small></div>
+                        <div class="pf-mini-stat"><span>∞</span><small>Réseaux</small></div>
+                    </div>
                 </div>
-            </a>
-
-            <a href="restart.html" class="logo-project-card">
-                <div class="project-logo-wrapper">
-                    <img src="RESTART LOGO.png" alt="Logo Projet RESTART" class="project-logo-img logo-wide">
-                </div>
-                <div class="project-logo-info">
-                    <h3>RESTART</h3>
-                    <span class="project-institution">Entrepreneuriat Social</span>
-                    <span class="view-project-link">Découvrir le projet <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
-
-            <a href="projet-jeunes.html" class="logo-project-card">
-                <div class="project-logo-wrapper">
-                    <img src="POUR LES JEUNES LOGO.png" alt="Logo Projet Avec Les Jeunes" class="project-logo-img logo-text">
-                </div>
-                <div class="project-logo-info">
-                    <h3>AVEC LES JEUNES</h3>
-                    <span class="project-institution">Union Européenne</span>
-                    <span class="view-project-link">Découvrir le projet <i class="fas fa-arrow-right"></i></span>
+                <div class="pf-card-footer">
+                    <span>Découvrir le projet</span>
+                    <i class="fas fa-arrow-right"></i>
                 </div>
             </a>
 
-            <a href="projet-flower.html" class="logo-project-card">
-                <div class="project-logo-wrapper">
-                    <img src="flower-logo.png" alt="Logo Projet FLOWER" class="project-logo-img logo-text">
+            <a href="restart.html" class="pf-card" style="--card-color:#d35546; --card-color-light:rgba(211,85,70,0.07);">
+                <div class="pf-card-color-bar"></div>
+                <div class="pf-card-logo-zone pf-logo-light">
+                    <img src="RESTART LOGO.png" alt="RESTART" class="pf-logo-img">
                 </div>
-                <div class="project-logo-info">
-                    <h3>FLOWER</h3>
-                    <span class="project-institution">Maroc & Tunisie</span>
-                    <span class="view-project-link">Découvrir le projet <i class="fas fa-arrow-right"></i></span>
+                <div class="pf-card-body">
+                    <div class="pf-card-meta">
+                        <span class="pf-card-partner">Entrepreneuriat Social</span>
+                    </div>
+                    <h3 class="pf-card-title">RESTART</h3>
+                    <p class="pf-card-excerpt">Création de 50+ startups éco-durables, prototypage de 600 idées et élaboration de 450 business plans avec subventions de démarrage.</p>
+                    <div class="pf-card-stats">
+                        <div class="pf-mini-stat"><span>50+</span><small>Startups</small></div>
+                        <div class="pf-mini-stat"><span>600</span><small>Idées</small></div>
+                        <div class="pf-mini-stat"><span>450</span><small>BP</small></div>
+                    </div>
                 </div>
-            </a>
-
-            <a href="projet-migration.html" class="logo-project-card">
-                <div class="project-logo-wrapper">
-                    <img src="onu-logo.png" alt="Logo Projet OIM" class="project-logo-img logo-tall">
-                </div>
-                <div class="project-logo-info">
-                    <h3>MIGRATION & DD</h3>
-                    <span class="project-institution">OIM · ONU Migration</span>
-                    <span class="view-project-link">Découvrir le projet <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
-
-            <a href="projet-jisr.html" class="logo-project-card">
-                <div class="project-logo-wrapper">
-                    <!-- Pas de logo : initiales stylisées -->
-                    <div class="project-logo-initials" style="background:#f5c842; color:#1a1a1a;">JISR</div>
-                </div>
-                <div class="project-logo-info">
-                    <h3>JISR</h3>
-                    <span class="project-institution">Incubateur Social des Femmes</span>
-                    <span class="view-project-link">Découvrir le projet <i class="fas fa-arrow-right"></i></span>
+                <div class="pf-card-footer">
+                    <span>Découvrir le projet</span>
+                    <i class="fas fa-arrow-right"></i>
                 </div>
             </a>
 
-            <a href="projet-dar-libtikar.html" class="logo-project-card">
-                <div class="project-logo-wrapper">
-                    <img src="darlibtikar-logo.png" alt="Logo Label Dar-Libtikar" class="project-logo-img logo-libtikar-fix">
+            <a href="projet-jeunes.html" class="pf-card" style="--card-color:#19048f; --card-color-light:rgba(25,4,143,0.06);">
+                <div class="pf-card-color-bar"></div>
+                <div class="pf-card-logo-zone pf-logo-light">
+                    <img src="POUR LES JEUNES LOGO.png" alt="Avec les jeunes" class="pf-logo-img">
                 </div>
-                <div class="project-logo-info">
-                    <h3>DAR-LIBTIKAR</h3>
-                    <span class="project-institution">Fondation Abdelkader Bensalah</span>
-                    <span class="view-project-link">Découvrir le projet <i class="fas fa-arrow-right"></i></span>
+                <div class="pf-card-body">
+                    <div class="pf-card-meta">
+                        <span class="pf-card-partner">Union Européenne</span>
+                        <span class="pf-card-badge">UE</span>
+                    </div>
+                    <h3 class="pf-card-title">Avec les Jeunes</h3>
+                    <p class="pf-card-excerpt">147 jeunes auto-entrepreneurs et 83 insertions dans le marché du travail via guichet d'insertion et stages rémunérés.</p>
+                    <div class="pf-card-stats">
+                        <div class="pf-mini-stat"><span>147</span><small>Auto-E.</small></div>
+                        <div class="pf-mini-stat"><span>83</span><small>Insérés</small></div>
+                    </div>
+                </div>
+                <div class="pf-card-footer">
+                    <span>Découvrir le projet</span>
+                    <i class="fas fa-arrow-right"></i>
                 </div>
             </a>
 
-            <a href="projet-dapp.html" class="logo-project-card">
-                <div class="project-logo-wrapper">
-                    <img src="dano-logo.png" alt="Logo DAPP Danida" class="project-logo-img logo-dapp-fix">
+            <a href="projet-flower.html" class="pf-card" style="--card-color:#056678; --card-color-light:rgba(5,102,120,0.07);">
+                <div class="pf-card-color-bar"></div>
+                <div class="pf-card-logo-zone pf-logo-light">
+                    <img src="flower-logo.png" alt="FLOWER" class="pf-logo-img">
                 </div>
-                <div class="project-logo-info">
-                    <h3>PROGRAMME DAPP</h3>
-                    <span class="project-institution">Ministère des Affaires Étrangères Danois</span>
-                    <span class="view-project-link">Découvrir le projet <i class="fas fa-arrow-right"></i></span>
+                <div class="pf-card-body">
+                    <div class="pf-card-meta">
+                        <span class="pf-card-partner">Maroc & Tunisie</span>
+                    </div>
+                    <h3 class="pf-card-title">FLOWER</h3>
+                    <p class="pf-card-excerpt">Formation de +2 000 femmes au Maroc et en Tunisie pour améliorer l'accès aux marchés, les revenus et l'intégration à la sécurité sociale.</p>
+                    <div class="pf-card-stats">
+                        <div class="pf-mini-stat"><span>+2 000</span><small>Femmes</small></div>
+                        <div class="pf-mini-stat"><span>2</span><small>Pays</small></div>
+                    </div>
+                </div>
+                <div class="pf-card-footer">
+                    <span>Découvrir le projet</span>
+                    <i class="fas fa-arrow-right"></i>
                 </div>
             </a>
 
-            <a href="conventions-partenariats.html" class="logo-project-card convention-card-highlight">
-                <div class="project-logo-wrapper">
-                    <i class="fas fa-handshake-angle convention-icon"></i>
+            <a href="projet-migration.html" class="pf-card" style="--card-color:#0033a0; --card-color-light:rgba(0,51,160,0.06);">
+                <div class="pf-card-color-bar"></div>
+                <div class="pf-card-logo-zone pf-logo-light">
+                    <img src="onu-logo.png" alt="OIM ONU Migration" class="pf-logo-img">
                 </div>
-                <div class="project-logo-info">
-                    <h3>CONVENTIONS & PARTENARIATS</h3>
-                    <span class="project-institution">Institutionnels & Associatifs</span>
-                    <span class="view-project-link">Consulter notre réseau <i class="fas fa-arrow-right"></i></span>
+                <div class="pf-card-body">
+                    <div class="pf-card-meta">
+                        <span class="pf-card-partner">OIM · ONU Migration</span>
+                    </div>
+                    <h3 class="pf-card-title">Migration & DD</h3>
+                    <p class="pf-card-excerpt">Accompagnement technique et financier de +200 porteurs de projets migrants, avec création de coopératives et d'auto-entrepreneurs.</p>
+                    <div class="pf-card-stats">
+                        <div class="pf-mini-stat"><span>+200</span><small>Porteurs</small></div>
+                    </div>
+                </div>
+                <div class="pf-card-footer">
+                    <span>Découvrir le projet</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <a href="projet-jisr.html" class="pf-card" style="--card-color:#e0ab00; --card-color-light:rgba(224,171,0,0.08);">
+                <div class="pf-card-color-bar"></div>
+                <div class="pf-card-logo-zone pf-logo-light">
+                    <div class="pf-logo-initials" style="background:#e0ab00; color:#1a1a1a;">JISR</div>
+                </div>
+                <div class="pf-card-body">
+                    <div class="pf-card-meta">
+                        <span class="pf-card-partner">Incubateur Social des Femmes</span>
+                    </div>
+                    <h3 class="pf-card-title">JISR</h3>
+                    <p class="pf-card-excerpt">Autonomisation de ~1 000 femmes vulnérables à Tanger-Assilah via accompagnement, coaching, incubation et AGR sur 24 mois.</p>
+                    <div class="pf-card-stats">
+                        <div class="pf-mini-stat"><span>~1 000</span><small>Femmes</small></div>
+                        <div class="pf-mini-stat"><span>400K</span><small>MAD</small></div>
+                    </div>
+                </div>
+                <div class="pf-card-footer">
+                    <span>Découvrir le projet</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <a href="projet-dar-libtikar.html" class="pf-card" style="--card-color:#ef8951; --card-color-light:rgba(239,137,81,0.07);">
+                <div class="pf-card-color-bar"></div>
+                <div class="pf-card-logo-zone" style="background:linear-gradient(135deg,#ef8951,#f5a978);">
+                    <img src="darlibtikar-logo.png" alt="Dar-Libtikar" class="pf-logo-img pf-logo-on-color">
+                </div>
+                <div class="pf-card-body">
+                    <div class="pf-card-meta">
+                        <span class="pf-card-partner">Fondation Abdelkader Bensalah</span>
+                    </div>
+                    <h3 class="pf-card-title">DAR-LIBTIKAR</h3>
+                    <p class="pf-card-excerpt">Parcours d'incubation de 8–9 mois pour dynamiser l'innovation sociale territoriale et faire émerger des solutions durables et duplicables.</p>
+                    <div class="pf-card-stats">
+                        <div class="pf-mini-stat"><span>9</span><small>Mois</small></div>
+                        <div class="pf-mini-stat"><span>3</span><small>Phases</small></div>
+                    </div>
+                </div>
+                <div class="pf-card-footer">
+                    <span>Découvrir le projet</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <a href="projet-dapp.html" class="pf-card" style="--card-color:#ba4919; --card-color-light:rgba(186,73,25,0.07);">
+                <div class="pf-card-color-bar"></div>
+                <div class="pf-card-logo-zone pf-logo-light">
+                    <img src="dano-logo.png" alt="DAPP Danida" class="pf-logo-img">
+                </div>
+                <div class="pf-card-body">
+                    <div class="pf-card-meta">
+                        <span class="pf-card-partner">Ministère AF Étrangères Danois</span>
+                        <span class="pf-card-year">2022–2027</span>
+                    </div>
+                    <h3 class="pf-card-title">DAPP</h3>
+                    <p class="pf-card-excerpt">Programme emploi, entrepreneuriat et droits humains pour les 18–35 ans dans la région MENA, déployé dans 4 pays dont le Maroc.</p>
+                    <div class="pf-card-stats">
+                        <div class="pf-mini-stat"><span>4</span><small>Pays</small></div>
+                        <div class="pf-mini-stat"><span>3</span><small>Régions MA</small></div>
+                    </div>
+                </div>
+                <div class="pf-card-footer">
+                    <span>Découvrir le projet</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- CONVENTIONS pleine largeur -->
+            <a href="conventions-partenariats.html" class="pf-card pf-card--conventions" style="--card-color:#003399; --card-color-light:rgba(0,51,153,0.05);">
+                <div class="pf-card-color-bar"></div>
+                <div class="pf-conventions-inner">
+                    <div class="pf-conventions-icon">
+                        <i class="fas fa-handshake-angle"></i>
+                    </div>
+                    <div class="pf-conventions-body">
+                        <span class="pf-card-partner">Institutionnels & Associatifs</span>
+                        <h3 class="pf-card-title">Conventions & Partenariats</h3>
+                        <p>Un réseau de conventions avec des partenaires institutionnels (ANAPEC, Maroc PME, Entraide Nationale…) et associatifs (AAUPE, Al Jisr, OJA…) pour un impact structuré à l'échelle nationale.</p>
+                    </div>
+                    <div class="pf-conventions-cta">
+                        <span>Consulter notre réseau</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
                 </div>
             </a>
 
         </div>
     </section>
 
-    <!-- ===== SÉPARATEUR ACCORDÉONS ===== -->
-    <div class="portfolio-section-label portfolio-section-label--alt">
-        <span><i class="fas fa-layer-group"></i> Autres projets & initiatives</span>
-    </div>
+    <!-- ACCORDÉONS -->
+    <section class="pf-acc-section">
+        <div class="pf-section-header">
+            <div class="pf-section-label pf-section-label--alt">
+                <i class="fas fa-layer-group"></i>
+                <span>Autres projets & initiatives</span>
+            </div>
+        </div>
 
-    <!-- ===== SECTION ACCORDÉONS : W4L, GIZ, LOG MED ===== -->
-    <section class="portfolio-accordion-section">
-        <div class="portfolio-accordion-container">
+        <div class="pf-acc-container">
 
-            <!-- ===== W4L – WORK FOR LIFE ===== -->
-            <div class="acc-project-item" data-project="w4l">
-                <button class="acc-project-trigger" type="button">
-                    <div class="acc-trigger-left">
-                        <div class="acc-logo-thumb acc-logo-thumb--w4l">
-                            <img src="WORK FOR LIFE.png" alt="Logo Work 4 Life">
+            <!-- W4L -->
+            <div class="pf-acc-item" data-color="#ea9333">
+                <button class="pf-acc-trigger" type="button">
+                    <div class="pf-acc-trigger-left">
+                        <div class="pf-acc-thumb" style="background:#fff8f0; border-color:rgba(234,147,51,0.3);">
+                            <img src="WORK FOR LIFE.png" alt="Work 4 Life">
                         </div>
-                        <div class="acc-trigger-info">
-                            <span class="acc-project-name">WORK 4 LIFE</span>
-                            <span class="acc-project-partner">Union Européenne · Entrepreneuriat collectif</span>
+                        <div class="pf-acc-info">
+                            <strong>WORK 4 LIFE</strong>
+                            <span>Union Européenne · Entrepreneuriat collectif · Migrants</span>
                         </div>
                     </div>
-                    <div class="acc-trigger-right">
-                        <span class="acc-tag acc-tag--ue">UE</span>
-                        <span class="acc-chevron"><i class="fas fa-chevron-down"></i></span>
+                    <div class="pf-acc-trigger-right">
+                        <span class="pf-acc-tag" style="color:#ea9333; border-color:rgba(234,147,51,0.4);">UE</span>
+                        <div class="pf-acc-chevron"><i class="fas fa-plus"></i></div>
                     </div>
                 </button>
-
-                <div class="acc-project-content">
-                    <div class="acc-content-inner acc-inner--w4l">
-                        <div class="acc-content-logo">
-                            <img src="WORK FOR LIFE.png" alt="Work 4 Life Logo">
+                <div class="pf-acc-content">
+                    <div class="pf-acc-inner">
+                        <div class="pf-acc-logo-panel" style="background:linear-gradient(135deg,#fff8f0,#fff3e0); border-color:rgba(234,147,51,0.2);">
+                            <img src="WORK FOR LIFE.png" alt="Work 4 Life">
+                            <div class="pf-acc-logo-caption"><span style="background:#ea9333; color:#fff;">Union Européenne</span></div>
                         </div>
-                        <div class="acc-content-body">
-                            <div class="acc-content-badge" style="background:#ea9333; color:#fff;">Union Européenne · W4L</div>
+                        <div class="pf-acc-text">
                             <h3>Work for Life – Entrepreneuriat Collectif</h3>
-                            <p>Le projet <strong>W4L – Work for Life</strong>, financé par l'Union Européenne, a soutenu l'insertion socio-économique des personnes migrantes via l'entrepreneuriat collectif, avec la création et la structuration de plus d'une vingtaine de coopératives et entreprises sociales viables.</p>
-                            <div class="acc-highlight-stat">
-                                <div class="acc-stat acc-stat--w4l">
-                                    <i class="fas fa-people-group"></i>
-                                    <span class="acc-stat-num">20+</span>
-                                    <span class="acc-stat-label">Coopératives & entreprises sociales créées</span>
-                                </div>
-                                <div class="acc-stat acc-stat--w4l-alt">
-                                    <i class="fas fa-earth-africa"></i>
-                                    <span class="acc-stat-num">100%</span>
-                                    <span class="acc-stat-label">Dédiées aux personnes migrantes</span>
-                                </div>
+                            <p>Le projet <strong>W4L – Work for Life</strong>, financé par l'Union Européenne, a soutenu l'insertion socio-économique des personnes migrantes via l'entrepreneuriat collectif, avec la création et la structuration de <strong>plus d'une vingtaine de coopératives et entreprises sociales viables</strong>.</p>
+                            <div class="pf-acc-stats">
+                                <div class="pf-acc-stat" style="border-color:#ea9333; background:rgba(234,147,51,0.06);"><i class="fas fa-people-group" style="color:#ea9333;"></i><b>20+</b><small>Coopératives & entreprises sociales</small></div>
+                                <div class="pf-acc-stat" style="border-color:#595959; background:rgba(89,89,89,0.05);"><i class="fas fa-earth-africa" style="color:#595959;"></i><b>100%</b><small>Dédié aux personnes migrantes</small></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- ===== GIZ – CLUSTER INDUSTRIEL ===== -->
-            <div class="acc-project-item" data-project="giz">
-                <button class="acc-project-trigger" type="button">
-                    <div class="acc-trigger-left">
-                        <div class="acc-logo-thumb acc-logo-thumb--giz">
-                            <img src="giz-logo.png" alt="Logo GIZ">
+            <!-- GIZ -->
+            <div class="pf-acc-item" data-color="#f1090e">
+                <button class="pf-acc-trigger" type="button">
+                    <div class="pf-acc-trigger-left">
+                        <div class="pf-acc-thumb" style="background:#fff5f5; border-color:rgba(241,9,14,0.25);">
+                            <img src="giz-logo.png" alt="GIZ">
                         </div>
-                        <div class="acc-trigger-info">
-                            <span class="acc-project-name">CLUSTER INDUSTRIEL</span>
-                            <span class="acc-project-partner">GIZ · Technologies d'assemblage</span>
+                        <div class="pf-acc-info">
+                            <strong>CLUSTER INDUSTRIEL</strong>
+                            <span>GIZ · Deutsche Gesellschaft · Technologies d'assemblage</span>
                         </div>
                     </div>
-                    <div class="acc-trigger-right">
-                        <span class="acc-tag acc-tag--giz">GIZ</span>
-                        <span class="acc-chevron"><i class="fas fa-chevron-down"></i></span>
+                    <div class="pf-acc-trigger-right">
+                        <span class="pf-acc-tag" style="color:#f1090e; border-color:rgba(241,9,14,0.35);">GIZ</span>
+                        <div class="pf-acc-chevron"><i class="fas fa-plus"></i></div>
                     </div>
                 </button>
-
-                <div class="acc-project-content">
-                    <div class="acc-content-inner acc-inner--giz">
-                        <div class="acc-content-logo">
-                            <img src="giz-logo.png" alt="GIZ Logo">
+                <div class="pf-acc-content">
+                    <div class="pf-acc-inner">
+                        <div class="pf-acc-logo-panel" style="background:linear-gradient(135deg,#fff5f5,#ffecec); border-color:rgba(241,9,14,0.15);">
+                            <img src="giz-logo.png" alt="GIZ">
+                            <div class="pf-acc-logo-caption"><span style="background:#f1090e; color:#fff;">GIZ</span></div>
                         </div>
-                        <div class="acc-content-body">
-                            <div class="acc-content-badge" style="background:#f1090e; color:#fff;">GIZ · Deutsche Gesellschaft</div>
+                        <div class="pf-acc-text">
                             <h3>Cluster Industriel – Technologies d'Assemblage</h3>
                             <p>ESMaroc a contribué à la <strong>structuration d'un cluster industriel</strong> en partenariat avec la GIZ dans le secteur des technologies d'assemblage, renforçant la compétitivité et l'innovation sectorielle au Maroc.</p>
-                            <div class="acc-highlight-stat">
-                                <div class="acc-stat acc-stat--giz">
-                                    <i class="fas fa-industry"></i>
-                                    <span class="acc-stat-num">1</span>
-                                    <span class="acc-stat-label">Cluster structuré dans les technologies d'assemblage</span>
-                                </div>
-                                <div class="acc-stat acc-stat--giz-alt">
-                                    <i class="fas fa-chart-line"></i>
-                                    <span class="acc-stat-num">+</span>
-                                    <span class="acc-stat-label">Compétitivité & innovation renforcées</span>
-                                </div>
+                            <div class="pf-acc-stats">
+                                <div class="pf-acc-stat" style="border-color:#f1090e; background:rgba(241,9,14,0.05);"><i class="fas fa-industry" style="color:#f1090e;"></i><b>1</b><small>Cluster structuré · Technologies d'assemblage</small></div>
+                                <div class="pf-acc-stat" style="border-color:#333; background:rgba(0,0,0,0.04);"><i class="fas fa-chart-line" style="color:#333;"></i><b>+</b><small>Compétitivité & innovation renforcées</small></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- ===== LOG MED ===== -->
-            <div class="acc-project-item" data-project="logmed">
-                <button class="acc-project-trigger" type="button">
-                    <div class="acc-trigger-left">
-                        <!-- Pas de logo : drapeau italien stylisé -->
-                        <div class="acc-logo-thumb acc-logo-thumb--logmed">
-                            <span class="acc-flag-it">
-                                <span style="background:#009246"></span>
-                                <span style="background:#ffffff"></span>
-                                <span style="background:#ce2b37"></span>
-                            </span>
+            <!-- LOG MED -->
+            <div class="pf-acc-item" data-color="#009246">
+                <button class="pf-acc-trigger" type="button">
+                    <div class="pf-acc-trigger-left">
+                        <div class="pf-acc-thumb pf-acc-thumb--flag" style="border-color:rgba(0,146,70,0.3);">
+                            <span style="background:#009246;"></span>
+                            <span style="background:#fff; border-left:1px solid #eee; border-right:1px solid #eee;"></span>
+                            <span style="background:#ce2b37;"></span>
                         </div>
-                        <div class="acc-trigger-info">
-                            <span class="acc-project-name">LOG MED</span>
-                            <span class="acc-project-partner">Coopération Italienne · Rabat & Tanger</span>
+                        <div class="pf-acc-info">
+                            <strong>LOG MED</strong>
+                            <span>Coopération Italienne · Rabat-Salé-Kénitra & Tanger-Tétouan</span>
                         </div>
                     </div>
-                    <div class="acc-trigger-right">
-                        <span class="acc-tag acc-tag--logmed">IT</span>
-                        <span class="acc-chevron"><i class="fas fa-chevron-down"></i></span>
+                    <div class="pf-acc-trigger-right">
+                        <span class="pf-acc-tag" style="color:#009246; border-color:rgba(0,146,70,0.35);">IT</span>
+                        <div class="pf-acc-chevron"><i class="fas fa-plus"></i></div>
                     </div>
                 </button>
-
-                <div class="acc-project-content">
-                    <div class="acc-content-inner acc-inner--logmed">
-                        <div class="acc-content-logo acc-content-logo--flag">
-                            <div class="acc-flag-big">
-                                <span style="background:#009246"></span>
-                                <span style="background:#ffffff"></span>
-                                <span style="background:#ce2b37"></span>
+                <div class="pf-acc-content">
+                    <div class="pf-acc-inner">
+                        <div class="pf-acc-logo-panel" style="background:linear-gradient(135deg,#f0faf4,#e8f5ee); border-color:rgba(0,146,70,0.2);">
+                            <div class="pf-flag-display">
+                                <span style="background:#009246;"></span>
+                                <span style="background:#ffffff;"></span>
+                                <span style="background:#ce2b37;"></span>
                             </div>
-                            <p class="acc-flag-label">Coopération<br><strong>Italienne</strong></p>
+                            <div class="pf-acc-logo-caption"><span style="background:#009246; color:#fff;">Coopération Italienne</span></div>
                         </div>
-                        <div class="acc-content-body">
-                            <div class="acc-content-badge" style="background:#009246; color:#fff;">Coopération Italienne · LOG MED</div>
+                        <div class="pf-acc-text">
                             <h3>LOG MED – Connecter l'Avenir</h3>
                             <p>Le projet <strong>LOG MED</strong>, soutenu par la coopération italienne, vise à renforcer l'employabilité et le potentiel entrepreneurial des jeunes et des femmes dans les régions de <strong>Rabat-Salé-Kénitra</strong> et <strong>Tanger-Tétouan-Al Hoceima</strong>.</p>
                             <p>À travers ses Hubs, il active un écosystème de stages de perfectionnement rémunérés et un accompagnement technique sur mesure pour favoriser une croissance économique inclusive et durable.</p>
-                            <div class="acc-highlight-stat">
-                                <div class="acc-stat acc-stat--logmed">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span class="acc-stat-num">2</span>
-                                    <span class="acc-stat-label">Régions cibles : Rabat & Tanger</span>
-                                </div>
-                                <div class="acc-stat acc-stat--logmed-alt">
-                                    <i class="fas fa-users"></i>
-                                    <span class="acc-stat-num">Hub</span>
-                                    <span class="acc-stat-label">Stages rémunérés & accompagnement technique</span>
-                                </div>
+                            <div class="pf-acc-stats">
+                                <div class="pf-acc-stat" style="border-color:#009246; background:rgba(0,146,70,0.06);"><i class="fas fa-map-marker-alt" style="color:#009246;"></i><b>2</b><small>Régions cibles · Rabat & Tanger</small></div>
+                                <div class="pf-acc-stat" style="border-color:#ce2b37; background:rgba(206,43,55,0.05);"><i class="fas fa-users" style="color:#ce2b37;"></i><b>Hub</b><small>Stages rémunérés & accompagnement</small></div>
                             </div>
                         </div>
                     </div>
@@ -333,10 +431,7 @@
     <div class="footer-container">
         <div class="footer-left">
             <h2 class="footer-logo">ES.Maroc<span>.Org</span></h2>
-            <p class="footer-description">
-                EsMaroc.Org est une association qui promeut l'innovation sociale au Maroc.
-                Nous accompagnons les entrepreneurs pour créer un impact durable et responsable.
-            </p>
+            <p class="footer-description">EsMaroc.Org est une association qui promeut l'innovation sociale au Maroc. Nous accompagnons les entrepreneurs pour créer un impact durable et responsable.</p>
             <div class="footer-contact">
                 <p><i class="fa-solid fa-location-dot"></i> 12 rue Pékin, Océan Résidence Les Fleurs, App. 1 Rabat</p>
                 <p><i class="fa-solid fa-phone"></i> +212 (0) 537 762 872</p>
@@ -358,23 +453,29 @@
 
 <script src="script.js"></script>
 <script>
-// Accordéons projets
-document.querySelectorAll('.acc-project-trigger').forEach(trigger => {
+document.querySelectorAll('.pf-acc-trigger').forEach(trigger => {
     trigger.addEventListener('click', () => {
-        const item = trigger.closest('.acc-project-item');
-        const content = item.querySelector('.acc-project-content');
-        const isOpen = item.classList.contains('acc-open');
+        const item = trigger.closest('.pf-acc-item');
+        const content = item.querySelector('.pf-acc-content');
+        const icon = trigger.querySelector('.pf-acc-chevron i');
+        const chevron = trigger.querySelector('.pf-acc-chevron');
+        const color = item.dataset.color;
+        const isOpen = item.classList.contains('pf-open');
 
-        // Fermer tous les autres
-        document.querySelectorAll('.acc-project-item.acc-open').forEach(openItem => {
-            openItem.classList.remove('acc-open');
-            openItem.querySelector('.acc-project-content').style.maxHeight = null;
+        document.querySelectorAll('.pf-acc-item.pf-open').forEach(open => {
+            open.classList.remove('pf-open');
+            open.querySelector('.pf-acc-content').style.maxHeight = null;
+            open.querySelector('.pf-acc-chevron i').className = 'fas fa-plus';
+            open.querySelector('.pf-acc-chevron').style.background = '#f0f4f8';
+            open.querySelector('.pf-acc-chevron i').style.color = '#718096';
         });
 
-        // Ouvrir/fermer le cliqué
         if (!isOpen) {
-            item.classList.add('acc-open');
+            item.classList.add('pf-open');
             content.style.maxHeight = content.scrollHeight + 'px';
+            icon.className = 'fas fa-minus';
+            chevron.style.background = color;
+            icon.style.color = '#fff';
         }
     });
 });
