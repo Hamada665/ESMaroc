@@ -1,0 +1,808 @@
+/* ==========================================================================
+   PAGE PROJETS — PORTFOLIO MAGAZINE
+   Cohérent avec la charte ESMaroc : bleu #003399, jaune #e0ab00
+   ========================================================================== */
+
+:root {
+    --pf-blue:      #003399;
+    --pf-yellow:    #e0ab00;
+    --pf-dark:      #0a1628;
+    --pf-text:      #4a5568;
+    --pf-bg:        #f7f9fc;
+    --pf-white:     #ffffff;
+    --pf-border:    rgba(0,51,153,0.09);
+}
+
+/* ============================================================
+   1. LAYOUT
+   ============================================================ */
+.pf-layout {
+    background-color: var(--pf-bg);
+}
+
+/* ============================================================
+   2. HERO — Split : texte gauche / stats droite
+   ============================================================ */
+.pf-hero {
+    position: relative;
+    background-color: var(--pf-dark);
+    overflow: hidden;
+}
+
+.pf-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, #0a1628 0%, #001a5c 50%, #003399 100%);
+    pointer-events: none;
+}
+
+/* Motif subtil de lignes obliques */
+.pf-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+        -55deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,0.025) 40px,
+        rgba(255,255,255,0.025) 41px
+    );
+}
+
+.pf-hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 110px 8% 100px;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 80px;
+    align-items: center;
+}
+
+.pf-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--pf-yellow);
+    margin-bottom: 24px;
+}
+
+.pf-hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(3rem, 5.5vw, 5.5rem);
+    font-weight: 900;
+    color: var(--pf-white);
+    line-height: 1.0;
+    letter-spacing: -3px;
+    margin-bottom: 28px;
+}
+
+.pf-hero-title em {
+    font-style: normal;
+    color: var(--pf-yellow);
+}
+
+.pf-hero-desc {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+    max-width: 520px;
+    border-left: 3px solid var(--pf-yellow);
+    padding-left: 20px;
+}
+
+/* Stats hero droite */
+.pf-hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    padding-left: 50px;
+}
+
+.pf-hero-stat {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.pf-hero-stat:last-child { border-bottom: none; }
+
+.pf-hero-stat-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--pf-yellow);
+    letter-spacing: -2px;
+    line-height: 1;
+    min-width: 80px;
+}
+
+.pf-hero-stat-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+}
+
+/* ============================================================
+   3. LABELS DE SECTION
+   ============================================================ */
+.pf-section-header {
+    padding: 0 8%;
+    margin-bottom: 40px;
+}
+
+.pf-section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: var(--pf-white);
+    border: 1px solid var(--pf-border);
+    border-left: 4px solid var(--pf-blue);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--pf-blue);
+}
+
+.pf-section-label i { color: var(--pf-yellow); font-size: 0.85rem; }
+
+.pf-section-label--alt {
+    border-left-color: #aaa;
+    color: #666;
+}
+.pf-section-label--alt i { color: #aaa; }
+
+/* ============================================================
+   4. SECTION GRILLE
+   ============================================================ */
+.pf-section {
+    padding: 70px 0 90px;
+}
+
+.pf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    padding: 0 8%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   5. CARTES PROJETS
+   ============================================================ */
+.pf-card {
+    background: var(--pf-white);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-top: 4px solid var(--card-color, #eee);
+    transition: transform 0.35s cubic-bezier(0.16,1,0.3,1),
+                box-shadow 0.35s cubic-bezier(0.16,1,0.3,1),
+                background 0.35s ease;
+    overflow: hidden;
+}
+
+/* Barre couleur latérale gauche — signature visuelle */
+.pf-card-color-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--card-color, #003399);
+    transition: width 0.35s cubic-bezier(0.16,1,0.3,1);
+    z-index: 1;
+}
+
+.pf-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.10);
+    background: var(--card-color-light, #f7f9ff);
+    z-index: 2;
+}
+
+.pf-card:hover .pf-card-color-bar {
+    width: 6px;
+}
+
+/* Zone logo */
+.pf-card-logo-zone {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 30px;
+    background-color: var(--pf-bg);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    transition: background 0.35s ease;
+}
+
+.pf-logo-dark {
+    background-color: #111;
+}
+
+.pf-logo-light {
+    background-color: #f7f9fc;
+}
+
+.pf-logo-img {
+    max-width: 85%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.35s ease;
+}
+
+.pf-card:hover .pf-logo-img {
+    transform: scale(1.07);
+}
+
+/* Logo sur fond coloré (Dar-Libtikar) */
+.pf-logo-on-color {
+    filter: brightness(0) invert(1);
+    max-height: 80%;
+}
+
+/* Initiales (JISR) */
+.pf-logo-initials {
+    width: 88px;
+    height: 88px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    transition: transform 0.35s ease;
+}
+
+.pf-card:hover .pf-logo-initials { transform: scale(1.08); }
+
+/* Corps */
+.pf-card-body {
+    padding: 24px 28px 16px;
+    flex: 1;
+}
+
+.pf-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.pf-card-partner {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #8899bb;
+}
+
+.pf-card-year {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pf-card-badge {
+    font-size: 0.62rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 2px 8px;
+    background: rgba(25,4,143,0.1);
+    color: #19048f;
+    border-radius: 2px;
+}
+
+.pf-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--pf-dark);
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+    line-height: 1.15;
+    transition: color 0.3s ease;
+}
+
+.pf-card:hover .pf-card-title {
+    color: var(--card-color, var(--pf-blue));
+}
+
+.pf-card-excerpt {
+    font-size: 0.88rem;
+    color: var(--pf-text);
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+/* Mini stats */
+.pf-card-stats {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.pf-mini-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 12px;
+    background-color: var(--card-color-light, rgba(0,51,153,0.05));
+    border-radius: 4px;
+    border-left: 3px solid var(--card-color, var(--pf-blue));
+}
+
+.pf-mini-stat span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--card-color, var(--pf-dark));
+    line-height: 1;
+}
+
+.pf-mini-stat small {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8899bb;
+    margin-top: 3px;
+}
+
+/* Footer de carte */
+.pf-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 28px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #8899bb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.pf-card-footer i {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.pf-card:hover .pf-card-footer {
+    color: var(--card-color, var(--pf-blue));
+    border-top-color: var(--card-color-light, rgba(0,51,153,0.1));
+}
+
+.pf-card:hover .pf-card-footer i {
+    transform: translateX(6px);
+    color: var(--card-color, var(--pf-blue));
+}
+
+/* ============================================================
+   6. CARTE CONVENTIONS — pleine largeur
+   ============================================================ */
+.pf-card--conventions {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: stretch;
+    border-top: 4px solid var(--pf-blue);
+}
+
+.pf-card--conventions:hover {
+    transform: translateY(-4px);
+}
+
+.pf-conventions-inner {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 40px;
+    width: 100%;
+}
+
+.pf-conventions-icon {
+    font-size: 3.5rem;
+    color: var(--pf-yellow);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.pf-card--conventions:hover .pf-conventions-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.pf-conventions-body {
+    flex: 1;
+}
+
+.pf-conventions-body .pf-card-title {
+    font-size: 1.6rem;
+    margin: 6px 0 10px;
+}
+
+.pf-conventions-body p {
+    font-size: 0.9rem;
+    color: var(--pf-text);
+    line-height: 1.65;
+    margin: 0;
+    max-width: 700px;
+}
+
+.pf-conventions-cta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--pf-blue);
+    flex-shrink: 0;
+    padding: 18px 30px;
+    border: 2px solid rgba(0,51,153,0.2);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.pf-card--conventions:hover .pf-conventions-cta {
+    background: var(--pf-blue);
+    color: var(--pf-white);
+    border-color: var(--pf-blue);
+    gap: 18px;
+}
+
+.pf-card--conventions:hover .pf-conventions-cta i {
+    transform: translateX(4px);
+}
+
+/* ============================================================
+   7. SECTION ACCORDÉONS
+   ============================================================ */
+.pf-acc-section {
+    padding: 50px 0 100px;
+    background: var(--pf-white);
+    border-top: 1px solid var(--pf-border);
+}
+
+.pf-acc-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+/* Item accordéon */
+.pf-acc-item {
+    background: var(--pf-white);
+    border: 1px solid var(--pf-border);
+    border-left: 4px solid #ddd;
+    overflow: hidden;
+    transition: border-left-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pf-acc-item.pf-open {
+    border-left-color: var(--acc-color, #003399);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* Trigger */
+.pf-acc-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    gap: 20px;
+    transition: background 0.2s ease;
+}
+
+.pf-acc-trigger:hover { background: #fafbfe; }
+
+.pf-acc-trigger-left {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* Miniature logo */
+.pf-acc-thumb {
+    width: 80px;
+    height: 55px;
+    min-width: 80px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.pf-acc-thumb img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(60%);
+    transition: filter 0.3s ease;
+}
+
+.pf-acc-item.pf-open .pf-acc-thumb img,
+.pf-acc-trigger:hover .pf-acc-thumb img { filter: grayscale(0%); }
+
+/* Drapeau miniature */
+.pf-acc-thumb--flag {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.pf-acc-thumb--flag span { flex: 1; }
+
+.pf-acc-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.pf-acc-info strong {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--pf-dark);
+    letter-spacing: -0.3px;
+}
+
+.pf-acc-info span {
+    font-size: 0.8rem;
+    color: #8899bb;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.pf-acc-trigger-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+}
+
+.pf-acc-tag {
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 11px;
+    border: 1px solid;
+    border-radius: 2px;
+    background: transparent;
+}
+
+.pf-acc-chevron {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f0f4f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.pf-acc-chevron i {
+    font-size: 0.75rem;
+    color: #718096;
+    transition: color 0.3s ease;
+}
+
+.pf-acc-item.pf-open .pf-acc-chevron {
+    transform: none;
+}
+
+/* Contenu accordéon */
+.pf-acc-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.16,1,0.3,1);
+}
+
+.pf-acc-inner {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 45px;
+    padding: 35px 30px 45px;
+    border-top: 1px solid var(--pf-border);
+    align-items: start;
+}
+
+/* Panel logo dans le contenu */
+.pf-acc-logo-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 28px 20px 20px;
+    border: 1px solid;
+    gap: 16px;
+    min-height: 160px;
+}
+
+.pf-acc-logo-panel img {
+    max-width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+}
+
+.pf-acc-logo-caption {
+    display: flex;
+    justify-content: center;
+}
+
+.pf-acc-logo-caption span {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 2px;
+}
+
+/* Drapeau grand dans le panel */
+.pf-flag-display {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.pf-flag-display span { flex: 1; }
+
+/* Texte du contenu */
+.pf-acc-text h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--pf-dark);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.pf-acc-text p {
+    font-size: 1rem;
+    color: var(--pf-text);
+    line-height: 1.75;
+    margin-bottom: 14px;
+}
+
+.pf-acc-text p:last-of-type { margin-bottom: 0; }
+.pf-acc-text strong { color: var(--pf-dark); }
+
+/* Stats dans le contenu accordéon */
+.pf-acc-stats {
+    display: flex;
+    gap: 14px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.pf-acc-stat {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 18px 18px;
+    border-radius: 6px;
+    border-left: 4px solid;
+}
+
+.pf-acc-stat i { font-size: 1.1rem; opacity: 0.7; margin-bottom: 4px; }
+
+.pf-acc-stat b {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 900;
+    color: var(--pf-dark);
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.pf-acc-stat small {
+    font-size: 0.78rem;
+    color: var(--pf-text);
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+/* ============================================================
+   8. RESPONSIVE
+   ============================================================ */
+@media (max-width: 1200px) {
+    .pf-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 1024px) {
+    .pf-hero-inner { grid-template-columns: 1fr; gap: 50px; }
+    .pf-hero-right {
+        flex-direction: row;
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-left: 0;
+        padding-top: 35px;
+        justify-content: space-around;
+    }
+    .pf-hero-stat { flex-direction: column; gap: 6px; text-align: center; border-bottom: none; padding: 0; }
+    .pf-acc-inner { grid-template-columns: 1fr; gap: 25px; }
+    .pf-acc-logo-panel { flex-direction: row; min-height: auto; padding: 18px; }
+    .pf-acc-logo-panel img { max-height: 60px; max-width: 120px; }
+    .pf-flag-display { width: 80px; height: 50px; flex: none; }
+}
+
+@media (max-width: 768px) {
+    .pf-grid { grid-template-columns: 1fr; }
+    .pf-grid, .pf-section { padding-left: 5%; padding-right: 5%; }
+    .pf-section-header, .pf-acc-container { padding-left: 5%; padding-right: 5%; }
+
+    .pf-card--conventions { grid-column: auto; }
+    .pf-conventions-inner { flex-direction: column; gap: 20px; padding: 28px 24px; }
+    .pf-conventions-cta { width: 100%; justify-content: center; }
+
+    .pf-acc-trigger { padding: 18px 20px; gap: 12px; }
+    .pf-acc-thumb { width: 60px; height: 45px; }
+    .pf-acc-info strong { font-size: 1rem; }
+    .pf-acc-tag { display: none; }
+    .pf-acc-inner { padding: 22px 18px 30px; }
+    .pf-acc-stats { flex-direction: column; }
+    .pf-acc-stat { min-width: unset; }
+
+    .pf-hero-title { font-size: 3rem; letter-spacing: -1px; }
+    .pf-hero-inner { padding: 80px 5% 70px; }
+    .pf-hero-right { flex-wrap: wrap; gap: 30px; }
+}
+
+@media (max-width: 480px) {
+    .pf-acc-logo-panel { display: none; }
+    .pf-card-logo-zone { height: 110px; }
+}
