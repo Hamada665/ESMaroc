@@ -1,0 +1,618 @@
+/* ============================================================
+   RAPPORTS.CSS — Styles spécifiques à la page rapports.html
+   Les styles du header, footer et variables CSS globales
+   sont gérés par style.css (déjà chargé en premier dans le HTML)
+   ============================================================ */
+
+
+/* ============================================================
+   SECTION 1 : HERO RAPPORTS
+   ============================================================ */
+.rapports-hero {
+    background-color: var(--bg-light);
+    padding: 80px 5% 90px;
+    display: flex;
+    justify-content: center;
+}
+
+.rapports-hero .hero-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.rapports-hero .soft-frame {
+    max-width: 760px;
+}
+
+.hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--text-light);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-eyebrow i {
+    color: var(--yellow);
+}
+
+.rapports-hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 800;
+    color: var(--blue);
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.rapports-hero .subtitle {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    line-height: 1.75;
+    max-width: 640px;
+    margin-bottom: 48px;
+}
+
+/* ── Stats en bas du hero ── */
+.hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border-top: 1.5px solid rgba(0, 43, 149, 0.12);
+    padding-top: 36px;
+    width: fit-content;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0 36px 0 0;
+}
+
+.stat-item:first-child {
+    padding-left: 0;
+}
+
+.stat-number {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--blue);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--text-light);
+    margin-top: 6px;
+}
+
+.stat-divider {
+    width: 1.5px;
+    height: 40px;
+    background: rgba(0, 43, 149, 0.12);
+    margin-right: 36px;
+    flex-shrink: 0;
+}
+
+
+/* ============================================================
+   SECTION 2 : INTRO
+   ============================================================ */
+.rapports-intro {
+    padding: 80px 5%;
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 43, 149, 0.07);
+}
+
+.intro-container {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 60px;
+    align-items: center;
+}
+
+.intro-content h2 {
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 800;
+    color: var(--blue);
+    line-height: 1.3;
+    margin-bottom: 22px;
+}
+
+.intro-content h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--yellow);
+    margin-top: 14px;
+}
+
+.intro-content p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    max-width: 680px;
+}
+
+.intro-accent {
+    flex-shrink: 0;
+}
+
+.accent-icon {
+    width: 90px;
+    height: 90px;
+    background: var(--bg-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: var(--blue);
+    border: 3px solid rgba(0, 43, 149, 0.1);
+}
+
+
+/* ============================================================
+   SECTION 3 : GRILLE DES RAPPORTS
+   ============================================================ */
+.rapports-grid-section {
+    padding: 90px 5% 100px;
+    background: var(--bg-light);
+    display: flex;
+    justify-content: center;
+}
+
+.rapports-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* ── En-tête de section ── */
+.section-header {
+    margin-bottom: 50px;
+}
+
+.section-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--text-light);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-eyebrow i {
+    color: var(--yellow);
+}
+
+.section-header h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    color: var(--blue);
+}
+
+.section-header h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--yellow);
+    margin-top: 14px;
+}
+
+/* ── Grille des cartes : 2 colonnes, dernier centré si impair ── */
+.rapports-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+/* La carte "featured" (2022) occupe toute la largeur en haut */
+.rapport-card.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 0;
+}
+
+/* ── Carte rapport standard ── */
+.rapport-card {
+    background: var(--white);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 43, 149, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 16px rgba(0, 43, 149, 0.04);
+}
+
+.rapport-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 43, 149, 0.12);
+    border-color: rgba(0, 43, 149, 0.2);
+}
+
+/* ── Zone couverture (mockup CSS fidèle au vrai rapport) ── */
+.rapport-card-cover {
+    position: relative;
+    background: #3d3d3d;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    flex-shrink: 0;
+}
+
+.rapport-card.featured .rapport-card-cover {
+    aspect-ratio: auto;
+    min-height: 340px;
+}
+
+.cover-mockup {
+    position: absolute;
+    inset: 0;
+    background: #3a3a3a;
+    display: flex;
+    flex-direction: column;
+    padding: 22px 20px 20px;
+    overflow: hidden;
+}
+
+/* ── Bande jaune verticale gauche ── */
+.cover-stripe {
+    position: absolute;
+    left: 48px;
+    top: 0;
+    bottom: 0;
+    width: 28px;
+    background: var(--yellow);
+    z-index: 1;
+}
+
+/* ── Logo en haut à droite ── */
+.cover-logo-area {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    text-align: right;
+    z-index: 2;
+}
+
+.cover-logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--white);
+    display: block;
+    line-height: 1;
+}
+
+.cover-logo-text span {
+    color: var(--yellow);
+}
+
+.cover-logo-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.48rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.55);
+    display: block;
+    margin-top: 3px;
+    text-transform: uppercase;
+}
+
+/* ── Bloc titre "RAPPORT ANNUEL / DES ACTIVITÉS" ── */
+.cover-title-block {
+    position: absolute;
+    left: 88px;
+    top: 50%;
+    transform: translateY(-60%);
+    z-index: 2;
+}
+
+.cover-rapport {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    margin: 0 0 8px;
+}
+
+.cover-activites {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--white);
+    background: var(--yellow);
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 0;
+}
+
+/* ── Icône décorative (bas gauche) ── */
+.cover-icon-zone {
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    z-index: 2;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover-icon {
+    font-size: 1.8rem;
+    color: rgba(255,255,255,0.18);
+}
+
+/* ── Bande d'année en bas ── */
+.cover-year-band {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.35);
+    padding: 10px 20px 10px 88px;
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    z-index: 2;
+}
+
+.cover-year-band span:first-child {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+}
+
+.cover-edition {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.6);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    padding-bottom: 2px;
+}
+
+/* ── Badge "Dernière édition" ── */
+.rapport-badge-latest {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--yellow);
+    color: var(--text-dark);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 3;
+}
+
+/* ── Corps de la carte ── */
+.rapport-card-body {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.rapport-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.rapport-year-tag {
+    background: rgba(0, 43, 149, 0.08);
+    color: var(--blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 2px;
+}
+
+.rapport-pages {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.rapport-card-body h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.rapport-card.featured .rapport-card-body h3 {
+    font-size: 1.5rem;
+}
+
+.rapport-card-body p {
+    font-size: 0.92rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 28px;
+}
+
+/* ── Bouton téléchargement ── */
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--blue);
+    color: var(--white);
+    text-decoration: none;
+    padding: 13px 24px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.btn-download:hover {
+    background: #002277;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 43, 149, 0.25);
+}
+
+.rapport-card.featured .btn-download {
+    padding: 15px 30px;
+    font-size: 0.95rem;
+}
+
+
+/* ============================================================
+   SECTION 4 : CTA CONTACT
+   ============================================================ */
+.rapports-cta {
+    padding: 90px 5%;
+    background: var(--blue);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.cta-container {
+    max-width: 560px;
+}
+
+.cta-icon {
+    font-size: 2.8rem;
+    color: var(--yellow);
+    margin-bottom: 22px;
+}
+
+.rapports-cta h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+
+.rapports-cta p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    margin-bottom: 36px;
+}
+
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--yellow);
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 16px 36px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+    background: #f0c800;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.2);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1000px) {
+    .rapport-card.featured {
+        grid-template-columns: 260px 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .rapports-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rapport-card.featured {
+        grid-column: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .rapport-card.featured .rapport-card-cover {
+        aspect-ratio: 3 / 2;
+        min-height: unset;
+    }
+
+    .intro-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .accent-icon {
+        display: none;
+    }
+
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .stat-divider {
+        display: none;
+    }
+
+    .stat-item {
+        padding: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .rapports-hero {
+        padding: 60px 5% 70px;
+    }
+
+    .cover-rapport {
+        font-size: 1.15rem;
+    }
+
+    .rapport-card-body {
+        padding: 24px;
+    }
+}
