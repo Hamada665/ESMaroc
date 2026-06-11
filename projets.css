@@ -1,56 +1,46 @@
 /* ==========================================================================
-   PAGE PROJETS — PORTFOLIO MAGAZINE
+   PAGE PROJETS — PORTFOLIO MAGAZINE v2
    Cohérent avec la charte ESMaroc : bleu #003399, jaune #e0ab00
    ========================================================================== */
 
 :root {
-    --pf-blue:      #003399;
-    --pf-yellow:    #e0ab00;
-    --pf-dark:      #0a1628;
-    --pf-text:      #4a5568;
-    --pf-bg:        #f7f9fc;
-    --pf-white:     #ffffff;
-    --pf-border:    rgba(0,51,153,0.09);
+    --pf-blue:   #003399;
+    --pf-yellow: #e0ab00;
+    --pf-dark:   #0a1628;
+    --pf-text:   #4a5568;
+    --pf-bg:     #f7f9fc;
+    --pf-white:  #ffffff;
+    --pf-border: rgba(0,51,153,0.09);
 }
 
 /* ============================================================
    1. LAYOUT
    ============================================================ */
-.pf-layout {
-    background-color: var(--pf-bg);
-}
+.pf-layout { background-color: var(--pf-bg); }
 
 /* ============================================================
-   2. HERO — Split : texte gauche / stats droite
+   2. HERO
    ============================================================ */
 .pf-hero {
     position: relative;
     background-color: var(--pf-dark);
     overflow: hidden;
 }
-
 .pf-hero-bg {
     position: absolute;
     inset: 0;
-    background:
-        linear-gradient(135deg, #0a1628 0%, #001a5c 50%, #003399 100%);
+    background: linear-gradient(135deg, #0a1628 0%, #001a5c 50%, #003399 100%);
     pointer-events: none;
 }
-
-/* Motif subtil de lignes obliques */
 .pf-hero-bg::after {
     content: '';
     position: absolute;
     inset: 0;
     background-image: repeating-linear-gradient(
-        -55deg,
-        transparent,
-        transparent 40px,
-        rgba(255,255,255,0.025) 40px,
-        rgba(255,255,255,0.025) 41px
+        -55deg, transparent, transparent 40px,
+        rgba(255,255,255,0.025) 40px, rgba(255,255,255,0.025) 41px
     );
 }
-
 .pf-hero-inner {
     position: relative;
     z-index: 2;
@@ -62,7 +52,6 @@
     gap: 80px;
     align-items: center;
 }
-
 .pf-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -74,7 +63,6 @@
     color: var(--pf-yellow);
     margin-bottom: 24px;
 }
-
 .pf-hero-title {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(3rem, 5.5vw, 5.5rem);
@@ -84,12 +72,7 @@
     letter-spacing: -3px;
     margin-bottom: 28px;
 }
-
-.pf-hero-title em {
-    font-style: normal;
-    color: var(--pf-yellow);
-}
-
+.pf-hero-title em { font-style: normal; color: var(--pf-yellow); }
 .pf-hero-desc {
     font-size: 1.1rem;
     color: rgba(255,255,255,0.65);
@@ -107,7 +90,6 @@
     border-left: 1px solid rgba(255,255,255,0.1);
     padding-left: 50px;
 }
-
 .pf-hero-stat {
     display: flex;
     align-items: center;
@@ -115,8 +97,24 @@
     padding: 28px 0;
     border-bottom: 1px solid rgba(255,255,255,0.07);
 }
-
 .pf-hero-stat:last-child { border-bottom: none; }
+
+/* Stats cliquables */
+.pf-hero-stat--link {
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 20px 16px;
+    margin: 4px -16px;
+    border-bottom: 1px solid rgba(255,255,255,0.07) !important;
+    transition: background 0.25s ease;
+    width: calc(100% + 32px);
+}
+.pf-hero-stat--link:last-child { border-bottom: none !important; }
+.pf-hero-stat--link:hover { background: rgba(255,255,255,0.06); }
 
 .pf-hero-stat-num {
     font-family: 'Montserrat', sans-serif;
@@ -125,26 +123,165 @@
     color: var(--pf-yellow);
     letter-spacing: -2px;
     line-height: 1;
-    min-width: 80px;
+    min-width: 85px;
 }
-
 .pf-hero-stat-label {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     color: rgba(255,255,255,0.45);
     line-height: 1.5;
+    flex: 1;
+    text-align: left;
+}
+.pf-stat-hint {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.2);
+    transition: color 0.25s ease, transform 0.25s ease;
+    display: flex;
+    align-items: center;
+}
+.pf-hero-stat--link:hover .pf-stat-hint {
+    color: var(--pf-yellow);
+    transform: translateY(2px);
+}
+.pf-hero-stat--btn { text-align: left; }
+
+/* ============================================================
+   3. MODALE CONTINENTS
+   ============================================================ */
+.pf-continents-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+.pf-continents-modal.pf-modal-open {
+    pointer-events: all;
+    opacity: 1;
+}
+.pf-continents-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 10, 30, 0.85);
+    backdrop-filter: blur(4px);
+}
+.pf-continents-panel {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(145deg, #0a1628, #001a5c);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 55px 60px;
+    max-width: 1000px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: translateY(30px) scale(0.97);
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.pf-continents-modal.pf-modal-open .pf-continents-panel {
+    transform: translateY(0) scale(1);
+}
+.pf-continents-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: rgba(255,255,255,0.08);
+    border: none;
+    color: rgba(255,255,255,0.6);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s;
+    display: flex; align-items: center; justify-content: center;
+}
+.pf-continents-close:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+.pf-continents-header {
+    margin-bottom: 45px;
+}
+.pf-continents-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--pf-white);
+    letter-spacing: -2px;
+    line-height: 1.05;
+    margin: 14px 0 12px;
+}
+.pf-continents-header h2 em { font-style: normal; color: var(--pf-yellow); }
+.pf-continents-header p { font-size: 1rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+.pf-continents-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.pf-continent-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+.pf-continent-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(224,171,0,0.3);
+}
+.pf-continent-map {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.2);
+    padding: 10px;
+}
+.pf-map-svg { width: 100%; height: 100%; }
+.pf-continent-info { padding: 20px 22px; }
+.pf-continent-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--pf-white);
+    display: block;
+    margin-bottom: 6px;
+}
+.pf-continent-info p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+}
+.pf-continent-projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.pf-continent-projects span {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 9px;
+    background: rgba(224,171,0,0.12);
+    color: var(--pf-yellow);
+    border-radius: 2px;
+    border: 1px solid rgba(224,171,0,0.2);
 }
 
 /* ============================================================
-   3. LABELS DE SECTION
+   4. LABELS DE SECTION
    ============================================================ */
-.pf-section-header {
-    padding: 0 8%;
-    margin-bottom: 40px;
-}
-
+.pf-section-header { padding: 0 8%; margin-bottom: 40px; }
 .pf-section-label {
     display: inline-flex;
     align-items: center;
@@ -159,22 +296,14 @@
     letter-spacing: 2px;
     color: var(--pf-blue);
 }
-
 .pf-section-label i { color: var(--pf-yellow); font-size: 0.85rem; }
-
-.pf-section-label--alt {
-    border-left-color: #aaa;
-    color: #666;
-}
+.pf-section-label--alt { border-left-color: #aaa; color: #666; }
 .pf-section-label--alt i { color: #aaa; }
 
 /* ============================================================
-   4. SECTION GRILLE
+   5. GRILLE
    ============================================================ */
-.pf-section {
-    padding: 70px 0 90px;
-}
-
+.pf-section { padding: 70px 0 90px; }
 .pf-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -185,7 +314,7 @@
 }
 
 /* ============================================================
-   5. CARTES PROJETS
+   6. CARTES
    ============================================================ */
 .pf-card {
     background: var(--pf-white);
@@ -199,213 +328,261 @@
                 background 0.35s ease;
     overflow: hidden;
 }
-
-/* Barre couleur latérale gauche — signature visuelle */
 .pf-card-color-bar {
     position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
+    left: 0; top: 0; bottom: 0;
     width: 4px;
     background-color: var(--card-color, #003399);
     transition: width 0.35s cubic-bezier(0.16,1,0.3,1);
     z-index: 1;
 }
-
 .pf-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 20px 50px rgba(0,0,0,0.10);
     background: var(--card-color-light, #f7f9ff);
     z-index: 2;
 }
+.pf-card:hover .pf-card-color-bar { width: 6px; }
 
-.pf-card:hover .pf-card-color-bar {
-    width: 6px;
-}
-
-/* Zone logo */
+/* Zone logo commune */
 .pf-card-logo-zone {
-    height: 140px;
+    height: 155px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 25px 30px;
     background-color: var(--pf-bg);
     border-bottom: 1px solid rgba(0,0,0,0.04);
+    overflow: hidden;
+    position: relative;
     transition: background 0.35s ease;
 }
-
-.pf-logo-dark {
-    background-color: #111;
-}
-
-.pf-logo-light {
-    background-color: #f7f9fc;
-}
-
 .pf-logo-img {
-    max-width: 85%;
+    max-width: 75%;
     max-height: 100%;
     object-fit: contain;
     transition: transform 0.35s ease;
 }
+.pf-card:hover .pf-logo-img { transform: scale(1.07); }
 
-.pf-card:hover .pf-logo-img {
-    transform: scale(1.07);
+/* --- UPSHIFT : fond noir, cityline en bas --- */
+.pf-logo-city-bg {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 40'%3E%3Cpath d='M0,40 L0,25 L20,25 L20,15 L35,15 L35,25 L50,25 L50,10 L65,10 L65,25 L80,25 L80,20 L90,20 L90,25 L110,25 L110,15 L125,15 L125,8 L140,8 L140,15 L155,15 L155,25 L170,25 L170,18 L180,18 L180,25 L200,25 L200,12 L215,12 L215,25 L230,25 L230,20 L245,20 L245,25 L260,25 L260,10 L275,10 L275,25 L290,25 L290,15 L305,15 L305,25 L320,25 L320,8 L335,8 L335,25 L350,25 L350,18 L365,18 L365,25 L380,25 L380,25 L400,25 L400,40 Z' fill='rgba(255,255,255,0.06)'/%3E%3C/svg%3E");
+    background-size: cover;
+    pointer-events: none;
 }
 
-/* Logo sur fond coloré (Dar-Libtikar) */
-.pf-logo-on-color {
-    filter: brightness(0) invert(1);
-    max-height: 80%;
+/* --- NAWAT : cercles animés --- */
+.pf-logo-nawat {
+    background: linear-gradient(135deg, #e8f6fa, #f0fafd);
+    position: relative;
 }
-
-/* Initiales (JISR) */
-.pf-logo-initials {
-    width: 88px;
-    height: 88px;
-    border-radius: 8px;
+.pf-nawat-rings {
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
+    pointer-events: none;
+}
+.pf-nawat-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid rgba(20,132,161,0.2);
+    animation: nawat-pulse 3s ease-in-out infinite;
+}
+.pf-nawat-ring--1 { width: 80px;  height: 80px;  animation-delay: 0s; }
+.pf-nawat-ring--2 { width: 120px; height: 120px; animation-delay: 0.6s; border-color: rgba(20,132,161,0.12); }
+.pf-nawat-ring--3 { width: 160px; height: 160px; animation-delay: 1.2s; border-color: rgba(20,132,161,0.07); }
+@keyframes nawat-pulse {
+    0%,100% { transform: scale(1); opacity: 1; }
+    50%      { transform: scale(1.08); opacity: 0.6; }
+}
+
+/* --- RESTART : barres diagonales rouges --- */
+.pf-logo-restart {
+    background: linear-gradient(160deg, #fdf5f4, #fff8f7);
+    position: relative;
+}
+.pf-restart-slash {
+    position: absolute;
+    width: 5px;
+    border-radius: 3px;
+    height: 200px;
+    background: linear-gradient(to bottom, rgba(211,85,70,0.25), transparent);
+    transform: rotate(20deg);
+    pointer-events: none;
+}
+.pf-restart-slash--1 { right: 22%; top: -40px; width: 3px; }
+.pf-restart-slash--2 { right: 14%; top: -20px; width: 5px; opacity: 0.5; }
+
+/* --- AVEC LES JEUNES : fond indigo + dots orange --- */
+.pf-logo-jeunes {
+    background: linear-gradient(135deg, #f4f2fd, #eeeafb);
+    position: relative;
+}
+.pf-jeunes-dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(241,137,30,0.2) 1.5px, transparent 1.5px);
+    background-size: 22px 22px;
+    background-position: 11px 11px;
+    pointer-events: none;
+}
+
+/* --- FLOWER : fond vert sombre + feuilles --- */
+.pf-logo-flower {
+    background: linear-gradient(135deg, #f0faf8, #e6f7f4);
+    position: relative;
+}
+.pf-flower-leaf {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 0 80% 0 80%;
+    opacity: 0.12;
+    pointer-events: none;
+}
+.pf-flower-leaf--1 { background: #056678; bottom: -20px; right: -15px; transform: rotate(20deg); }
+.pf-flower-leaf--2 { background: #51b946; top: -20px;    left:  -15px; transform: rotate(200deg); }
+
+/* --- OIM MIGRATION : fond bleu ONU + cercle globe --- */
+.pf-logo-oim {
+    background: linear-gradient(135deg, #eef2fc, #e8eef9);
+    position: relative;
+}
+.pf-oim-globe {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 50% 50%, rgba(0,51,160,0.06) 0%, transparent 65%);
+    pointer-events: none;
+}
+.pf-oim-globe::after {
+    content: '\f57d';
+    font-family: 'Font Awesome 6 Free';
     font-weight: 900;
-    letter-spacing: 1px;
-    transition: transform 0.35s ease;
+    position: absolute;
+    font-size: 7rem;
+    color: rgba(0,51,160,0.05);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
 }
 
-.pf-card:hover .pf-logo-initials { transform: scale(1.08); }
-
-/* Corps */
-.pf-card-body {
-    padding: 24px 28px 16px;
-    flex: 1;
+/* --- JISR : fond jaune plein --- */
+.pf-jisr-bg {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 18px,
+        rgba(0,0,0,0.04) 18px,
+        rgba(0,0,0,0.04) 19px
+    );
+    pointer-events: none;
+}
+.pf-jisr-text {
+    position: relative;
+    z-index: 2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: rgba(0,0,0,0.75);
+    letter-spacing: -2px;
+    line-height: 1;
 }
 
-.pf-card-meta {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
+/* --- DAR-LIBTIKAR : logo grand sur fond orange --- */
+.pf-logo-libtikar {
+    background: linear-gradient(135deg, #ef8951, #f5a978);
+    padding: 15px 20px;
+}
+.pf-logo-libtikar-big {
+    max-width: 88% !important;
+    max-height: 92% !important;
+    object-fit: contain;
+    filter: brightness(0) invert(1) !important;
+    drop-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
+/* --- DAPP : bandes couleurs Dano-Arabe --- */
+.pf-logo-dapp {
+    background: linear-gradient(160deg, #fdf8f5, #faf3ee);
+    position: relative;
+}
+.pf-dapp-stripe {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 6px;
+    border-radius: 3px;
+    opacity: 0.35;
+    pointer-events: none;
+}
+.pf-dapp-stripe--1 { background: #ba4919; right: 28%; }
+.pf-dapp-stripe--2 { background: #00a19c; right: 20%; width: 4px; opacity: 0.25; }
+.pf-dapp-stripe--3 { background: #222220; right: 14%; width: 3px; opacity: 0.15; }
+
+/* Corps carte */
+.pf-card-body { padding: 24px 28px 16px; flex: 1; }
+.pf-card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
 .pf-card-partner {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: #8899bb;
+    font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.2px; color: #8899bb;
 }
-
-.pf-card-year {
-    font-size: 0.68rem;
-    font-weight: 600;
-    color: #bbb;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
+.pf-card-year { font-size: 0.68rem; font-weight: 600; color: #bbb; text-transform: uppercase; letter-spacing: 1px; }
 .pf-card-badge {
-    font-size: 0.62rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    padding: 2px 8px;
-    background: rgba(25,4,143,0.1);
-    color: #19048f;
-    border-radius: 2px;
+    font-size: 0.62rem; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 1.5px; padding: 2px 8px;
+    background: rgba(25,4,143,0.1); color: #19048f; border-radius: 2px;
 }
-
 .pf-card-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 900;
-    color: var(--pf-dark);
-    letter-spacing: -0.5px;
-    margin-bottom: 10px;
-    line-height: 1.15;
+    font-size: 1.4rem; font-weight: 900;
+    color: var(--pf-dark); letter-spacing: -0.5px;
+    margin-bottom: 10px; line-height: 1.15;
     transition: color 0.3s ease;
 }
-
-.pf-card:hover .pf-card-title {
-    color: var(--card-color, var(--pf-blue));
-}
-
-.pf-card-excerpt {
-    font-size: 0.88rem;
-    color: var(--pf-text);
-    line-height: 1.6;
-    margin-bottom: 18px;
-}
+.pf-card:hover .pf-card-title { color: var(--card-color, var(--pf-blue)); }
+.pf-card-excerpt { font-size: 0.88rem; color: var(--pf-text); line-height: 1.6; margin-bottom: 18px; }
 
 /* Mini stats */
-.pf-card-stats {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
+.pf-card-stats { display: flex; gap: 10px; flex-wrap: wrap; }
 .pf-mini-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex; flex-direction: column; align-items: flex-start;
     padding: 8px 12px;
     background-color: var(--card-color-light, rgba(0,51,153,0.05));
     border-radius: 4px;
     border-left: 3px solid var(--card-color, var(--pf-blue));
 }
-
 .pf-mini-stat span {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: var(--card-color, var(--pf-dark));
-    line-height: 1;
+    font-size: 1.15rem; font-weight: 800;
+    color: var(--card-color, var(--pf-dark)); line-height: 1;
 }
-
 .pf-mini-stat small {
-    font-size: 0.65rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #8899bb;
-    margin-top: 3px;
+    font-size: 0.65rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1px; color: #8899bb; margin-top: 3px;
 }
 
-/* Footer de carte */
+/* Footer carte */
 .pf-card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; align-items: center; justify-content: space-between;
     padding: 16px 28px;
     border-top: 1px solid rgba(0,0,0,0.05);
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: #8899bb;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 0.82rem; font-weight: 700;
+    color: #8899bb; text-transform: uppercase; letter-spacing: 1px;
     transition: all 0.3s ease;
 }
-
-.pf-card-footer i {
-    font-size: 0.75rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.pf-card:hover .pf-card-footer {
-    color: var(--card-color, var(--pf-blue));
-    border-top-color: var(--card-color-light, rgba(0,51,153,0.1));
-}
-
-.pf-card:hover .pf-card-footer i {
-    transform: translateX(6px);
-    color: var(--card-color, var(--pf-blue));
-}
+.pf-card-footer i { font-size: 0.75rem; transition: transform 0.3s ease, color 0.3s ease; }
+.pf-card:hover .pf-card-footer { color: var(--card-color, var(--pf-blue)); }
+.pf-card:hover .pf-card-footer i { transform: translateX(6px); color: var(--card-color, var(--pf-blue)); }
 
 /* ============================================================
-   6. CARTE CONVENTIONS — pleine largeur
+   7. CARTE CONVENTIONS — pleine largeur
    ============================================================ */
 .pf-card--conventions {
     grid-column: 1 / -1;
@@ -413,93 +590,43 @@
     align-items: stretch;
     border-top: 4px solid var(--pf-blue);
 }
-
-.pf-card--conventions:hover {
-    transform: translateY(-4px);
-}
-
+.pf-card--conventions:hover { transform: translateY(-4px); }
 .pf-conventions-inner {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding: 40px 40px;
-    width: 100%;
+    display: flex; align-items: center; gap: 40px;
+    padding: 40px; width: 100%;
 }
-
 .pf-conventions-icon {
-    font-size: 3.5rem;
-    color: var(--pf-yellow);
-    flex-shrink: 0;
+    font-size: 3.5rem; color: var(--pf-yellow); flex-shrink: 0;
     transition: transform 0.3s ease;
 }
-
-.pf-card--conventions:hover .pf-conventions-icon {
-    transform: scale(1.1) rotate(-5deg);
-}
-
-.pf-conventions-body {
-    flex: 1;
-}
-
-.pf-conventions-body .pf-card-title {
-    font-size: 1.6rem;
-    margin: 6px 0 10px;
-}
-
-.pf-conventions-body p {
-    font-size: 0.9rem;
-    color: var(--pf-text);
-    line-height: 1.65;
-    margin: 0;
-    max-width: 700px;
-}
-
+.pf-card--conventions:hover .pf-conventions-icon { transform: scale(1.1) rotate(-5deg); }
+.pf-conventions-body { flex: 1; }
+.pf-conventions-body .pf-card-title { font-size: 1.6rem; margin: 6px 0 10px; }
+.pf-conventions-body p { font-size: 0.9rem; color: var(--pf-text); line-height: 1.65; margin: 0; max-width: 700px; }
 .pf-conventions-cta {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.85rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--pf-blue);
-    flex-shrink: 0;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--pf-blue); flex-shrink: 0;
     padding: 18px 30px;
-    border: 2px solid rgba(0,51,153,0.2);
-    border-radius: 3px;
+    border: 2px solid rgba(0,51,153,0.2); border-radius: 3px;
     transition: all 0.3s ease;
 }
-
 .pf-card--conventions:hover .pf-conventions-cta {
-    background: var(--pf-blue);
-    color: var(--pf-white);
-    border-color: var(--pf-blue);
-    gap: 18px;
-}
-
-.pf-card--conventions:hover .pf-conventions-cta i {
-    transform: translateX(4px);
+    background: var(--pf-blue); color: var(--pf-white); border-color: var(--pf-blue); gap: 18px;
 }
 
 /* ============================================================
-   7. SECTION ACCORDÉONS
+   8. SECTION ACCORDÉONS
    ============================================================ */
 .pf-acc-section {
     padding: 50px 0 100px;
     background: var(--pf-white);
     border-top: 1px solid var(--pf-border);
 }
-
 .pf-acc-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 8%;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
+    max-width: 1400px; margin: 0 auto; padding: 0 8%;
+    display: flex; flex-direction: column; gap: 3px;
 }
-
-/* Item accordéon */
 .pf-acc-item {
     background: var(--pf-white);
     border: 1px solid var(--pf-border);
@@ -507,302 +634,176 @@
     overflow: hidden;
     transition: border-left-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 .pf-acc-item.pf-open {
     border-left-color: var(--acc-color, #003399);
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
-
-/* Trigger */
 .pf-acc-trigger {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 30px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    text-align: left;
-    gap: 20px;
+    width: 100%; display: flex; justify-content: space-between; align-items: center;
+    padding: 24px 30px; background: none; border: none; cursor: pointer;
+    font-family: 'Montserrat', sans-serif; text-align: left; gap: 20px;
     transition: background 0.2s ease;
 }
-
 .pf-acc-trigger:hover { background: #fafbfe; }
+.pf-acc-trigger-left { display: flex; align-items: center; gap: 22px; flex: 1; min-width: 0; }
 
-.pf-acc-trigger-left {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    flex: 1;
-    min-width: 0;
-}
-
-/* Miniature logo */
+/* Miniatures logos accordéons — plus grandes et plus visibles */
 .pf-acc-thumb {
-    width: 80px;
-    height: 55px;
-    min-width: 80px;
-    border-radius: 6px;
-    border: 1px solid #eee;
+    width: 100px;
+    height: 68px;
+    min-width: 100px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.08);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 8px;
-    transition: border-color 0.3s ease;
+    padding: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+.pf-acc-thumb--w4l  { background: #fff8f0; border-color: rgba(234,147,51,0.3); }
+.pf-acc-thumb--giz  { background: #fff5f5; border-color: rgba(241,9,14,0.25); }
 
 .pf-acc-thumb img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 100%; max-height: 100%;
     object-fit: contain;
-    filter: grayscale(60%);
-    transition: filter 0.3s ease;
+    filter: grayscale(30%);
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
-
 .pf-acc-item.pf-open .pf-acc-thumb img,
-.pf-acc-trigger:hover .pf-acc-thumb img { filter: grayscale(0%); }
+.pf-acc-trigger:hover .pf-acc-thumb img { filter: grayscale(0%); transform: scale(1.05); }
 
-/* Drapeau miniature */
-.pf-acc-thumb--flag {
+/* Drapeau italien en miniature — accordéon trigger */
+.pf-acc-thumb--flag-it {
+    width: 100px;
+    height: 68px;
+    min-width: 100px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,146,70,0.3);
     display: flex;
     flex-direction: row;
-    padding: 0;
     overflow: hidden;
-    border-radius: 6px;
-    border: 1px solid #ddd;
+    padding: 0;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
+.pf-acc-thumb--flag-it span { flex: 1; }
+.pf-acc-thumb--flag-it span:nth-child(1) { background: #009246; }
+.pf-acc-thumb--flag-it span:nth-child(2) { background: #ffffff; border-left: 1px solid #eee; border-right: 1px solid #eee; }
+.pf-acc-thumb--flag-it span:nth-child(3) { background: #ce2b37; }
+.pf-acc-item.pf-open .pf-acc-thumb--flag-it,
+.pf-acc-trigger:hover .pf-acc-thumb--flag-it { box-shadow: 0 4px 12px rgba(0,146,70,0.2); }
 
-.pf-acc-thumb--flag span { flex: 1; }
-
-.pf-acc-info {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    min-width: 0;
-}
-
-.pf-acc-info strong {
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: var(--pf-dark);
-    letter-spacing: -0.3px;
-}
-
-.pf-acc-info span {
-    font-size: 0.8rem;
-    color: #8899bb;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-}
-
-.pf-acc-trigger-right {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-shrink: 0;
-}
-
+.pf-acc-info { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.pf-acc-info strong { font-size: 1.15rem; font-weight: 800; color: var(--pf-dark); letter-spacing: -0.3px; }
+.pf-acc-info span { font-size: 0.8rem; color: #8899bb; font-weight: 500; }
+.pf-acc-trigger-right { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
 .pf-acc-tag {
-    font-size: 0.68rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    padding: 4px 11px;
-    border: 1px solid;
-    border-radius: 2px;
-    background: transparent;
+    font-size: 0.68rem; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 1.5px; padding: 4px 11px;
+    border: 1px solid; border-radius: 2px; background: transparent;
 }
-
 .pf-acc-chevron {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+    width: 36px; height: 36px; border-radius: 50%;
     background: #f0f4f8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: background 0.3s ease, transform 0.3s ease;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: background 0.3s ease;
 }
-
-.pf-acc-chevron i {
-    font-size: 0.75rem;
-    color: #718096;
-    transition: color 0.3s ease;
-}
-
-.pf-acc-item.pf-open .pf-acc-chevron {
-    transform: none;
-}
+.pf-acc-chevron i { font-size: 0.75rem; color: #718096; transition: color 0.3s ease; }
 
 /* Contenu accordéon */
-.pf-acc-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.45s cubic-bezier(0.16,1,0.3,1);
-}
-
+.pf-acc-content { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.16,1,0.3,1); }
 .pf-acc-inner {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 45px;
+    display: grid; grid-template-columns: 240px 1fr; gap: 45px;
     padding: 35px 30px 45px;
-    border-top: 1px solid var(--pf-border);
-    align-items: start;
+    border-top: 1px solid var(--pf-border); align-items: start;
 }
-
-/* Panel logo dans le contenu */
 .pf-acc-logo-panel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    padding: 28px 20px 20px;
-    border: 1px solid;
-    gap: 16px;
-    min-height: 160px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    border-radius: 10px; padding: 28px 20px 20px;
+    border: 1px solid; gap: 16px; min-height: 180px;
 }
+.pf-acc-logo-panel img { max-width: 100%; object-fit: contain; }
 
-.pf-acc-logo-panel img {
-    max-width: 100%;
-    max-height: 100px;
-    object-fit: contain;
+/* Grand drapeau dans le panel accordéon */
+.pf-flag-display-big {
+    display: flex; width: 100%; height: 90px;
+    border-radius: 8px; overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
+.pf-flag-display-big span { flex: 1; }
 
-.pf-acc-logo-caption {
-    display: flex;
-    justify-content: center;
-}
-
+.pf-acc-logo-caption { display: flex; justify-content: center; }
 .pf-acc-logo-caption span {
-    font-size: 0.68rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    padding: 4px 12px;
-    border-radius: 2px;
+    font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.5px; padding: 4px 12px; border-radius: 2px;
 }
-
-/* Drapeau grand dans le panel */
-.pf-flag-display {
-    display: flex;
-    width: 100%;
-    height: 70px;
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-.pf-flag-display span { flex: 1; }
-
-/* Texte du contenu */
 .pf-acc-text h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--pf-dark);
-    margin-bottom: 16px;
-    letter-spacing: -0.5px;
-    line-height: 1.2;
+    font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800;
+    color: var(--pf-dark); margin-bottom: 16px; letter-spacing: -0.5px; line-height: 1.2;
 }
-
-.pf-acc-text p {
-    font-size: 1rem;
-    color: var(--pf-text);
-    line-height: 1.75;
-    margin-bottom: 14px;
-}
-
+.pf-acc-text p { font-size: 1rem; color: var(--pf-text); line-height: 1.75; margin-bottom: 14px; }
 .pf-acc-text p:last-of-type { margin-bottom: 0; }
 .pf-acc-text strong { color: var(--pf-dark); }
-
-/* Stats dans le contenu accordéon */
-.pf-acc-stats {
-    display: flex;
-    gap: 14px;
-    margin-top: 24px;
-    flex-wrap: wrap;
-}
-
+.pf-acc-stats { display: flex; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
 .pf-acc-stat {
-    flex: 1;
-    min-width: 150px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 18px 18px;
-    border-radius: 6px;
-    border-left: 4px solid;
+    flex: 1; min-width: 150px;
+    display: flex; flex-direction: column; gap: 5px;
+    padding: 18px; border-radius: 6px; border-left: 4px solid;
 }
-
 .pf-acc-stat i { font-size: 1.1rem; opacity: 0.7; margin-bottom: 4px; }
-
 .pf-acc-stat b {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.9rem;
-    font-weight: 900;
-    color: var(--pf-dark);
-    letter-spacing: -1px;
-    line-height: 1;
+    font-family: 'Montserrat', sans-serif; font-size: 1.9rem; font-weight: 900;
+    color: var(--pf-dark); letter-spacing: -1px; line-height: 1;
 }
-
-.pf-acc-stat small {
-    font-size: 0.78rem;
-    color: var(--pf-text);
-    line-height: 1.4;
-    font-weight: 500;
-}
+.pf-acc-stat small { font-size: 0.78rem; color: var(--pf-text); line-height: 1.4; font-weight: 500; }
 
 /* ============================================================
-   8. RESPONSIVE
+   9. RESPONSIVE
    ============================================================ */
 @media (max-width: 1200px) {
     .pf-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (max-width: 1024px) {
     .pf-hero-inner { grid-template-columns: 1fr; gap: 50px; }
     .pf-hero-right {
-        flex-direction: row;
-        border-left: none;
+        flex-direction: row; border-left: none;
         border-top: 1px solid rgba(255,255,255,0.1);
-        padding-left: 0;
-        padding-top: 35px;
+        padding-left: 0; padding-top: 35px;
         justify-content: space-around;
     }
-    .pf-hero-stat { flex-direction: column; gap: 6px; text-align: center; border-bottom: none; padding: 0; }
+    .pf-hero-stat--link {
+        flex-direction: column; gap: 6px; text-align: center;
+        border-bottom: none !important; padding: 16px 20px;
+        margin: 0; width: auto;
+    }
+    .pf-hero-stat-num { min-width: unset; }
     .pf-acc-inner { grid-template-columns: 1fr; gap: 25px; }
     .pf-acc-logo-panel { flex-direction: row; min-height: auto; padding: 18px; }
-    .pf-acc-logo-panel img { max-height: 60px; max-width: 120px; }
-    .pf-flag-display { width: 80px; height: 50px; flex: none; }
+    .pf-acc-logo-panel img { max-height: 70px; max-width: 130px; }
+    .pf-flag-display-big { width: 100px; height: 60px; flex: none; }
+    .pf-continents-grid { grid-template-columns: 1fr; }
 }
-
 @media (max-width: 768px) {
-    .pf-grid { grid-template-columns: 1fr; }
-    .pf-grid, .pf-section { padding-left: 5%; padding-right: 5%; }
+    .pf-grid { grid-template-columns: 1fr; padding: 0 5%; }
+    .pf-section { padding-left: 0; padding-right: 0; }
     .pf-section-header, .pf-acc-container { padding-left: 5%; padding-right: 5%; }
-
     .pf-card--conventions { grid-column: auto; }
     .pf-conventions-inner { flex-direction: column; gap: 20px; padding: 28px 24px; }
     .pf-conventions-cta { width: 100%; justify-content: center; }
-
     .pf-acc-trigger { padding: 18px 20px; gap: 12px; }
-    .pf-acc-thumb { width: 60px; height: 45px; }
+    .pf-acc-thumb, .pf-acc-thumb--flag-it { width: 75px; height: 52px; min-width: 75px; }
     .pf-acc-info strong { font-size: 1rem; }
     .pf-acc-tag { display: none; }
     .pf-acc-inner { padding: 22px 18px 30px; }
     .pf-acc-stats { flex-direction: column; }
     .pf-acc-stat { min-width: unset; }
-
     .pf-hero-title { font-size: 3rem; letter-spacing: -1px; }
     .pf-hero-inner { padding: 80px 5% 70px; }
-    .pf-hero-right { flex-wrap: wrap; gap: 30px; }
+    .pf-continents-panel { padding: 35px 25px; }
+    .pf-continents-header h2 { font-size: 2rem; }
 }
-
 @media (max-width: 480px) {
     .pf-acc-logo-panel { display: none; }
-    .pf-card-logo-zone { height: 110px; }
+    .pf-card-logo-zone { height: 120px; }
+    .pf-hero-right { flex-wrap: wrap; }
 }
