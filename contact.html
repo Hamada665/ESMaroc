@@ -7,10 +7,10 @@
 
     <!-- Styles globaux du site (header, footer, variables CSS…) -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Styles spécifiques à la page Contact -->
     <link rel="stylesheet" href="contact.css">
-
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    
     <!-- Font Awesome & Google Fonts (déjà présents dans tes autres pages) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -25,49 +25,56 @@
         <div class="logo">
             <img src="ESMAROC LOGO.png" alt="Logo ESMaroc">
         </div>
-
+ 
         <nav id="main-nav">
-            <a href="index.html" class="active">Accueil</a>
-
+            <!-- Changez "active" sur le lien correspondant à la page courante -->
+            <a href="index.html">Accueil</a>
+ 
             <div class="dropdown">
                 <a href="#" class="dropdown-trigger">
                     ESMaroc <i class="fas fa-chevron-down nav-arrow"></i>
                 </a>
                 <div class="dropdown-menu">
                     <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
-                    <a href="histoire.html">Notre Histoire & Vision</a>
+                    <a href="histoire.html">Notre Histoire &amp; Vision</a>
                     <a href="equipe.html">Notre Équipe</a>
                     <a href="rapports.html">Rapports</a>
                 </div>
             </div>
-
+ 
             <a href="evenements.html">Évènements</a>
             <a href="projets.html">Projets</a>
             <a href="elearning.html">École E-learning</a>
             <a href="contact.html">Contact</a>
         </nav>
-
+ 
         <div class="header-icons">
-            <!-- Barre de recherche -->
+ 
+            <!-- 🔍 Barre de recherche -->
             <div class="search-wrapper">
-                <a href="#" class="icon-link" id="search-toggle" aria-label="Rechercher" onclick="return false;">
+                <a href="#" class="icon-link" id="search-toggle" aria-label="Rechercher">
                     <i class="fas fa-search"></i>
                 </a>
                 <div class="search-bar" id="search-bar">
-                    <input type="text" id="search-input" placeholder="Rechercher sur le site…" autocomplete="off">
-                    <button id="search-close"><i class="fas fa-times"></i></button>
+                    <div class="search-bar-top">
+                        <input type="text" id="search-input"
+                               placeholder="Rechercher sur le site…"
+                               autocomplete="off">
+                        <button id="search-close">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
                     <div class="search-results" id="search-results"></div>
                 </div>
             </div>
-
-            <!-- Localisation → Hub Rabat -->
+ 
+            <!-- 📍 Localisation → Hub Rabat -->
             <a href="https://maps.app.goo.gl/56zAEYm36nfkxbUT8"
                target="_blank" rel="noopener"
                class="icon-link" aria-label="Nous localiser">
                 <i class="fas fa-map-marker-alt"></i>
             </a>
-
-
+ 
         </div>
     </div>
 </header>
@@ -375,6 +382,7 @@
 
     <script src="script.js"></script>
     <script src="contact.js"></script>
+    <script src="header.js"></script>
 
 </body>
 </html>
