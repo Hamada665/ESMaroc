@@ -1,0 +1,156 @@
+/* ==========================================================================
+   HEADER.CSS — Styles globaux du header ESMaroc
+   À inclure sur TOUTES les pages via : <link rel="stylesheet" href="header.css">
+   Gère : barre de recherche, dropdown mobile, sticky scroll
+   ========================================================================== */
+
+/* ── Barre de recherche déroulante ── */
+.search-wrapper {
+    position: relative;
+}
+
+.search-bar {
+    display: none;
+    position: absolute;
+    top: 140%;
+    right: 0;
+    width: 340px;
+    background: var(--white);
+    border-radius: 4px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    border-top: 3px solid var(--blue);
+    padding: 12px 15px;
+    z-index: 9999;
+    animation: searchSlideDown 0.25s ease;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.search-bar.open {
+    display: flex;
+}
+
+@keyframes searchSlideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.search-bar-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#search-input {
+    flex: 1;
+    border: 1.5px solid rgba(0, 69, 149, 0.15);
+    border-radius: 3px;
+    padding: 9px 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.25s;
+}
+
+#search-input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(0, 69, 149, 0.07);
+}
+
+#search-input::placeholder { color: #b0b7c3; }
+
+#search-close {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 3px;
+    transition: color 0.2s, background 0.2s;
+    flex-shrink: 0;
+}
+
+#search-close:hover {
+    color: var(--blue);
+    background: var(--bg-light);
+}
+
+/* Résultats */
+.search-results {
+    width: 100%;
+    max-height: 280px;
+    overflow-y: auto;
+    border-top: 1px solid #f0f0f0;
+}
+
+.search-result-item {
+    padding: 10px 6px;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 0.84rem;
+    cursor: pointer;
+    color: var(--text-dark);
+    transition: color 0.2s, background 0.2s;
+    border-radius: 2px;
+}
+
+.search-result-item:hover {
+    color: var(--blue);
+    background: var(--bg-light);
+    padding-left: 10px;
+}
+
+.search-result-item:last-child { border-bottom: none; }
+
+.search-no-result {
+    padding: 10px 6px;
+    font-size: 0.83rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* ── Icône loupe — même style que les autres icon-link ── */
+#search-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: var(--blue);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+#search-toggle:hover {
+    color: var(--yellow);
+    transform: scale(1.1);
+}
+
+/* ── Burger — masqué (retiré du projet) ── */
+.burger-menu { display: none !important; }
+
+/* ── Dropdown mobile ── */
+@media (max-width: 900px) {
+    nav { display: flex; }
+
+    .dropdown-menu {
+        position: static !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transform: none !important;
+        box-shadow: none !important;
+        border-top: none !important;
+        padding: 0 0 0 16px !important;
+        display: none !important;
+        min-width: unset !important;
+        background: transparent !important;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+}
