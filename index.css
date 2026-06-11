@@ -1543,3 +1543,367 @@
 .carousel-viewport {
     overflow: visible;
 }
+
+
+/* ============================================================
+   SECTION MÉTHODOLOGIE — WIDGET STEPPER INTÉGRÉ
+   Design dark blue/yellow cohérent avec la page projets
+   ============================================================ */
+
+/* La section methodology devient un fond dégradé immersif */
+.methodology-section {
+    padding: 100px 8%;
+    background: linear-gradient(135deg, #04284f 0%, #0a3d6b 50%, #04284f 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Motif de fond discret (points) */
+.methodology-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,.06) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+    pointer-events: none;
+}
+
+/* Adapter les textes sur fond sombre */
+.methodology-section .content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.methodology-text h2 {
+    color: #ffffff !important;
+}
+
+.methodology-text h2::after {
+    background-color: var(--yellow) !important;
+}
+
+.methodology-text p {
+    color: rgba(255,255,255,.72) !important;
+}
+
+.methodology-text h3 {
+    color: rgba(255,255,255,.85) !important;
+    font-size: 0.88rem;
+    letter-spacing: 2px;
+}
+
+/* Liste accompagnement sur fond sombre */
+.accompagnement-list li {
+    background: rgba(255,255,255,.06) !important;
+    border-color: rgba(255,255,255,.1) !important;
+}
+
+.accompagnement-list li:hover {
+    background: rgba(255,255,255,.12) !important;
+    border-color: var(--yellow) !important;
+    transform: translateX(4px);
+}
+
+.acc-icon {
+    background: rgba(255,255,255,.1) !important;
+    color: #fff !important;
+}
+
+.accompagnement-list li:hover .acc-icon {
+    background: var(--yellow) !important;
+    color: #04284f !important;
+}
+
+.acc-text strong { color: #ffffff !important; }
+.acc-text span   { color: rgba(255,255,255,.6) !important; }
+
+
+/* ── Wrapper du widget (remplace .methodology-image) ── */
+.methodology-widget-wrap {
+    flex: 0.9;
+    display: flex;
+    align-items: stretch;
+}
+
+.mw-inner {
+    width: 100%;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 12px;
+    padding: 32px 28px;
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 20px 60px rgba(0,0,0,.3),
+                inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+/* ── Ampoule ── */
+.mw-bulb {
+    flex: 0 0 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    padding-top: 6px;
+}
+
+.mw-bulb-svg {
+    width: 90px;
+    height: 130px;
+    transition: filter .4s ease;
+}
+
+.mw-rays { opacity: 0; transition: opacity .4s; }
+.mw-glass    { transition: fill .4s, stroke .4s; }
+.mw-filament { transition: stroke .4s; }
+.mw-halo     { transition: opacity .4s; }
+
+.mw-bulb-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.45);
+    text-align: center;
+}
+
+/* Séparateur vertical */
+.mw-inner::after {
+    content: '';
+    display: none; /* handled by flex gap */
+}
+
+/* ── Contenu step ── */
+.mw-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Dots */
+.mw-dots {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.mw-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.2);
+    transition: background .3s, transform .3s, width .3s;
+}
+
+.mw-done   { background: var(--yellow); }
+.mw-active { background: var(--yellow); transform: scale(1.4); width: 20px; border-radius: 4px; }
+
+/* Eyebrow */
+.mw-eyebrow {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 8px;
+}
+
+/* Titre step */
+.mw-step-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    letter-spacing: -.3px;
+}
+
+.mw-step-title em {
+    color: var(--yellow);
+    font-style: normal;
+}
+
+/* Description */
+.mw-step-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,.65);
+    line-height: 1.65;
+    margin-bottom: 18px;
+}
+
+/* Boutons */
+.mw-btn-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.mw-btn-primary {
+    background: var(--yellow);
+    color: #04284f;
+    border: none;
+    border-radius: 5px;
+    padding: 11px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .2s, transform .15s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.mw-btn-primary:hover { background: #ffd040; transform: translateY(-1px); }
+
+.mw-btn-yes {
+    background: #16a34a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.mw-btn-yes:hover { background: #15803d; }
+
+.mw-btn-no {
+    background: rgba(239,68,68,.15);
+    color: #fca5a5;
+    border: 1.5px solid rgba(239,68,68,.35);
+    border-radius: 5px;
+    padding: 10px 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.mw-btn-no:hover { background: rgba(239,68,68,.25); }
+
+.mw-btn-back {
+    background: transparent;
+    color: rgba(255,255,255,.35);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 5px;
+    padding: 9px 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.mw-btn-back:hover { color: rgba(255,255,255,.75); border-color: rgba(255,255,255,.4); }
+
+/* Tags résultat */
+.mw-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.mw-tag-yes { background: rgba(22,163,74,.2);  color: #4ade80; border: 1px solid rgba(74,222,128,.3); }
+.mw-tag-no  { background: rgba(239,68,68,.2);  color: #fca5a5; border: 1px solid rgba(252,165,165,.3); }
+
+/* Boîte résultat */
+.mw-result-box {
+    border-radius: 7px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+}
+
+.mw-result-yes { background: rgba(22,163,74,.08);  border-left: 3px solid #4ade80; }
+.mw-result-no  { background: rgba(239,68,68,.08);  border-left: 3px solid #f87171; }
+
+.mw-result-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.mw-result-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.mw-result-list li {
+    font-size: 12px;
+    color: rgba(255,255,255,.7);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* reset card styles */
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.mw-result-list li::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: #4ade80;
+    flex-shrink: 0;
+}
+
+.mw-list-no li::before { background: #f87171; }
+
+/* Animation entrée */
+.mw-fadein {
+    animation: mwFadeIn .35s ease both;
+}
+
+@keyframes mwFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .content-wrapper {
+        flex-direction: column !important;
+    }
+    .methodology-widget-wrap {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .mw-inner {
+        flex-direction: column;
+        align-items: center;
+        padding: 22px 18px;
+    }
+    .mw-bulb { flex: unset; }
+    .mw-step-title { font-size: 18px; }
+}
+
+
+/* ── Burger retiré — masquer le bouton si présent en cache ── */
+.burger-menu { display: none !important; }
