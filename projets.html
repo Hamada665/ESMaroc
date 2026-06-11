@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos Projets | ESMaroc.Org</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="projets.css">
+    <link rel="stylesheet" href="projets-page.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 </head>
@@ -44,29 +44,122 @@
         <div class="pf-hero-bg"></div>
         <div class="pf-hero-inner">
             <div class="pf-hero-left">
-                <span class="pf-eyebrow"><i class="fas fa-circle-dot"></i> ESMaroc · Depuis 2017</span>
-                <h1 class="pf-hero-title">Nos<br><em>Projets</em></h1>
+                <span class="pf-eyebrow"><i class="fas fa-circle-dot"></i> ESMaroc · Depuis 2011</span>
+                <h1 class="pf-hero-title">Notre<br><em>Portefeuille</em><br>de Projets</h1>
                 <p class="pf-hero-desc">Des programmes structurants déployés avec des bailleurs internationaux, des institutions publiques et des acteurs de terrain pour un impact social mesurable et durable.</p>
             </div>
             <div class="pf-hero-right">
-                <div class="pf-hero-stat">
+
+                <!-- STAT 1 : scroll vers les projets -->
+                <a href="#projets-grid" class="pf-hero-stat pf-hero-stat--link" title="Voir les projets">
                     <span class="pf-hero-stat-num">12</span>
                     <span class="pf-hero-stat-label">Projets<br>& Initiatives</span>
-                </div>
-                <div class="pf-hero-stat">
+                    <span class="pf-stat-hint"><i class="fas fa-chevron-down"></i></span>
+                </a>
+
+                <!-- STAT 2 : vers page partenaires -->
+                <a href="partenaires.html" class="pf-hero-stat pf-hero-stat--link" title="Voir nos partenaires">
                     <span class="pf-hero-stat-num">10+</span>
                     <span class="pf-hero-stat-label">Partenaires<br>Internationaux</span>
-                </div>
-                <div class="pf-hero-stat">
+                    <span class="pf-stat-hint"><i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <!-- STAT 3 : ouvre la modale continents -->
+                <button class="pf-hero-stat pf-hero-stat--link pf-hero-stat--btn" id="openContinentsModal" title="Voir les continents">
                     <span class="pf-hero-stat-num">3</span>
                     <span class="pf-hero-stat-label">Continents<br>représentés</span>
-                </div>
+                    <span class="pf-stat-hint"><i class="fas fa-globe"></i></span>
+                </button>
+
             </div>
         </div>
     </section>
 
+    <!-- MODALE CONTINENTS -->
+    <div class="pf-continents-modal" id="continentsModal">
+        <div class="pf-continents-overlay" id="closeContinentsOverlay"></div>
+        <div class="pf-continents-panel">
+            <button class="pf-continents-close" id="closeContinentsBtn"><i class="fas fa-times"></i></button>
+            <div class="pf-continents-header">
+                <span class="pf-eyebrow"><i class="fas fa-globe"></i> Présence internationale</span>
+                <h2>3 Continents,<br><em>1 Vision</em></h2>
+                <p>ESMaroc déploie ses programmes en partenariat avec des organisations implantées sur trois continents.</p>
+            </div>
+            <div class="pf-continents-grid">
+
+                <div class="pf-continent-card">
+                    <div class="pf-continent-map">
+                        <!-- Afrique SVG simplifié -->
+                        <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" class="pf-map-svg">
+                            <path d="M85,10 L115,8 L135,20 L145,40 L148,60 L140,80 L145,100 L140,120 L130,140 L125,160 L110,185 L100,200 L90,185 L75,160 L70,140 L60,120 L55,100 L60,80 L55,60 L58,40 L70,20 Z" fill="rgba(224,171,0,0.25)" stroke="#e0ab00" stroke-width="2"/>
+                            <circle cx="95" cy="75" r="5" fill="#e0ab00"/>
+                            <text x="95" y="60" text-anchor="middle" font-size="10" fill="#e0ab00" font-weight="700" font-family="Montserrat">MAROC</text>
+                            <circle cx="100" cy="120" r="3" fill="rgba(224,171,0,0.6)"/>
+                            <text x="118" y="124" font-size="8" fill="rgba(255,255,255,0.5)" font-family="Montserrat">TUNISIE</text>
+                        </svg>
+                    </div>
+                    <div class="pf-continent-info">
+                        <span class="pf-continent-name">Afrique</span>
+                        <p>Maroc · Tunisie · Égypte · Jordanie</p>
+                        <div class="pf-continent-projects">
+                            <span>UPSHIFT</span><span>NAWAT</span><span>RESTART</span><span>FLOWER</span><span>+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pf-continent-card">
+                    <div class="pf-continent-map">
+                        <!-- Europe SVG simplifié -->
+                        <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" class="pf-map-svg">
+                            <path d="M40,30 L70,20 L100,25 L130,20 L160,30 L165,55 L155,75 L160,95 L150,110 L130,115 L115,130 L100,145 L85,130 L70,115 L50,110 L40,95 L35,75 L35,55 Z" fill="rgba(0,51,153,0.2)" stroke="#003399" stroke-width="2"/>
+                            <circle cx="100" cy="70" r="4" fill="#003399"/>
+                            <text x="100" y="58" text-anchor="middle" font-size="9" fill="#6699ff" font-weight="700" font-family="Montserrat">EUROPE</text>
+                            <circle cx="75" cy="90" r="3" fill="rgba(0,51,153,0.7)"/>
+                            <text x="60" y="108" font-size="7" fill="rgba(255,255,255,0.45)" font-family="Montserrat">FR · IT · DK</text>
+                        </svg>
+                    </div>
+                    <div class="pf-continent-info">
+                        <span class="pf-continent-name">Europe</span>
+                        <p>France · Italie · Danemark · Espagne</p>
+                        <div class="pf-continent-projects">
+                            <span>DAPP</span><span>LOG MED</span><span>W4L</span><span>RESTART</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pf-continent-card">
+                    <div class="pf-continent-map">
+                        <!-- Amériques/International SVG -->
+                        <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" class="pf-map-svg">
+                            <circle cx="100" cy="110" r="70" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                            <circle cx="100" cy="110" r="50" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+                            <circle cx="100" cy="110" r="30" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                            <!-- UNICEF / ONU -->
+                            <circle cx="100" cy="60" r="8" fill="rgba(0,120,200,0.3)" stroke="#0078c8" stroke-width="1.5"/>
+                            <text x="100" y="45" text-anchor="middle" font-size="8" fill="#4db8ff" font-weight="700" font-family="Montserrat">UNICEF</text>
+                            <circle cx="155" cy="110" r="6" fill="rgba(0,51,160,0.3)" stroke="#0033a0" stroke-width="1.5"/>
+                            <text x="160" y="98" font-size="7" fill="rgba(255,255,255,0.45)" font-family="Montserrat">OIM</text>
+                            <line x1="100" y1="60" x2="100" y2="110" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="3,3"/>
+                            <line x1="155" y1="110" x2="100" y2="110" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="3,3"/>
+                            <circle cx="100" cy="110" r="5" fill="#e0ab00"/>
+                            <text x="100" y="145" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.5)" font-family="Montserrat">INTERNATIONAL</text>
+                        </svg>
+                    </div>
+                    <div class="pf-continent-info">
+                        <span class="pf-continent-name">International</span>
+                        <p>ONU · UNICEF · OIM · Réseaux globaux</p>
+                        <div class="pf-continent-projects">
+                            <span>UNICEF</span><span>OIM</span><span>DAPP</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <!-- GRILLE PROJETS -->
-    <section class="pf-section">
+    <section class="pf-section" id="projets-grid">
         <div class="pf-section-header">
             <div class="pf-section-label">
                 <i class="fas fa-external-link-alt"></i>
@@ -76,16 +169,15 @@
 
         <div class="pf-grid">
 
+            <!-- UPSHIFT : logo blanc sur fond noir -->
             <a href="upshift.html" class="pf-card" style="--card-color:#000000; --card-color-light:rgba(0,0,0,0.05);">
                 <div class="pf-card-color-bar"></div>
-                <div class="pf-card-logo-zone pf-logo-dark">
-                    <img src="UPSHIFT LOGO.png" alt="UPSHIFT" class="pf-logo-img">
+                <div class="pf-card-logo-zone" style="background:#111; padding:0; overflow:hidden; position:relative;">
+                    <div class="pf-logo-city-bg"></div>
+                    <img src="UPSHIFT LOGO.png" alt="UPSHIFT" class="pf-logo-img" style="position:relative; z-index:2; max-height:75%; max-width:55%;">
                 </div>
                 <div class="pf-card-body">
-                    <div class="pf-card-meta">
-                        <span class="pf-card-partner">UNICEF · Tanger</span>
-                        <span class="pf-card-year">2021–2022</span>
-                    </div>
+                    <div class="pf-card-meta"><span class="pf-card-partner">UNICEF · Tanger</span><span class="pf-card-year">2021–2022</span></div>
                     <h3 class="pf-card-title">UPSHIFT</h3>
                     <p class="pf-card-excerpt">Sensibilisation de +1 000 jeunes à l'entrepreneuriat social et accompagnement de 5 startups via un bootcamp intensif de 6 jours.</p>
                     <div class="pf-card-stats">
@@ -93,21 +185,22 @@
                         <div class="pf-mini-stat"><span>5</span><small>Startups</small></div>
                     </div>
                 </div>
-                <div class="pf-card-footer">
-                    <span>Découvrir le projet</span>
-                    <i class="fas fa-arrow-right"></i>
-                </div>
+                <div class="pf-card-footer"><span>Découvrir le projet</span><i class="fas fa-arrow-right"></i></div>
             </a>
 
+            <!-- NAWAT : cercles animés inspirés du logo -->
             <a href="nawat.html" class="pf-card" style="--card-color:#1484a1; --card-color-light:rgba(20,132,161,0.07);">
                 <div class="pf-card-color-bar"></div>
-                <div class="pf-card-logo-zone pf-logo-light">
-                    <img src="NAWAT LOGO.png" alt="NAWAT" class="pf-logo-img">
+                <div class="pf-card-logo-zone pf-logo-nawat">
+                    <div class="pf-nawat-rings">
+                        <div class="pf-nawat-ring pf-nawat-ring--1"></div>
+                        <div class="pf-nawat-ring pf-nawat-ring--2"></div>
+                        <div class="pf-nawat-ring pf-nawat-ring--3"></div>
+                    </div>
+                    <img src="NAWAT LOGO.png" alt="NAWAT" class="pf-logo-img" style="position:relative; z-index:2; max-width:65%;">
                 </div>
                 <div class="pf-card-body">
-                    <div class="pf-card-meta">
-                        <span class="pf-card-partner">Maroc PME</span>
-                    </div>
+                    <div class="pf-card-meta"><span class="pf-card-partner">Maroc PME</span></div>
                     <h3 class="pf-card-title">NAWAT</h3>
                     <p class="pf-card-excerpt">Renforcement des capacités de 20 TPE à travers un accompagnement stratégique, du réseautage et des conférences sectorielles.</p>
                     <div class="pf-card-stats">
@@ -115,21 +208,19 @@
                         <div class="pf-mini-stat"><span>∞</span><small>Réseaux</small></div>
                     </div>
                 </div>
-                <div class="pf-card-footer">
-                    <span>Découvrir le projet</span>
-                    <i class="fas fa-arrow-right"></i>
-                </div>
+                <div class="pf-card-footer"><span>Découvrir le projet</span><i class="fas fa-arrow-right"></i></div>
             </a>
 
+            <!-- RESTART : barres diagonales rouges/bleues -->
             <a href="restart.html" class="pf-card" style="--card-color:#d35546; --card-color-light:rgba(211,85,70,0.07);">
                 <div class="pf-card-color-bar"></div>
-                <div class="pf-card-logo-zone pf-logo-light">
-                    <img src="RESTART LOGO.png" alt="RESTART" class="pf-logo-img">
+                <div class="pf-card-logo-zone pf-logo-restart">
+                    <div class="pf-restart-slash pf-restart-slash--1"></div>
+                    <div class="pf-restart-slash pf-restart-slash--2"></div>
+                    <img src="RESTART LOGO.png" alt="RESTART" class="pf-logo-img" style="position:relative; z-index:2; max-width:65%;">
                 </div>
                 <div class="pf-card-body">
-                    <div class="pf-card-meta">
-                        <span class="pf-card-partner">Entrepreneuriat Social</span>
-                    </div>
+                    <div class="pf-card-meta"><span class="pf-card-partner">Entrepreneuriat Social</span></div>
                     <h3 class="pf-card-title">RESTART</h3>
                     <p class="pf-card-excerpt">Création de 50+ startups éco-durables, prototypage de 600 idées et élaboration de 450 business plans avec subventions de démarrage.</p>
                     <div class="pf-card-stats">
@@ -138,22 +229,18 @@
                         <div class="pf-mini-stat"><span>450</span><small>BP</small></div>
                     </div>
                 </div>
-                <div class="pf-card-footer">
-                    <span>Découvrir le projet</span>
-                    <i class="fas fa-arrow-right"></i>
-                </div>
+                <div class="pf-card-footer"><span>Découvrir le projet</span><i class="fas fa-arrow-right"></i></div>
             </a>
 
+            <!-- AVEC LES JEUNES : dégradé indigo + points dorés -->
             <a href="projet-jeunes.html" class="pf-card" style="--card-color:#19048f; --card-color-light:rgba(25,4,143,0.06);">
                 <div class="pf-card-color-bar"></div>
-                <div class="pf-card-logo-zone pf-logo-light">
-                    <img src="POUR LES JEUNES LOGO.png" alt="Avec les jeunes" class="pf-logo-img">
+                <div class="pf-card-logo-zone pf-logo-jeunes">
+                    <div class="pf-jeunes-dots"></div>
+                    <img src="POUR LES JEUNES LOGO.png" alt="Avec les jeunes" class="pf-logo-img" style="position:relative; z-index:2; max-width:70%;">
                 </div>
                 <div class="pf-card-body">
-                    <div class="pf-card-meta">
-                        <span class="pf-card-partner">Union Européenne</span>
-                        <span class="pf-card-badge">UE</span>
-                    </div>
+                    <div class="pf-card-meta"><span class="pf-card-partner">Union Européenne</span><span class="pf-card-badge">UE</span></div>
                     <h3 class="pf-card-title">Avec les Jeunes</h3>
                     <p class="pf-card-excerpt">147 jeunes auto-entrepreneurs et 83 insertions dans le marché du travail via guichet d'insertion et stages rémunérés.</p>
                     <div class="pf-card-stats">
@@ -161,21 +248,19 @@
                         <div class="pf-mini-stat"><span>83</span><small>Insérés</small></div>
                     </div>
                 </div>
-                <div class="pf-card-footer">
-                    <span>Découvrir le projet</span>
-                    <i class="fas fa-arrow-right"></i>
-                </div>
+                <div class="pf-card-footer"><span>Découvrir le projet</span><i class="fas fa-arrow-right"></i></div>
             </a>
 
-            <a href="flower.html" class="pf-card" style="--card-color:#056678; --card-color-light:rgba(5,102,120,0.07);">
+            <!-- FLOWER : fond vert sombre avec feuilles -->
+            <a href="projet-flower.html" class="pf-card" style="--card-color:#056678; --card-color-light:rgba(5,102,120,0.07);">
                 <div class="pf-card-color-bar"></div>
-                <div class="pf-card-logo-zone pf-logo-light">
-                    <img src="flower-logo.png" alt="FLOWER" class="pf-logo-img">
+                <div class="pf-card-logo-zone pf-logo-flower">
+                    <div class="pf-flower-leaf pf-flower-leaf--1"></div>
+                    <div class="pf-flower-leaf pf-flower-leaf--2"></div>
+                    <img src="flower-logo.png" alt="FLOWER" class="pf-logo-img" style="position:relative; z-index:2; max-width:80%;">
                 </div>
                 <div class="pf-card-body">
-                    <div class="pf-card-meta">
-                        <span class="pf-card-partner">Maroc & Tunisie</span>
-                    </div>
+                    <div class="pf-card-meta"><span class="pf-card-partner">Maroc & Tunisie</span></div>
                     <h3 class="pf-card-title">FLOWER</h3>
                     <p class="pf-card-excerpt">Formation de +2 000 femmes au Maroc et en Tunisie pour améliorer l'accès aux marchés, les revenus et l'intégration à la sécurité sociale.</p>
                     <div class="pf-card-stats">
@@ -183,42 +268,36 @@
                         <div class="pf-mini-stat"><span>2</span><small>Pays</small></div>
                     </div>
                 </div>
-                <div class="pf-card-footer">
-                    <span>Découvrir le projet</span>
-                    <i class="fas fa-arrow-right"></i>
-                </div>
+                <div class="pf-card-footer"><span>Découvrir le projet</span><i class="fas fa-arrow-right"></i></div>
             </a>
 
-            <a href="oim.html" class="pf-card" style="--card-color:#0033a0; --card-color-light:rgba(0,51,160,0.06);">
+            <!-- MIGRATION OIM : fond bleu ONU avec globe -->
+            <a href="projet-migration.html" class="pf-card" style="--card-color:#0033a0; --card-color-light:rgba(0,51,160,0.06);">
                 <div class="pf-card-color-bar"></div>
-                <div class="pf-card-logo-zone pf-logo-light">
-                    <img src="ONU LOGO.png" alt="OIM ONU Migration" class="pf-logo-img">
+                <div class="pf-card-logo-zone pf-logo-oim">
+                    <div class="pf-oim-globe"></div>
+                    <img src="onu-logo.png" alt="OIM" class="pf-logo-img" style="position:relative; z-index:2; max-width:65%;">
                 </div>
                 <div class="pf-card-body">
-                    <div class="pf-card-meta">
-                        <span class="pf-card-partner">OIM · ONU Migration</span>
-                    </div>
+                    <div class="pf-card-meta"><span class="pf-card-partner">OIM · ONU Migration</span></div>
                     <h3 class="pf-card-title">Migration & DD</h3>
                     <p class="pf-card-excerpt">Accompagnement technique et financier de +200 porteurs de projets migrants, avec création de coopératives et d'auto-entrepreneurs.</p>
                     <div class="pf-card-stats">
                         <div class="pf-mini-stat"><span>+200</span><small>Porteurs</small></div>
                     </div>
                 </div>
-                <div class="pf-card-footer">
-                    <span>Découvrir le projet</span>
-                    <i class="fas fa-arrow-right"></i>
-                </div>
+                <div class="pf-card-footer"><span>Découvrir le projet</span><i class="fas fa-arrow-right"></i></div>
             </a>
 
-            <a href="jisr.html" class="pf-card" style="--card-color:#e0ab00; --card-color-light:rgba(224,171,0,0.08);">
+            <!-- JISR : fond jaune plein, initiales grandes -->
+            <a href="projet-jisr.html" class="pf-card" style="--card-color:#e0ab00; --card-color-light:rgba(224,171,0,0.08);">
                 <div class="pf-card-color-bar"></div>
-                <div class="pf-card-logo-zone pf-logo-light">
-                    <div class="pf-logo-initials" style="background:#e0ab00; color:#1a1a1a;">JISR</div>
+                <div class="pf-card-logo-zone" style="background:#e0ab00; justify-content:center; align-items:center; position:relative; overflow:hidden;">
+                    <div class="pf-jisr-bg"></div>
+                    <div class="pf-jisr-text">JISR</div>
                 </div>
                 <div class="pf-card-body">
-                    <div class="pf-card-meta">
-                        <span class="pf-card-partner">Incubateur Social des Femmes</span>
-                    </div>
+                    <div class="pf-card-meta"><span class="pf-card-partner">Incubateur Social des Femmes</span></div>
                     <h3 class="pf-card-title">JISR</h3>
                     <p class="pf-card-excerpt">Autonomisation de ~1 000 femmes vulnérables à Tanger-Assilah via accompagnement, coaching, incubation et AGR sur 24 mois.</p>
                     <div class="pf-card-stats">
@@ -226,21 +305,17 @@
                         <div class="pf-mini-stat"><span>400K</span><small>MAD</small></div>
                     </div>
                 </div>
-                <div class="pf-card-footer">
-                    <span>Découvrir le projet</span>
-                    <i class="fas fa-arrow-right"></i>
-                </div>
+                <div class="pf-card-footer"><span>Découvrir le projet</span><i class="fas fa-arrow-right"></i></div>
             </a>
 
-            <a href="darlibtikar.html" class="pf-card" style="--card-color:#ef8951; --card-color-light:rgba(239,137,81,0.07);">
+            <!-- DAR-LIBTIKAR : logo grand sur fond orange -->
+            <a href="projet-dar-libtikar.html" class="pf-card" style="--card-color:#ef8951; --card-color-light:rgba(239,137,81,0.07);">
                 <div class="pf-card-color-bar"></div>
-                <div class="pf-card-logo-zone" style="background:linear-gradient(135deg,#ef8951,#f5a978);">
-                    <img src="libtikar-blanc-logo.png" alt="Dar-Libtikar" class="pf-logo-img pf-logo-on-color">
+                <div class="pf-card-logo-zone pf-logo-libtikar">
+                    <img src="darlibtikar-logo.png" alt="Dar-Libtikar" class="pf-logo-img pf-logo-libtikar-big">
                 </div>
                 <div class="pf-card-body">
-                    <div class="pf-card-meta">
-                        <span class="pf-card-partner">Fondation Abdelkader Bensalah</span>
-                    </div>
+                    <div class="pf-card-meta"><span class="pf-card-partner">Fondation Abdelkader Bensalah</span></div>
                     <h3 class="pf-card-title">DAR-LIBTIKAR</h3>
                     <p class="pf-card-excerpt">Parcours d'incubation de 8–9 mois pour dynamiser l'innovation sociale territoriale et faire émerger des solutions durables et duplicables.</p>
                     <div class="pf-card-stats">
@@ -248,22 +323,20 @@
                         <div class="pf-mini-stat"><span>3</span><small>Phases</small></div>
                     </div>
                 </div>
-                <div class="pf-card-footer">
-                    <span>Découvrir le projet</span>
-                    <i class="fas fa-arrow-right"></i>
-                </div>
+                <div class="pf-card-footer"><span>Découvrir le projet</span><i class="fas fa-arrow-right"></i></div>
             </a>
 
-            <a href="dapp.html" class="pf-card" style="--card-color:#ba4919; --card-color-light:rgba(186,73,25,0.07);">
+            <!-- DAPP : fond sombre avec couleurs Dano-Arabe -->
+            <a href="projet-dapp.html" class="pf-card" style="--card-color:#ba4919; --card-color-light:rgba(186,73,25,0.07);">
                 <div class="pf-card-color-bar"></div>
-                <div class="pf-card-logo-zone pf-logo-light">
-                    <img src="DANO ARABE LOGO.png" alt="DAPP Danida" class="pf-logo-img">
+                <div class="pf-card-logo-zone pf-logo-dapp">
+                    <div class="pf-dapp-stripe pf-dapp-stripe--1"></div>
+                    <div class="pf-dapp-stripe pf-dapp-stripe--2"></div>
+                    <div class="pf-dapp-stripe pf-dapp-stripe--3"></div>
+                    <img src="dano-logo.png" alt="DAPP Danida" class="pf-logo-img" style="position:relative; z-index:2; max-width:75%;">
                 </div>
                 <div class="pf-card-body">
-                    <div class="pf-card-meta">
-                        <span class="pf-card-partner">Ministère AF Étrangères Danois</span>
-                        <span class="pf-card-year">2022–2027</span>
-                    </div>
+                    <div class="pf-card-meta"><span class="pf-card-partner">Ministère AF Étrangères Danois</span><span class="pf-card-year">2022–2027</span></div>
                     <h3 class="pf-card-title">DAPP</h3>
                     <p class="pf-card-excerpt">Programme emploi, entrepreneuriat et droits humains pour les 18–35 ans dans la région MENA, déployé dans 4 pays dont le Maroc.</p>
                     <div class="pf-card-stats">
@@ -271,19 +344,14 @@
                         <div class="pf-mini-stat"><span>3</span><small>Régions MA</small></div>
                     </div>
                 </div>
-                <div class="pf-card-footer">
-                    <span>Découvrir le projet</span>
-                    <i class="fas fa-arrow-right"></i>
-                </div>
+                <div class="pf-card-footer"><span>Découvrir le projet</span><i class="fas fa-arrow-right"></i></div>
             </a>
 
             <!-- CONVENTIONS pleine largeur -->
             <a href="conventions-partenariats.html" class="pf-card pf-card--conventions" style="--card-color:#003399; --card-color-light:rgba(0,51,153,0.05);">
                 <div class="pf-card-color-bar"></div>
                 <div class="pf-conventions-inner">
-                    <div class="pf-conventions-icon">
-                        <i class="fas fa-handshake-angle"></i>
-                    </div>
+                    <div class="pf-conventions-icon"><i class="fas fa-handshake-angle"></i></div>
                     <div class="pf-conventions-body">
                         <span class="pf-card-partner">Institutionnels & Associatifs</span>
                         <h3 class="pf-card-title">Conventions & Partenariats</h3>
@@ -314,7 +382,7 @@
             <div class="pf-acc-item" data-color="#ea9333">
                 <button class="pf-acc-trigger" type="button">
                     <div class="pf-acc-trigger-left">
-                        <div class="pf-acc-thumb" style="background:#fff8f0; border-color:rgba(234,147,51,0.3);">
+                        <div class="pf-acc-thumb pf-acc-thumb--w4l">
                             <img src="WORK FOR LIFE.png" alt="Work 4 Life">
                         </div>
                         <div class="pf-acc-info">
@@ -330,7 +398,7 @@
                 <div class="pf-acc-content">
                     <div class="pf-acc-inner">
                         <div class="pf-acc-logo-panel" style="background:linear-gradient(135deg,#fff8f0,#fff3e0); border-color:rgba(234,147,51,0.2);">
-                            <img src="WORK FOR LIFE.png" alt="Work 4 Life">
+                            <img src="WORK FOR LIFE.png" alt="Work 4 Life" style="max-height:110px;">
                             <div class="pf-acc-logo-caption"><span style="background:#ea9333; color:#fff;">Union Européenne</span></div>
                         </div>
                         <div class="pf-acc-text">
@@ -349,8 +417,8 @@
             <div class="pf-acc-item" data-color="#f1090e">
                 <button class="pf-acc-trigger" type="button">
                     <div class="pf-acc-trigger-left">
-                        <div class="pf-acc-thumb" style="background:#fff5f5; border-color:rgba(241,9,14,0.25);">
-                            <img src="GIZ LOGO.png" alt="GIZ">
+                        <div class="pf-acc-thumb pf-acc-thumb--giz">
+                            <img src="giz-logo.png" alt="GIZ">
                         </div>
                         <div class="pf-acc-info">
                             <strong>CLUSTER INDUSTRIEL</strong>
@@ -365,7 +433,7 @@
                 <div class="pf-acc-content">
                     <div class="pf-acc-inner">
                         <div class="pf-acc-logo-panel" style="background:linear-gradient(135deg,#fff5f5,#ffecec); border-color:rgba(241,9,14,0.15);">
-                            <img src="giz-logo.png" alt="GIZ">
+                            <img src="giz-logo.png" alt="GIZ" style="max-height:90px;">
                             <div class="pf-acc-logo-caption"><span style="background:#f1090e; color:#fff;">GIZ</span></div>
                         </div>
                         <div class="pf-acc-text">
@@ -380,14 +448,12 @@
                 </div>
             </div>
 
-            <!-- LOG MED -->
+            <!-- LOG MED : drapeau italien en guise de logo -->
             <div class="pf-acc-item" data-color="#009246">
                 <button class="pf-acc-trigger" type="button">
                     <div class="pf-acc-trigger-left">
-                        <div class="pf-acc-thumb pf-acc-thumb--flag" style="border-color:rgba(0,146,70,0.3);">
-                            <span style="background:#009246;"></span>
-                            <span style="background:#fff; border-left:1px solid #eee; border-right:1px solid #eee;"></span>
-                            <span style="background:#ce2b37;"></span>
+                        <div class="pf-acc-thumb pf-acc-thumb--flag-it">
+                            <span></span><span></span><span></span>
                         </div>
                         <div class="pf-acc-info">
                             <strong>LOG MED</strong>
@@ -401,10 +467,10 @@
                 </button>
                 <div class="pf-acc-content">
                     <div class="pf-acc-inner">
-                        <div class="pf-acc-logo-panel" style="background:linear-gradient(135deg,#f0faf4,#e8f5ee); border-color:rgba(0,146,70,0.2);">
-                            <div class="pf-flag-display">
+                        <div class="pf-acc-logo-panel" style="background:linear-gradient(135deg,#f0faf4,#e8f5ee); border-color:rgba(0,146,70,0.2); gap:20px;">
+                            <div class="pf-flag-display-big">
                                 <span style="background:#009246;"></span>
-                                <span style="background:#ffffff;"></span>
+                                <span style="background:#fff; border-left:1px solid #ddd; border-right:1px solid #ddd;"></span>
                                 <span style="background:#ce2b37;"></span>
                             </div>
                             <div class="pf-acc-logo-caption"><span style="background:#009246; color:#fff;">Coopération Italienne</span></div>
@@ -453,6 +519,7 @@
 
 <script src="script.js"></script>
 <script>
+// ===== ACCORDÉONS =====
 document.querySelectorAll('.pf-acc-trigger').forEach(trigger => {
     trigger.addEventListener('click', () => {
         const item = trigger.closest('.pf-acc-item');
@@ -461,7 +528,6 @@ document.querySelectorAll('.pf-acc-trigger').forEach(trigger => {
         const chevron = trigger.querySelector('.pf-acc-chevron');
         const color = item.dataset.color;
         const isOpen = item.classList.contains('pf-open');
-
         document.querySelectorAll('.pf-acc-item.pf-open').forEach(open => {
             open.classList.remove('pf-open');
             open.querySelector('.pf-acc-content').style.maxHeight = null;
@@ -469,7 +535,6 @@ document.querySelectorAll('.pf-acc-trigger').forEach(trigger => {
             open.querySelector('.pf-acc-chevron').style.background = '#f0f4f8';
             open.querySelector('.pf-acc-chevron i').style.color = '#718096';
         });
-
         if (!isOpen) {
             item.classList.add('pf-open');
             content.style.maxHeight = content.scrollHeight + 'px';
@@ -478,6 +543,26 @@ document.querySelectorAll('.pf-acc-trigger').forEach(trigger => {
             icon.style.color = '#fff';
         }
     });
+});
+
+// ===== MODALE CONTINENTS =====
+const modal = document.getElementById('continentsModal');
+document.getElementById('openContinentsModal').addEventListener('click', () => {
+    modal.classList.add('pf-modal-open');
+    document.body.style.overflow = 'hidden';
+});
+function closeModal() {
+    modal.classList.remove('pf-modal-open');
+    document.body.style.overflow = '';
+}
+document.getElementById('closeContinentsBtn').addEventListener('click', closeModal);
+document.getElementById('closeContinentsOverlay').addEventListener('click', closeModal);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ===== SCROLL SMOOTH =====
+document.querySelector('a[href="#projets-grid"]').addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('projets-grid').scrollIntoView({ behavior: 'smooth' });
 });
 </script>
 </body>
