@@ -61,10 +61,7 @@
                 <i class="fas fa-map-marker-alt"></i>
             </a>
 
-            <!-- Burger mobile -->
-            <button class="burger-menu" id="burger-btn" aria-label="Menu">
-                <i class="fas fa-bars"></i>
-            </button>
+
         </div>
     </div>
 </header>
@@ -189,101 +186,35 @@
             </ul>
         </div>
 
-        <!-- ── WIDGET INTERACTIF AMPOULE + SCHÉMA BUSINESS PLAN ── -->
-        <div class="methodology-image">
-            <div class="bp-widget" id="bpWidget">
+        <!-- ── WIDGET INTERACTIF : PARCOURS VERS LE SUCCÈS ── -->
+        <div class="methodology-widget-wrap">
+            <div class="mw-inner" id="bpWidget">
 
-                <!-- Ampoule SVG interactive -->
-                <div class="bp-bulb-zone" id="bpBulb">
-                    <svg class="bp-bulb-svg" viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Rayons lumineux -->
-                        <g class="bp-rays">
-                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round"/>
-                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round" transform="rotate(45 60 60)"/>
-                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round" transform="rotate(90 60 60)"/>
-                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round" transform="rotate(135 60 60)"/>
-                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round" transform="rotate(180 60 60)"/>
-                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round" transform="rotate(225 60 60)"/>
-                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round" transform="rotate(270 60 60)"/>
-                            <line x1="60" y1="8"  x2="60" y2="0"  stroke="#f2bc00" stroke-width="3" stroke-linecap="round" transform="rotate(315 60 60)"/>
+                <!-- Ampoule (toujours visible, cliquable) -->
+                <div class="mw-bulb" id="mwBulb" onclick="mwToggleBulb()">
+                    <svg class="mw-bulb-svg" viewBox="0 0 100 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g class="mw-rays">
+                            <line x1="50" y1="4" x2="50" y2="0" stroke="#f2bc00" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="50" y1="4" x2="50" y2="0" stroke="#f2bc00" stroke-width="2.5" stroke-linecap="round" transform="rotate(45 50 52)"/>
+                            <line x1="50" y1="4" x2="50" y2="0" stroke="#f2bc00" stroke-width="2.5" stroke-linecap="round" transform="rotate(90 50 52)"/>
+                            <line x1="50" y1="4" x2="50" y2="0" stroke="#f2bc00" stroke-width="2.5" stroke-linecap="round" transform="rotate(135 50 52)"/>
+                            <line x1="50" y1="4" x2="50" y2="0" stroke="#f2bc00" stroke-width="2.5" stroke-linecap="round" transform="rotate(180 50 52)"/>
+                            <line x1="50" y1="4" x2="50" y2="0" stroke="#f2bc00" stroke-width="2.5" stroke-linecap="round" transform="rotate(225 50 52)"/>
+                            <line x1="50" y1="4" x2="50" y2="0" stroke="#f2bc00" stroke-width="2.5" stroke-linecap="round" transform="rotate(270 50 52)"/>
+                            <line x1="50" y1="4" x2="50" y2="0" stroke="#f2bc00" stroke-width="2.5" stroke-linecap="round" transform="rotate(315 50 52)"/>
                         </g>
-                        <!-- Halo glow -->
-                        <circle class="bp-halo" cx="60" cy="62" r="42" fill="#f2bc00" opacity="0"/>
-                        <!-- Corps ampoule -->
-                        <path class="bp-glass" d="M60 20 C35 20 18 38 18 60 C18 76 28 88 38 96 L38 108 C38 112 42 115 46 115 L74 115 C78 115 82 112 82 108 L82 96 C92 88 102 76 102 60 C102 38 85 20 60 20Z" fill="#e8f4ff" stroke="#c0d8f0" stroke-width="2"/>
-                        <!-- Filament -->
-                        <path class="bp-filament" d="M48 95 L48 70 L52 60 L56 70 L60 55 L64 70 L68 60 L72 70 L72 95" stroke="#004595" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        <!-- Socle -->
-                        <rect x="42" y="115" width="36" height="8"  rx="2" fill="#c0d0e8"/>
-                        <rect x="44" y="123" width="32" height="8"  rx="2" fill="#a8b8d0"/>
-                        <rect x="46" y="131" width="28" height="8"  rx="2" fill="#90a0b8"/>
-                        <!-- Vis/trait déco -->
-                        <line x1="42" y1="119" x2="78" y2="119" stroke="#90a0b8" stroke-width="1"/>
-                        <line x1="44" y1="127" x2="76" y2="127" stroke="#90a0b8" stroke-width="1"/>
+                        <circle class="mw-halo" cx="50" cy="52" r="34" fill="#f2bc00" opacity="0"/>
+                        <path class="mw-glass" d="M50 16 C30 16 16 30 16 48 C16 60 23 70 32 78 L32 90 C32 93 35 95 38 95 L62 95 C65 95 68 93 68 90 L68 78 C77 70 84 60 84 48 C84 30 70 16 50 16Z" fill="#dceeff" stroke="#a0c4e8" stroke-width="1.5"/>
+                        <path class="mw-filament" d="M40 78 L40 58 L44 50 L48 58 L50 45 L52 58 L56 50 L60 58 L60 78" stroke="#004595" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="34" y="95" width="32" height="6" rx="2" fill="#b0c8e0"/>
+                        <rect x="36" y="101" width="28" height="6" rx="2" fill="#90aac8"/>
+                        <rect x="38" y="107" width="24" height="7" rx="2" fill="#708ab0"/>
                     </svg>
-                    <p class="bp-hint">Passez la souris sur l'ampoule</p>
+                    <span class="mw-bulb-label" id="mwBulbLabel">Cliquez !</span>
                 </div>
 
-                <!-- Schéma Business Plan animé -->
-                <div class="bp-schema" id="bpSchema">
-                    <div class="bp-schema-title">Votre parcours vers le succès</div>
-
-                    <div class="bp-flow">
-                        <!-- Nœud 1 : Idée -->
-                        <div class="bp-node bp-node--idea bp-n1">
-                            <div class="bp-node-icon"><i class="fas fa-lightbulb"></i></div>
-                            <span>Idée</span>
-                        </div>
-
-                        <div class="bp-arrow bp-a1"><i class="fas fa-arrow-right"></i></div>
-
-                        <!-- Nœud 2 : Étude -->
-                        <div class="bp-node bp-node--study bp-n2">
-                            <div class="bp-node-icon"><i class="fas fa-magnifying-glass"></i></div>
-                            <span>Étude</span>
-                        </div>
-
-                        <div class="bp-arrow bp-a2"><i class="fas fa-arrow-right"></i></div>
-
-                        <!-- Nœud 3 : Business Plan -->
-                        <div class="bp-node bp-node--bp bp-n3">
-                            <div class="bp-node-icon"><i class="fas fa-file-contract"></i></div>
-                            <span>Business<br>Plan</span>
-                        </div>
-                    </div>
-
-                    <!-- Question centrale -->
-                    <div class="bp-question bp-q1">
-                        <div class="bp-question-bubble">
-                            <i class="fas fa-circle-question"></i>
-                            Ça fonctionne ?
-                        </div>
-                        <div class="bp-branches">
-                            <div class="bp-branch bp-branch--yes">
-                                <span class="bp-branch-label yes">OUI</span>
-                                <i class="fas fa-arrow-right"></i>
-                                <div class="bp-node bp-node--money">
-                                    <div class="bp-node-icon"><i class="fas fa-sack-dollar"></i></div>
-                                    <span>Financement</span>
-                                </div>
-                                <i class="fas fa-arrow-right"></i>
-                                <div class="bp-node bp-node--launch">
-                                    <div class="bp-node-icon"><i class="fas fa-rocket"></i></div>
-                                    <span>Lancement</span>
-                                </div>
-                            </div>
-                            <div class="bp-branch bp-branch--no">
-                                <span class="bp-branch-label no">NON</span>
-                                <i class="fas fa-arrow-left"></i>
-                                <span class="bp-retry">Révision &amp; Itération</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bp-esmaroc-tag">
-                        <i class="fas fa-circle-check"></i> ESMaroc vous accompagne à chaque étape
-                    </div>
-                </div>
+                <!-- Contenu interactif step-by-step -->
+                <div class="mw-content" id="mwContent"></div>
 
             </div>
         </div>
@@ -729,6 +660,29 @@
     </div>
 
     <div class="partners-track-wrapper">
+        <!--
+        ╔══════════════════════════════════════════════════════════════════╗
+        ║  ➕ AJOUTER UN PARTENAIRE — copier/coller ce bloc :              ║
+        ║                                                                  ║
+        ║  <a href="https://site-partenaire.com" target="_blank"           ║
+        ║     rel="noopener" class="partner-logo-card">                    ║
+        ║    <div class="partner-logo-inner">                              ║
+        ║      <!-- OPTION A : avec logo image -->                         ║
+        ║      <img src="LOGO_PARTENAIRE.png" alt="NOM PARTENAIRE"         ║
+        ║           onerror="this.style.display='none';                    ║
+        ║           this.nextElementSibling.style.display='flex'">         ║
+        ║      <span class="partner-name-fallback"                         ║
+        ║            style="display:none">NOM PARTENAIRE</span>            ║
+        ║      <!-- OPTION B : sans logo (texte seul) -->                  ║
+        ║      <!-- <span class="partner-name-fallback">NOM</span> -->      ║
+        ║    </div>                                                         ║
+        ║    <span class="partner-name">Nom Affiché</span>                 ║
+        ║  </a>                                                            ║
+        ║                                                                  ║
+        ║  Répéter autant de fois que nécessaire — le carrousel            ║
+        ║  s'adapte automatiquement au nombre de partenaires.              ║
+        ╚══════════════════════════════════════════════════════════════════╝
+        -->
         <div class="partners-track" id="partners-track">
 
             <a href="https://www.anapec.org" target="_blank" rel="noopener" class="partner-logo-card">
@@ -1012,5 +966,123 @@
 
 <script src="script.js"></script>
 <script src="index.js"></script>
+
+<script>
+/* ── STEPPER : PARCOURS VERS LE SUCCÈS ── */
+(function(){
+    var lit = false;
+
+    window.mwToggleBulb = function(){
+        lit = !lit;
+        var svg  = document.querySelector('.mw-bulb-svg');
+        var lbl  = document.getElementById('mwBulbLabel');
+        var glass = document.querySelector('.mw-glass');
+        var fil   = document.querySelector('.mw-filament');
+        var halo  = document.querySelector('.mw-halo');
+        var rays  = document.querySelector('.mw-rays');
+        if(lit){
+            svg.style.filter  = 'drop-shadow(0 0 16px rgba(242,188,0,.7))';
+            glass.style.cssText = 'fill:#fffde7;stroke:#f2bc00;transition:fill .4s,stroke .4s';
+            fil.style.stroke  = '#f2bc00';
+            halo.style.opacity = '.18';
+            rays.style.opacity = '1';
+            lbl.textContent   = "L'inspiration !";
+        } else {
+            svg.style.filter  = '';
+            glass.style.cssText = 'fill:#dceeff;stroke:#a0c4e8;transition:fill .4s,stroke .4s';
+            fil.style.stroke  = '#004595';
+            halo.style.opacity = '0';
+            rays.style.opacity = '0';
+            lbl.textContent   = 'Cliquez !';
+        }
+    };
+
+    var steps = [
+        { ey:'Étape 1 sur 5', title:'Votre parcours vers le <em>succès</em>',
+          desc:"Chaque grande entreprise commence par une étincelle. ESMaroc vous guide pas à pas, de l'idée au lancement.",
+          btn:'J'ai une idée →', next:1 },
+        { ey:'Étape 2 sur 5', title:'You have an <em>idea</em>',
+          desc:"La première étape est de valider que votre idée répond à un vrai besoin. ESMaroc vous accompagne dans l'analyse de votre marché.",
+          btn:'Passer à l'étude →', next:2 },
+        { ey:'Étape 3 sur 5', title:'Étude de <em>marché</em>',
+          desc:'On analyse la concurrence, les opportunités et les risques. Vous obtenez une vision claire de votre positionnement.',
+          btn:'Rédiger le business plan →', next:3 },
+        { ey:'Étape 4 sur 5', title:'Business <em>plan</em>',
+          desc:'Votre roadmap financière et stratégique prend forme. Modèle économique, projection de revenus, levée de fonds.',
+          btn:'Ça fonctionne ?', next:4, isQ:true },
+        { ey:'Étape 5 sur 5', title:'Ça <em>fonctionne ?</em>',
+          desc:'Le moment de vérité : votre plan est-il viable ?', isDecision:true }
+    ];
+    var total = steps.length;
+    var cur   = 0;
+
+    function dots(active){
+        var h='<div class="mw-dots">';
+        for(var i=0;i<total;i++){
+            h+='<div class="mw-dot'+(i<active?' mw-done':i===active?' mw-active':'')+'"></div>';
+        }
+        return h+'</div>';
+    }
+
+    function goTo(i){
+        cur = i;
+        var s = steps[i];
+        var h = '<div class="mw-step-inner mw-fadein">'+dots(i);
+        h += '<span class="mw-eyebrow">'+s.ey+'</span>';
+        h += '<div class="mw-step-title">'+s.title+'</div>';
+        h += '<p class="mw-step-desc">'+s.desc+'</p>';
+        if(s.isDecision){
+            h += '<div class="mw-btn-row">';
+            h += '<button class="mw-btn-yes" onclick="mwResult(true)">OUI — mon plan est solide</button>';
+            h += '<button class="mw-btn-no" onclick="mwResult(false)">NON — je dois retravailler</button>';
+            h += '</div>';
+        } else {
+            h += '<div class="mw-btn-row">';
+            h += '<button class="mw-btn-primary" onclick="goTo('+(i+1)+')">'+s.btn+'</button>';
+            if(i>0) h += '<button class="mw-btn-back" onclick="goTo('+(i-1)+')">← Retour</button>';
+            h += '</div>';
+        }
+        h += '</div>';
+        document.getElementById('mwContent').innerHTML = h;
+    }
+
+    window.mwResult = function(yes){
+        var h = '<div class="mw-step-inner mw-fadein">'+dots(total-1);
+        if(yes){
+            h += '<span class="mw-tag mw-tag-yes">OUI — Plan validé</span>';
+            h += '<div class="mw-step-title">Prêt pour le <em>lancement !</em></div>';
+            h += '<div class="mw-result-box mw-result-yes">';
+            h += '<div class="mw-result-title">ESMaroc vous accompagne pour :</div>';
+            h += '<ul class="mw-result-list">';
+            h += '<li>Obtenir un financement adapté à votre stade</li>';
+            h += '<li>Formaliser votre entreprise (SARL, coopérative…)</li>';
+            h += '<li>Intégrer notre réseau de mentors et d'experts</li>';
+            h += '<li>Accéder aux marchés locaux et internationaux</li>';
+            h += '</ul></div>';
+            h += '<div class="mw-btn-row"><a href="contact.html" class="mw-btn-yes">Démarrer avec ESMaroc →</a>';
+            h += '<button class="mw-btn-back" onclick="goTo(4)">← Retour</button></div>';
+        } else {
+            h += '<span class="mw-tag mw-tag-no">NON — Révision nécessaire</span>';
+            h += '<div class="mw-step-title">Révision & <em>itération</em></div>';
+            h += '<div class="mw-result-box mw-result-no">';
+            h += '<div class="mw-result-title">Pas de panique — c'est normal !</div>';
+            h += '<ul class="mw-result-list mw-list-no">';
+            h += '<li>Retravailler le modèle économique avec un expert</li>';
+            h += '<li>Valider à nouveau auprès de vos futurs clients</li>';
+            h += '<li>Pivoter si nécessaire — l'échec est une étape</li>';
+            h += '<li>ESMaroc vous guide pour repartir sur de bonnes bases</li>';
+            h += '</ul></div>';
+            h += '<div class="mw-btn-row"><button class="mw-btn-primary" onclick="goTo(1)">Recommencer l'étude →</button>';
+            h += '<button class="mw-btn-back" onclick="goTo(4)">← Retour</button></div>';
+        }
+        h += '</div>';
+        document.getElementById('mwContent').innerHTML = h;
+    };
+
+    /* init */
+    if(document.getElementById('mwContent')) goTo(0);
+})();
+</script>
+
 </body>
 </html>
