@@ -1,0 +1,730 @@
+/* ==========================================================================
+   PAGE : CONVENTIONS & PARTENARIATS
+   Palette : Bleu ESMaroc + Jaune ESMaroc (couleurs site)
+   À adapter selon les variables de style.css du site
+   Âme : Réseau · Connexions · Institutionnel · Collaboratif
+   Typographie : Montserrat uniquement
+   ========================================================================== */
+
+:root {
+    /* Couleurs principales ESMaroc — à adapter si variables déjà définies dans style.css */
+    --cv-blue:         #1a3c6e;
+    --cv-blue-dark:    #0f2548;
+    --cv-blue-deeper:  #091830;
+    --cv-blue-mid:     #2a5298;
+    --cv-blue-light:   #4a7bc8;
+    --cv-blue-pale:    #eaf0fb;
+    --cv-yellow:       #f5c842;
+    --cv-yellow-dark:  #c9a020;
+    --cv-yellow-pale:  #fef6d8;
+    --cv-white:        #ffffff;
+    --cv-off-white:    #f5f8ff;
+    --cv-light-gray:   #f0f4f8;
+    --cv-text-dark:    #0d1f3c;
+    --cv-text-mid:     #3a5070;
+    --cv-text-light:   #7a90b0;
+    --cv-border:       rgba(26,60,110,0.10);
+    --cv-border-soft:  rgba(26,60,110,0.06);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+.cv-page-body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cv-off-white);
+    color: var(--cv-text-dark);
+}
+
+/* ============================================================
+   1. HERO
+   ============================================================ */
+.cv-hero {
+    position: relative;
+    background: linear-gradient(140deg, var(--cv-blue-deeper) 0%, var(--cv-blue-dark) 50%, var(--cv-blue) 100%);
+    padding: 120px 5% 180px;
+    overflow: hidden;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Réseau SVG en fond */
+.cv-network-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.cv-network-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+}
+
+.cv-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Breadcrumb */
+.cv-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 28px;
+}
+.cv-breadcrumb a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.cv-breadcrumb a:hover { color: var(--cv-yellow); }
+.cv-breadcrumb span:last-child {
+    color: rgba(255,255,255,0.8);
+    font-weight: 600;
+}
+
+/* Tags */
+.cv-hero-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.cv-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245,200,66,0.15);
+    border: 1px solid rgba(245,200,66,0.3);
+    color: rgba(255,255,255,0.85);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 7px 16px;
+    border-radius: 2px;
+}
+
+.cv-tag i { color: var(--cv-yellow); font-size: 0.65rem; }
+
+.cv-tag--outline {
+    background: transparent;
+    border-color: rgba(255,255,255,0.2);
+}
+
+/* Titre héro */
+.cv-hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -2px;
+    margin-bottom: 28px;
+    display: block;
+}
+
+/* "Conventions" — blanc pur */
+.cv-hero-title {
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    color: var(--cv-white);
+}
+
+/* "&" — jaune signature */
+.cv-title-amp {
+    display: inline;
+    color: var(--cv-yellow);
+    font-size: 0.75em;
+    font-weight: 900;
+    font-style: italic;
+    vertical-align: baseline;
+}
+
+/* "Partenariats" — légèrement retrait */
+.cv-title-part {
+    display: inline;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    letter-spacing: -1px;
+}
+
+.cv-hero-description {
+    font-size: 1.08rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.72);
+    max-width: 620px;
+    line-height: 1.85;
+    border-left: 3px solid var(--cv-yellow);
+    padding-left: 22px;
+    margin-bottom: 42px;
+}
+
+.cv-hero-description strong {
+    color: var(--cv-white);
+    font-weight: 700;
+}
+
+/* Compteurs rapides */
+.cv-hero-counts {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    max-width: 460px;
+}
+
+.cv-hero-count {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 24px;
+}
+
+.cv-hero-count:first-child { padding-left: 0; }
+
+.cv-count-sep {
+    width: 1px;
+    height: 40px;
+    background: rgba(245,200,66,0.25);
+    flex-shrink: 0;
+}
+
+.cv-count-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--cv-yellow);
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.cv-count-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.4);
+}
+
+/* Vague de transition */
+.cv-hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    line-height: 0;
+    z-index: 3;
+}
+.cv-hero-wave svg {
+    display: block;
+    width: 100%;
+    height: 80px;
+}
+
+/* ============================================================
+   2. INTRO
+   ============================================================ */
+.cv-intro-section {
+    background: var(--cv-off-white);
+    padding: 80px 5%;
+}
+
+.cv-intro-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cv-eyebrow {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--cv-yellow-dark);
+    margin-bottom: 12px;
+}
+
+.cv-eyebrow--blue  { color: var(--cv-blue-mid); }
+.cv-eyebrow--light { color: rgba(255,255,255,0.45); }
+
+.cv-intro-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    color: var(--cv-text-dark);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+}
+
+.cv-intro-text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--cv-text-mid);
+    line-height: 1.85;
+    margin-bottom: 14px;
+}
+
+/* ============================================================
+   3. SECTIONS PARTENAIRES
+   ============================================================ */
+.cv-section {
+    padding: 80px 5%;
+}
+
+.cv-section--assoc {
+    background: var(--cv-white);
+}
+
+.cv-section--inst {
+    background: var(--cv-off-white);
+    border-top: 1px solid var(--cv-border);
+}
+
+/* En-tête de section */
+.cv-section-header {
+    max-width: 1300px;
+    margin: 0 auto 50px;
+}
+
+.cv-section-header-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.cv-section-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.cv-section-icon--yellow {
+    background: var(--cv-yellow);
+    color: var(--cv-blue-dark);
+}
+
+.cv-section-icon--blue {
+    background: var(--cv-blue);
+    color: var(--cv-white);
+}
+
+.cv-section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--cv-text-dark);
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+    line-height: 1.15;
+}
+
+.cv-section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: var(--cv-yellow);
+    margin-top: 12px;
+    border-radius: 2px;
+}
+
+.cv-section--inst .cv-section-title::after {
+    background: var(--cv-blue);
+}
+
+.cv-section-desc {
+    font-size: 0.92rem;
+    font-weight: 400;
+    color: var(--cv-text-light);
+    line-height: 1.65;
+    max-width: 620px;
+    margin-top: 10px;
+}
+
+/* ---- GRILLE ASSOCIATIFS ---- */
+.cv-partners-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.cv-partner-card {
+    background: var(--cv-off-white);
+    border-radius: 10px;
+    padding: 22px 20px;
+    border: 1px solid var(--cv-border-soft);
+    border-top: 3px solid transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease;
+    cursor: default;
+}
+
+.cv-partner-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(26,60,110,0.1);
+    border-top-color: var(--cv-yellow);
+}
+
+.cv-partner-card--highlight {
+    background: var(--cv-yellow-pale);
+    border-color: rgba(245,200,66,0.2);
+}
+
+.cv-partner-card--highlight:hover {
+    border-top-color: var(--cv-yellow-dark);
+}
+
+/* Card large sur toute la largeur */
+.cv-partner-card--wide {
+    grid-column: span 2;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+}
+
+.cv-partner-card--wide .cv-partner-icon {
+    flex-shrink: 0;
+}
+
+/* Card "et bien d'autres" */
+.cv-partner-card--more {
+    background: transparent;
+    border: 2px dashed rgba(26,60,110,0.15);
+    border-top: 3px solid transparent;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0.7;
+}
+
+.cv-partner-card--more:hover {
+    opacity: 1;
+    border-top-color: transparent;
+    box-shadow: none;
+    transform: none;
+}
+
+.cv-partner-icon {
+    width: 38px;
+    height: 38px;
+    background: rgba(26,60,110,0.07);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: var(--cv-blue-mid);
+    flex-shrink: 0;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+.cv-partner-card:hover .cv-partner-icon {
+    background: var(--cv-yellow);
+    color: var(--cv-blue-dark);
+}
+
+.cv-partner-icon--more {
+    background: rgba(26,60,110,0.05);
+    color: var(--cv-text-light);
+}
+
+.cv-partner-card h4 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--cv-text-dark);
+    line-height: 1.3;
+    margin: 0;
+}
+
+.cv-partner-sub {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--cv-text-light);
+    font-style: italic;
+}
+
+.cv-partner-type {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--cv-blue-light);
+    background: var(--cv-blue-pale);
+    padding: 3px 9px;
+    border-radius: 100px;
+    margin-top: 2px;
+}
+
+/* ---- GRILLE INSTITUTIONNELS ---- */
+.cv-inst-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.cv-inst-card {
+    background: var(--cv-white);
+    border-radius: 10px;
+    padding: 24px 22px;
+    border: 1px solid var(--cv-border-soft);
+    border-left: 4px solid transparent;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
+}
+
+.cv-inst-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 24px rgba(26,60,110,0.09);
+    border-left-color: var(--cv-blue);
+}
+
+.cv-inst-card--highlight {
+    background: var(--cv-blue-pale);
+}
+
+.cv-inst-card--highlight:hover {
+    border-left-color: var(--cv-blue-mid);
+}
+
+.cv-inst-card--more {
+    background: transparent;
+    border: 2px dashed rgba(26,60,110,0.12);
+    border-left: 2px dashed rgba(26,60,110,0.12);
+    opacity: 0.65;
+    align-items: center;
+}
+
+.cv-inst-card--more:hover {
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+}
+
+.cv-inst-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    background: rgba(26,60,110,0.08);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    color: var(--cv-blue-mid);
+    flex-shrink: 0;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+.cv-inst-card:hover .cv-inst-icon {
+    background: var(--cv-blue);
+    color: var(--cv-white);
+}
+
+.cv-inst-icon--more { background: rgba(26,60,110,0.04); color: var(--cv-text-light); }
+
+.cv-inst-body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cv-inst-body h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--cv-text-dark);
+    line-height: 1.35;
+    margin: 0;
+}
+
+.cv-inst-sub {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--cv-text-light);
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.cv-inst-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--cv-blue);
+    background: var(--cv-blue-pale);
+    padding: 3px 9px;
+    border-radius: 100px;
+}
+
+/* ============================================================
+   4. BLOC IMPACT
+   ============================================================ */
+.cv-impact-section {
+    background: linear-gradient(135deg, var(--cv-blue-dark) 0%, var(--cv-blue) 100%);
+    padding: 100px 5%;
+}
+
+.cv-impact-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.cv-impact-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    color: var(--cv-white);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+}
+
+.cv-impact-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: var(--cv-yellow);
+    margin-top: 14px;
+    border-radius: 2px;
+}
+
+.cv-impact-text p {
+    font-size: 0.98rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.68);
+    line-height: 1.85;
+    margin-bottom: 14px;
+}
+
+.cv-impact-text strong {
+    color: var(--cv-yellow-pale);
+    font-weight: 600;
+}
+
+.cv-impact-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.cv-impact-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 24px 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cv-impact-card:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-3px);
+}
+
+.cv-impact-card i {
+    font-size: 1.2rem;
+    color: var(--cv-yellow);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.cv-impact-card strong {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--cv-white);
+    margin-bottom: 8px;
+}
+
+.cv-impact-card p {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* ============================================================
+   5. RESPONSIVE
+   ============================================================ */
+@media (max-width: 1100px) {
+    .cv-partners-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .cv-partner-card--wide {
+        grid-column: span 3;
+    }
+    .cv-inst-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cv-impact-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cv-hero {
+        padding: 100px 5% 170px;
+        min-height: auto;
+    }
+    .cv-hero-title {
+        font-size: 3rem;
+        letter-spacing: -1px;
+    }
+    .cv-partners-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .cv-partner-card--wide {
+        grid-column: span 2;
+    }
+    .cv-inst-grid {
+        grid-template-columns: 1fr;
+    }
+    .cv-section-header-inner {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .cv-hero-counts { flex-wrap: wrap; }
+    .cv-impact-cards { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .cv-hero-title { font-size: 2.2rem; }
+    .cv-partners-grid { grid-template-columns: 1fr; }
+    .cv-partner-card--wide { grid-column: span 1; flex-direction: column; }
+    .cv-hero-counts { flex-direction: column; gap: 16px; }
+    .cv-count-sep { width: 40px; height: 1px; }
+}
