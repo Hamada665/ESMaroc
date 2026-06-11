@@ -974,113 +974,146 @@
 
     window.mwToggleBulb = function(){
         lit = !lit;
-        var svg  = document.querySelector('.mw-bulb-svg');
-        var lbl  = document.getElementById('mwBulbLabel');
+        var svg   = document.querySelector('.mw-bulb-svg');
+        var lbl   = document.getElementById('mwBulbLabel');
         var glass = document.querySelector('.mw-glass');
         var fil   = document.querySelector('.mw-filament');
         var halo  = document.querySelector('.mw-halo');
         var rays  = document.querySelector('.mw-rays');
         if(lit){
-            svg.style.filter  = 'drop-shadow(0 0 16px rgba(242,188,0,.7))';
-            glass.style.cssText = 'fill:#fffde7;stroke:#f2bc00;transition:fill .4s,stroke .4s';
-            fil.style.stroke  = '#f2bc00';
-            halo.style.opacity = '.18';
-            rays.style.opacity = '1';
-            lbl.textContent   = "L'inspiration !";
+            svg.style.filter    = 'drop-shadow(0 0 16px rgba(242,188,0,.7))';
+            glass.setAttribute('style','fill:#fffde7;stroke:#f2bc00;transition:fill .4s,stroke .4s');
+            fil.style.stroke    = '#f2bc00';
+            halo.style.opacity  = '.18';
+            rays.style.opacity  = '1';
+            lbl.textContent     = 'L\u2019inspiration\u00a0!';
         } else {
-            svg.style.filter  = '';
-            glass.style.cssText = 'fill:#dceeff;stroke:#a0c4e8;transition:fill .4s,stroke .4s';
-            fil.style.stroke  = '#004595';
-            halo.style.opacity = '0';
-            rays.style.opacity = '0';
-            lbl.textContent   = 'Cliquez !';
+            svg.style.filter    = '';
+            glass.setAttribute('style','fill:#dceeff;stroke:#a0c4e8;transition:fill .4s,stroke .4s');
+            fil.style.stroke    = '#004595';
+            halo.style.opacity  = '0';
+            rays.style.opacity  = '0';
+            lbl.textContent     = 'Cliquez\u00a0!';
         }
     };
 
     var steps = [
-        { ey:'Étape 1 sur 5', title:'Votre parcours vers le <em>succès</em>',
-          desc:"Chaque grande entreprise commence par une étincelle. ESMaroc vous guide pas à pas, de l'idée au lancement.",
-          btn:'J'ai une idée →', next:1 },
-        { ey:'Étape 2 sur 5', title:'You have an <em>idea</em>',
-          desc:"La première étape est de valider que votre idée répond à un vrai besoin. ESMaroc vous accompagne dans l'analyse de votre marché.",
-          btn:'Passer à l'étude →', next:2 },
-        { ey:'Étape 3 sur 5', title:'Étude de <em>marché</em>',
-          desc:'On analyse la concurrence, les opportunités et les risques. Vous obtenez une vision claire de votre positionnement.',
-          btn:'Rédiger le business plan →', next:3 },
-        { ey:'Étape 4 sur 5', title:'Business <em>plan</em>',
-          desc:'Votre roadmap financière et stratégique prend forme. Modèle économique, projection de revenus, levée de fonds.',
-          btn:'Ça fonctionne ?', next:4, isQ:true },
-        { ey:'Étape 5 sur 5', title:'Ça <em>fonctionne ?</em>',
-          desc:'Le moment de vérité : votre plan est-il viable ?', isDecision:true }
+        {
+            ey   : '\u00c9tape 1 sur 5',
+            title: 'Votre parcours vers le <em>succ\u00e8s</em>',
+            desc : 'Chaque grande entreprise commence par une \u00e9tincelle. ESMaroc vous guide pas \u00e0 pas, de l\u2019id\u00e9e au lancement.',
+            btn  : 'J\u2019ai une id\u00e9e \u2192',
+            next : 1
+        },
+        {
+            ey   : '\u00c9tape 2 sur 5',
+            title: 'You have an <em>idea</em>',
+            desc : 'La premi\u00e8re \u00e9tape est de valider que votre id\u00e9e r\u00e9pond \u00e0 un vrai besoin. ESMaroc vous accompagne dans l\u2019analyse de votre march\u00e9.',
+            btn  : 'Passer \u00e0 l\u2019\u00e9tude \u2192',
+            next : 2
+        },
+        {
+            ey   : '\u00c9tape 3 sur 5',
+            title: '\u00c9tude de <em>march\u00e9</em>',
+            desc : 'On analyse la concurrence, les opportunit\u00e9s et les risques. Vous obtenez une vision claire de votre positionnement.',
+            btn  : 'R\u00e9diger le business plan \u2192',
+            next : 3
+        },
+        {
+            ey   : '\u00c9tape 4 sur 5',
+            title: 'Business <em>plan</em>',
+            desc : 'Votre roadmap financi\u00e8re et strat\u00e9gique prend forme. Mod\u00e8le \u00e9conomique, projection de revenus, lev\u00e9e de fonds.',
+            btn  : '\u00c7a fonctionne\u00a0?',
+            next : 4
+        },
+        {
+            ey         : '\u00c9tape 5 sur 5',
+            title      : '\u00c7a <em>fonctionne\u00a0?</em>',
+            desc       : 'Le moment de v\u00e9rit\u00e9\u00a0: votre plan est-il viable\u00a0?',
+            isDecision : true
+        }
     ];
+
     var total = steps.length;
-    var cur   = 0;
 
     function dots(active){
-        var h='<div class="mw-dots">';
-        for(var i=0;i<total;i++){
-            h+='<div class="mw-dot'+(i<active?' mw-done':i===active?' mw-active':'')+'"></div>';
+        var h = '<div class="mw-dots">';
+        for(var i = 0; i < total; i++){
+            var cls = 'mw-dot' + (i < active ? ' mw-done' : i === active ? ' mw-active' : '');
+            h += '<div class="' + cls + '"></div>';
         }
-        return h+'</div>';
+        return h + '</div>';
     }
 
-    function goTo(i){
-        cur = i;
+    window.goTo = function(i){
         var s = steps[i];
-        var h = '<div class="mw-step-inner mw-fadein">'+dots(i);
-        h += '<span class="mw-eyebrow">'+s.ey+'</span>';
-        h += '<div class="mw-step-title">'+s.title+'</div>';
-        h += '<p class="mw-step-desc">'+s.desc+'</p>';
+        var h = '<div class="mw-step-inner mw-fadein">' + dots(i);
+        h += '<span class="mw-eyebrow">' + s.ey + '</span>';
+        h += '<div class="mw-step-title">' + s.title + '</div>';
+        h += '<p class="mw-step-desc">' + s.desc + '</p>';
         if(s.isDecision){
             h += '<div class="mw-btn-row">';
-            h += '<button class="mw-btn-yes" onclick="mwResult(true)">OUI — mon plan est solide</button>';
-            h += '<button class="mw-btn-no" onclick="mwResult(false)">NON — je dois retravailler</button>';
+            h += '<button class="mw-btn-yes" onclick="mwResult(true)">OUI &mdash; mon plan est solide</button>';
+            h += '<button class="mw-btn-no"  onclick="mwResult(false)">NON &mdash; je dois retravailler</button>';
             h += '</div>';
         } else {
             h += '<div class="mw-btn-row">';
-            h += '<button class="mw-btn-primary" onclick="goTo('+(i+1)+')">'+s.btn+'</button>';
-            if(i>0) h += '<button class="mw-btn-back" onclick="goTo('+(i-1)+')">← Retour</button>';
+            h += '<button class="mw-btn-primary" onclick="goTo(' + (i + 1) + ')">' + s.btn + '</button>';
+            if(i > 0){
+                h += '<button class="mw-btn-back" onclick="goTo(' + (i - 1) + ')">\u2190 Retour</button>';
+            }
             h += '</div>';
-        }
-        h += '</div>';
-        document.getElementById('mwContent').innerHTML = h;
-    }
-
-    window.mwResult = function(yes){
-        var h = '<div class="mw-step-inner mw-fadein">'+dots(total-1);
-        if(yes){
-            h += '<span class="mw-tag mw-tag-yes">OUI — Plan validé</span>';
-            h += '<div class="mw-step-title">Prêt pour le <em>lancement !</em></div>';
-            h += '<div class="mw-result-box mw-result-yes">';
-            h += '<div class="mw-result-title">ESMaroc vous accompagne pour :</div>';
-            h += '<ul class="mw-result-list">';
-            h += '<li>Obtenir un financement adapté à votre stade</li>';
-            h += '<li>Formaliser votre entreprise (SARL, coopérative…)</li>';
-            h += '<li>Intégrer notre réseau de mentors et d'experts</li>';
-            h += '<li>Accéder aux marchés locaux et internationaux</li>';
-            h += '</ul></div>';
-            h += '<div class="mw-btn-row"><a href="contact.html" class="mw-btn-yes">Démarrer avec ESMaroc →</a>';
-            h += '<button class="mw-btn-back" onclick="goTo(4)">← Retour</button></div>';
-        } else {
-            h += '<span class="mw-tag mw-tag-no">NON — Révision nécessaire</span>';
-            h += '<div class="mw-step-title">Révision & <em>itération</em></div>';
-            h += '<div class="mw-result-box mw-result-no">';
-            h += '<div class="mw-result-title">Pas de panique — c'est normal !</div>';
-            h += '<ul class="mw-result-list mw-list-no">';
-            h += '<li>Retravailler le modèle économique avec un expert</li>';
-            h += '<li>Valider à nouveau auprès de vos futurs clients</li>';
-            h += '<li>Pivoter si nécessaire — l'échec est une étape</li>';
-            h += '<li>ESMaroc vous guide pour repartir sur de bonnes bases</li>';
-            h += '</ul></div>';
-            h += '<div class="mw-btn-row"><button class="mw-btn-primary" onclick="goTo(1)">Recommencer l'étude →</button>';
-            h += '<button class="mw-btn-back" onclick="goTo(4)">← Retour</button></div>';
         }
         h += '</div>';
         document.getElementById('mwContent').innerHTML = h;
     };
 
-    /* init */
-    if(document.getElementById('mwContent')) goTo(0);
+    window.mwResult = function(yes){
+        var h = '<div class="mw-step-inner mw-fadein">' + dots(total - 1);
+        if(yes){
+            h += '<span class="mw-tag mw-tag-yes">OUI &mdash; Plan valid\u00e9</span>';
+            h += '<div class="mw-step-title">Pr\u00eat pour le <em>lancement\u00a0!</em></div>';
+            h += '<div class="mw-result-box mw-result-yes">';
+            h += '<div class="mw-result-title">ESMaroc vous accompagne pour\u00a0:</div>';
+            h += '<ul class="mw-result-list">';
+            h += '<li>Obtenir un financement adapt\u00e9 \u00e0 votre stade</li>';
+            h += '<li>Formaliser votre entreprise (SARL, coop\u00e9rative\u2026)</li>';
+            h += '<li>Int\u00e9grer notre r\u00e9seau de mentors et d\u2019experts</li>';
+            h += '<li>Acc\u00e9der aux march\u00e9s locaux et internationaux</li>';
+            h += '</ul></div>';
+            h += '<div class="mw-btn-row">';
+            h += '<a href="contact.html" class="mw-btn-yes">D\u00e9marrer avec ESMaroc \u2192</a>';
+            h += '<button class="mw-btn-back" onclick="goTo(4)">\u2190 Retour</button>';
+            h += '</div>';
+        } else {
+            h += '<span class="mw-tag mw-tag-no">NON &mdash; R\u00e9vision n\u00e9cessaire</span>';
+            h += '<div class="mw-step-title">R\u00e9vision &amp; <em>it\u00e9ration</em></div>';
+            h += '<div class="mw-result-box mw-result-no">';
+            h += '<div class="mw-result-title">Pas de panique &mdash; c\u2019est normal\u00a0!</div>';
+            h += '<ul class="mw-result-list mw-list-no">';
+            h += '<li>Retravailler le mod\u00e8le \u00e9conomique avec un expert</li>';
+            h += '<li>Valider \u00e0 nouveau aupr\u00e8s de vos futurs clients</li>';
+            h += '<li>Pivoter si n\u00e9cessaire &mdash; l\u2019\u00e9chec est une \u00e9tape</li>';
+            h += '<li>ESMaroc vous guide pour repartir sur de bonnes bases</li>';
+            h += '</ul></div>';
+            h += '<div class="mw-btn-row">';
+            h += '<button class="mw-btn-primary" onclick="goTo(1)">Recommencer l\u2019\u00e9tude \u2192</button>';
+            h += '<button class="mw-btn-back"    onclick="goTo(4)">\u2190 Retour</button>';
+            h += '</div>';
+        }
+        h += '</div>';
+        document.getElementById('mwContent').innerHTML = h;
+    };
+
+    /* Init propre */
+    function mwInit(){
+        if(document.getElementById('mwContent')) window.goTo(0);
+    }
+    if(document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', mwInit);
+    } else {
+        mwInit();
+    }
 })();
 </script>
 
