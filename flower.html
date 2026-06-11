@@ -6,37 +6,74 @@
     <title>Projet FLOWER | ESMaroc.Org</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="flower.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body class="flower-page-body">
 
-<!-- ===================== HEADER ===================== -->
+<!--
+═══════════════════════════════════════════════════════════════════════
+  HEADER GLOBAL ESMAROC — Copier/coller sur TOUTES les pages
+═══════════════════════════════════════════════════════════════════════
+-->
 <header>
     <div class="header-container">
         <div class="logo">
             <img src="ESMAROC LOGO.png" alt="Logo ESMaroc">
         </div>
-        <nav>
+
+        <nav id="main-nav">
+            <!-- Changez "active" sur le lien correspondant à la page courante -->
             <a href="index.html">Accueil</a>
+
             <div class="dropdown">
-                <a href="#" class="dropdown-trigger">ESMaroc <i class="fas fa-chevron-down nav-arrow"></i></a>
+                <a href="#" class="dropdown-trigger">
+                    ESMaroc <i class="fas fa-chevron-down nav-arrow"></i>
+                </a>
                 <div class="dropdown-menu">
                     <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
-                    <a href="histoire.html">Notre Histoire & Vision</a>
+                    <a href="histoire.html">Notre Histoire &amp; Vision</a>
                     <a href="equipe.html">Notre Équipe</a>
+                    <a href="rapports.html">Rapports</a>
                 </div>
             </div>
+
             <a href="evenements.html">Évènements</a>
-            <a href="projets.html" class="active">Projets</a>
-            <a href="#">École E-learning</a>
-            <a href="#">Contact</a>
+            <a href="projets.html">Projets</a>
+            <a href="elearning.html">École E-learning</a>
+            <a href="contact.html">Contact</a>
         </nav>
+
         <div class="header-icons">
-            <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
-            <a href="#" class="icon-link"><i class="fas fa-map-marker-alt"></i></a>
-            <button class="burger-menu"><i class="fas fa-bars"></i></button>
+
+            <!-- 🔍 Barre de recherche -->
+            <div class="search-wrapper">
+                <a href="#" class="icon-link" id="search-toggle" aria-label="Rechercher">
+                    <i class="fas fa-search"></i>
+                </a>
+                <div class="search-bar" id="search-bar">
+                    <div class="search-bar-top">
+                        <input type="text" id="search-input"
+                               placeholder="Rechercher sur le site…"
+                               autocomplete="off">
+                        <button id="search-close">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+            </div>
+
+            <!-- 📍 Localisation → Hub Rabat -->
+            <a href="https://maps.app.goo.gl/56zAEYm36nfkxbUT8"
+               target="_blank" rel="noopener"
+               class="icon-link" aria-label="Nous localiser">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+
         </div>
     </div>
 </header>
@@ -379,36 +416,115 @@
 
 </main>
 
-<!-- ===================== FOOTER ===================== -->
+<!--
+═══════════════════════════════════════════════════════════════════════
+  FOOTER GLOBAL ESMAROC — Copier/coller sur TOUTES les pages
+═══════════════════════════════════════════════════════════════════════
+-->
 <footer class="main-footer">
     <div class="footer-container">
+
+        <!-- ── COLONNE GAUCHE : infos ── -->
         <div class="footer-left">
             <h2 class="footer-logo">ES.Maroc<span>.Org</span></h2>
+
             <p class="footer-description">
                 EsMaroc.Org est une association qui promeut l'innovation sociale au Maroc.
                 Nous accompagnons les entrepreneurs pour créer un impact durable et responsable.
             </p>
-            <div class="footer-contact">
-                <p><i class="fa-solid fa-location-dot"></i> 12 rue Pékin, Océan Résidence Les Fleurs, App. 1 Rabat</p>
-                <p><i class="fa-solid fa-phone"></i> +212 (0) 537 762 872</p>
-                <p><i class="fa-solid fa-envelope"></i> contact@entreprisesocialemaroc.org</p>
+
+            <!-- Deux hubs -->
+            <div class="footer-hubs">
+
+                <div class="footer-hub">
+                    <p class="footer-hub-title">
+                        <i class="fa-solid fa-circle-dot"></i>
+                        Hub Rabat &mdash; Siège principal
+                    </p>
+                    <div class="footer-contact">
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            12 rue Pékin, Océan Résidence Les Fleurs, App. 1 &mdash; Rabat
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+212537762872">+212 (0) 537 762 872</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-hub">
+                    <p class="footer-hub-title">
+                        <i class="fa-solid fa-circle-dot"></i>
+                        Hub Tanger &mdash; Régional
+                    </p>
+                    <div class="footer-contact">
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Centre des Services à la Jeunesse,
+                            Hay Hassani Bni Touzine &mdash; Tanger
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+212526131326">+212 (0) 5 26 13 13 26</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Email commun aux deux hubs -->
+            <div class="footer-contact footer-email-row">
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:contact@entreprisesocialemaroc.org">
+                        contact@entreprisesocialemaroc.org
+                    </a>
+                </p>
             </div>
         </div>
+
+        <!-- ── SÉPARATEUR VERTICAL ── -->
+        <div class="footer-divider"></div>
+
+        <!-- ── COLONNE DROITE : RS + CTA ── -->
         <div class="footer-right">
-            <h3>REJOIGNEZ-NOUS</h3>
+            <h3>Rejoignez-nous</h3>
+
             <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/1D5jCeXmCF/?mibextid=wwXIfr"
+                   target="_blank" rel="noopener" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/es-maroc-org/?originalSubdomain=mt"
+                   target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://youtube.com/@esmarocorg484?si=5d8Rrxz4J4Jl7WgH"
+                   target="_blank" rel="noopener" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/es.maroc?igsh=dnB1cGllNzRmbG1n"
+                   target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
             </div>
-            <p class="copyright">ES.Maroc © Copyright 2026. Tous droits réservés.</p>
+
+            <div class="footer-contact-btn-wrap">
+                <a href="contact.html" class="footer-contact-btn">
+                    <i class="fas fa-envelope"></i> Contactez-nous
+                </a>
+            </div>
+
+            <p class="copyright">ES.Maroc &copy; Copyright 2026. Tous droits réservés.</p>
         </div>
+
     </div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
 <script src="script.js"></script>
+<script src="header.js"></script>
 
 </body>
 </html>
