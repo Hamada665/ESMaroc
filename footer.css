@@ -1,0 +1,215 @@
+/* ==========================================================================
+   FOOTER.CSS — Styles globaux du footer ESMaroc
+   À inclure sur TOUTES les pages via : <link rel="stylesheet" href="footer.css">
+   ========================================================================== */
+
+/* ── Structure principale ── */
+.main-footer {
+    background-color: #1a1a1a;
+    color: var(--white);
+    padding: 80px 8% 40px;
+}
+
+.footer-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 80px;
+}
+
+/* ── Colonne gauche ── */
+.footer-left {
+    flex: 1.5;
+}
+
+.footer-logo {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.footer-logo span {
+    color: var(--yellow);
+}
+
+.footer-description {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    opacity: 0.7;
+    max-width: 480px;
+}
+
+/* ── Deux hubs ── */
+.footer-hubs {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-hub {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-hub-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--yellow);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.footer-hub-title i {
+    font-size: 0.6rem;
+    color: var(--yellow);
+}
+
+/* ── Infos de contact ── */
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-contact p {
+    font-size: 0.88rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+.footer-contact i {
+    color: var(--yellow);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.footer-contact a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-contact a:hover {
+    color: var(--yellow);
+}
+
+.footer-email-row {
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Colonne droite ── */
+.footer-right {
+    flex: 0 0 240px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.footer-right h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    color: var(--yellow);
+    text-transform: uppercase;
+}
+
+/* ── Icônes réseaux sociaux ── */
+.social-icons {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.social-icons a {
+    color: var(--white);
+    font-size: 1.3rem;
+    transition: color 0.3s, transform 0.3s;
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: var(--yellow);
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+/* ── Bouton Contactez-nous ── */
+.footer-contact-btn-wrap {
+    margin-bottom: 20px;
+}
+
+.footer-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--yellow);
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 11px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.footer-contact-btn:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Copyright ── */
+.copyright {
+    font-size: 0.78rem;
+    opacity: 0.35;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 20px;
+    margin-top: auto;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .footer-right {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 30px;
+        flex: unset;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 60px 5% 30px;
+    }
+    .footer-hubs {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .footer-logo {
+        font-size: 1.6rem;
+    }
+}
