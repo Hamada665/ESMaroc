@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Partenaires | ES.Maroc.Org</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="partenaires.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ═══════════ HEADER GLOBAL ═══════════ -->
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="ESMAROC LOGO.png" alt="Logo ESMaroc">
+        </div>
+        <nav id="main-nav">
+            <a href="index.html">Accueil</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-trigger">ESMaroc <i class="fas fa-chevron-down nav-arrow"></i></a>
+                <div class="dropdown-menu">
+                    <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
+                    <a href="histoire.html">Notre Histoire &amp; Vision</a>
+                    <a href="equipe.html">Notre Équipe</a>
+                    <a href="rapports.html">Rapports</a>
+                </div>
+            </div>
+            <a href="evenements.html">Évènements</a>
+            <a href="projets.html">Projets</a>
+            <a href="elearning.html">École E-learning</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-icons">
+            <div class="search-wrapper">
+                <a href="#" class="icon-link" id="search-toggle" aria-label="Rechercher">
+                    <i class="fas fa-search"></i>
+                </a>
+                <div class="search-bar" id="search-bar">
+                    <div class="search-bar-top">
+                        <input type="text" id="search-input" placeholder="Rechercher sur le site…" autocomplete="off">
+                        <button id="search-close"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+            </div>
+            <a href="https://maps.app.goo.gl/56zAEYm36nfkxbUT8" target="_blank" rel="noopener" class="icon-link" aria-label="Nous localiser">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="pt-hero">
+        <div class="pt-hero-inner">
+            <div class="pt-hero-text">
+                <span class="pt-eyebrow"><i class="fas fa-circle-dot"></i> ESMaroc · Réseau partenarial</span>
+                <h1>Nos <em>Partenaires</em></h1>
+                <p>Un écosystème riche de <strong>73 partenaires</strong> — institutions publiques, ONG internationales, universités, coopérations bilatérales et acteurs associatifs — engagés aux côtés d'ESMaroc pour l'innovation sociale au Maroc et en Afrique.</p>
+            </div>
+            <div class="pt-hero-stats">
+                <div class="pt-stat">
+                    <span class="pt-stat-num">73</span>
+                    <span class="pt-stat-label">Partenaires<br>actifs</span>
+                </div>
+                <div class="pt-stat">
+                    <span class="pt-stat-num">4</span>
+                    <span class="pt-stat-label">Continents<br>représentés</span>
+                </div>
+                <div class="pt-stat">
+                    <span class="pt-stat-num">15+</span>
+                    <span class="pt-stat-label">Pays<br>partenaires</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ FILTRE PAR CATÉGORIE ═══════════ -->
+    <section class="pt-filter-bar">
+        <div class="pt-filter-inner">
+            <button class="pt-filter-btn active" data-filter="all">
+                <i class="fas fa-globe"></i> Tous
+            </button>
+            <button class="pt-filter-btn" data-filter="international">
+                <i class="fas fa-earth-africa"></i> International
+            </button>
+            <button class="pt-filter-btn" data-filter="maroc">
+                <i class="fas fa-star-and-crescent"></i> Maroc
+            </button>
+            <button class="pt-filter-btn" data-filter="academic">
+                <i class="fas fa-graduation-cap"></i> Académique
+            </button>
+            <button class="pt-filter-btn" data-filter="institutionnel">
+                <i class="fas fa-landmark"></i> Institutionnel
+            </button>
+        </div>
+    </section>
+
+    <!-- ═══════════ GRILLE PARTENAIRES ═══════════ -->
+    <section class="pt-grid-section">
+        <div class="pt-grid" id="ptGrid">
+
+            <!-- ── INTERNATIONAUX ── -->
+            <a href="https://european-union.europa.eu" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="UE.jpg" alt="Union Européenne" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">UE</span></div>
+                <div class="pt-card-info"><h3>Union Européenne</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://www.iom.int" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="ONU LOGO.png" alt="OIM" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">OIM</span></div>
+                <div class="pt-card-info"><h3>OIM — ONU Migration</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://morocco.un.org" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="NUM.jfif" alt="Nations Unies Maroc" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">ONU</span></div>
+                <div class="pt-card-info"><h3>Nations Unies Maroc</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://www.undp.org/fr/morocco" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="PNUD.png" alt="PNUD" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">PNUD</span></div>
+                <div class="pt-card-info"><h3>PNUD</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://www.unicef.org" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="unicef.png" alt="UNICEF" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">UNICEF</span></div>
+                <div class="pt-card-info"><h3>UNICEF</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://www.fondazionecariplo.it" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="fondazione.jpg" alt="Fondazione Cariplo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">FONDAZIONE CARIPLO</span></div>
+                <div class="pt-card-info"><h3>Fondazione Cariplo</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://www.soleterre.org" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="soleterre.png" alt="Soleterre" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">SOLETERRE</span></div>
+                <div class="pt-card-info"><h3>Soleterre</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://www.esteri.it" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="ministero.png" alt="Ministero Affari Esteri" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">MINISTERO IT</span></div>
+                <div class="pt-card-info"><h3>Ministero degli Affari Esteri</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://www.aics.gov.it" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="agenzia.png" alt="AICS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">AICS</span></div>
+                <div class="pt-card-info"><h3>AICS — Coopération Italienne</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://www.giz.de" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="germancoop.png" alt="German Cooperation" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">GERMAN COOP</span></div>
+                <div class="pt-card-info"><h3>German Cooperation — GIZ</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://www.netherlandsandyou.nl" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="paysbas.png" alt="Royaume des Pays-Bas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">PAYS-BAS</span></div>
+                <div class="pt-card-info"><h3>Royaume des Pays-Bas</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://um6p.ma" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="denmark.png" alt="DANIDA" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">DANIDA</span></div>
+                <div class="pt-card-info"><h3>DANIDA — Denmark</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://www.swisscontact.org" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="swiss.png" alt="SwissContact" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">SWISSCONTACT</span></div>
+                <div class="pt-card-info"><h3>SwissContact</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://www.plan-international.org" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="plan.jpg" alt="Plan International" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">PLAN INT.</span></div>
+                <div class="pt-card-info"><h3>Plan International</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://corpsafrica.org" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="corps.png" alt="Corps Africa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">CORPS AFRICA</span></div>
+                <div class="pt-card-info"><h3>Corps Africa</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://informedelsector.coordinadoraongd.org/entidades/alianza-por-la-solidaridad-actionaid-espana/" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="alianza.png" alt="Alianza por la Solidaridad" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">ALIANZA</span></div>
+                <div class="pt-card-info"><h3>Alianza por la Solidaridad</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://sci.ngo/organization/mellemfolkeligt-samvirke-ms-denmark/" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="mellem.png" alt="Mellemfolkeligt Samvirke" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">MS DENMARK</span></div>
+                <div class="pt-card-info"><h3>Mellemfolkeligt Samvirke</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://www.cmeres.org/" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="cmeres.png" alt="CMERES" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">CMERES</span></div>
+                <div class="pt-card-info"><h3>CMERES</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="cospe.png" alt="COSPE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">COSPE</span></div>
+                <div class="pt-card-info"><h3>COSPE</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="8x.png" alt="8X Mille" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">8X MILLE</span></div>
+                <div class="pt-card-info"><h3>8X Mille</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="vismara.png" alt="Fondazione Peppino Vismara" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">VISMARA</span></div>
+                <div class="pt-card-info"><h3>Fondazione Peppino Vismara</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="sanzeno.png" alt="Fondazione Sanzeno" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">SANZENO</span></div>
+                <div class="pt-card-info"><h3>Fondazione Sanzeno</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="giolli.png" alt="Giolli Coop" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">GIOLLI</span></div>
+                <div class="pt-card-info"><h3>Giolli Coop</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="puntosud.png" alt="Punto Sud" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">PUNTO SUD</span></div>
+                <div class="pt-card-info"><h3>Punto Sud</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://ufmsecretariat.org" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="UPM.png" alt="Union pour la Méditerranée" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">UPM</span></div>
+                <div class="pt-card-info"><h3>Union pour la Méditerranée</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="MD.jpg" alt="Day of the Mediterranean" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">MED DAY</span></div>
+                <div class="pt-card-info"><h3>Day of the Mediterranean</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="compass.png" alt="COMPASS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">COMPASS</span></div>
+                <div class="pt-card-info"><h3>COMPASS</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="AU EU.jpg" alt="AU-EU Youth Hub" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">AU-EU HUB</span></div>
+                <div class="pt-card-info"><h3>AU-EU Youth Cooperation Hub</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="pmeivoire.png" alt="Agence CI PME" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">CI PME</span></div>
+                <div class="pt-card-info"><h3>Agence Côte d'Ivoire PME</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <a href="https://www.efe.org" target="_blank" rel="noopener" class="pt-card" data-cat="international">
+                <div class="pt-logo-box"><img src="EFE.png" alt="EFE Maroc" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">EFE MAROC</span></div>
+                <div class="pt-card-info"><h3>EFE Maroc</h3><span class="pt-tag pt-tag-intl">International</span></div>
+            </a>
+
+            <!-- ── INSTITUTIONNELS MAROC ── -->
+            <a href="https://www.anapec.org" target="_blank" rel="noopener" class="pt-card" data-cat="institutionnel">
+                <div class="pt-logo-box"><img src="anapec.png" alt="ANAPEC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">ANAPEC</span></div>
+                <div class="pt-card-info"><h3>ANAPEC</h3><span class="pt-tag pt-tag-inst">Institutionnel</span></div>
+            </a>
+
+            <a href="https://www.marocpme.ma" target="_blank" rel="noopener" class="pt-card" data-cat="institutionnel">
+                <div class="pt-logo-box"><img src="marocpme.png" alt="Maroc PME" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">MAROC PME</span></div>
+                <div class="pt-card-info"><h3>Maroc PME</h3><span class="pt-tag pt-tag-inst">Institutionnel</span></div>
+            </a>
+
+            <a href="https://www.ofppt.ma" target="_blank" rel="noopener" class="pt-card" data-cat="institutionnel">
+                <div class="pt-logo-box"><img src="ofppt.png" alt="OFPPT" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">OFPPT</span></div>
+                <div class="pt-card-info"><h3>OFPPT</h3><span class="pt-tag pt-tag-inst">Institutionnel</span></div>
+            </a>
+
+            <a href="https://www.indh.ma" target="_blank" rel="noopener" class="pt-card" data-cat="institutionnel">
+                <div class="pt-logo-box"><img src="tanmya.png" alt="INDH" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">INDH</span></div>
+                <div class="pt-card-info"><h3>INDH — التنمية البشرية</h3><span class="pt-tag pt-tag-inst">Institutionnel</span></div>
+            </a>
+
+            <a href="https://www.autoentrepreneur.ma" target="_blank" rel="noopener" class="pt-card" data-cat="institutionnel">
+                <div class="pt-logo-box"><img src="autoentrepreneur.png" alt="Auto-Entrepreneurs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">AUTO-E</span></div>
+                <div class="pt-card-info"><h3>L'Auto-Entrepreneur</h3><span class="pt-tag pt-tag-inst">Institutionnel</span></div>
+            </a>
+
+            <a href="https://www.data.gov.ma/data/fr/organization/ministere-de-la-solidarite-de-l-insertion-sociale-et-de-la-famille-msisf" target="_blank" rel="noopener" class="pt-card" data-cat="institutionnel">
+                <div class="pt-logo-box"><img src="MSISF.png" alt="MSISF" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">MSISF</span></div>
+                <div class="pt-card-info"><h3>MSISF</h3><span class="pt-tag pt-tag-inst">Institutionnel</span></div>
+            </a>
+
+            <a href="https://africandigitalsummit.ma/partner/ministere-de-la-jeunesse-de-la-culture-et-de-la-communication/" target="_blank" rel="noopener" class="pt-card" data-cat="institutionnel">
+                <div class="pt-logo-box"><img src="logo_ministere_2021.png" alt="Ministère Jeunesse" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">MIN. JEUNESSE</span></div>
+                <div class="pt-card-info"><h3>Ministère de la Jeunesse</h3><span class="pt-tag pt-tag-inst">Institutionnel</span></div>
+            </a>
+
+            <a href="https://africandigitalsummit.ma/partner/ministere-de-la-jeunesse-de-la-culture-et-de-la-communication/" target="_blank" rel="noopener" class="pt-card" data-cat="institutionnel">
+                <div class="pt-logo-box"><img src="ministrytanger.png" alt="Ministère Jeunesse Tanger" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">MIN. TANGER</span></div>
+                <div class="pt-card-info"><h3>Ministère Jeunesse — Tanger</h3><span class="pt-tag pt-tag-inst">Institutionnel</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="institutionnel">
+                <div class="pt-logo-box"><img src="fesmeknes.png" alt="المديرية الجهوية فاس مكناس" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">FÈS-MEKNÈS</span></div>
+                <div class="pt-card-info"><h3>المديرية الجهوية — فاس مكناس</h3><span class="pt-tag pt-tag-inst">Institutionnel</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="institutionnel">
+                <div class="pt-logo-box"><img src="CRI.png" alt="CRI" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">CRI</span></div>
+                <div class="pt-card-info"><h3>Centre Régional d'Investissement</h3><span class="pt-tag pt-tag-inst">Institutionnel</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="institutionnel">
+                <div class="pt-logo-box"><img src="CGEM.png" alt="CGEM" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">CGEM</span></div>
+                <div class="pt-card-info"><h3>CGEM</h3><span class="pt-tag pt-tag-inst">Institutionnel</span></div>
+            </a>
+
+            <a href="https://www.chefchaouen.ma" target="_blank" rel="noopener" class="pt-card" data-cat="institutionnel">
+                <div class="pt-logo-box"><img src="chefchaouen.png" alt="Commune de Chefchaouen" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">CHEFCHAOUEN</span></div>
+                <div class="pt-card-info"><h3>Commune de Chefchaouen</h3><span class="pt-tag pt-tag-inst">Institutionnel</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="institutionnel">
+                <div class="pt-logo-box"><img src="ODC.png" alt="ODC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">ODC</span></div>
+                <div class="pt-card-info"><h3>Office du Développement de la Coopération</h3><span class="pt-tag pt-tag-inst">Institutionnel</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="institutionnel">
+                <div class="pt-logo-box"><img src="AM.png" alt="Artisanat du Maroc" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">ARTISANAT MA</span></div>
+                <div class="pt-card-info"><h3>Artisanat du Maroc</h3><span class="pt-tag pt-tag-inst">Institutionnel</span></div>
+            </a>
+
+            <!-- ── ACADÉMIQUE ── -->
+            <a href="https://www.emsi.ma" target="_blank" rel="noopener" class="pt-card" data-cat="academic">
+                <div class="pt-logo-box"><img src="EMSI.png" alt="EMSI" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">EMSI</span></div>
+                <div class="pt-card-info"><h3>EMSI</h3><span class="pt-tag pt-tag-acad">Académique</span></div>
+            </a>
+
+            <a href="https://www.unifi.it" target="_blank" rel="noopener" class="pt-card" data-cat="academic">
+                <div class="pt-logo-box"><img src="universita.png" alt="Università di Firenze" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">UNIV. FIRENZE</span></div>
+                <div class="pt-card-info"><h3>Università degli Studi di Firenze</h3><span class="pt-tag pt-tag-acad">Académique</span></div>
+            </a>
+
+            <a href="https://www.uit.ac.ma" target="_blank" rel="noopener" class="pt-card" data-cat="academic">
+                <div class="pt-logo-box"><img src="ibntofail.png" alt="Ibn Tofail University" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">IBN TOFAIL</span></div>
+                <div class="pt-card-info"><h3>Université Ibn Tofail</h3><span class="pt-tag pt-tag-acad">Académique</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="academic">
+                <div class="pt-logo-box"><img src="universityabdellah.png" alt="Université Mohammed Ben Abdellah" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">UMB ABDELLAH</span></div>
+                <div class="pt-card-info"><h3>Université M. Ben Abdellah</h3><span class="pt-tag pt-tag-acad">Académique</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="academic">
+                <div class="pt-logo-box"><img src="ESTS.png" alt="EST Salé" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">ESTS</span></div>
+                <div class="pt-card-info"><h3>École Sup. de Technologie de Salé</h3><span class="pt-tag pt-tag-acad">Académique</span></div>
+            </a>
+
+            <a href="https://www.enactusinpt.ma" target="_blank" rel="noopener" class="pt-card" data-cat="academic">
+                <div class="pt-logo-box"><img src="enactus.png" alt="Enactus INPT" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">ENACTUS INPT</span></div>
+                <div class="pt-card-info"><h3>Enactus INPT</h3><span class="pt-tag pt-tag-acad">Académique</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="academic">
+                <div class="pt-logo-box"><img src="ENSI.png" alt="ENSI" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">ENSI</span></div>
+                <div class="pt-card-info"><h3>ENSI</h3><span class="pt-tag pt-tag-acad">Académique</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="academic">
+                <div class="pt-logo-box"><img src="impt.png" alt="IMPT" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">IMPT</span></div>
+                <div class="pt-card-info"><h3>IMPT</h3><span class="pt-tag pt-tag-acad">Académique</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="academic">
+                <div class="pt-logo-box"><img src="SEC.png" alt="Student Entrepreneurship Center" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">SEC</span></div>
+                <div class="pt-card-info"><h3>Student Entrepreneurship Center</h3><span class="pt-tag pt-tag-acad">Académique</span></div>
+            </a>
+
+            <a href="https://aiesec.org" target="_blank" rel="noopener" class="pt-card" data-cat="academic">
+                <div class="pt-logo-box"><img src="AIESEC.png" alt="AIESEC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">AIESEC</span></div>
+                <div class="pt-card-info"><h3>AIESEC</h3><span class="pt-tag pt-tag-acad">Académique</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="academic">
+                <div class="pt-logo-box"><img src="ifmeree.png" alt="IFMEREE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">IFMEREE</span></div>
+                <div class="pt-card-info"><h3>IFMEREE</h3><span class="pt-tag pt-tag-acad">Académique</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="academic">
+                <div class="pt-logo-box"><img src="ifme.png" alt="IFME" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">IFME</span></div>
+                <div class="pt-card-info"><h3>Institut de Formation aux Métiers d'Élevage</h3><span class="pt-tag pt-tag-acad">Académique</span></div>
+            </a>
+
+            <!-- ── MAROC (Associations & Acteurs) ── -->
+            <a href="https://www.technopark.ma" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="technopark.png" alt="Technopark" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">TECHNOPARK</span></div>
+                <div class="pt-card-info"><h3>Technopark</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="OJA.jpg" alt="OJA" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">OJA</span></div>
+                <div class="pt-card-info"><h3>OJA</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+            <a href="https://inastanger.ma/fr/" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="inas.png" alt="INAS Tanger" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">INAS</span></div>
+                <div class="pt-card-info"><h3>INAS Tanger</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+            <a href="https://shmagadir.ma/" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="kachfya.jpg" alt="الكشفية الحسنية" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">KACHFYA</span></div>
+                <div class="pt-card-info"><h3>الكشفية الحسنية — أكادير</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="ACSJ.png" alt="ACSJ" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">ACSJ</span></div>
+                <div class="pt-card-info"><h3>ACSJ</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="impactlab.png" alt="Impact Lab" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">IMPACT LAB</span></div>
+                <div class="pt-card-info"><h3>Impact Lab</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="essalam.jfif" alt="Association Essalam" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">ESSALAM</span></div>
+                <div class="pt-card-info"><h3>Association Essalam</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="artlina.png" alt="L'Art Lina" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">ART LINA</span></div>
+                <div class="pt-card-info"><h3>L'Art Lina</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="fonon.png" alt="جمعية الفنون" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">FONON</span></div>
+                <div class="pt-card-info"><h3>جمعية الفنون الجميلة</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="iscos.jfif" alt="ISCOS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">ISCOS</span></div>
+                <div class="pt-card-info"><h3>ISCOS Maroc</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="career.jfif" alt="Career Center" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">CAREER CENTER</span></div>
+                <div class="pt-card-info"><h3>Career Center</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="webevents.png" alt="WebEvents App" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">WEBEVENTS</span></div>
+                <div class="pt-card-info"><h3>WebEvents App</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="arlega.png" alt="Arlega Agence" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">ARLEGA</span></div>
+                <div class="pt-card-info"><h3>Arlega Agence</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="JM2.0.png" alt="Jeunes du Maroc 2.0" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">JM 2.0</span></div>
+                <div class="pt-card-info"><h3>Jeunes du Maroc 2.0</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="fondationabdelkader.png" alt="Fondation Abdelkader Bensallah" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">F. BENSALLAH</span></div>
+                <div class="pt-card-info"><h3>Fondation Abdelkader Bensallah</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="pt-card" data-cat="maroc">
+                <div class="pt-logo-box"><img src="CEFA.png" alt="CEFA" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="pt-fallback" style="display:none">CEFA</span></div>
+                <div class="pt-card-info"><h3>CEFA</h3><span class="pt-tag pt-tag-maroc">Maroc</span></div>
+            </a>
+
+        </div>
+
+        <!-- Compteur résultats -->
+        <p class="pt-count" id="ptCount">73 partenaires</p>
+    </section>
+
+    <!-- CTA devenir partenaire -->
+    <section class="pt-cta-section">
+        <div class="pt-cta-inner">
+            <i class="fas fa-handshake-angle pt-cta-icon"></i>
+            <h2>Rejoignez notre réseau</h2>
+            <p>Vous souhaitez co-construire des solutions durables et contribuer à l'innovation sociale au Maroc ?</p>
+            <a href="contact.html" class="pt-cta-btn">Devenir partenaire <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+</main>
+
+<!-- ═══════════ FOOTER GLOBAL ═══════════ -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h2 class="footer-logo">ES.Maroc<span>.Org</span></h2>
+            <p class="footer-description">EsMaroc.Org est une association qui promeut l'innovation sociale au Maroc. Nous accompagnons les entrepreneurs pour créer un impact durable et responsable.</p>
+            <div class="footer-hubs">
+                <div class="footer-hub">
+                    <p class="footer-hub-title"><i class="fa-solid fa-circle-dot"></i> Hub Rabat &mdash; Siège principal</p>
+                    <div class="footer-contact">
+                        <p><i class="fa-solid fa-location-dot"></i> 12 rue Pékin, Océan Résidence Les Fleurs, App. 1 &mdash; Rabat</p>
+                        <p><i class="fa-solid fa-phone"></i><a href="tel:+212537762872">+212 (0) 537 762 872</a></p>
+                    </div>
+                </div>
+                <div class="footer-hub">
+                    <p class="footer-hub-title"><i class="fa-solid fa-circle-dot"></i> Hub Tanger &mdash; Régional</p>
+                    <div class="footer-contact">
+                        <p><i class="fa-solid fa-location-dot"></i> Centre des Services à la Jeunesse, Hay Hassani Bni Touzine &mdash; Tanger</p>
+                        <p><i class="fa-solid fa-phone"></i><a href="tel:+212526131326">+212 (0) 5 26 13 13 26</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-contact footer-email-row">
+                <p><i class="fa-solid fa-envelope"></i><a href="mailto:contact@entreprisesocialemaroc.org">contact@entreprisesocialemaroc.org</a></p>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-right">
+            <h3>Rejoignez-nous</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/1D5jCeXmCF/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/es-maroc-org/?originalSubdomain=mt" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://youtube.com/@esmarocorg484?si=5d8Rrxz4J4Jl7WgH" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/es.maroc?igsh=dnB1cGllNzRmbG1n" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="footer-contact-btn-wrap">
+                <a href="contact.html" class="footer-contact-btn"><i class="fas fa-envelope"></i> Contactez-nous</a>
+            </div>
+            <p class="copyright">ES.Maroc &copy; Copyright 2026. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="header.js"></script>
+<script>
+/* ── Filtre partenaires ── */
+document.addEventListener('DOMContentLoaded', function () {
+    var btns  = document.querySelectorAll('.pt-filter-btn');
+    var cards = document.querySelectorAll('.pt-card');
+    var count = document.getElementById('ptCount');
+
+    btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            btns.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+
+            var filter = btn.dataset.filter;
+            var visible = 0;
+
+            cards.forEach(function (card) {
+                var show = filter === 'all' || card.dataset.cat === filter;
+                card.style.display = show ? 'flex' : 'none';
+                if (show) visible++;
+            });
+
+            count.textContent = visible + ' partenaire' + (visible > 1 ? 's' : '');
+        });
+    });
+});
+</script>
+</body>
+</html>
