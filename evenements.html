@@ -7,30 +7,20 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="evenements-accordion.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="evenements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body class="events-page-body">
 
-<!--
-═══════════════════════════════════════════════════════════════════════
-  HEADER GLOBAL ESMAROC — Copier/coller sur TOUTES les pages
-═══════════════════════════════════════════════════════════════════════
--->
+<!-- ═══════════ HEADER GLOBAL ═══════════ -->
 <header>
     <div class="header-container">
-        <div class="logo">
-            <img src="ESMAROC LOGO.png" alt="Logo ESMaroc">
-        </div>
-
+        <div class="logo"><img src="ESMAROC LOGO.png" alt="Logo ESMaroc"></div>
         <nav id="main-nav">
-            <!-- Changez "active" sur le lien correspondant à la page courante -->
             <a href="index.html">Accueil</a>
-
             <div class="dropdown">
-                <a href="#" class="dropdown-trigger">
-                    ESMaroc <i class="fas fa-chevron-down nav-arrow"></i>
-                </a>
+                <a href="#" class="dropdown-trigger">ESMaroc <i class="fas fa-chevron-down nav-arrow"></i></a>
                 <div class="dropdown-menu">
                     <a href="qui-sommes-nous.html">Qui sommes-nous ?</a>
                     <a href="histoire.html">Notre Histoire &amp; Vision</a>
@@ -38,403 +28,542 @@
                     <a href="rapports.html">Rapports</a>
                 </div>
             </div>
-
-            <a href="evenements.html">Évènements</a>
+            <a href="evenements.html" class="active">Évènements</a>
             <a href="projets.html">Projets</a>
             <a href="elearning.html">École E-learning</a>
             <a href="contact.html">Contact</a>
         </nav>
-
         <div class="header-icons">
-
-            <!-- 🔍 Barre de recherche -->
             <div class="search-wrapper">
                 <a href="#" class="icon-link" id="search-toggle" aria-label="Rechercher">
                     <i class="fas fa-search"></i>
                 </a>
                 <div class="search-bar" id="search-bar">
                     <div class="search-bar-top">
-                        <input type="text" id="search-input"
-                               placeholder="Rechercher sur le site…"
-                               autocomplete="off">
-                        <button id="search-close">
-                            <i class="fas fa-times"></i>
-                        </button>
+                        <input type="text" id="search-input" placeholder="Rechercher sur le site…" autocomplete="off">
+                        <button id="search-close"><i class="fas fa-times"></i></button>
                     </div>
                     <div class="search-results" id="search-results"></div>
                 </div>
             </div>
-
-            <!-- 📍 Localisation → Hub Rabat -->
-            <a href="https://maps.app.goo.gl/56zAEYm36nfkxbUT8"
-               target="_blank" rel="noopener"
-               class="icon-link" aria-label="Nous localiser">
+            <a href="https://maps.app.goo.gl/56zAEYm36nfkxbUT8" target="_blank" rel="noopener" class="icon-link" aria-label="Nous localiser">
                 <i class="fas fa-map-marker-alt"></i>
             </a>
-
         </div>
     </div>
 </header>
 
-<main class="events-layout">
+<main>
 
-    <section class="events-hero">
-        <div class="events-hero-content">
-            <h1>Événements & Animation de l'Écosystème</h1>
-            <p>À travers ses activités phares, ESMaroc anime l'écosystème entrepreneurial et de l'employabilité, crée des passerelles concrètes entre les jeunes, les entreprises et les institutions, et renforce durablement les compétences et les opportunités économiques sur les territoires.</p>
+    <!-- ═══════════ HERO — style projets/partenaires ═══════════ -->
+    <section class="ev-hero">
+        <div class="ev-hero-bg"></div>
+        <div class="ev-hero-inner">
+
+            <div class="ev-hero-left">
+                <span class="ev-eyebrow"><i class="fas fa-circle-dot"></i> ESMaroc · Animation de l'écosystème</span>
+                <h1 class="ev-hero-title">Nos<br><em>Événements</em></h1>
+                <p class="ev-hero-desc">ESMaroc anime l'écosystème entrepreneurial et de l'employabilité, crée des passerelles concrètes entre les jeunes, les entreprises et les institutions, et renforce durablement les compétences sur les territoires.</p>
+
+                <!-- Mini-badges catégories dans le hero -->
+                <div class="ev-hero-cats">
+                    <span><i class="fas fa-briefcase"></i> Recrutement & Business</span>
+                    <span><i class="fas fa-comments"></i> Échanges & Mentorat</span>
+                    <span><i class="fas fa-graduation-cap"></i> Programmes & Académies</span>
+                    <span><i class="fas fa-globe-africa"></i> Stratégie & Coopération</span>
+                </div>
+            </div>
+
+            <div class="ev-hero-right">
+
+                <!-- Stat 1 : scroll vers événements -->
+                <a href="#evenements-grid" class="ev-hero-stat ev-hero-stat--link" id="scrollToEvents" title="Voir tous les événements">
+                    <span class="ev-hero-stat-num">11</span>
+                    <span class="ev-hero-stat-label">Événements<br>& Programmes</span>
+                    <span class="ev-stat-hint"><i class="fas fa-chevron-down"></i></span>
+                </a>
+
+                <!-- Stat 2 : modale éditions -->
+                <button class="ev-hero-stat ev-hero-stat--link ev-hero-stat--btn" id="openEditionsModal" title="Voir les éditions">
+                    <span class="ev-hero-stat-num">8+</span>
+                    <span class="ev-hero-stat-label">Éditions<br>organisées</span>
+                    <span class="ev-stat-hint"><i class="fas fa-calendar"></i></span>
+                </button>
+
+                <!-- Stat 3 : modale impact -->
+                <button class="ev-hero-stat ev-hero-stat--link ev-hero-stat--btn" id="openImpactModal" title="Voir l'impact">
+                    <span class="ev-hero-stat-num">13K+</span>
+                    <span class="ev-hero-stat-label">Participants<br>accompagnés</span>
+                    <span class="ev-stat-hint"><i class="fas fa-users"></i></span>
+                </button>
+
+            </div>
         </div>
     </section>
 
-    <!-- RECRUTEMENT & BUSINESS -->
-    <h2 class="events-group-title"><i class="fas fa-briefcase"></i> Recrutement & Business</h2>
-    <section class="events-grid-section">
-        <div class="events-container">
 
-            <a href="evenement-salon-emploi.html" class="page-ev-card">
-                <div class="page-ev-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80" alt="Salon de l'Emploi">
-                </div>
-                <div class="page-ev-floating-box">
-                    <h3>Le Salon de l'Emploi ESMaroc</h3>
-                    <p class="page-ev-snippet">Plateforme majeure de réseautage et de recrutement réunissant plus de 100 entreprises, 40 startups et 400 chercheurs d'emploi présélectionnés en format hybride.</p>
-                    <div class="page-ev-footer-action">
-                        <span class="page-ev-read-more">Voir les éditions</span>
-                        <span class="page-ev-badge badge-recrutement">Recrutement</span>
-                    </div>
-                </div>
-            </a>
+    <!-- ═══════════ MODALE ÉDITIONS ═══════════ -->
+    <div class="ev-modal" id="editionsModal">
+        <div class="ev-modal-overlay" id="closeEditionsOverlay"></div>
+        <div class="ev-modal-panel">
+            <button class="ev-modal-close" id="closeEditionsBtn"><i class="fas fa-times"></i></button>
+            <div class="ev-modal-header">
+                <span class="ev-eyebrow"><i class="fas fa-calendar-days"></i> Historique</span>
+                <h2>8+ Éditions,<br><em>une histoire</em></h2>
+                <p>Depuis 2017, ESMaroc organise des événements récurrents qui ont marqué l'écosystème entrepreneurial marocain.</p>
+            </div>
+            <div class="ev-editions-grid">
 
-            <a href="souk.html" class="page-ev-card">
-                <div class="page-ev-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Souk des Startups">
-                </div>
-                <div class="page-ev-floating-box">
-                    <h3>Le Souk des Startups</h3>
-                    <p class="page-ev-snippet">Événement de référence avec le soutien du Ministère de la Jeunesse mettant en valeur l'innovation locale, marocaine et africaine des entrepreneurs et migrants.</p>
-                    <div class="page-ev-footer-action">
-                        <span class="page-ev-read-more">Découvrir le Souk</span>
-                        <span class="page-ev-badge badge-recrutement">Business</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="soireecitoyen.html" class="page-ev-card">
-                <div class="page-ev-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80" alt="Soirée des Entreprises Citoyennes">
-                </div>
-                <div class="page-ev-floating-box">
-                    <h3>Soirée des Entreprises Citoyennes</h3>
-                    <p class="page-ev-snippet">Rassemblement exclusif des entreprises engagées dans l'emploi des jeunes, le développement durable et la RSE pour co-construire des partenariats à fort impact.</p>
-                    <div class="page-ev-footer-action">
-                        <span class="page-ev-read-more">Lire l'article</span>
-                        <span class="page-ev-badge badge-recrutement">Réseau</span>
-                    </div>
-                </div>
-            </a>
-
-        </div>
-    </section>
-
-    <!-- ÉCHANGES & MENTORAT -->
-    <h2 class="events-group-title"><i class="fas fa-comments"></i> Échanges & Mentorat</h2>
-    <section class="events-grid-section">
-        <div class="events-container">
-
-            <a href="esmaroc-cafe.html" class="page-ev-card">
-                <div class="page-ev-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Café ESMaroc">
-                </div>
-                <div class="page-ev-floating-box">
-                    <h3>Le Café ESMaroc</h3>
-                    <p class="page-ev-snippet">Espace hybride régulier d'échanges pour les startups incubées. Présentation des avancées et synergies dans l'agriculture, les services et l'innovation sociale.</p>
-                    <div class="page-ev-footer-action">
-                        <span class="page-ev-read-more">Participer</span>
-                        <span class="page-ev-badge badge-accompagnement">Meetup</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="experts.html" class="page-ev-card">
-                <div class="page-ev-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=600&q=80" alt="Experts Connect">
-                </div>
-                <div class="page-ev-floating-box">
-                    <h3>Experts Connect ESMaroc</h3>
-                    <p class="page-ev-snippet">Initiative en ligne réunissant des experts et professionnels pour inspirer, motiver et transmettre des compétences pratiques en entrepreneuriat et soft skills aux jeunes.</p>
-                    <div class="page-ev-footer-action">
-                        <span class="page-ev-read-more">Rejoindre le Live</span>
-                        <span class="page-ev-badge badge-accompagnement">Webinaire</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="portesouvertes.html" class="page-ev-card">
-                <div class="page-ev-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1521737711867-e3b90473bd58?auto=format&fit=crop&w=600&q=80" alt="Semaine Portes Ouvertes">
-                </div>
-                <div class="page-ev-floating-box">
-                    <h3>La Semaine Portes Ouvertes</h3>
-                    <p class="page-ev-snippet">Accompagnement personnalisé à la recherche d'emploi, ateliers de rédaction de CV, simulations d'entretiens et mise en relation directe avec des recruteurs.</p>
-                    <div class="page-ev-footer-action">
-                        <span class="page-ev-read-more">S'inscrire</span>
-                        <span class="page-ev-badge badge-accompagnement">Insertion</span>
-                    </div>
-                </div>
-            </a>
-
-        </div>
-    </section>
-
-    <!-- PROGRAMMES & ACADÉMIES -->
-    <h2 class="events-group-title"><i class="fas fa-graduation-cap"></i> Programmes & Académies</h2>
-    <section class="events-grid-section">
-        <div class="events-container">
-
-            <a href="ecoledete.html" class="page-ev-card">
-                <div class="page-ev-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="École d'Été">
-                </div>
-                <div class="page-ev-floating-box">
-                    <h3>L'École d'Été du Hub ESMaroc</h3>
-                    <p class="page-ev-snippet">Programme immersif certifiant et gratuit destiné aux porteurs de projets innovants des grandes régions du Maroc pour maîtriser la créativité et le financement.</p>
-                    <div class="page-ev-footer-action">
-                        <span class="page-ev-read-more">Postuler</span>
-                        <span class="page-ev-badge badge-formation">Immersion</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="evenement-elearning-afrique.html" class="page-ev-card">
-                <div class="page-ev-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=600&q=80" alt="Plateforme E-learning Afrique">
-                </div>
-                <div class="page-ev-floating-box">
-                    <h3>Plateforme E-Learning Panafricaine</h3>
-                    <p class="page-ev-snippet">Fondée avec l'ONG Soleterre, cette académie digitale a formé 253 associations à travers 15 pays africains francophones en gestion de projets et levée de fonds.</p>
-                    <div class="page-ev-footer-action">
-                        <span class="page-ev-read-more">Accéder aux cours</span>
-                        <span class="page-ev-badge badge-formation">Digital</span>
-                    </div>
-                </div>
-            </a>
-
-        </div>
-    </section>
-
-    <!-- STRATÉGIE & COOPÉRATION SUD-SUD -->
-    <h2 class="events-group-title"><i class="fas fa-globe-africa"></i> Stratégie & Coopération Sud-Sud</h2>
-    <section class="events-grid-section">
-        <div class="events-container">
-
-            <a href="sudsud.html" class="page-ev-card">
-                <div class="page-ev-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140e2b8?auto=format&fit=crop&w=600&q=80" alt="Coopération Sud-Sud">
-                </div>
-                <div class="page-ev-floating-box">
-                    <h3>Déploiement Régional & Coopération Sud-Sud</h3>
-                    <p class="page-ev-snippet">Duplication du modèle Hub ESMaroc en Côte d'Ivoire (Abidjan, Bouaké), au Sénégal (Dakar), et partenariats d'appui avec CorpsAfrica en Ouganda et au Malawi.</p>
-                    <div class="page-ev-footer-action">
-                        <span class="page-ev-read-more">Suivre l'impact</span>
-                        <span class="page-ev-badge badge-strategie">International</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="rse.html" class="page-ev-card">
-                <div class="page-ev-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Partenariats RSE">
-                </div>
-                <div class="page-ev-floating-box">
-                    <h3>Développement Stratégique des Partenariats RSE</h3>
-                    <p class="page-ev-snippet">Accompagnement opérationnel des entreprises engagées pour structurer le mécénat de compétences, les bootcamps et le mentorat au profit des startups et coopératives.</p>
-                    <div class="page-ev-footer-action">
-                        <span class="page-ev-read-more">Devenir Partenaire</span>
-                        <span class="page-ev-badge badge-strategie">RSE</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- COMITÉ CONSULTATIF — ACCORDION LATÉRAL -->
-            <div class="accordion-wrapper">
-
-                <div class="page-ev-card accordion-card" id="comite-card" onclick="toggleAccordion()">
-                    <div class="page-ev-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80" alt="Comité Consultatif">
-                    </div>
-                    <div class="page-ev-floating-box">
-                        <h3>Le Comité Consultatif ESMaroc</h3>
-                        <p class="page-ev-snippet">Réunion semestrielle stratégique avec l'ANAPEC, l'ODCO, l'Entraide Nationale et Maroc PME pour synchroniser et amplifier les actions d'insertion des jeunes.</p>
-                        <div class="page-ev-footer-action">
-                            <span class="page-ev-read-more accordion-trigger">
-                                En savoir plus <i class="fas fa-chevron-right accordion-arrow"></i>
-                            </span>
-                            <span class="page-ev-badge badge-strategie">Gouvernance</span>
-                        </div>
+                <div class="ev-edition-card" style="--ed-color:#e53e3e;">
+                    <div class="ev-edition-icon"><i class="fas fa-users-line"></i></div>
+                    <div class="ev-edition-info">
+                        <strong>Salon de l'Emploi ESMaroc</strong>
+                        <span class="ev-edition-count">5+ éditions</span>
+                        <p>Plateforme hybride de recrutement — 100+ entreprises, 400+ candidats présélectionnés par édition.</p>
+                        <div class="ev-edition-years"><span>2018</span><span>2019</span><span>2020</span><span>2021</span><span>2022</span></div>
                     </div>
                 </div>
 
-                <!-- PANNEAU QUI GLISSE À DROITE -->
-                <div class="accordion-side-panel" id="comite-panel">
-                    <button class="accordion-close" onclick="toggleAccordion()">
-                        <i class="fas fa-times"></i>
-                    </button>
-                    <h4>Le Comité Consultatif ESMaroc</h4>
-                    <p>Réuni tous les six mois, le Comité rassemble l'ensemble des acteurs clés de l'insertion socio-économique des jeunes.</p>
+                <div class="ev-edition-card" style="--ed-color:#805ad5;">
+                    <div class="ev-edition-icon"><i class="fas fa-store"></i></div>
+                    <div class="ev-edition-info">
+                        <strong>Souk des Startups</strong>
+                        <span class="ev-edition-count">3+ éditions</span>
+                        <p>Événement de référence avec le Ministère de la Jeunesse — innovation locale, marocaine et africaine.</p>
+                        <div class="ev-edition-years"><span>2019</span><span>2021</span><span>2023</span></div>
+                    </div>
+                </div>
 
-                    <ul class="accordion-list">
-                        <li>
-                            <span class="accordion-check"><i class="fas fa-check"></i></span>
-                            <div><strong>Institutions publiques</strong> — ANAPEC, ODCO, Entraide Nationale, Maroc PME</div>
-                        </li>
-                        <li>
-                            <span class="accordion-check"><i class="fas fa-check"></i></span>
-                            <div><strong>Partenaires privés</strong> engagés dans l'employabilité</div>
-                        </li>
-                        <li>
-                            <span class="accordion-check"><i class="fas fa-check"></i></span>
-                            <div><strong>ONG nationales et internationales</strong> partenaires d'ESMaroc</div>
-                        </li>
-                    </ul>
+                <div class="ev-edition-card" style="--ed-color:#3182ce;">
+                    <div class="ev-edition-icon"><i class="fas fa-mug-hot"></i></div>
+                    <div class="ev-edition-info">
+                        <strong>Café ESMaroc</strong>
+                        <span class="ev-edition-count">Mensuel</span>
+                        <p>Espace hybride régulier d'échanges pour les startups incubées. Organisé tous les mois depuis 2018.</p>
+                        <div class="ev-edition-years"><span>2018</span><span>→</span><span>2024</span></div>
+                    </div>
+                </div>
 
-                    <div class="accordion-objective">
-                        <i class="fas fa-bullseye"></i>
-                        <div><strong>Objectif :</strong> Coordonner les actions, partager les avancées des projets et renforcer les synergies pour l'insertion socio-économique des jeunes.</div>
+                <div class="ev-edition-card" style="--ed-color:#38a169;">
+                    <div class="ev-edition-icon"><i class="fas fa-sun"></i></div>
+                    <div class="ev-edition-info">
+                        <strong>École d'Été du Hub</strong>
+                        <span class="ev-edition-count">4+ éditions</span>
+                        <p>Programme immersif certifiant et gratuit pour les porteurs de projets des grandes régions du Maroc.</p>
+                        <div class="ev-edition-years"><span>2019</span><span>2020</span><span>2022</span><span>2023</span></div>
                     </div>
                 </div>
 
             </div>
-
         </div>
-    </section>
+    </div>
+
+
+    <!-- ═══════════ MODALE IMPACT ═══════════ -->
+    <div class="ev-modal" id="impactModal">
+        <div class="ev-modal-overlay" id="closeImpactOverlay"></div>
+        <div class="ev-modal-panel ev-modal-panel--impact">
+            <button class="ev-modal-close" id="closeImpactBtn"><i class="fas fa-times"></i></button>
+            <div class="ev-modal-header">
+                <span class="ev-eyebrow"><i class="fas fa-chart-line"></i> Impact mesurable</span>
+                <h2>L'impact de nos<br><em>événements</em></h2>
+                <p>Chaque événement ESMaroc génère un impact concret et mesurable sur l'écosystème entrepreneurial.</p>
+            </div>
+            <div class="ev-impact-grid">
+
+                <div class="ev-impact-stat">
+                    <i class="fas fa-users" style="color:#e0ab00;"></i>
+                    <strong>+13 100</strong>
+                    <span>Participants accompagnés depuis 2017</span>
+                </div>
+                <div class="ev-impact-stat">
+                    <i class="fas fa-building" style="color:#3182ce;"></i>
+                    <strong>100+</strong>
+                    <span>Entreprises partenaires par édition du Salon</span>
+                </div>
+                <div class="ev-impact-stat">
+                    <i class="fas fa-rocket" style="color:#38a169;"></i>
+                    <strong>40+</strong>
+                    <span>Startups présentées au Souk des Startups</span>
+                </div>
+                <div class="ev-impact-stat">
+                    <i class="fas fa-graduation-cap" style="color:#805ad5;"></i>
+                    <strong>253</strong>
+                    <span>Associations formées via la plateforme e-learning panafricaine</span>
+                </div>
+                <div class="ev-impact-stat">
+                    <i class="fas fa-earth-africa" style="color:#e53e3e;"></i>
+                    <strong>15</strong>
+                    <span>Pays africains francophones touchés par l'académie digitale</span>
+                </div>
+                <div class="ev-impact-stat">
+                    <i class="fas fa-handshake" style="color:#e0ab00;"></i>
+                    <strong>4</strong>
+                    <span>Institutions publiques au Comité Consultatif semestriel</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════ FILTRE STICKY ═══════════ -->
+    <div class="ev-filter-bar" id="evenements-grid">
+        <div class="ev-filter-inner">
+            <button class="ev-filter-btn active" data-filter="all">
+                <i class="fas fa-globe"></i> Tous
+            </button>
+            <button class="ev-filter-btn" data-filter="recrutement">
+                <i class="fas fa-briefcase"></i> Recrutement & Business
+            </button>
+            <button class="ev-filter-btn" data-filter="mentorat">
+                <i class="fas fa-comments"></i> Échanges & Mentorat
+            </button>
+            <button class="ev-filter-btn" data-filter="programmes">
+                <i class="fas fa-graduation-cap"></i> Programmes & Académies
+            </button>
+            <button class="ev-filter-btn" data-filter="strategie">
+                <i class="fas fa-globe-africa"></i> Stratégie & Coopération
+            </button>
+        </div>
+    </div>
+
+
+    <!-- ═══════════ CONTENU ÉVÉNEMENTS (cartes existantes intactes) ═══════════ -->
+    <div class="ev-content-wrapper">
+
+        <!-- ── RECRUTEMENT & BUSINESS ── -->
+        <div class="ev-group" data-cat="recrutement">
+            <h2 class="events-group-title"><i class="fas fa-briefcase"></i> Recrutement & Business</h2>
+            <section class="events-grid-section">
+                <div class="events-container">
+
+                    <a href="evenement-salon-emploi.html" class="page-ev-card">
+                        <div class="page-ev-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80" alt="Salon de l'Emploi">
+                        </div>
+                        <div class="page-ev-floating-box">
+                            <h3>Le Salon de l'Emploi ESMaroc</h3>
+                            <p class="page-ev-snippet">Plateforme majeure de réseautage et de recrutement réunissant plus de 100 entreprises, 40 startups et 400 chercheurs d'emploi présélectionnés en format hybride.</p>
+                            <div class="page-ev-footer-action">
+                                <span class="page-ev-read-more">Voir les éditions</span>
+                                <span class="page-ev-badge badge-recrutement">Recrutement</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="souk.html" class="page-ev-card">
+                        <div class="page-ev-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Souk des Startups">
+                        </div>
+                        <div class="page-ev-floating-box">
+                            <h3>Le Souk des Startups</h3>
+                            <p class="page-ev-snippet">Événement de référence avec le soutien du Ministère de la Jeunesse mettant en valeur l'innovation locale, marocaine et africaine des entrepreneurs et migrants.</p>
+                            <div class="page-ev-footer-action">
+                                <span class="page-ev-read-more">Découvrir le Souk</span>
+                                <span class="page-ev-badge badge-recrutement">Business</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="soireecitoyen.html" class="page-ev-card">
+                        <div class="page-ev-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80" alt="Soirée des Entreprises Citoyennes">
+                        </div>
+                        <div class="page-ev-floating-box">
+                            <h3>Soirée des Entreprises Citoyennes</h3>
+                            <p class="page-ev-snippet">Rassemblement exclusif des entreprises engagées dans l'emploi des jeunes, le développement durable et la RSE pour co-construire des partenariats à fort impact.</p>
+                            <div class="page-ev-footer-action">
+                                <span class="page-ev-read-more">Lire l'article</span>
+                                <span class="page-ev-badge badge-recrutement">Réseau</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- ── ÉCHANGES & MENTORAT ── -->
+        <div class="ev-group" data-cat="mentorat">
+            <h2 class="events-group-title"><i class="fas fa-comments"></i> Échanges & Mentorat</h2>
+            <section class="events-grid-section">
+                <div class="events-container">
+
+                    <a href="esmaroc-cafe.html" class="page-ev-card">
+                        <div class="page-ev-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Café ESMaroc">
+                        </div>
+                        <div class="page-ev-floating-box">
+                            <h3>Le Café ESMaroc</h3>
+                            <p class="page-ev-snippet">Espace hybride régulier d'échanges pour les startups incubées. Présentation des avancées et synergies dans l'agriculture, les services et l'innovation sociale.</p>
+                            <div class="page-ev-footer-action">
+                                <span class="page-ev-read-more">Participer</span>
+                                <span class="page-ev-badge badge-accompagnement">Meetup</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="experts.html" class="page-ev-card">
+                        <div class="page-ev-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=600&q=80" alt="Experts Connect">
+                        </div>
+                        <div class="page-ev-floating-box">
+                            <h3>Experts Connect ESMaroc</h3>
+                            <p class="page-ev-snippet">Initiative en ligne réunissant des experts et professionnels pour inspirer, motiver et transmettre des compétences pratiques en entrepreneuriat et soft skills aux jeunes.</p>
+                            <div class="page-ev-footer-action">
+                                <span class="page-ev-read-more">Rejoindre le Live</span>
+                                <span class="page-ev-badge badge-accompagnement">Webinaire</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="portesouvertes.html" class="page-ev-card">
+                        <div class="page-ev-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1521737711867-e3b90473bd58?auto=format&fit=crop&w=600&q=80" alt="Semaine Portes Ouvertes">
+                        </div>
+                        <div class="page-ev-floating-box">
+                            <h3>La Semaine Portes Ouvertes</h3>
+                            <p class="page-ev-snippet">Accompagnement personnalisé à la recherche d'emploi, ateliers de rédaction de CV, simulations d'entretiens et mise en relation directe avec des recruteurs.</p>
+                            <div class="page-ev-footer-action">
+                                <span class="page-ev-read-more">S'inscrire</span>
+                                <span class="page-ev-badge badge-accompagnement">Insertion</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- ── PROGRAMMES & ACADÉMIES ── -->
+        <div class="ev-group" data-cat="programmes">
+            <h2 class="events-group-title"><i class="fas fa-graduation-cap"></i> Programmes & Académies</h2>
+            <section class="events-grid-section">
+                <div class="events-container">
+
+                    <a href="ecoledete.html" class="page-ev-card">
+                        <div class="page-ev-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="École d'Été">
+                        </div>
+                        <div class="page-ev-floating-box">
+                            <h3>L'École d'Été du Hub ESMaroc</h3>
+                            <p class="page-ev-snippet">Programme immersif certifiant et gratuit destiné aux porteurs de projets innovants des grandes régions du Maroc pour maîtriser la créativité et le financement.</p>
+                            <div class="page-ev-footer-action">
+                                <span class="page-ev-read-more">Postuler</span>
+                                <span class="page-ev-badge badge-formation">Immersion</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="evenement-elearning-afrique.html" class="page-ev-card">
+                        <div class="page-ev-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=600&q=80" alt="Plateforme E-learning Afrique">
+                        </div>
+                        <div class="page-ev-floating-box">
+                            <h3>Plateforme E-Learning Panafricaine</h3>
+                            <p class="page-ev-snippet">Fondée avec l'ONG Soleterre, cette académie digitale a formé 253 associations à travers 15 pays africains francophones en gestion de projets et levée de fonds.</p>
+                            <div class="page-ev-footer-action">
+                                <span class="page-ev-read-more">Accéder aux cours</span>
+                                <span class="page-ev-badge badge-formation">Digital</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- ── STRATÉGIE & COOPÉRATION SUD-SUD ── -->
+        <div class="ev-group" data-cat="strategie">
+            <h2 class="events-group-title"><i class="fas fa-globe-africa"></i> Stratégie & Coopération Sud-Sud</h2>
+            <section class="events-grid-section">
+                <div class="events-container">
+
+                    <a href="sudsud.html" class="page-ev-card">
+                        <div class="page-ev-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140e2b8?auto=format&fit=crop&w=600&q=80" alt="Coopération Sud-Sud">
+                        </div>
+                        <div class="page-ev-floating-box">
+                            <h3>Déploiement Régional & Coopération Sud-Sud</h3>
+                            <p class="page-ev-snippet">Duplication du modèle Hub ESMaroc en Côte d'Ivoire (Abidjan, Bouaké), au Sénégal (Dakar), et partenariats d'appui avec CorpsAfrica en Ouganda et au Malawi.</p>
+                            <div class="page-ev-footer-action">
+                                <span class="page-ev-read-more">Suivre l'impact</span>
+                                <span class="page-ev-badge badge-strategie">International</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="rse.html" class="page-ev-card">
+                        <div class="page-ev-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Partenariats RSE">
+                        </div>
+                        <div class="page-ev-floating-box">
+                            <h3>Développement Stratégique des Partenariats RSE</h3>
+                            <p class="page-ev-snippet">Accompagnement opérationnel des entreprises engagées pour structurer le mécénat de compétences, les bootcamps et le mentorat au profit des startups et coopératives.</p>
+                            <div class="page-ev-footer-action">
+                                <span class="page-ev-read-more">Devenir Partenaire</span>
+                                <span class="page-ev-badge badge-strategie">RSE</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- COMITÉ CONSULTATIF — Accordion latéral conservé intact -->
+                    <div class="accordion-wrapper">
+                        <div class="page-ev-card accordion-card" id="comite-card" onclick="toggleAccordion()">
+                            <div class="page-ev-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80" alt="Comité Consultatif">
+                            </div>
+                            <div class="page-ev-floating-box">
+                                <h3>Le Comité Consultatif ESMaroc</h3>
+                                <p class="page-ev-snippet">Réunion semestrielle stratégique avec l'ANAPEC, l'ODCO, l'Entraide Nationale et Maroc PME pour synchroniser et amplifier les actions d'insertion des jeunes.</p>
+                                <div class="page-ev-footer-action">
+                                    <span class="page-ev-read-more accordion-trigger">
+                                        En savoir plus <i class="fas fa-chevron-right accordion-arrow"></i>
+                                    </span>
+                                    <span class="page-ev-badge badge-strategie">Gouvernance</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-side-panel" id="comite-panel">
+                            <button class="accordion-close" onclick="toggleAccordion()"><i class="fas fa-times"></i></button>
+                            <h4>Le Comité Consultatif ESMaroc</h4>
+                            <p>Réuni tous les six mois, le Comité rassemble l'ensemble des acteurs clés de l'insertion socio-économique des jeunes.</p>
+                            <ul class="accordion-list">
+                                <li><span class="accordion-check"><i class="fas fa-check"></i></span><div><strong>Institutions publiques</strong> — ANAPEC, ODCO, Entraide Nationale, Maroc PME</div></li>
+                                <li><span class="accordion-check"><i class="fas fa-check"></i></span><div><strong>Partenaires privés</strong> engagés dans l'employabilité</div></li>
+                                <li><span class="accordion-check"><i class="fas fa-check"></i></span><div><strong>ONG nationales et internationales</strong> partenaires d'ESMaroc</div></li>
+                            </ul>
+                            <div class="accordion-objective">
+                                <i class="fas fa-bullseye"></i>
+                                <div><strong>Objectif :</strong> Coordonner les actions, partager les avancées des projets et renforcer les synergies pour l'insertion socio-économique des jeunes.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+    </div><!-- fin ev-content-wrapper -->
 
 </main>
 
-<!--
-═══════════════════════════════════════════════════════════════════════
-  FOOTER GLOBAL ESMAROC — Copier/coller sur TOUTES les pages
-═══════════════════════════════════════════════════════════════════════
--->
+<!-- ═══════════ FOOTER GLOBAL ═══════════ -->
 <footer class="main-footer">
     <div class="footer-container">
-
-        <!-- ── COLONNE GAUCHE : infos ── -->
         <div class="footer-left">
             <h2 class="footer-logo">ES.Maroc<span>.Org</span></h2>
-
-            <p class="footer-description">
-                EsMaroc.Org est une association qui promeut l'innovation sociale au Maroc.
-                Nous accompagnons les entrepreneurs pour créer un impact durable et responsable.
-            </p>
-
-            <!-- Deux hubs -->
+            <p class="footer-description">EsMaroc.Org est une association qui promeut l'innovation sociale au Maroc. Nous accompagnons les entrepreneurs pour créer un impact durable et responsable.</p>
             <div class="footer-hubs">
-
                 <div class="footer-hub">
-                    <p class="footer-hub-title">
-                        <i class="fa-solid fa-circle-dot"></i>
-                        Hub Rabat &mdash; Siège principal
-                    </p>
+                    <p class="footer-hub-title"><i class="fa-solid fa-circle-dot"></i> Hub Rabat &mdash; Siège principal</p>
                     <div class="footer-contact">
-                        <p>
-                            <i class="fa-solid fa-location-dot"></i>
-                            12 rue Pékin, Océan Résidence Les Fleurs, App. 1 &mdash; Rabat
-                        </p>
-                        <p>
-                            <i class="fa-solid fa-phone"></i>
-                            <a href="tel:+212537762872">+212 (0) 537 762 872</a>
-                        </p>
+                        <p><i class="fa-solid fa-location-dot"></i> 12 rue Pékin, Océan Résidence Les Fleurs, App. 1 &mdash; Rabat</p>
+                        <p><i class="fa-solid fa-phone"></i><a href="tel:+212537762872">+212 (0) 537 762 872</a></p>
                     </div>
                 </div>
-
                 <div class="footer-hub">
-                    <p class="footer-hub-title">
-                        <i class="fa-solid fa-circle-dot"></i>
-                        Hub Tanger &mdash; Régional
-                    </p>
+                    <p class="footer-hub-title"><i class="fa-solid fa-circle-dot"></i> Hub Tanger &mdash; Régional</p>
                     <div class="footer-contact">
-                        <p>
-                            <i class="fa-solid fa-location-dot"></i>
-                            Centre des Services à la Jeunesse,
-                            Hay Hassani Bni Touzine &mdash; Tanger
-                        </p>
-                        <p>
-                            <i class="fa-solid fa-phone"></i>
-                            <a href="tel:+212526131326">+212 (0) 5 26 13 13 26</a>
-                        </p>
+                        <p><i class="fa-solid fa-location-dot"></i> Centre des Services à la Jeunesse, Hay Hassani Bni Touzine &mdash; Tanger</p>
+                        <p><i class="fa-solid fa-phone"></i><a href="tel:+212526131326">+212 (0) 5 26 13 13 26</a></p>
                     </div>
                 </div>
-
             </div>
-
-            <!-- Email commun aux deux hubs -->
             <div class="footer-contact footer-email-row">
-                <p>
-                    <i class="fa-solid fa-envelope"></i>
-                    <a href="mailto:contact@entreprisesocialemaroc.org">
-                        contact@entreprisesocialemaroc.org
-                    </a>
-                </p>
+                <p><i class="fa-solid fa-envelope"></i><a href="mailto:contact@entreprisesocialemaroc.org">contact@entreprisesocialemaroc.org</a></p>
             </div>
         </div>
-
-        <!-- ── SÉPARATEUR VERTICAL ── -->
         <div class="footer-divider"></div>
-
-        <!-- ── COLONNE DROITE : RS + CTA ── -->
         <div class="footer-right">
             <h3>Rejoignez-nous</h3>
-
             <div class="social-icons">
-                <a href="https://www.facebook.com/share/1D5jCeXmCF/?mibextid=wwXIfr"
-                   target="_blank" rel="noopener" aria-label="Facebook">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a href="https://www.linkedin.com/company/es-maroc-org/?originalSubdomain=mt"
-                   target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="https://youtube.com/@esmarocorg484?si=5d8Rrxz4J4Jl7WgH"
-                   target="_blank" rel="noopener" aria-label="YouTube">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-                <a href="https://www.instagram.com/es.maroc?igsh=dnB1cGllNzRmbG1n"
-                   target="_blank" rel="noopener" aria-label="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
+                <a href="https://www.facebook.com/share/1D5jCeXmCF/?mibextid=wwXIfr" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/es-maroc-org/?originalSubdomain=mt" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://youtube.com/@esmarocorg484?si=5d8Rrxz4J4Jl7WgH" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/es.maroc?igsh=dnB1cGllNzRmbG1n" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
             </div>
-
             <div class="footer-contact-btn-wrap">
-                <a href="contact.html" class="footer-contact-btn">
-                    <i class="fas fa-envelope"></i> Contactez-nous
-                </a>
+                <a href="contact.html" class="footer-contact-btn"><i class="fas fa-envelope"></i> Contactez-nous</a>
             </div>
-
             <p class="copyright">ES.Maroc &copy; Copyright 2026. Tous droits réservés.</p>
         </div>
-
     </div>
 </footer>
 
-<script>
-function toggleAccordion() {
-    const card = document.getElementById('comite-card');
-    const panel = document.getElementById('comite-panel');
-    const arrow = document.querySelector('.accordion-arrow');
-    const trigger = document.querySelector('.accordion-trigger');
-    const isOpen = panel.classList.contains('open');
-
-    if (isOpen) {
-        panel.classList.remove('open');
-        card.classList.remove('accordion-open');
-        trigger.innerHTML = 'En savoir plus <i class="fas fa-chevron-right accordion-arrow"></i>';
-    } else {
-        panel.classList.add('open');
-        card.classList.add('accordion-open');
-        trigger.innerHTML = 'Réduire <i class="fas fa-chevron-left accordion-arrow"></i>';
-    }
-}
-</script>
+<script src="script.js"></script>
 <script src="header.js"></script>
-    
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    /* ── Accordion comité ── */
+    window.toggleAccordion = function () {
+        var card    = document.getElementById('comite-card');
+        var panel   = document.getElementById('comite-panel');
+        var trigger = document.querySelector('.accordion-trigger');
+        var isOpen  = panel.classList.contains('open');
+        if (isOpen) {
+            panel.classList.remove('open');
+            card.classList.remove('accordion-open');
+            trigger.innerHTML = 'En savoir plus <i class="fas fa-chevron-right accordion-arrow"></i>';
+        } else {
+            panel.classList.add('open');
+            card.classList.add('accordion-open');
+            trigger.innerHTML = 'R\u00e9duire <i class="fas fa-chevron-left accordion-arrow"></i>';
+        }
+    };
+
+    /* ── Scroll stat 1 ── */
+    var scrollBtn = document.getElementById('scrollToEvents');
+    if (scrollBtn) {
+        scrollBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector('.ev-filter-bar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    }
+
+    /* ── Modale éditions ── */
+    var modalE = document.getElementById('editionsModal');
+    document.getElementById('openEditionsModal').addEventListener('click', function () {
+        modalE.classList.add('ev-modal-open');
+        document.body.style.overflow = 'hidden';
+    });
+    function closeE() { modalE.classList.remove('ev-modal-open'); document.body.style.overflow = ''; }
+    document.getElementById('closeEditionsBtn').addEventListener('click', closeE);
+    document.getElementById('closeEditionsOverlay').addEventListener('click', closeE);
+
+    /* ── Modale impact ── */
+    var modalI = document.getElementById('impactModal');
+    document.getElementById('openImpactModal').addEventListener('click', function () {
+        modalI.classList.add('ev-modal-open');
+        document.body.style.overflow = 'hidden';
+    });
+    function closeI() { modalI.classList.remove('ev-modal-open'); document.body.style.overflow = ''; }
+    document.getElementById('closeImpactBtn').addEventListener('click', closeI);
+    document.getElementById('closeImpactOverlay').addEventListener('click', closeI);
+
+    /* ── Fermer avec Echap ── */
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { closeE(); closeI(); }
+    });
+
+    /* ── Filtres catégories ── */
+    var filterBtns = document.querySelectorAll('.ev-filter-btn');
+    var groups     = document.querySelectorAll('.ev-group');
+
+    filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            filterBtns.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            var filter = btn.dataset.filter;
+            groups.forEach(function (g) {
+                g.style.display = (filter === 'all' || g.dataset.cat === filter) ? 'block' : 'none';
+            });
+        });
+    });
+
+});
+</script>
 </body>
 </html>
