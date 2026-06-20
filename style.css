@@ -224,7 +224,7 @@ nav a:hover {
 /* --- HERO SECTION --- */
 .hero {
     height: 85vh;
-    background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1471&auto=format&fit=crop') center/cover no-repeat;
+    background: url('team-pic.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     position: relative;
